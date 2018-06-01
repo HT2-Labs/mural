@@ -1,12 +1,18 @@
 import * as React from 'react';
 import * as dom from 'react-dom';
+import ButtonIcon, { Size } from './buttons/ButtonIcon';
 import IconHome from './icons/IconHome';
+import IconSearch from './icons/IconSearch';
 
 const Demo = () => {
   return (
     <>
-      <button style={{ width: 200, height: 50 }}>Hi there <IconHome /></button>
-      {/* <button>Hi there <IconHome width={200} height={100} color="red" /></button> */}
+      <div>This is our home icon: <IconHome /></div>
+      <div>This is our search icon: <IconSearch /></div>
+      <div>
+        This is our button icon:
+        <ButtonIcon renderIcon={IconHome} size={Size.Large} backgroundColor="red" color="white" />
+      </div>
     </>
   );
 };

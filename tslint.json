@@ -3,6 +3,13 @@
     "./node_modules/@ht2-labs/typescript-project/configs/tslint.json"
   ],
   "rules": {
-    "no-unnecessary-type-assertion": false
+    "no-unnecessary-type-assertion": false,
+    "variable-name": [
+      true,
+      "check-format",
+      "ban-keywords",
+      "allow-leading-underscore",
+      "allow-pascal-case"
+    ]
   }
 }
