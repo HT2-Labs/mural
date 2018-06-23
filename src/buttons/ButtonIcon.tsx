@@ -52,6 +52,10 @@ export default ({
     &:hover {
       cursor: pointer;
     }
+    & svg {
+      position: relative;
+      top: .125em;
+    }
   `;
 
   return (
