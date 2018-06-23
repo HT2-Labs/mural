@@ -5,11 +5,9 @@ import IconProps from '../utils/IconProps';
 export default ({ width = '1em', height = '1em', color = 'inherit' }: IconProps) => {
 
   const Svg = styled.svg`
-    fill: ${color},
-    height: ${height},
-    position: relative,
-    top: .125em,
-    width: ${width},
+    fill: ${color};
+    height: ${height};
+    width: ${width};
   `;
 
   return (
