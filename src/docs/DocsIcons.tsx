@@ -1,3 +1,4 @@
+// tslint:disable:max-file-line-count
 import * as React from 'react';
 import styled from 'styled-components';
 
@@ -14,6 +15,7 @@ import IconChevronDown from '../icons/IconChevronDown';
 import IconChevronLeft from '../icons/IconChevronLeft';
 import IconChevronRight from '../icons/IconChevronRight';
 import IconChevronUp from '../icons/IconChevronUp';
+import IconCuratr from '../icons/IconCuratr';
 import IconEllipsisV from '../icons/IconEllipsisV';
 import IconFilter from '../icons/IconFilter';
 import IconFlagCheckered from '../icons/IconFlagCheckered';
@@ -26,7 +28,23 @@ import IconThumbsUp from '../icons/IconThumbsUp';
 import IconTimes from '../icons/IconTimes';
 import IconTimesCircle from '../icons/IconTimesCircle';
 
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { obsidian } from 'react-syntax-highlighter/styles/hljs';
+
 export default () => {
+  const codeString = `
+    import * as React from 'react';
+    import createSVGIcon from '../utils/createSVGIcon';
+
+    export default createSVGIcon(() => {
+      return (
+        <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206
+        0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69
+        432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997
+        9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/>
+      );
+    }, '0 0 512 512');
+  `;
   const Grid = styled.div`
     display: grid;
     grid-template-columns: 200px 200px 200px 200px;
@@ -46,8 +64,12 @@ export default () => {
     padding-top: 20px;
     font-size: 16px;
   `;
+  const SectionTitle = styled.h2 `
+    font-size: 4rem;
+  `;
   return (
     <>
+      <SectionTitle id="Icons">Icons</SectionTitle>
       <Grid>
         <GridItem><IconArrowDown /><GridItemText>IconArrowDown</GridItemText></GridItem>
         <GridItem><IconArrowLeft /><GridItemText>IconArrowLeft</GridItemText></GridItem>
@@ -62,6 +84,7 @@ export default () => {
         <GridItem><IconChevronLeft /><GridItemText>IconChevronLeft</GridItemText></GridItem>
         <GridItem><IconChevronRight /><GridItemText>IconChevronRight</GridItemText></GridItem>
         <GridItem><IconChevronUp /><GridItemText>IconChevronUp</GridItemText></GridItem>
+        <GridItem><IconCuratr /><GridItemText>IconCuratr</GridItemText></GridItem>
         <GridItem><IconEllipsisV /><GridItemText>IconEllipsisV</GridItemText></GridItem>
         <GridItem><IconFilter /><GridItemText>IconFilter</GridItemText></GridItem>
         <GridItem><IconFlagCheckered /><GridItemText>IconFlagCheckered</GridItemText></GridItem>
@@ -74,6 +97,7 @@ export default () => {
         <GridItem><IconTimes /><GridItemText>IconTimes</GridItemText></GridItem>
         <GridItem><IconTimesCircle /><GridItemText>IconTimesCircle</GridItemText></GridItem>
       </Grid>
+      <SyntaxHighlighter language="javascript" style={obsidian}>{codeString}</SyntaxHighlighter>
     </>
   );
 };

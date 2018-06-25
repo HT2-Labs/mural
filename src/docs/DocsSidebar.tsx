@@ -1,0 +1,36 @@
+import * as React from 'react';
+import styled from 'styled-components';
+
+export default () => {
+  const Sidebar = styled.aside`
+    width: 250px;
+  `;
+  const Logo = styled.div `
+    background-image: url('https://www.ht2labs.com/wp-content/uploads/2016/09/ht2-labs-logo2x.png');
+    background-size: 100%;
+    width: 250px;
+    padding-top: 27%;
+  `;
+  const Name = styled.h1`
+    text-align: right;
+    font-size: 45px;
+    margin: 0;
+    color: #344a58;
+    padding-right: 8px;
+  `;
+  const Menu = styled.nav`
+    margin-top: 60px;
+  `;
+  const MenuItem = styled.a`
+    font-size: 20px;
+  `;
+  return (
+    <Sidebar>
+      <Logo />
+      <Name>Mural</Name>
+      <Menu>
+        <MenuItem href="#Icons">Icons</MenuItem>
+      </Menu>
+    </Sidebar>
+  );
+};
