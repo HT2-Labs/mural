@@ -20,6 +20,7 @@ export default () => {
   return (
     <>
       <SectionTitle>The HT2Labs Shared Component Library - Mural</SectionTitle>
+      <Text>Multi-use react ? library</Text>
       <Quote>
         A distinguishing characteristic of mural painting is that the architectural
         elements of the given space are harmoniously incorporated into the picture
