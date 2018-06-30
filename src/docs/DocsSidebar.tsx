@@ -29,7 +29,12 @@ export default () => {
       <Logo />
       <Name>Mural</Name>
       <Menu>
+        <MenuItem href="#Buttons">Buttons</MenuItem>
+        <MenuItem href="#Cards">Cards</MenuItem>
+        <MenuItem href="#Forms">Forms</MenuItem>
+        <MenuItem href="#Headings">Headings</MenuItem>
         <MenuItem href="#Icons">Icons</MenuItem>
+        <MenuItem href="#Menus">Menus</MenuItem>
       </Menu>
     </Sidebar>
   );
