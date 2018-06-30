@@ -20,9 +20,14 @@ export default () => {
   `;
   const Menu = styled.nav`
     margin-top: 60px;
+    display: flex;
+    flex-direction: column;
   `;
   const MenuItem = styled.a`
     font-size: 20px;
+    padding: 10px 20px;
+    border-left: 4px solid #344a58;
+    color: #344a58;
   `;
   return (
     <Sidebar>
