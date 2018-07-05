@@ -12,7 +12,7 @@ export default ({ children, onClick, type }: CardProps) => {
     padding: 14px 20px;
     width: 100%;
     color: #2f2f2f;
-    cursor: ${onClick ? 'pointer' : 'initial'};
+    cursor: ${onClick !== undefined ? 'pointer' : 'initial'};
   `;
   const NormalCard = styled(Card)`
     background-color: #fff;
@@ -36,7 +36,7 @@ export default ({ children, onClick, type }: CardProps) => {
   const ChosenCard = chooseCard();
 
   return (
-    <ChosenCard onClick={onClick} role={onClick && 'button'}>
+    <ChosenCard onClick={onClick} role={onClick !== undefined ? 'button' : ''}>
       {children}
     </ChosenCard>
   );
