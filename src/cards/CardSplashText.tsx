@@ -7,6 +7,7 @@ export default ({ children }: CardProps) => {
   const CardSplashText = styled.div`
     align-items: center;
     display: flex;
+    flex-direction: column;
     font-size: 20px;
     height: 100%;
     justify-content: center;

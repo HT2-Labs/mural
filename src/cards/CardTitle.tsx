@@ -1,7 +1,9 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-export default (props: { readonly children: JSX.Element[] | JSX.Element | string }) => {
+import CardProps from '../utils/CardProps';
+
+export default ({ children }: CardProps) => {
   const CardTitle = styled.h3`
     font-size: 13px;
     font-weight: normal;
@@ -11,7 +13,7 @@ export default (props: { readonly children: JSX.Element[] | JSX.Element | string
   `;
   return (
     <CardTitle>
-      {props.children}
+      {children}
     </CardTitle>
   );
 };
