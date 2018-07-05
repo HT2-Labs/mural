@@ -1,5 +1,8 @@
 // tslint:disable:max-file-line-count
 import * as React from 'react';
+
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { obsidian } from 'react-syntax-highlighter/styles/hljs';
 import styled from 'styled-components';
 
 import IconArrowDown from '../icons/IconArrowDown';
@@ -28,8 +31,7 @@ import IconThumbsUp from '../icons/IconThumbsUp';
 import IconTimes from '../icons/IconTimes';
 import IconTimesCircle from '../icons/IconTimesCircle';
 
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { obsidian } from 'react-syntax-highlighter/styles/hljs';
+import DocsSectionTitle from './DocsSectionTitle';
 
 export default () => {
   const codeString = `
@@ -64,12 +66,9 @@ export default () => {
     padding-top: 20px;
     font-size: 16px;
   `;
-  const SectionTitle = styled.h2 `
-    font-size: 4rem;
-  `;
   return (
     <>
-      <SectionTitle id="Icons">Icons</SectionTitle>
+      <DocsSectionTitle id="Icons">Icons</DocsSectionTitle>
       <Grid>
         <GridItem><IconArrowDown /><GridItemText>IconArrowDown</GridItemText></GridItem>
         <GridItem><IconArrowLeft /><GridItemText>IconArrowLeft</GridItemText></GridItem>

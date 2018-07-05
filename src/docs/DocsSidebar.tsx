@@ -5,30 +5,35 @@ export default () => {
   const Sidebar = styled.aside`
     width: 250px;
   `;
+
   const Logo = styled.div `
     background-image: url('https://www.ht2labs.com/wp-content/uploads/2016/09/ht2-labs-logo2x.png');
     background-size: 100%;
-    width: 250px;
     padding-top: 27%;
+    width: 250px;
   `;
+
   const Name = styled.h1`
-    text-align: right;
+    color: #344a58;
     font-size: 45px;
     margin: 0;
-    color: #344a58;
     padding-right: 8px;
+    text-align: right;
   `;
+
   const Menu = styled.nav`
-    margin-top: 60px;
     display: flex;
     flex-direction: column;
+    margin-top: 60px;
   `;
+
   const MenuItem = styled.a`
-    font-size: 20px;
-    padding: 10px 20px;
     border-left: 4px solid #344a58;
     color: #344a58;
+    font-size: 20px;
+    padding: 10px 20px;
   `;
+
   return (
     <Sidebar>
       <Logo />
