@@ -7,6 +7,7 @@ import CardBody from '../cards/CardBody';
 import CardFooter from '../cards/CardFooter';
 import CardHeader from '../cards/CardHeader';
 import CardSplashHeader from '../cards/CardSplashHeader';
+import CardSplashSubText from '../cards/CardSplashSubText';
 import CardSplashText from '../cards/CardSplashText';
 import CardTitle from '../cards/CardTitle';
 import IconEllipsisV from '../icons/IconEllipsisV';
@@ -87,10 +88,12 @@ export default () => {
         </Card>
         <Card type={CardType.Highlighted}>
           <CardSplashHeader>
+            <CardHeader />
             <IconEllipsisV color={'#fff'}/>
           </CardSplashHeader>
           <CardSplashText>
             <strong>Shared components</strong>
+            <CardSplashSubText>(0/3) things are cool</CardSplashSubText>
           </CardSplashText>
         </Card>
         <Card type={CardType.Placeholder}>
