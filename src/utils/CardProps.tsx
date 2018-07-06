@@ -4,7 +4,7 @@ export enum CardType {
 }
 
 export default interface IconProps {
-  readonly children?: JSX.Element[] | JSX.Element | string;
+  readonly children?: JSX.Element[] | JSX.Element | string | boolean[] | boolean;
   readonly type?: CardType;
   readonly onClick?: () => void;
 }
