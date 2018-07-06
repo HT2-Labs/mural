@@ -6,7 +6,7 @@ export default ({ children, onClick, type, disabled }: ButtonProps) => {
   const Button = styled.button`
     border-radius: 2px;
     box-sizing: border-box;
-    cursor: ${disabled ? 'not-allowed' : 'pointer'};
+    cursor: ${disabled !== undefined ? 'not-allowed' : 'pointer'};
     display: block;
     font-size: 14px;
     font-weight: 700;
@@ -16,8 +16,8 @@ export default ({ children, onClick, type, disabled }: ButtonProps) => {
     text-transform: uppercase;
     width: auto;
     &:hover {
-      box-shadow: ${disabled ? 'none' : '0 2px 2px 2px rgba(0, 0, 0, 0.14)'};
-      transform: ${disabled ? 'none' : 'translateY(2px)'};
+      box-shadow: ${disabled !== undefined ? 'none' : '0 2px 2px 2px rgba(0, 0, 0, 0.14)'};
+      transform: ${disabled !== undefined ? 'none' : 'translateY(2px)'};
       transition: all 0.15s ease 0s;
     }
     &:active {
@@ -49,15 +49,19 @@ export default ({ children, onClick, type, disabled }: ButtonProps) => {
     color: #777;
   `;
   const chooseButton = () => {
-    if (disabled && type === ButtonType.Ghost) { return DisabledGhostButton; }
-    if (disabled) { return DisabledButton; }
+    if (disabled !== undefined && type === ButtonType.Ghost) { return DisabledGhostButton; }
+    if (disabled !== undefined) { return DisabledButton; }
     if (type === ButtonType.Ghost) { return GhostButton; }
     return NormalButton;
   };
   const ChosenButton = chooseButton();
 
   return (
-    <ChosenButton disabled={disabled ? true : false} onClick={onClick} role={'button'}>
+    <ChosenButton
+      disabled={disabled !== undefined ? true : false}
+      onClick={onClick}
+      role={'button'}
+    >
       {children}
     </ChosenButton>
   );
