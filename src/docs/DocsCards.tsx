@@ -28,11 +28,11 @@ export default () => {
   `;
 
   const normalCard = `
-  import Card from '@HT2-Labs/react-components/dist/cards/Card';
-  import CardBody from '@HT2-Labs/react-components/dist/cards/CardBody';
-  import CardFooter from '@HT2-Labs/react-components/dist/cards/CardFooter';
-  import CardHeader from '@HT2-Labs/react-components/dist/cards/CardHeader';
-  import CardTitle from '@HT2-Labs/react-components/dist/cards/CardTitle';
+  import Card from '@ht2-labs/react-components/dist/cards/Card';
+  import CardBody from '@ht2-labs/react-components/dist/cards/CardBody';
+  import CardFooter from '@ht2-labs/react-components/dist/cards/CardFooter';
+  import CardHeader from '@ht2-labs/react-components/dist/cards/CardHeader';
+  import CardTitle from '@ht2-labs/react-components/dist/cards/CardTitle';
 
   <Card>
     <CardHeader>
@@ -47,9 +47,9 @@ export default () => {
   `;
 
   const CardHighlighted = `
-  import Card from '@HT2-Labs/react-components/dist/cards/Card';
-  import CardSplashHeader from '@HT2-Labs/react-components/dist/cards/CardSplashHeader';
-  import CardSplashText from '@HT2-Labs/react-components/dist/cards/CardSplashText';
+  import Card from '@ht2-labs/react-components/dist/cards/Card';
+  import CardSplashHeader from '@ht2-labs/react-components/dist/cards/CardSplashHeader';
+  import CardSplashText from '@ht2-labs/react-components/dist/cards/CardSplashText';
 
   <Card type={CardType.Highlighted} onClick>
     <CardSplashHeader>
@@ -62,8 +62,8 @@ export default () => {
   `;
 
   const cardPlaceholder = `
-  import Card from '@HT2-Labs/react-components/dist/cards/Card';
-  import CardSplashText from '@HT2-Labs/react-components/dist/cards/CardSplashText';
+  import Card from '@ht2-labs/react-components/dist/cards/Card';
+  import CardSplashText from '@ht2-labs/react-components/dist/cards/CardSplashText';
 
   <Card type={CardType.Placeholder}>
     <CardSplashText>
