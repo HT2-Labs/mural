@@ -3,6 +3,7 @@ import * as dom from 'react-dom';
 import { ThemeProvider } from 'styled-components';
 import styled from 'styled-components';
 
+import DocsButtons from './docs/DocsButtons';
 import DocsCards from './docs/DocsCards';
 import DocsIcons from './docs/DocsIcons';
 import DocsIntro from './docs/DocsIntro';
@@ -38,6 +39,7 @@ const Demo = () => {
         <DocsSidebar />
         <Main>
           <DocsIntro />
+          <DocsButtons />
           <DocsCards />
           <DocsIcons />
         </Main>
