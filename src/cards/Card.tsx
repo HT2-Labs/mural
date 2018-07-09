@@ -2,17 +2,19 @@ import * as React from 'react';
 import styled from 'styled-components';
 import CardProps, { CardType } from '../utils/CardProps';
 
-export default ({ children, onClick, type }: CardProps) => {
+export default ({ children, onClick, type, selected }: CardProps) => {
   const Card = styled.div`
+    border-bottom: ${selected !== undefined ? '10px solid rgba(0, 0, 0, 0.2)' : 'none'};
     border-radius: ${({ theme }) => theme.borderRadius};
     box-sizing: border-box;
+    color: #2f2f2f;
+    cursor: ${onClick !== undefined ? 'pointer' : 'initial'};
     display: flex;
     flex-direction: column;
     height: auto;
+    min-height: ${selected !== undefined ? '154px' : '144px'};
     padding: 14px 20px;
     width: 100%;
-    color: #2f2f2f;
-    cursor: ${onClick !== undefined ? 'pointer' : 'initial'};
   `;
   const NormalCard = styled(Card)`
     background-color: #fff;
@@ -20,10 +22,8 @@ export default ({ children, onClick, type }: CardProps) => {
   `;
   const HighlightedCard = styled(Card)`
     background-color: ${({ theme }) => theme.colorSecondary};
-    border-bottom: 10px solid rgba(0, 0, 0, 0.2);
     box-shadow: ${({ theme }) => theme.boxShadow};
     color: ${({ theme }) => theme.colorPrimaryText};
-    min-height: 154px;
   `;
   const PlaceholderCard = styled(Card)`
     background-color: #e0e0e0;
