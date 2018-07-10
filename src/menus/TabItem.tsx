@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import MenuProps from '../utils/MenuProps';
 
-export default ({ active, children, onClick }: MenuProps) => {
+export default ({ active = false, children, onClick }: MenuProps) => {
   const TabItem = styled.div`
     border-bottom: 4px solid;
     border-color: ${active ? ({ theme }) => theme.color.Button : 'transparent'};
