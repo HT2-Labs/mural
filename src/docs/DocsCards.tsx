@@ -86,7 +86,7 @@ export default () => {
           </CardBody>
           <CardFooter>Card Title</CardFooter>
         </Card>
-        <Card type={CardType.Highlighted}>
+        <Card type={CardType.Highlighted} active>
           <CardSplashHeader>
             <CardHeader />
             <IconEllipsisV color={'#fff'}/>
