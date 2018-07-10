@@ -4,20 +4,19 @@ import ButtonProps, { ButtonType } from '../utils/ButtonProps';
 
 export default ({ children, onClick, type, disabled }: ButtonProps) => {
   const Button = styled.button`
-    border-radius: 2px;
+    border-radius: ${({ theme }) => theme.radius.Button};
     box-sizing: border-box;
     cursor: ${disabled !== undefined ? 'not-allowed' : 'pointer'};
     display: block;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 700;
     margin: 4px;
-    padding: 10px 16px;
+    padding: 8px 16px;
     text-align: center;
-    text-transform: uppercase;
     width: auto;
     &:hover {
-      box-shadow: ${disabled !== undefined ? 'none' : '0 2px 2px 2px rgba(0, 0, 0, 0.14)'};
-      transform: ${disabled !== undefined ? 'none' : 'translateY(2px)'};
+      box-shadow: ${disabled !== undefined ? 'none' : ({ theme }) => theme.shadow.Large};
+      transform: ${disabled !== undefined ? 'none' : 'translate3D(0, 2px, 0)'};
       transition: all 0.15s ease 0s;
     }
     &:active {
@@ -25,28 +24,28 @@ export default ({ children, onClick, type, disabled }: ButtonProps) => {
     }
   `;
   const NormalButton = styled(Button)`
-    background-color: ${({ theme }) => theme.colorButton};
-    border: 2px solid ${({ theme }) => theme.colorButton};
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24);;
-    color: #fff;
+    background-color: ${({ theme }) => theme.color.Button};
+    border: 2px solid ${({ theme }) => theme.color.Button};
+    box-shadow: ${({ theme }) => theme.shadow.Main};
+    color: ${({ theme }) => theme.color.ButtonText};
   `;
   const GhostButton = styled(Button)`
-    background-color: #fff;
-    border: 2px solid ${({ theme }) => theme.colorButton};
+    background-color: transparent;
+    border: 2px solid ${({ theme }) => theme.color.Button};
     box-shadow: none;
-    color: ${({ theme }) => theme.colorButton};
+    color: ${({ theme }) => theme.color.Button};
   `;
   const DisabledButton = styled(Button)`
-    background-color: #eee;
-    border: 2px solid #eee;
+    background-color: ${({ theme }) => theme.color.Disabled};
+    border: 2px solid ${({ theme }) => theme.color.Disabled};
     box-shadow: none;
-    color: #444;
+    color: ${({ theme }) => theme.color.DisabledText};
   `;
   const DisabledGhostButton = styled(Button)`
-    background-color: #fff;
-    border: 2px solid #eee;
+    background-color: transparent;
+    border: 2px solid ${({ theme }) => theme.color.Disabled};
     box-shadow: none;
-    color: #777;
+    color: ${({ theme }) => theme.color.DisabledText};
   `;
   const chooseButton = () => {
     if (disabled !== undefined && type === ButtonType.Ghost) { return DisabledGhostButton; }
