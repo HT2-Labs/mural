@@ -4,7 +4,8 @@ export enum ButtonType {
 }
 
 export default interface IconProps {
-  readonly children?: JSX.Element[] | JSX.Element | string | boolean[] | boolean;
+  // Readonly children?: JSX.Element[] | JSX.Element | string | boolean[] | boolean; -- Help Ryan!
+  readonly children?: any;
   readonly disabled?: boolean | undefined;
   readonly onClick?: () => void;
   readonly type?: ButtonType;
