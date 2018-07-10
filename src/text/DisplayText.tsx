@@ -1,8 +1,8 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import TextProps, { ElementType, SizeType } from '../utils/TextProps';
+import TextProps, { ElementType } from '../utils/TextProps';
 
-export default ({ children, size, type }: TextProps) => {
+export default ({ children, type }: TextProps) => {
   const h1 = styled.h1`
     color: ${({ theme }) => theme.colorText};
   `;
