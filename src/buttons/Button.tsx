@@ -8,6 +8,7 @@ export default ({ children, onClick, type, disabled }: ButtonProps) => {
     box-sizing: border-box;
     cursor: ${disabled !== undefined ? 'not-allowed' : 'pointer'};
     display: block;
+    flex-shrink: 0;
     font-size: 16px;
     font-weight: 700;
     margin: 4px;
@@ -21,6 +22,10 @@ export default ({ children, onClick, type, disabled }: ButtonProps) => {
     }
     &:active {
       box-shadow: none;
+    }
+    & svg {
+      position: relative;
+      top: .1em;
     }
   `;
   const NormalButton = styled(Button)`
