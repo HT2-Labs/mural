@@ -6,8 +6,7 @@ export default ({ children }: MenuProps) => {
   const TabMenu = styled.nav`
     display: flex;
     height: 44px;
-    width: 100%;
-    margin: 0 8px;
+    margin: auto 4px 0;
   `;
 
   return (
