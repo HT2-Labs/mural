@@ -42,9 +42,10 @@ export default () => {
         <MenuItem href="#Buttons">Buttons</MenuItem>
         <MenuItem href="#Cards">Cards</MenuItem>
         <MenuItem href="#Forms">Forms</MenuItem>
-        <MenuItem href="#Headings">Headings</MenuItem>
+        <MenuItem href="#Headers">Headers</MenuItem>
         <MenuItem href="#Icons">Icons</MenuItem>
         <MenuItem href="#Menus">Menus</MenuItem>
+        <MenuItem href="#Text">Text</MenuItem>
       </Menu>
     </Sidebar>
   );

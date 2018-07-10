@@ -9,11 +9,11 @@ export default () => {
   return (
     <>
       <DocsSectionTitle id="Headers">Headers</DocsSectionTitle>
-        <TabMenu>
-          <TabItem active>Goals</TabItem>
-          <TabItem>Archive</TabItem>
-          <TabItem>Reports</TabItem>
-        </TabMenu>
+      <TabMenu>
+        <TabItem active>Goals</TabItem>
+        <TabItem>Archive</TabItem>
+        <TabItem>Reports</TabItem>
+      </TabMenu>
       <hr />
     </>
   );
