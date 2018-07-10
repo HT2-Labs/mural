@@ -28,34 +28,34 @@ export default ({ children, size, type }: TextProps) => {
   };
   const ChosenElement = chooseElement();
 
-  const small = styled(ChosenElement)`
-    font-weight: normal;
-    font-size: 20px;
-  `;
-  const medium = styled(ChosenElement)`
-    font-weight: normal;
-    font-size: 24px;
-  `;
-  const large = styled(ChosenElement)`
-    font-weight: bold;
-    font-size: 32px;
-  `;
-  const extraLarge = styled(ChosenElement)`
-    font-weight: bold;
-    font-size: 40px;
-  `;
+  // Const small = styled(ChosenElement)`
+  //   Font-weight: normal;
+  //   Font-size: 20px;
+  // `;
+  // Const medium = styled(ChosenElement)`
+  //   Font-weight: normal;
+  //   Font-size: 24px;
+  // `;
+  // Const large = styled(ChosenElement)`
+  //   Font-weight: bold;
+  //   Font-size: 32px;
+  // `;
+  // Const extraLarge = styled(ChosenElement)`
+  //   Font-weight: bold;
+  //   Font-size: 40px;
+  // `;
 
-  const chooseSize = () => {
-    if (size === SizeType.Small) { return small; }
-    if (size === SizeType.Large) { return large; }
-    if (size === SizeType.ExtraLarge) { return extraLarge; }
-    return medium;
-  };
-  const ChosenSize = chooseSize();
+  // Const chooseSize = () => {
+  //   If (size === SizeType.Small) { return small; }
+  //   If (size === SizeType.Large) { return large; }
+  //   If (size === SizeType.ExtraLarge) { return extraLarge; }
+  //   Return medium;
+  // };
+  // Const ChosenSize = chooseSize();
 
   return (
-    <ChosenSize>
+    <ChosenElement>
       {children}
-    </ChosenSize>
+    </ChosenElement>
   );
 };
