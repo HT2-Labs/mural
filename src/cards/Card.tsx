@@ -8,7 +8,7 @@ export default ({ children, onClick, type, active = false }: CardProps) => {
     border-radius: ${({ theme }) => theme.radius.Card};
     box-sizing: border-box;
     color: ${({ theme }) => theme.color.BodyText};
-    cursor: ${onClick ? 'pointer' : 'initial'};
+    cursor: ${onClick !== undefined ? 'pointer' : 'initial'};
     display: flex;
     flex-direction: column;
     height: auto;
