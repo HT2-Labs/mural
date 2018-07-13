@@ -15,6 +15,6 @@ export enum SizeType {
 
 export default interface IconProps {
   readonly children: JSX.Element[] | JSX.Element | string | boolean[] | boolean;
-  readonly type: ElementType;
   readonly size?: SizeType;
+  readonly type: ElementType;
 }
