@@ -1,10 +1,10 @@
 {
-  "name": "@ht2-labs/react-components",
+  "name": "@ht2-labs/mural",
   "version": "1.0.0",
-  "description": "Demonstrates ht2-labs with react-components.",
+  "description": "Demonstrates ht2-labs with mural.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ht2-labs/react-components"
+    "url": "https://github.com/ht2-labs/mural"
   },
   "main": "dist/index.js",
   "author": "ht2-labs",
