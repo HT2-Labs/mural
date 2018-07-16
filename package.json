@@ -21,7 +21,8 @@
     "semantic-release": "ht2-release-public-circleci-lib",
     "build-ghpages": "npm run clean && parcel build src/index.html --public-url ./",
     "deploy-ghpages": "node scripts/ghpages.js",
-    "ghpages": "npm run build-ghpages && npm run deploy-ghpages"
+    "ghpages": "npm run build-ghpages && npm run deploy-ghpages",
+    "publish": "sh ./scripts/publish.sh"
   },
   "dependencies": {
     "@material-ui/core": "^1.1.0",
