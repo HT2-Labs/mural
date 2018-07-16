@@ -6,6 +6,6 @@ export enum CardType {
 export default interface IconProps {
   readonly active?: boolean;
   readonly children?: JSX.Element[] | JSX.Element | string | boolean[] | boolean;
-  readonly onClick?: (e: React.MouseEvent) => void;
+  readonly onClick?: (e: React.MouseEvent<HTMLElement>) => void;
   readonly type?: CardType;
 }
