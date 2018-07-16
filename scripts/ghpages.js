@@ -5,7 +5,7 @@ ghpages.publish('dist', {
     name: 'HT2 Bot',
     email: 'hello@ht2labs.com'
   },
-  repo: `https://${process.env.GH_TOKEN}@github.com/ht2-labs/react-components.git`,
+  repo: `https://${process.env.GH_TOKEN}@github.com/ht2-labs/mural.git`,
   silent: true,
   message: 'ci(gh-pages): Publishes new changes [ci skip].'
 }, (err) => {
