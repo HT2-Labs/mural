@@ -1,11 +1,12 @@
+import { ReactNode } from 'react';
+
 export enum ButtonType {
   Ghost,
   Invisible,
 }
 
-export default interface IconProps {
-  // Readonly children?: JSX.Element[] | JSX.Element | string | boolean[] | boolean; -- Help Ryan!
-  readonly children?: any;
+export default interface ButtonProps {
+  readonly children?: ReactNode;
   readonly disabled?: boolean | undefined;
   readonly onClick?: (e: React.MouseEvent<HTMLElement>) => void;
   readonly type?: ButtonType;

@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export enum ElementType {
   H1,
   H2,
@@ -14,7 +16,7 @@ export enum SizeType {
 }
 
 export default interface IconProps {
-  readonly children: JSX.Element[] | JSX.Element | string | boolean[] | boolean;
+  readonly children: ReactNode;
   readonly size?: SizeType;
   readonly type: ElementType;
 }
