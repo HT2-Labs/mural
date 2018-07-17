@@ -2,6 +2,10 @@ import * as React from 'react';
 import styled from 'styled-components';
 import ButtonProps, { ButtonType } from '../utils/ButtonProps';
 
+export {
+  ButtonType,
+};
+
 export default ({ children, onClick, type, disabled }: ButtonProps) => {
   const Button = styled.button`
     border-radius: ${({ theme }) => theme.radius.Button};

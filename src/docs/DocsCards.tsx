@@ -2,7 +2,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import Card from '../cards/Card';
+import Card, { CardType } from '../cards/Card';
 import CardBody from '../cards/CardBody';
 import CardFooter from '../cards/CardFooter';
 import CardHeader from '../cards/CardHeader';
@@ -10,11 +10,12 @@ import CardSplashHeader from '../cards/CardSplashHeader';
 import CardSplashSubText from '../cards/CardSplashSubText';
 import CardSplashText from '../cards/CardSplashText';
 import CardTitle from '../cards/CardTitle';
+import Text, { ElementType } from '../text/Text';
+
 import IconEllipsisV from '../icons/IconEllipsisV';
 
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { obsidian } from 'react-syntax-highlighter/styles/hljs';
-import { CardType } from '../utils/CardProps';
 import DocsSectionTitle from './DocsSectionTitle';
 
 export default () => {
@@ -40,7 +41,7 @@ export default () => {
       <IconEllipsisV />
     </CardHeader>
     <CardBody>
-      <strong>The new home for all shared components</strong>
+      <p>The new home for all shared components</p>
     </CardBody>
     <CardFooter>Card Title</CardFooter>
   </Card>
@@ -56,7 +57,7 @@ export default () => {
       <IconEllipsisV color={'#fff'}/>
     </CardSplashHeader>
     <CardSplashText>
-      <strong>Shared components</strong>
+      <Text>Shared components</Text>
     </CardSplashText>
   </Card>
   `;
@@ -67,7 +68,7 @@ export default () => {
 
   <Card type={CardType.Placeholder}>
     <CardSplashText>
-      <strong>Shared components</strong>
+      <Text>Shared components</Text>
     </CardSplashText>
   </Card>
   `;
@@ -82,9 +83,11 @@ export default () => {
             <IconEllipsisV />
           </CardHeader>
           <CardBody>
-            <strong>The new home for all shared components</strong>
+            <Text type={ElementType.P}>The new home for all shared components</Text>
           </CardBody>
-          <CardFooter>Card Title</CardFooter>
+          <CardFooter>
+            <Text type={ElementType.P}>Some footer text</Text>
+          </CardFooter>
         </Card>
         <Card type={CardType.Highlighted} active>
           <CardSplashHeader>
@@ -92,13 +95,13 @@ export default () => {
             <IconEllipsisV color={'#fff'}/>
           </CardSplashHeader>
           <CardSplashText>
-            <strong>Shared components</strong>
+            <Text type={ElementType.P}>Shared components</Text>
             <CardSplashSubText>(0/3) things are cool</CardSplashSubText>
           </CardSplashText>
         </Card>
         <Card type={CardType.Placeholder}>
           <CardSplashText>
-            <strong>Shared components</strong>
+            <Text type={ElementType.P}>Shared components</Text>
           </CardSplashText>
         </Card>
       </CardGrid>
