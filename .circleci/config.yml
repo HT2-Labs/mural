@@ -38,7 +38,7 @@ jobs:
           command: npm run duplication -- --limit 15
       - deploy:
           name: Semantic Release
-          command: npm run publish
+          command: npm run semantic-release
       - deploy:
           name: Github Pages
           command: |
