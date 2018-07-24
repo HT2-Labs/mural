@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import DisplayText from '../text/DisplayText';
+import { H1, H3, SizeType } from '../text/Text';
 
 import Button from '../buttons/Button';
 import PageActions from '../headers/PageActions';
@@ -11,7 +11,6 @@ import IconEdit from '../icons/IconEdit';
 import TabItem from '../menus/TabItem';
 import TabMenu from '../menus/TabMenu';
 import { ButtonType } from '../utils/ButtonProps';
-import { ElementType, SizeType } from '../utils/TextProps';
 import DocsSectionTitle from './DocsSectionTitle';
 
 export default () => {
@@ -22,12 +21,12 @@ export default () => {
         <PageHeader>
           <PageTitle>
             <PageHeaderText>
-              <DisplayText type={ElementType.H1} size={SizeType.Large}>
+              <H1 size={SizeType.Large}>
                 Promote
-              </DisplayText>
-              <DisplayText type={ElementType.H3} size={SizeType.Small}>
+              </H1>
+              <H3 size={SizeType.Small}>
                 Grow into a new role
-              </DisplayText>
+              </H3>
             </PageHeaderText>
             <PageActions><Button type={ButtonType.Ghost}><IconEdit /> Edit</Button></PageActions>
           </PageTitle>

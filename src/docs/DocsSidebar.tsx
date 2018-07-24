@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export default () => {
@@ -27,7 +28,7 @@ export default () => {
     margin-top: 60px;
   `;
 
-  const MenuItem = styled.a`
+  const MenuItem = styled(NavLink)`
     border-left: 4px solid #344a58;
     color: #344a58;
     font-size: 20px;
@@ -39,13 +40,13 @@ export default () => {
       <Logo />
       <Name>Mural</Name>
       <Menu>
-        <MenuItem href="#Buttons">Buttons</MenuItem>
-        <MenuItem href="#Cards">Cards</MenuItem>
-        <MenuItem href="#Forms">Forms</MenuItem>
-        <MenuItem href="#Headers">Headers</MenuItem>
-        <MenuItem href="#Icons">Icons</MenuItem>
-        <MenuItem href="#Menus">Menus</MenuItem>
-        <MenuItem href="#Text">Text</MenuItem>
+        <MenuItem to="/Buttons">Buttons</MenuItem>
+        <MenuItem to="/Cards">Cards</MenuItem>
+        <MenuItem to="/Forms">Forms</MenuItem>
+        <MenuItem to="/Headers">Headers</MenuItem>
+        <MenuItem to="/Icons">Icons</MenuItem>
+        <MenuItem to="/Menus">Menus</MenuItem>
+        <MenuItem to="/Text">Text</MenuItem>
       </Menu>
     </Sidebar>
   );

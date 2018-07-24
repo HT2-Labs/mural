@@ -3,6 +3,7 @@ import * as dom from 'react-dom';
 import { ThemeProvider } from 'styled-components';
 import styled from 'styled-components';
 
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import DocsButtons from './docs/DocsButtons';
 import DocsCards from './docs/DocsCards';
 import DocsHeaders from './docs/DocsHeaders';
@@ -54,13 +55,15 @@ const Demo = () => {
       <MainWrap>
         <DocsSidebar />
         <Main>
-          <DocsIntro />
-          <DocsButtons />
-          <DocsCards />
-          <DocsHeaders />
-          <DocsIcons />
-          <DocsMenus />
-          <DocsText />
+          <Switch>
+            <Route exact path="/" component={DocsIntro}/>
+            <Route path="/buttons" component={DocsButtons}/>
+            <Route path="/cards" component={DocsCards}/>
+            <Route path="/headers" component={DocsHeaders}/>
+            <Route path="/icons" component={DocsIcons}/>
+            <Route path="/menus" component={DocsMenus}/>
+            <Route path="/text" component={DocsText}/>
+          </Switch>
         </Main>
       </MainWrap>
     </ThemeProvider>
@@ -68,4 +71,4 @@ const Demo = () => {
 };
 
 const element = document.getElementsByClassName('app')[0];
-dom.render(<Demo />, element);
+dom.render(<BrowserRouter><Demo /></BrowserRouter>, element);
