@@ -2,12 +2,18 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import Button from '../buttons/Button';
+import { Button, ButtonType } from '../Button';
 
-// Import SyntaxHighlighter from 'react-syntax-highlighter';
-// Import { obsidian } from 'react-syntax-highlighter/styles/hljs';
-import { ButtonType } from '../utils/ButtonProps';
+import IconHome from '../icons/IconHome';
+import DocsCode from './DocsCode';
 import DocsSectionTitle from './DocsSectionTitle';
+
+const normalButton = `import { Button, ButtonType } from '@ht2-labs/mural/Button';
+
+<Button>Button</Button>
+<Button type={ButtonType.Ghost}>Ghost Button</Button>
+<Button disabled>Disabled Button</Button>
+<Button type={ButtonType.Ghost} disabled>Disabled Ghost Button</Button>`;
 
 export default () => {
 
@@ -27,8 +33,11 @@ export default () => {
         <Button type={ButtonType.Ghost}>Ghost Button</Button>
         <Button disabled>Disabled Button</Button>
         <Button type={ButtonType.Ghost} disabled>Disabled Ghost Button</Button>
+        <Button>Button with Icon <IconHome /></Button>
+        <Button disabled>Button with Icon <IconHome /></Button>
       </ButtonGrid>
       <hr />
+      <DocsCode code={normalButton} />
     </>
   );
 };

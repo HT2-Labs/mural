@@ -21,14 +21,10 @@
     "ghpages": "npm run build-ghpages && npm run deploy-ghpages"
   },
   "dependencies": {
-    "@types/react-router-dom": "^4.3.0",
-    "@types/react-syntax-highlighter": "0.0.5",
-    "prop-types": "^15.6.1",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.0",
-    "react-router-dom": "^4.3.1",
-    "react-syntax-highlighter": "^8.0.0",
-    "styled-components": "^3.3.0"
+    "prop-types": "15.6.1",
+    "react": "16.4.1",
+    "react-dom": "16.4.0",
+    "styled-components": "3.3.0"
   },
   "devDependencies": {
     "@ht2-labs/semantic-release": "1.1.3",
@@ -36,9 +32,13 @@
     "@types/prop-types": "15.5.4",
     "@types/react": "16.4.7",
     "@types/react-dom": "16.0.6",
+    "@types/react-router-dom": "4.3.0",
+    "@types/react-syntax-highlighter": "0.0.5",
     "gh-pages": "1.2.0",
     "jscpd": "0.6.22",
     "parcel-bundler": "1.9.7",
+    "react-router-dom": "4.3.1",
+    "react-syntax-highlighter": "8.0.0",
     "rimraf": "2.6.2",
     "typescript": "2.9.2"
   },

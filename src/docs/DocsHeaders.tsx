@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { H1, H3, SizeType } from '../text/Text';
 
-import Button from '../buttons/Button';
+import { Button, ButtonType } from '../Button';
 import PageActions from '../headers/PageActions';
 import PageHeader from '../headers/PageHeader';
 import PageHeaderText from '../headers/PageHeaderText';
@@ -10,7 +10,6 @@ import PageTitle from '../headers/PageTitle';
 import IconEdit from '../icons/IconEdit';
 import TabItem from '../menus/TabItem';
 import TabMenu from '../menus/TabMenu';
-import { ButtonType } from '../utils/ButtonProps';
 import DocsSectionTitle from './DocsSectionTitle';
 
 export default () => {
