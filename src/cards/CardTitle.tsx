@@ -8,7 +8,7 @@ export default ({ children }: CardProps) => {
     font-size: 13px;
     font-weight: normal;
     line-height: 1.25;
-    margin: 0 0 14px;
+    margin: 0;
     width: 100%;
   `;
   return (
