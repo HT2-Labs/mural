@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import CardProps from '../utils/CardProps';
+import CardProps from './CardProps';
 
 export default ({ children }: CardProps) => {
   const CardSplashSubText = styled.div`

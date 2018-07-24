@@ -2,19 +2,22 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import Card from '../cards/Card';
-import CardBody from '../cards/CardBody';
-import CardFooter from '../cards/CardFooter';
-import CardHeader from '../cards/CardHeader';
-import CardSplashHeader from '../cards/CardSplashHeader';
-import CardSplashSubText from '../cards/CardSplashSubText';
-import CardSplashText from '../cards/CardSplashText';
-import CardTitle from '../cards/CardTitle';
+import {
+  Card,
+  CardBody,
+  CardFooter,
+  CardHeader,
+  CardSplashHeader,
+  CardSplashSubText,
+  CardSplashText,
+  CardTitle,
+  CardType,
+}
+from '../Card';
+
 import IconEllipsisV from '../icons/IconEllipsisV';
 
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { obsidian } from 'react-syntax-highlighter/styles/hljs';
-import { CardType } from '../utils/CardProps';
+import DocsCode from './DocsCode';
 import DocsSectionTitle from './DocsSectionTitle';
 
 export default () => {
@@ -27,50 +30,42 @@ export default () => {
     margin-bottom: 40px;
   `;
 
-  const normalCard = `
-  import Card from '@ht2-labs/mural/dist/cards/Card';
-  import CardBody from '@ht2-labs/mural/dist/cards/CardBody';
-  import CardFooter from '@ht2-labs/mural/dist/cards/CardFooter';
-  import CardHeader from '@ht2-labs/mural/dist/cards/CardHeader';
-  import CardTitle from '@ht2-labs/mural/dist/cards/CardTitle';
+  const normalCard = (
+`import { Card, CardBody, CardFooter, CardHeader, CardTitle } from '@ht2-labs/mural/Card';
+<Card>
+  <CardHeader>
+    <CardTitle>Card Title</CardTitle>
+    <IconEllipsisV />
+  </CardHeader>
+  <CardBody>
+    <strong>The new home for all shared components</strong>
+  </CardBody>
+  <CardFooter>Card Title</CardFooter>
+</Card>
+`);
 
-  <Card>
-    <CardHeader>
-      <CardTitle>Card Title</CardTitle>
-      <IconEllipsisV />
-    </CardHeader>
-    <CardBody>
-      <strong>The new home for all shared components</strong>
-    </CardBody>
-    <CardFooter>Card Title</CardFooter>
-  </Card>
-  `;
+  const CardHighlighted = (
+`import { Card, CardSplashHeader, CardSplashText } from '@ht2-labs/mural/Card';
 
-  const CardHighlighted = `
-  import Card from '@ht2-labs/mural/dist/cards/Card';
-  import CardSplashHeader from '@ht2-labs/mural/dist/cards/CardSplashHeader';
-  import CardSplashText from '@ht2-labs/mural/dist/cards/CardSplashText';
+<Card type={CardType.Highlighted} onClick>
+  <CardSplashHeader>
+    <IconEllipsisV color={'#fff'}/>
+  </CardSplashHeader>
+  <CardSplashText>
+    <strong>Shared components</strong>
+  </CardSplashText>
+</Card>
+`);
 
-  <Card type={CardType.Highlighted} onClick>
-    <CardSplashHeader>
-      <IconEllipsisV color={'#fff'}/>
-    </CardSplashHeader>
-    <CardSplashText>
-      <strong>Shared components</strong>
-    </CardSplashText>
-  </Card>
-  `;
+  const cardPlaceholder = (
+`import { Card, CardSplashText } from '@ht2-labs/mural/Card';
 
-  const cardPlaceholder = `
-  import Card from '@ht2-labs/mural/dist/cards/Card';
-  import CardSplashText from '@ht2-labs/mural/dist/cards/CardSplashText';
-
-  <Card type={CardType.Placeholder}>
-    <CardSplashText>
-      <strong>Shared components</strong>
-    </CardSplashText>
-  </Card>
-  `;
+<Card type={CardType.Placeholder}>
+  <CardSplashText>
+    <strong>Shared components</strong>
+  </CardSplashText>
+</Card>
+`);
 
   return (
     <>
@@ -103,15 +98,9 @@ export default () => {
         </Card>
       </CardGrid>
 
-      <SyntaxHighlighter language="javascript" style={obsidian}>
-        {normalCard}
-      </SyntaxHighlighter>
-      <SyntaxHighlighter language="javascript" style={obsidian}>
-        {CardHighlighted}
-      </SyntaxHighlighter>
-      <SyntaxHighlighter language="javascript" style={obsidian}>
-        {cardPlaceholder}
-      </SyntaxHighlighter>
+      <DocsCode code={normalCard} />
+      <DocsCode code={CardHighlighted} />
+      <DocsCode code={cardPlaceholder} />
     </>
   );
 };

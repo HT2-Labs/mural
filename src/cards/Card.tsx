@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import CardProps, { CardType } from '../utils/CardProps';
+import CardProps, { CardType } from './CardProps';
 
 export default ({ children, onClick, type, active = false }: CardProps) => {
   const Card = styled.div`
