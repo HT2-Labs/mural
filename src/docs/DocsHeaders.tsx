@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import DisplayText from '../text/DisplayText';
+import Text from '../text/Text';
 
 import Button from '../buttons/Button';
 import PageActions from '../headers/PageActions';
@@ -22,12 +22,12 @@ export default () => {
         <PageHeader>
           <PageTitle>
             <PageHeaderText>
-              <DisplayText type={ElementType.H1} size={SizeType.Large}>
+              <Text type={ElementType.H1} size={SizeType.Large}>
                 Promote
-              </DisplayText>
-              <DisplayText type={ElementType.H3} size={SizeType.Small}>
+              </Text>
+              <Text type={ElementType.H3} size={SizeType.Small}>
                 Grow into a new role
-              </DisplayText>
+              </Text>
             </PageHeaderText>
             <PageActions><Button type={ButtonType.Ghost}><IconEdit /> Edit</Button></PageActions>
           </PageTitle>

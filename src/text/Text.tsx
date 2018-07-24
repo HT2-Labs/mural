@@ -2,6 +2,10 @@ import * as React from 'react';
 import styled from 'styled-components';
 import TextProps, { ElementType } from '../utils/TextProps';
 
+export {
+  ElementType,
+};
+
 export default ({ children, type }: TextProps) => {
   const h1 = styled.h1`
     color: ${({ theme }) => theme.colorText};

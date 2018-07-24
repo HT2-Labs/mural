@@ -2,11 +2,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import Button from '../buttons/Button';
-
-// Import SyntaxHighlighter from 'react-syntax-highlighter';
-// Import { obsidian } from 'react-syntax-highlighter/styles/hljs';
-import { ButtonType } from '../utils/ButtonProps';
+import Button, { ButtonType } from '../buttons/Button';
 import DocsSectionTitle from './DocsSectionTitle';
 
 export default () => {

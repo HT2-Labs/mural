@@ -2,9 +2,13 @@ import * as React from 'react';
 import styled from 'styled-components';
 import CardProps, { CardType } from '../utils/CardProps';
 
+export {
+  CardType,
+};
+
 export default ({ children, onClick, type, active = false }: CardProps) => {
   const Card = styled.div`
-    border-bottom: ${active ? '8px solid rgba(0, 0, 0, 0.2)' : 'none'};
+    border-bottom: ${active ? '8px solid rgba(0, 0, 0, 0.8)' : 'none'};
     border-radius: ${({ theme }) => theme.radius.Card};
     box-sizing: border-box;
     color: ${({ theme }) => theme.color.BodyText};
@@ -12,7 +16,7 @@ export default ({ children, onClick, type, active = false }: CardProps) => {
     display: flex;
     flex-direction: column;
     height: auto;
-    min-height: ${active ? '152px' : '144px'};
+    min-height: ${active ? '144px' : '144px'};
     padding: 16px 20px;
     width: 100%;
   `;

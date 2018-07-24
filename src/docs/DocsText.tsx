@@ -2,7 +2,7 @@
 import * as React from 'react';
 // Import styled from 'styled-components';
 
-import DisplayText from '../text/DisplayText';
+import Text from '../text/Text';
 
 // Import SyntaxHighlighter from 'react-syntax-highlighter';
 // Import { obsidian } from 'react-syntax-highlighter/styles/hljs';
@@ -22,25 +22,25 @@ export default () => {
   return (
     <>
       <DocsSectionTitle id="Text">Text</DocsSectionTitle>
-      <DisplayText type={ElementType.H1} size={SizeType.ExtraLarge}>Header 1 Element</DisplayText>
-      <DisplayText type={ElementType.H2} size={SizeType.ExtraLarge}>Header 2 Element</DisplayText>
-      <DisplayText type={ElementType.H3} size={SizeType.ExtraLarge}>Header 3 Element</DisplayText>
-      <DisplayText type={ElementType.H4} size={SizeType.ExtraLarge}>Header 4 Element</DisplayText>
+      <Text type={ElementType.H1} size={SizeType.ExtraLarge}>Header 1 Element</Text>
+      <Text type={ElementType.H2} size={SizeType.ExtraLarge}>Header 2 Element</Text>
+      <Text type={ElementType.H3} size={SizeType.ExtraLarge}>Header 3 Element</Text>
+      <Text type={ElementType.H4} size={SizeType.ExtraLarge}>Header 4 Element</Text>
 
-      <DisplayText type={ElementType.H1} size={SizeType.Large}>Header 1 Element</DisplayText>
-      <DisplayText type={ElementType.H2} size={SizeType.Large}>Header 2 Element</DisplayText>
-      <DisplayText type={ElementType.H3} size={SizeType.Large}>Header 3 Element</DisplayText>
-      <DisplayText type={ElementType.H4} size={SizeType.Large}>Header 4 Element</DisplayText>
+      <Text type={ElementType.H1} size={SizeType.Large}>Header 1 Element</Text>
+      <Text type={ElementType.H2} size={SizeType.Large}>Header 2 Element</Text>
+      <Text type={ElementType.H3} size={SizeType.Large}>Header 3 Element</Text>
+      <Text type={ElementType.H4} size={SizeType.Large}>Header 4 Element</Text>
 
-      <DisplayText type={ElementType.H1} size={SizeType.Medium}>Header 1 Element</DisplayText>
-      <DisplayText type={ElementType.H2} size={SizeType.Medium}>Header 2 Element</DisplayText>
-      <DisplayText type={ElementType.H3} size={SizeType.Medium}>Header 3 Element</DisplayText>
-      <DisplayText type={ElementType.H4} size={SizeType.Medium}>Header 4 Element</DisplayText>
+      <Text type={ElementType.H1} size={SizeType.Medium}>Header 1 Element</Text>
+      <Text type={ElementType.H2} size={SizeType.Medium}>Header 2 Element</Text>
+      <Text type={ElementType.H3} size={SizeType.Medium}>Header 3 Element</Text>
+      <Text type={ElementType.H4} size={SizeType.Medium}>Header 4 Element</Text>
 
-      <DisplayText type={ElementType.H1} size={SizeType.Small}>Header 1 Element</DisplayText>
-      <DisplayText type={ElementType.H2} size={SizeType.Small}>Header 2 Element</DisplayText>
-      <DisplayText type={ElementType.H3} size={SizeType.Small}>Header 3 Element</DisplayText>
-      <DisplayText type={ElementType.H4} size={SizeType.Small}>Header 4 Element</DisplayText>
+      <Text type={ElementType.H1} size={SizeType.Small}>Header 1 Element</Text>
+      <Text type={ElementType.H2} size={SizeType.Small}>Header 2 Element</Text>
+      <Text type={ElementType.H3} size={SizeType.Small}>Header 3 Element</Text>
+      <Text type={ElementType.H4} size={SizeType.Small}>Header 4 Element</Text>
       <hr />
     </>
   );
