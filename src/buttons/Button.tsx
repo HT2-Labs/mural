@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import ButtonProps, { ButtonType } from './ButtonProps';
 
-export default ({ children, onClick, type, disabled }: ButtonProps) => {
+export default ({ children, onClick, type, disabled, fullWidth }: ButtonProps) => {
   const Button = styled.button`
     border-radius: ${({ theme }) => theme.radius.Button};
     box-sizing: border-box;
@@ -14,7 +14,7 @@ export default ({ children, onClick, type, disabled }: ButtonProps) => {
     margin: 4px;
     padding: 8px 16px;
     text-align: center;
-    width: auto;
+    width: ${fullWidth !== undefined ? '100%' : 'auto'};
     &:hover {
       box-shadow: ${disabled !== undefined ? 'none' : ({ theme }) => theme.shadow.Large};
       transform: ${disabled !== undefined ? 'none' : 'translate3D(0, 2px, 0)'};
