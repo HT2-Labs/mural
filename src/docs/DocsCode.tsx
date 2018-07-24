@@ -4,6 +4,12 @@ import { tomorrow } from 'react-syntax-highlighter/styles/prism';
 
 export default ({ code = 'Code Demo' }) => {
   return (
-    <SyntaxHighlighter language="jsx" style={tomorrow}>{code}</SyntaxHighlighter>
+    <SyntaxHighlighter
+      language="jsx"
+      showLineNumbers
+      style={tomorrow}
+    >
+      {code}
+    </SyntaxHighlighter>
   );
 };

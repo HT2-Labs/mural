@@ -19,6 +19,7 @@ const Demo = () => {
       BodyText: '#2f2f2f',
       Button: '#076699',
       ButtonText: '#ffffff',
+      Danger: '#ff0000',
       Disabled: '#eeeeee',
       DisabledText: '#5d5d5d',
       Primary: '#41bfee',
@@ -39,11 +40,11 @@ const Demo = () => {
   const MainWrap = styled.div`
     border-top: 8px solid ${theme.color.Secondary};
     display: grid;
-    grid-template-columns: 250px 870px;
+    grid-template-columns: 250px auto;
     grid-template-rows: auto;
     margin: 0 auto;
     padding-top: 16px;
-    width: 1200px;
+    max-width: 1200px;
   `;
 
   const Main = styled.main`
