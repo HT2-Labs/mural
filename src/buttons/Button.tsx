@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import ButtonProps, { ButtonType } from '../utils/ButtonProps';
+import ButtonProps, { ButtonType } from './ButtonProps';
 
 export default ({ children, onClick, type, disabled }: ButtonProps) => {
   const Button = styled.button`
