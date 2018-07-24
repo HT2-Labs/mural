@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import IconProps from './IconProps';
+import IconProps from '../icons/IconProps';
 
 export default (renderSvg: () => React.ReactNode, viewBox = '0 0 512 512') => {
   return ({ width = '1em', height = '1em', color = 'currentColor' }: IconProps) => {
