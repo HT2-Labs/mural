@@ -33,6 +33,12 @@ export default () => {
     color: #344a58;
     font-size: 20px;
     padding: 10px 20px;
+    text-decoration: none;
+    &:hover {
+      background: #344a58;
+      color: #fff;
+    }
+    transition: all 0.06s;
   `;
 
   return (
