@@ -2,7 +2,14 @@ import * as React from 'react';
 import styled from 'styled-components';
 import ButtonProps, { ButtonType } from './ButtonProps';
 
-export default ({ children, onClick, type, disabled, fullWidth }: ButtonProps) => {
+export default ({
+  children,
+  danger,
+  disabled,
+  fullWidth,
+  onClick,
+  type,
+}: ButtonProps) => {
   const Button = styled.button`
     border-radius: ${({ theme }) => theme.radius.Button};
     box-sizing: border-box;
@@ -28,17 +35,21 @@ export default ({ children, onClick, type, disabled, fullWidth }: ButtonProps) =
       top: .1em;
     }
   `;
+  const color = danger !== undefined
+    ? ({ theme }: any) => theme.color.Danger
+    : ({ theme }: any) => theme.color.Button
+  ;
   const NormalButton = styled(Button)`
-    background-color: ${({ theme }) => theme.color.Button};
-    border: 2px solid ${({ theme }) => theme.color.Button};
+    background-color: ${color};
+    border: 2px solid ${color};
     box-shadow: ${({ theme }) => theme.shadow.Main};
     color: ${({ theme }) => theme.color.ButtonText};
   `;
   const GhostButton = styled(Button)`
     background-color: transparent;
-    border: 2px solid ${({ theme }) => theme.color.Button};
+    border: 2px solid ${color};
     box-shadow: none;
-    color: ${({ theme }) => theme.color.Button};
+    color: ${color};
   `;
   const DisabledButton = styled(Button)`
     background-color: ${({ theme }) => theme.color.Disabled};

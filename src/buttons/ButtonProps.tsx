@@ -7,6 +7,7 @@ export enum ButtonType {
 
 export default interface ButtonProps {
   readonly children: ReactNode;
+  readonly danger?: boolean | undefined;
   readonly disabled?: boolean | undefined;
   readonly fullWidth?: boolean | undefined;
   readonly onClick: (e: React.MouseEvent<HTMLElement>) => void;
