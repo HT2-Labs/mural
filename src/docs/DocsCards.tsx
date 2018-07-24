@@ -12,11 +12,12 @@ import {
   CardSplashText,
   CardTitle,
   CardType,
-}
-from '../Card';
+} from '../Card';
 
 import IconEllipsisV from '../icons/IconEllipsisV';
 
+import { ButtonType } from '../Button';
+import Button from '../buttons/Button';
 import DocsCode from './DocsCode';
 import DocsSectionTitle from './DocsSectionTitle';
 
@@ -25,6 +26,7 @@ export default () => {
   const CardGrid = styled.div`
     display: grid;
     grid-column-gap: 2%;
+    grid-row-gap: 20px;
     grid-template-columns: 32% 32% 32%;
     grid-template-rows: 144px;
     margin-bottom: 40px;
@@ -66,6 +68,12 @@ export default () => {
   </CardSplashText>
 </Card>
 `);
+const actionContent = (
+  <CardSplashText>
+    <Button fullWidth>Edit</Button>
+    <Button type={ButtonType.Ghost} fullWidth>Delete</Button>
+  </CardSplashText>
+);
 
   return (
     <>
@@ -81,6 +89,18 @@ export default () => {
           </CardBody>
           <CardFooter>Card Title</CardFooter>
         </Card>
+
+        <Card type={CardType.Highlighted} actionContent={actionContent}>
+          <CardHeader>
+            <CardTitle>Card Title</CardTitle>
+            <IconEllipsisV />
+          </CardHeader>
+          <CardBody>
+            <strong>The new home for all shared components</strong>
+          </CardBody>
+          <CardFooter>Card Title</CardFooter>
+        </Card>
+
         <Card type={CardType.Highlighted} active>
           <CardSplashHeader>
             <CardHeader />
@@ -91,6 +111,7 @@ export default () => {
             <CardSplashSubText>(0/3) things are cool</CardSplashSubText>
           </CardSplashText>
         </Card>
+
         <Card type={CardType.Placeholder}>
           <CardSplashText>
             <strong>Shared components</strong>
