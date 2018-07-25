@@ -12,6 +12,10 @@ import TabItem from '../menus/TabItem';
 import TabMenu from '../menus/TabMenu';
 import DocsSectionTitle from './DocsSectionTitle';
 
+const deadClick = () => {
+  return;
+};
+
 export default () => {
 
   return (
@@ -27,7 +31,9 @@ export default () => {
                 Grow into a new role
               </H3>
             </PageHeaderText>
-            <PageActions><Button type={ButtonType.Ghost}><IconEdit /> Edit</Button></PageActions>
+            <PageActions>
+              <Button onClick={deadClick} type={ButtonType.Ghost}><IconEdit /> Edit</Button>
+            </PageActions>
           </PageTitle>
           <TabMenu>
             <TabItem active>Goals</TabItem>

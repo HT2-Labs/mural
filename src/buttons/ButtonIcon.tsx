@@ -1,7 +1,7 @@
 // tslint:disable:no-magic-numbers
 import * as React from 'react';
 import styled from 'styled-components';
-import IconProps from '../utils/IconProps';
+import IconProps from '../icons/IconProps';
 
 export enum Size {
   Small,
