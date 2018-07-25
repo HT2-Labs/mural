@@ -5,7 +5,14 @@ import IconTimes from '../icons/IconTimes';
 import CardActions from './CardActions';
 import CardProps, { CardType } from './CardProps';
 
-export default ({ children, onClick, type, actionContent, active = false }: CardProps) => {
+export default ({
+  children,
+  onClick,
+  type,
+  overlayContent,
+  active = false,
+  overlay = false,
+}: CardProps) => {
   const Card = styled.div`
     border-bottom: ${active ? '8px solid rgba(0, 0, 0, 0.2)' : 'none'};
     border-radius: ${({ theme }) => theme.radius.Card};
@@ -13,25 +20,27 @@ export default ({ children, onClick, type, actionContent, active = false }: Card
     color: ${({ theme }) => theme.color.BodyText};
     cursor: ${onClick !== undefined ? 'pointer' : 'initial'};
     width: 100%;
-    position: ${ actionContent ? 'relative' : 'unset'};
+    overflow: hidden;
+    position: ${ overlay ? 'relative' : 'unset'};
   `;
 
   const InnerCard = styled.div`
     box-sizing: border-box;
     display: flex;
+    filter: ${ overlay ? 'blur(3px)' : 'none'};
     flex-direction: column;
-    padding: 16px 20px;
     height: 100%;
-    position: ${ actionContent ? 'absolute' : 'unset'};
-    filter: ${ actionContent ? 'blur(4px)' : 'none'};
+    padding: 16px 20px;
   `;
 
-  const ActionContent = styled.div`
+  const OverlayContent = styled.div`
+    background-color: rgba(255, 255, 255, 0.8);
     box-sizing: border-box;
-    position: absolute;
-    padding: 16px 20px;
     height: 100%;
+    padding: 16px 20px;
+    position: absolute;
     width: 100%;
+    z-index: 20;
   `;
 
   const NormalCard = styled(Card)`
@@ -60,19 +69,19 @@ export default ({ children, onClick, type, actionContent, active = false }: Card
       onClick={onClick}
       role={onClick !== undefined ? 'button' : ''}
     >
-      <InnerCard>
-        {children}
-      </InnerCard>
-      {actionContent && (
-        <ActionContent>
+      {!!overlay ? (
+        <OverlayContent>
           <CardHeader>
             <CardActions>
               <IconTimes color={'#000'}/>
             </CardActions>
           </CardHeader>
-          {actionContent}
-        </ActionContent>
-      )}
+          {overlayContent}
+        </OverlayContent>
+      ) : null}
+      <InnerCard>
+        {children}
+      </InnerCard>
     </ChosenCard>
   );
 };

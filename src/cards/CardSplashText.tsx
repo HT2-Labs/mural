@@ -12,6 +12,7 @@ export default ({ children }: CardProps) => {
     height: 100%;
     justify-content: center;
     line-height: 1.19;
+    text-align: center;
     width: 100%;
   `;
   return (
