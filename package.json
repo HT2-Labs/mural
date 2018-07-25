@@ -21,10 +21,10 @@
     "ghpages": "npm run build-ghpages && npm run deploy-ghpages"
   },
   "dependencies": {
-    "prop-types": "15.6.1",
-    "react": "16.4.1",
-    "react-dom": "16.4.0",
-    "styled-components": "3.3.0"
+    "prop-types": "^15.6.1",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.0",
+    "styled-components": "^3.3.0"
   },
   "devDependencies": {
     "@ht2-labs/semantic-release": "1.1.3",
