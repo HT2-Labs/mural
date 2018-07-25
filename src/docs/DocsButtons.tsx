@@ -48,32 +48,32 @@ class DocsButton extends React.Component {
         <DocsSectionTitle id="Buttons">Buttons</DocsSectionTitle>
         <ButtonGrid>
           <Button
-            onClick={() => changeCode(normalButton)}
+            onClick={() => { changeCode(normalButton); }}
           >Button</Button>
 
           <Button
-            onClick={() => changeCode(ghostButton)}
+            onClick={() => { changeCode(ghostButton); }}
             type={ButtonType.Ghost}
           >Ghost Button</Button>
 
           <Button
-            onClick={() => changeCode(normalButton)}
+            onClick={() => { changeCode(normalButton); }}
             danger
           >Button with Icon <IconHome /></Button>
 
           <Button
-            onClick={() => changeCode(ghostButton)}
+            onClick={() => { changeCode(ghostButton); }}
             type={ButtonType.Ghost}
             danger
           >Button with Icon <IconCuratr /></Button>
 
           <Button
-            onClick={() => changeCode(normalButton)}
+            onClick={() => { changeCode(normalButton); }}
             disabled
           >Disabled Button</Button>
 
           <Button
-            onClick={() => changeCode(ghostButton)}
+            onClick={() => { changeCode(ghostButton); }}
             type={ButtonType.Ghost}
             disabled
           >Disabled Ghost Button</Button>
@@ -82,11 +82,11 @@ class DocsButton extends React.Component {
         Buttons will adjust their width to their content by default. To force them to
         use their space, add the <code>fullWidth</code> prop.
         <Button
-          onClick={() => changeCode(normalButton)}
+          onClick={() => { changeCode(normalButton); }}
         >Button</Button>
 
         <Button
-          onClick={() => changeCode(normalButton)}
+          onClick={() => { changeCode(normalButton); }}
           fullWidth
         >Button</Button>
         <hr />
