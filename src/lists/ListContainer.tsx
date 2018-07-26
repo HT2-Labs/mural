@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import ListProps from './ListProps';
 
-export default ({ children, canSelect }: ListProps) => {
+export default ({ children }: ListProps) => {
   const ListContainer = styled.ul`
     background-color: #fff;
     box-shadow: ${({ theme }) => theme.shadow.Main};
@@ -13,7 +13,7 @@ export default ({ children, canSelect }: ListProps) => {
   `;
 
   return (
-    <ListContainer selectType={ canSelect }>
+    <ListContainer>
       {children}
     </ListContainer>
   );
