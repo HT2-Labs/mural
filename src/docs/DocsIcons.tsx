@@ -30,6 +30,7 @@ import {
   IconTimesCircle,
 } from '../Icon';
 
+import IconClose from '../icons/IconClose';
 import { H1, H2, SizeType } from '../Text';
 import DocsCode from './DocsCode';
 
@@ -76,6 +77,7 @@ export default () => {
         <GridItem><IconChevronDown /><GridItemText>IconChevronDown</GridItemText></GridItem>
         <GridItem><IconChevronLeft /><GridItemText>IconChevronLeft</GridItemText></GridItem>
         <GridItem><IconChevronRight /><GridItemText>IconChevronRight</GridItemText></GridItem>
+        <GridItem><IconClose /><GridItemText>IconClose</GridItemText></GridItem>
         <GridItem><IconChevronUp /><GridItemText>IconChevronUp</GridItemText></GridItem>
         <GridItem><IconCuratr /><GridItemText>IconCuratr</GridItemText></GridItem>
         <GridItem><IconEllipsisV /><GridItemText>IconEllipsisV</GridItemText></GridItem>

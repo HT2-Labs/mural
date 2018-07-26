@@ -11,6 +11,7 @@ import IconChevronDown from './icons/IconChevronDown';
 import IconChevronLeft from './icons/IconChevronLeft';
 import IconChevronRight from './icons/IconChevronRight';
 import IconChevronUp from './icons/IconChevronUp';
+import IconClose from './icons/IconClose';
 import IconCuratr from './icons/IconCuratr';
 import IconEllipsisV from './icons/IconEllipsisV';
 import IconFilter from './icons/IconFilter';
@@ -38,6 +39,7 @@ export {
   IconChevronLeft,
   IconChevronRight,
   IconChevronUp,
+  IconClose,
   IconCuratr,
   IconEllipsisV,
   IconFilter,
@@ -45,10 +47,10 @@ export {
   IconHome,
   IconLink,
   IconPlusCircle,
+  IconProps,
   IconSearch,
   IconTachometer,
   IconThumbsUp,
   IconTimes,
   IconTimesCircle,
-  IconProps,
 };
