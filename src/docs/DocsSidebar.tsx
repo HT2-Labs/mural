@@ -46,13 +46,16 @@ export default () => {
       <Logo />
       <Name>Mural</Name>
       <Menu>
-        <MenuItem to="/Buttons">Buttons</MenuItem>
-        <MenuItem to="/Cards">Cards</MenuItem>
-        <MenuItem to="/Forms">Forms</MenuItem>
-        <MenuItem to="/Headers">Headers</MenuItem>
-        <MenuItem to="/Icons">Icons</MenuItem>
-        <MenuItem to="/Menus">Menus</MenuItem>
-        <MenuItem to="/Text">Text</MenuItem>
+        <MenuItem to="/">Home</MenuItem>
+        <MenuItem to="/themes">Themes</MenuItem>
+        <MenuItem to="/buttons">Buttons</MenuItem>
+        <MenuItem to="/cards">Cards</MenuItem>
+        <MenuItem to="/forms">Forms</MenuItem>
+        <MenuItem to="/headers">Headers</MenuItem>
+        <MenuItem to="/icons">Icons</MenuItem>
+        <MenuItem to="/lists">Lists</MenuItem>
+        <MenuItem to="/menus">Menus</MenuItem>
+        <MenuItem to="/text">Text</MenuItem>
       </Menu>
     </Sidebar>
   );

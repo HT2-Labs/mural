@@ -1,15 +1,15 @@
+// tslint:disable:max-file-line-count
+// tslint:disable:no-this
+// tslint:disable:no-class
 import * as React from 'react';
 import styled from 'styled-components';
 
 import { Button, ButtonType } from '../Button';
 
-import IconCuratr from '../icons/IconCuratr';
-import IconHome from '../icons/IconHome';
+import { IconCuratr, IconHome } from '../Icon';
+import { H1, H2, SizeType } from '../Text';
 import DocsCode from './DocsCode';
-import DocsSectionTitle from './DocsSectionTitle';
 
-// tslint:disable:no-this
-// tslint:disable-next-line:no-class
 class DocsButton extends React.Component {
   public readonly state = {
     codeSnippet: 'Click component to see example...',
@@ -45,7 +45,8 @@ class DocsButton extends React.Component {
 
     return (
       <>
-        <DocsSectionTitle id="Buttons">Buttons</DocsSectionTitle>
+        <H1 size={SizeType.ExtraLarge}>Buttons</H1>
+        <hr />
         <ButtonGrid>
           <Button
             onClick={() => { changeCode(normalButton); }}
@@ -89,6 +90,7 @@ class DocsButton extends React.Component {
           onClick={() => { changeCode(normalButton); }}
           fullWidth
         >Button</Button>
+        <H2 size={SizeType.Large}>Examples</H2>
         <hr />
         <DocsCode code={this.state.codeSnippet} />
       </>
