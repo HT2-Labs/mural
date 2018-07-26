@@ -190,7 +190,7 @@ const overlayContent = (
           >
             <CardHeader>
               <CardTitle>Card Title</CardTitle>
-              <Button type={ButtonType.Ghost} onClick={actionOpen}><IconEllipsisV /></Button>
+              <Button type={ButtonType.Ghost} onClick={actionOpen} ghostColor="#fff"><IconEllipsisV /></Button>
             </CardHeader>
             <CardBody>
               <strong>The new home for all shared components</strong>

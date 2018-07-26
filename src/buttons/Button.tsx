@@ -1,19 +1,21 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import defaultTo from '../utils/defaultTo';
 import ButtonProps, { ButtonType } from './ButtonProps';
 
 export default ({
   children,
-  danger,
-  disabled,
-  fullWidth,
+  danger = false,
+  disabled = false,
+  fullWidth = false,
+  ghostColor ,
   onClick,
   type,
 }: ButtonProps) => {
   const Button = styled.button`
     border-radius: ${({ theme }) => theme.radius.Button};
     box-sizing: border-box;
-    cursor: ${disabled !== undefined ? 'not-allowed' : 'pointer'};
+    cursor: ${disabled ? 'not-allowed' : 'pointer'};
     display: block;
     flex-shrink: 0;
     font-size: 16px;
@@ -21,10 +23,10 @@ export default ({
     margin: 4px;
     padding: 8px 16px;
     text-align: center;
-    width: ${fullWidth !== undefined ? '100%' : 'auto'};
+    width: ${fullWidth ? '100%' : 'auto'};
     &:hover {
-      box-shadow: ${disabled !== undefined ? 'none' : ({ theme }) => theme.shadow.Large};
-      transform: ${disabled !== undefined ? 'none' : 'translate3D(0, 2px, 0)'};
+      box-shadow: ${disabled ? 'none' : ({ theme }) => theme.shadow.Large};
+      transform: ${disabled ? 'none' : 'translate3D(0, 2px, 0)'};
       transition: all 0.15s ease 0s;
     }
     &:active {
@@ -35,7 +37,7 @@ export default ({
       top: .1em;
     }
   `;
-  const color = danger !== undefined
+  const color = danger
     ? ({ theme }: any) => theme.color.Danger
     : ({ theme }: any) => theme.color.Button
   ;
@@ -47,9 +49,9 @@ export default ({
   `;
   const GhostButton = styled(Button)`
     background-color: transparent;
-    border: 2px solid ${color};
+    border: 2px solid ${defaultTo(ghostColor, color)};
     box-shadow: none;
-    color: ${color};
+    color: ${defaultTo(ghostColor, color)};
   `;
   const DisabledButton = styled(Button)`
     background-color: ${({ theme }) => theme.color.Disabled};
@@ -64,8 +66,8 @@ export default ({
     color: ${({ theme }) => theme.color.DisabledText};
   `;
   const chooseButton = () => {
-    if (disabled !== undefined && type === ButtonType.Ghost) { return DisabledGhostButton; }
-    if (disabled !== undefined) { return DisabledButton; }
+    if (disabled && type === ButtonType.Ghost) { return DisabledGhostButton; }
+    if (disabled) { return DisabledButton; }
     if (type === ButtonType.Ghost) { return GhostButton; }
     return NormalButton;
   };
@@ -73,7 +75,7 @@ export default ({
 
   return (
     <ChosenButton
-      disabled={disabled !== undefined ? true : false}
+      disabled={disabled}
       onClick={onClick}
       role={'button'}
     >
