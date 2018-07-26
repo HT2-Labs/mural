@@ -20,8 +20,8 @@ import IconEllipsisV from '../icons/IconEllipsisV';
 
 import { ButtonType } from '../Button';
 import Button from '../buttons/Button';
+import { H1, H2, SizeType } from '../Text';
 import DocsCode from './DocsCode';
-import DocsSectionTitle from './DocsSectionTitle';
 
 class DocsCards extends React.Component {
   public readonly state = {
@@ -75,6 +75,47 @@ class DocsCards extends React.Component {
 </Card>
 `);
 
+const cardOverlay = (
+`import { Card, CardSplashText } from '@ht2-labs/mural/Card';
+import { Button, ButtonTypes } from '@ht2-labs/mural/Button';
+
+const actionOpen = () => {
+  this.setState({overlay: true});
+};
+
+const actionClose = () => {
+  this.setState({overlay: false});
+};
+
+const overlayContent = (
+  <CardSplashText>
+    <Button onClick={actionClose} fullWidth>Edit</Button>
+    <Button
+      onClick={actionClose}
+      type={ButtonType.Ghost}
+      fullWidth
+      danger
+    >Delete</Button>
+  </CardSplashText>
+);
+
+<Card
+  onClick={() => { changeCode(cardOverlay); }}
+  type={CardType.Highlighted}
+  overlayContent={overlayContent}
+  overlay={this.state.overlay}
+>
+  <CardHeader>
+    <CardTitle>Card Title</CardTitle>
+    <Button type={ButtonType.Ghost} onClick={actionOpen}><IconEllipsisV /></Button>
+  </CardHeader>
+  <CardBody>
+    <strong>The new home for all shared components</strong>
+  </CardBody>
+  <CardFooter>Card Title</CardFooter>
+</Card>
+`);
+
     const changeCode = (code: string) => {
       this.setState({codeSnippet: code});
     };
@@ -87,7 +128,7 @@ class DocsCards extends React.Component {
       this.setState({overlay: false});
     };
 
-    const test = (
+    const overlayContent = (
       <CardSplashText>
         <Button onClick={actionClose} fullWidth>Edit</Button>
         <Button
@@ -101,7 +142,8 @@ class DocsCards extends React.Component {
 
     return (
       <>
-        <DocsSectionTitle id="Cards">Cards</DocsSectionTitle>
+        <H1 size={SizeType.ExtraLarge}>Cards</H1>
+        <hr />
         <CardGrid>
           <Card
             onClick={() => { changeCode(normalCard); }}
@@ -141,14 +183,14 @@ class DocsCards extends React.Component {
           </Card>
 
           <Card
-            onClick={actionOpen}
+            onClick={() => { changeCode(cardOverlay); }}
             type={CardType.Highlighted}
-            overlayContent={test}
+            overlayContent={overlayContent}
             overlay={this.state.overlay}
           >
             <CardHeader>
               <CardTitle>Card Title</CardTitle>
-              <IconEllipsisV />
+              <Button type={ButtonType.Ghost} onClick={actionOpen}><IconEllipsisV /></Button>
             </CardHeader>
             <CardBody>
               <strong>The new home for all shared components</strong>
@@ -157,7 +199,18 @@ class DocsCards extends React.Component {
           </Card>
         </CardGrid>
 
+        <H2 size={SizeType.Large}>Examples</H2>
+        <hr />
         <DocsCode code={this.state.codeSnippet} />
+        <H2 size={SizeType.Large}>Props</H2>
+        <code>Prop: onClick</code> - <code>Default: none</code>
+        <br/>
+        <code>Prop: type</code> - <code>Default: none</code>
+        <br/>
+        <code>Prop: overlay</code> - <code>Default: true</code>
+        <br/>
+        <code>Prop: overlayContent</code> - <code>Type: JSX</code> - <code>Default: none</code>
+        <hr />
       </>
     );
   }

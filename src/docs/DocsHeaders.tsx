@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { H1, H3, SizeType } from '../text/Text';
+import { H1, H3, SizeType } from '../Text';
 
 import { Button, ButtonType } from '../Button';
 import PageActions from '../headers/PageActions';

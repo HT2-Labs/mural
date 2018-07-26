@@ -1,8 +1,5 @@
 // tslint:disable:max-file-line-count
 import * as React from 'react';
-
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { obsidian } from 'react-syntax-highlighter/styles/hljs';
 import styled from 'styled-components';
 
 import {
@@ -33,22 +30,16 @@ import {
   IconTimesCircle,
 } from '../Icon';
 
-import DocsSectionTitle from './DocsSectionTitle';
+import { H1, H2, SizeType } from '../Text';
+import DocsCode from './DocsCode';
+
+const codeSnippet =
+`import { IconArrowDown } from '@ht2-labs/mural/Icon';
+
+<IconArrowDown />
+`;
 
 export default () => {
-  const codeString = `
-    import * as React from 'react';
-    import createSVGIcon from '../utils/createSVGIcon';
-
-    export default createSVGIcon(() => {
-      return (
-        <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206
-        0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69
-        432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997
-        9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/>
-      );
-    }, '0 0 512 512');
-  `;
   const Grid = styled.div`
     display: grid;
     grid-template-columns: 200px 200px 200px 200px;
@@ -70,7 +61,8 @@ export default () => {
   `;
   return (
     <>
-      <DocsSectionTitle id="Icons">Icons</DocsSectionTitle>
+      <H1 size={SizeType.ExtraLarge}>Icons</H1>
+      <hr />
       <Grid>
         <GridItem><IconArrowDown /><GridItemText>IconArrowDown</GridItemText></GridItem>
         <GridItem><IconArrowLeft /><GridItemText>IconArrowLeft</GridItemText></GridItem>
@@ -98,7 +90,12 @@ export default () => {
         <GridItem><IconTimes /><GridItemText>IconTimes</GridItemText></GridItem>
         <GridItem><IconTimesCircle /><GridItemText>IconTimesCircle</GridItemText></GridItem>
       </Grid>
-      <SyntaxHighlighter language="javascript" style={obsidian}>{codeString}</SyntaxHighlighter>
+      <H2 size={SizeType.Large}>Examples</H2>
+      <hr />
+      <DocsCode code={codeSnippet} />
+      <H2 size={SizeType.Large}>Props</H2>
+      <code>Prop: size</code> - <code>Default: body</code>
+      <hr />
     </>
   );
 };

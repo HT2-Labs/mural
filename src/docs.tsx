@@ -9,9 +9,11 @@ import DocsCards from './docs/DocsCards';
 import DocsHeaders from './docs/DocsHeaders';
 import DocsIcons from './docs/DocsIcons';
 import DocsIntro from './docs/DocsIntro';
+import DocsLists from './docs/DocsLists';
 import DocsMenus from './docs/DocsMenus';
 import DocsSidebar from './docs/DocsSidebar';
 import DocsText from './docs/DocsText';
+import DocsThemes from './docs/DocsThemes';
 
 const Demo = () => {
   const theme = {
@@ -58,10 +60,12 @@ const Demo = () => {
         <Main>
           <Switch>
             <Route exact path="/" component={DocsIntro}/>
+            <Route path="/themes" component={DocsThemes}/>
             <Route path="/buttons" component={DocsButtons}/>
             <Route path="/cards" component={DocsCards}/>
             <Route path="/headers" component={DocsHeaders}/>
             <Route path="/icons" component={DocsIcons}/>
+            <Route path="/lists" component={DocsLists}/>
             <Route path="/menus" component={DocsMenus}/>
             <Route path="/text" component={DocsText}/>
           </Switch>
