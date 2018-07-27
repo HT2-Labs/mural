@@ -12,6 +12,7 @@ import DocsIcons from './docs/DocsIcons';
 import DocsIntro from './docs/DocsIntro';
 import DocsLists from './docs/DocsLists';
 import DocsMenus from './docs/DocsMenus';
+import DocsModal from './docs/DocsModal';
 import DocsSidebar from './docs/DocsSidebar';
 import DocsText from './docs/DocsText';
 import DocsThemes from './docs/DocsThemes';
@@ -67,6 +68,7 @@ const Demo = () => {
             <Route path="/icons" component={DocsIcons}/>
             <Route path="/lists" component={DocsLists}/>
             <Route path="/menus" component={DocsMenus}/>
+            <Route path="/modal" component={DocsModal}/>
             <Route path="/text" component={DocsText}/>
           </Switch>
         </Main>

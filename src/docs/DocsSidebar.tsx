@@ -90,6 +90,7 @@ export default () => {
           <MenuItem to="/icons">Icons</MenuItem>
           <MenuItem to="/lists">Lists</MenuItem>
           <MenuItem to="/menus">Menus</MenuItem>
+          <MenuItem to="/modal">Modal</MenuItem>
           <MenuItem to="/text">Text</MenuItem>
         </Menu>
         <GithubLink href="https://github.com/ht2-labs/mural"><IconGithub /></GithubLink>
