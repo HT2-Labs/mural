@@ -17,7 +17,7 @@ export interface IModal {
 
 const modalRoot = document.getElementById('modal-root');
 
-class Modal extends React.Component<IModalProps, {} > {
+class Modal extends React.Component<IModalProps> {
   private readonly el: any;
 
   constructor(props: IModalProps) {
@@ -26,13 +26,13 @@ class Modal extends React.Component<IModalProps, {} > {
   }
 
   public componentDidMount() {
-    if (modalRoot) {
+    if (modalRoot !== null) {
       modalRoot.appendChild(this.el);
     }
   }
 
   public componentWillUnmount() {
-    if (modalRoot) {
+    if (modalRoot !== null) {
       modalRoot.removeChild(this.el);
     }
   }
@@ -46,6 +46,8 @@ class Modal extends React.Component<IModalProps, {} > {
 }
 
 export default (props: IModalProps) => {
+
+  const isModalOpen = props.open !== undefined ? props.open : false;
 
   const ModalCard = styled.div`
     border-radius: ${({ theme }) => theme.radius.Button};
@@ -62,7 +64,7 @@ export default (props: IModalProps) => {
     align-items: center;
     background-color: rgba(0, 0, 0, 0.3);
     bottom: 0px;
-    display: ${props.open ? 'flex' : 'none'};
+    display: ${isModalOpen ? 'flex' : 'none'};
     justify-content: center;
     left: 0px;
     position: fixed;
