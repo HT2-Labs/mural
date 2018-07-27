@@ -44,37 +44,37 @@ export default ({
     ? ({ theme }: any) => theme.color.Danger
     : ({ theme }: any) => theme.color.Button
   ;
-  const NormalButton = styled(Button)`
+  const NormalButton = Button.extend`
     background-color: ${color};
     border: 2px solid ${color};
     box-shadow: ${({ theme }) => theme.shadow.Main};
     color: ${({ theme }) => theme.color.ButtonText};
   `;
-  const GhostButton = styled(Button)`
+  const GhostButton = Button.extend`
     background-color: transparent;
     border: 2px solid ${defaultTo(ghostColor, color)};
     box-shadow: none;
     color: ${defaultTo(ghostColor, color)};
   `;
-  const InvisibleButton = styled(Button)`
+  const InvisibleButton = Button.extend`
     background-color: transparent;
     border: 2px solid transparent;
     box-shadow: none;
     color: ${defaultTo(ghostColor, color)};
   `;
-  const DisabledButton = styled(Button)`
+  const DisabledButton = Button.extend`
     background-color: ${({ theme }) => theme.color.Disabled};
     border: 2px solid ${({ theme }) => theme.color.Disabled};
     box-shadow: none;
     color: ${({ theme }) => theme.color.DisabledText};
   `;
-  const DisabledGhostButton = styled(Button)`
+  const DisabledGhostButton = Button.extend`
     background-color: transparent;
     border: 2px solid ${({ theme }) => theme.color.Disabled};
     box-shadow: none;
     color: ${({ theme }) => theme.color.DisabledText};
   `;
-  const DisabledInvisibleButton = styled(Button)`
+  const DisabledInvisibleButton = Button.extend`
     background-color: transparent;
     border: 2px solid transparent;
     box-shadow: none;
