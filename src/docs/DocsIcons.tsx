@@ -20,8 +20,10 @@ import {
   IconEllipsisV,
   IconFilter,
   IconFlagCheckered,
+  IconGithub,
   IconHome,
   IconLink,
+  IconNpm,
   IconPlusCircle,
   IconSearch,
   IconTachometer,
@@ -83,8 +85,10 @@ export default () => {
         <GridItem><IconEllipsisV /><GridItemText>IconEllipsisV</GridItemText></GridItem>
         <GridItem><IconFilter /><GridItemText>IconFilter</GridItemText></GridItem>
         <GridItem><IconFlagCheckered /><GridItemText>IconFlagCheckered</GridItemText></GridItem>
+        <GridItem><IconGithub /><GridItemText>IconGithub</GridItemText></GridItem>
         <GridItem><IconHome /><GridItemText>IconHome</GridItemText></GridItem>
         <GridItem><IconLink /><GridItemText>IconLink</GridItemText></GridItem>
+        <GridItem><IconNpm /><GridItemText>IconNpm</GridItemText></GridItem>
         <GridItem><IconPlusCircle /><GridItemText>IconPlusCircle</GridItemText></GridItem>
         <GridItem><IconSearch /><GridItemText>IconSearch</GridItemText></GridItem>
         <GridItem><IconTachometer /><GridItemText>IconTachometer</GridItemText></GridItem>

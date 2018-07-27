@@ -19,11 +19,12 @@ export default ({
     display: block;
     flex-shrink: 0;
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 500;
     margin: 4px;
     padding: 8px 16px;
     text-align: center;
     text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
     width: ${fullWidth ? '100%' : 'auto'};
     &:hover {
       box-shadow: ${disabled ? 'none' : ({ theme }) => theme.shadow.Large};

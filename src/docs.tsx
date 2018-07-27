@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import DocsButtons from './docs/DocsButtons';
 import DocsCards from './docs/DocsCards';
+import DocsForms from './docs/DocsForms';
 import DocsHeaders from './docs/DocsHeaders';
 import DocsIcons from './docs/DocsIcons';
 import DocsIntro from './docs/DocsIntro';
@@ -40,13 +41,11 @@ const Demo = () => {
   };
 
   const MainWrap = styled.div`
-    border-top: 8px solid ${theme.color.Secondary};
     display: grid;
     grid-template-columns: 250px auto;
     grid-template-rows: auto;
-    margin: 0 auto;
-    padding-top: 16px;
     max-width: 1200px;
+    height: 100%;
   `;
 
   const Main = styled.main`
@@ -63,6 +62,7 @@ const Demo = () => {
             <Route path="/themes" component={DocsThemes}/>
             <Route path="/buttons" component={DocsButtons}/>
             <Route path="/cards" component={DocsCards}/>
+            <Route path="/forms" component={DocsForms}/>
             <Route path="/headers" component={DocsHeaders}/>
             <Route path="/icons" component={DocsIcons}/>
             <Route path="/lists" component={DocsLists}/>

@@ -41,6 +41,7 @@ class DocsButton extends React.Component {
       grid-row-gap: 14px;
       grid-template-columns: repeat(2, 2fr);
       margin-bottom: 40px;
+      justify-items: start;
     `;
 
     return (
@@ -76,16 +77,11 @@ class DocsButton extends React.Component {
           <Button
             onClick={() => { changeCode(ghostButton); }}
             type={ButtonType.Ghost}
-            disabled
           >Disabled Ghost Button</Button>
         </ButtonGrid>
 
         Buttons will adjust their width to their content by default. To force them to
         use their space, add the <code>fullWidth</code> prop.
-        <Button
-          onClick={() => { changeCode(normalButton); }}
-        >Button</Button>
-
         <Button
           onClick={() => { changeCode(normalButton); }}
           fullWidth

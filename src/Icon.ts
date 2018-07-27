@@ -16,8 +16,10 @@ import IconCuratr from './icons/IconCuratr';
 import IconEllipsisV from './icons/IconEllipsisV';
 import IconFilter from './icons/IconFilter';
 import IconFlagCheckered from './icons/IconFlagCheckered';
+import IconGithub from './icons/IconGithub';
 import IconHome from './icons/IconHome';
 import IconLink from './icons/IconLink';
+import IconNpm from './icons/IconNpm';
 import IconPlusCircle from './icons/IconPlusCircle';
 import IconProps from './icons/IconProps';
 import IconSearch from './icons/IconSearch';
@@ -44,8 +46,10 @@ export {
   IconEllipsisV,
   IconFilter,
   IconFlagCheckered,
+  IconGithub,
   IconHome,
   IconLink,
+  IconNpm,
   IconPlusCircle,
   IconProps,
   IconSearch,
