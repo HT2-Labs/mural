@@ -111,8 +111,7 @@ class DocsButton extends React.Component {
 
         <H2 size={SizeType.Large}>IconButton</H2>
         <hr />
-        <P>Test</P>
-        <ButtonIcon><IconCuratr /></ButtonIcon>
+        <P>Coming soon...</P>
         {/* <DocsCode code={codeSnippetButtonGroup} /> */}
 
         <H2 size={SizeType.Large}>ButtonGroup</H2>
