@@ -21,7 +21,6 @@ export default ({
     flex-shrink: 0;
     font-size: 16px;
     font-weight: 500;
-    margin: 4px;
     padding: 8px 16px;
     text-align: center;
     text-transform: uppercase;
