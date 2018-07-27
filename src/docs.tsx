@@ -36,7 +36,7 @@ const Demo = () => {
     },
     shadow: {
       Large: '0 2px 2px 2px rgba(0, 0, 0, 0.12)',
-      Main: '0 2px 2px 0 rgba(0, 0, 0, 0.24)',
+      Main: '0px 1px 3px 0px rgba(0, 0, 0, 0.05)',
     },
   };
 

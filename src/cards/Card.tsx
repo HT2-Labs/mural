@@ -22,6 +22,10 @@ export default ({
     width: 100%;
     overflow: hidden;
     position: ${ overlay ? 'relative' : 'unset'};
+    &:hover {
+      box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.12);
+      transform: scale(1.01);
+    }
   `;
 
   const InnerCard = styled.div`

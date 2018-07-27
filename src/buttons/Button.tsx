@@ -1,3 +1,4 @@
+// tslint:disable:max-file-line-count
 import * as React from 'react';
 import styled from 'styled-components';
 import defaultTo from '../utils/defaultTo';
@@ -55,6 +56,12 @@ export default ({
     box-shadow: none;
     color: ${defaultTo(ghostColor, color)};
   `;
+  const InvisibleButton = styled(Button)`
+    background-color: transparent;
+    border: 2px solid transparent;
+    box-shadow: none;
+    color: ${defaultTo(ghostColor, color)};
+  `;
   const DisabledButton = styled(Button)`
     background-color: ${({ theme }) => theme.color.Disabled};
     border: 2px solid ${({ theme }) => theme.color.Disabled};
@@ -67,10 +74,18 @@ export default ({
     box-shadow: none;
     color: ${({ theme }) => theme.color.DisabledText};
   `;
+  const DisabledInvisibleButton = styled(Button)`
+    background-color: transparent;
+    border: 2px solid transparent;
+    box-shadow: none;
+    color: ${({ theme }) => theme.color.DisabledText};
+  `;
   const chooseButton = () => {
     if (disabled && type === ButtonType.Ghost) { return DisabledGhostButton; }
+    if (disabled && type === ButtonType.Invisible) { return DisabledInvisibleButton; }
     if (disabled) { return DisabledButton; }
     if (type === ButtonType.Ghost) { return GhostButton; }
+    if (type === ButtonType.Invisible) { return InvisibleButton; }
     return NormalButton;
   };
   const ChosenButton = chooseButton();
