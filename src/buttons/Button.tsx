@@ -8,7 +8,7 @@ export default ({
   danger = false,
   disabled = false,
   fullWidth = false,
-  ghostColor ,
+  ghostColor,
   onClick,
   type,
 }: ButtonProps) => {
@@ -23,6 +23,7 @@ export default ({
     margin: 4px;
     padding: 8px 16px;
     text-align: center;
+    text-transform: uppercase;
     width: ${fullWidth ? '100%' : 'auto'};
     &:hover {
       box-shadow: ${disabled ? 'none' : ({ theme }) => theme.shadow.Large};
