@@ -4,10 +4,9 @@
 // tslint:disable:max-line-length
 import * as React from 'react';
 
-import { Button, ButtonGroup, ButtonIcon, ButtonType } from '../Button';
+import { Button, ButtonGroup, ButtonType } from '../Button';
 
 import { IconChevronRight } from '../Icon';
-import IconCuratr from '../icons/IconCuratr';
 import { H1, H2, P, SizeType } from '../Text';
 import DocsCode from './DocsCode';
 
