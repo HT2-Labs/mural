@@ -2,10 +2,8 @@
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import { IconNpm } from '../Icon';
-import IconGithub from '../icons/IconGithub';
+import { IconNpm, IconGithub } from '../Icon';
 
-// tslint:disable-next-line:no-class
 export default () => {
 
   const Sidebar = styled.div`
@@ -17,7 +15,7 @@ export default () => {
     display: flex;
     flex-direction: column;
     position: fixed;
-    height: 100vh;
+    min-height: 100vh;
   `;
 
   const Logo = styled.div `
