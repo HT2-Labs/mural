@@ -4,7 +4,7 @@
 // tslint:disable:max-line-length
 import * as React from 'react';
 
-import { Button, ButtonGroup, ButtonType } from '../Button';
+import { Button, ButtonGroup, GhostButton, InvisibleButton } from '../Button';
 
 import { IconChevronRight } from '../Icon';
 import { H1, H2, P, SizeType } from '../Text';
@@ -16,41 +16,41 @@ class DocsButton extends React.Component {
   };
   public render() {
     const normalButton = (
-`import { Button, ButtonType } from '@ht2-labs/mural/Button';
+      `import { Button } from '@ht2-labs/mural/Button';
 
 <Button>Button</Button>
 <Button disabled>Button</Button>`
     );
 
     const ghostButton = (
-`import { Button, ButtonType } from '@ht2-labs/mural/Button';
+      `import { Button } from '@ht2-labs/mural/Button';
 
-<Button type={ButtonType.Ghost}>Ghost Button</Button>
-<Button type={ButtonType.Ghost} disabled>Disabled Button</Button>`
+<GhostButton>Ghost Button</GhostButton>
+<GhostButton disabled>Disabled Ghost Button</GhostButton>`
     );
 
     const dangerButton = (
-`import { Button, ButtonType } from '@ht2-labs/mural/Button';
+      `import { Button } from '@ht2-labs/mural/Button';
 
-<Button danger>Ghost Button</Button>
-<Button type={ButtonType.Ghost} danger>Disabled Button</Button>`
+<Button danger>Danger Button</Button>
+<GhostButton danger>Danger Ghost Button</GhostButton>`
     );
 
     const invisibleButton = (
-`import { Button, ButtonType } from '@ht2-labs/mural/Button';
+      `import { Button } from '@ht2-labs/mural/Button';
 
-<Button danger>Ghost Button</Button>
-<Button type={ButtonType.Ghost} danger>Disabled Button</Button>`
+<InvisibleButton>Invisible Button</Button>
+<InvisibleButton disabled>Disabled Invisible Button</Button>`
     );
 
     const changeCode = (code: string) => {
-      this.setState({codeSnippet: code});
+      this.setState({ codeSnippet: code });
     };
 
     const codeSnippetButtonGroup =
-`<ButtonGroup>
+      `<ButtonGroup>
   <Button>Button</Button>
-  <Button type={ButtonType.Ghost}>Disabled Button</Button>
+  <GhostButton>Ghost Button</Button>
 </ButtonGroup>`;
 
     return (
@@ -67,14 +67,12 @@ class DocsButton extends React.Component {
 
         <P>Ghost buttons can be used as a secondary option or to overlay on splash images. Ghost buttons can have their color overwritten by using the <code>ghostColor</code> prop.</P>
         <ButtonGroup>
-          <Button
+          <GhostButton
             onClick={() => { changeCode(ghostButton); }}
-            type={ButtonType.Ghost}
-          >Ghost Button</Button>
-          <Button
-            type={ButtonType.Ghost}
+          >Ghost Button</GhostButton>
+          <GhostButton
             disabled
-          >Disabled Ghost Button</Button>
+          >Disabled Ghost Button</GhostButton>
         </ButtonGroup>
 
         <P>Use the <code>danger</code> prop to signify a destructive action (the color is set in the theme).</P>
@@ -83,23 +81,21 @@ class DocsButton extends React.Component {
             onClick={() => { changeCode(dangerButton); }}
             danger
           >Danger !</Button>
-          <Button
+          <GhostButton
             onClick={() => { changeCode(dangerButton); }}
-            type={ButtonType.Ghost}
             danger
-          >Danger Ghost Button</Button>
+          >Danger Ghost Button</GhostButton>
         </ButtonGroup>
 
         <P>Only use invisible buttons in combination with other buttons (i.e. in a  <code>ButtonGroup</code>). Do NOT use them by themselves as this can be confusing.</P>
         <ButtonGroup>
-          <Button
+          <InvisibleButton
             onClick={() => { changeCode(invisibleButton); }}
-            type={ButtonType.Invisible}
-            >Invisible Button <IconChevronRight /></Button>
-          <Button
-            type={ButtonType.Invisible}
+          >Invisible Button <IconChevronRight /></InvisibleButton>
+          <InvisibleButton
+            onClick={() => { changeCode(invisibleButton); }}
             disabled
-          >Disabled Invisible Button <IconChevronRight /></Button>
+          >Disabled Invisible Button <IconChevronRight /></InvisibleButton>
         </ButtonGroup>
 
         <P>Buttons will adjust their width to their content by default. To force them to

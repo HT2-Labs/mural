@@ -6,7 +6,7 @@ import * as React from 'react';
 
 import { H1, H2, H3, P, SizeType } from '../Text';
 
-import { Button, ButtonGroup, ButtonType } from '../Button';
+import { Button, ButtonGroup, GhostButton, InvisibleButton } from '../Button';
 import { IconClose } from '../Icon';
 import Modal from '../modal/Modal';
 import ModalActions from '../modal/ModalActions';
@@ -16,13 +16,13 @@ import ModalHeader from '../modal/ModalHeader';
 import DocsCode from './DocsCode';
 
 const codeSnippet =
-`<Modal open={this.state.modalOpen} onCloseFn={this.closeModal}>
+  `<Modal open={this.state.modalOpen} onCloseFn={this.closeModal}>
 <ModalHeader>
   <H3 size={SizeType.Large}>This is a Modal</H3>
   <ModalActions>
-    <Button type={ButtonType.Invisible} onClick={this.closeModal}>
+    <InvisibleButton onClick={this.closeModal}>
       <IconClose />
-    </Button>
+    </InvisbleButton>
   </ModalActions>
 </ModalHeader>
 
@@ -40,7 +40,7 @@ const codeSnippet =
   <ModalActions>
     <ButtonGroup>
       <Button>Yes</Button>
-      <Button type={ButtonType.Ghost}>Hmm</Button>
+      <GhostButton>Hmm</GhostButton>
       <Button onClick={this.closeModal} danger>No!</Button>
     </ButtonGroup>
   </ModalActions>
@@ -74,9 +74,9 @@ export default class DocsModal extends React.Component {
           <ModalHeader>
             <H3 size={SizeType.Large}>This is a Modal</H3>
             <ModalActions>
-              <Button type={ButtonType.Invisible} onClick={this.closeModal}>
+              <InvisibleButton onClick={this.closeModal}>
                 <IconClose />
-              </Button>
+              </InvisibleButton>
             </ModalActions>
           </ModalHeader>
 
@@ -94,7 +94,7 @@ export default class DocsModal extends React.Component {
             <ModalActions>
               <ButtonGroup>
                 <Button>Yes</Button>
-                <Button type={ButtonType.Ghost}>Hmm</Button>
+                <GhostButton>Hmm</GhostButton>
                 <Button onClick={this.closeModal} danger>No!</Button>
               </ButtonGroup>
             </ModalActions>

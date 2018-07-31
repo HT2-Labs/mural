@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import { IconNpm, IconGithub } from '../Icon';
+import { IconGithub, IconNpm } from '../Icon';
 
 export default () => {
 

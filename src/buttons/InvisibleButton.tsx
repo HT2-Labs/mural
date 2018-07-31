@@ -1,6 +1,7 @@
 // tslint:disable:max-file-line-count
 import * as React from 'react';
 import styled from 'styled-components';
+import defaultTo from '../utils/defaultTo';
 import ButtonProps from './ButtonProps';
 
 export default ({
@@ -8,7 +9,7 @@ export default ({
   danger = false,
   disabled = false,
   fullWidth = false,
-
+  ghostColor,
   onClick,
 
 }: ButtonProps) => {
@@ -41,22 +42,23 @@ export default ({
   const color = danger
     ? ({ theme }: any) => theme.color.Danger
     : ({ theme }: any) => theme.color.Button
-  ;
-  const NormalButton = Button.extend`
-    background-color: ${color};
-    border: 2px solid ${color};
-    box-shadow: ${({ theme }) => theme.shadow.Main};
-    color: ${({ theme }) => theme.color.ButtonText};
+    ;
+  const InvisibleButton = Button.extend`
+    background-color: transparent;
+    border: 2px solid transparent;
+    box-shadow: none;
+    color: ${defaultTo(ghostColor, color)};
   `;
-  const DisabledButton = Button.extend`
-    background-color: ${({ theme }) => theme.color.Disabled};
-    border: 2px solid ${({ theme }) => theme.color.Disabled};
+  const DisabledInvisibleButton = Button.extend`
+    background-color: transparent;
+    border: 2px solid transparent;
     box-shadow: none;
     color: ${({ theme }) => theme.color.DisabledText};
   `;
   const chooseButton = () => {
-    if (disabled) { return DisabledButton; }
-    return NormalButton;
+    if (disabled) { return DisabledInvisibleButton; }
+    return InvisibleButton;
+
   };
   const ChosenButton = chooseButton();
 

@@ -16,10 +16,8 @@ import {
   CardType,
 } from '../Card';
 
+import { Button, GhostButton } from '../Button';
 import IconEllipsisV from '../icons/IconEllipsisV';
-
-import { ButtonType } from '../Button';
-import Button from '../buttons/Button';
 import { H1, H2, SizeType } from '../Text';
 import DocsCode from './DocsCode';
 
@@ -39,7 +37,7 @@ class DocsCards extends React.Component {
     `;
 
     const normalCard = (
-`import { Card, CardBody, CardFooter, CardHeader, CardTitle } from '@ht2-labs/mural/Card';
+      `import { Card, CardBody, CardFooter, CardHeader, CardTitle } from '@ht2-labs/mural/Card';
 <Card>
   <CardHeader>
     <CardTitle>Card Title</CardTitle>
@@ -53,7 +51,7 @@ class DocsCards extends React.Component {
 `);
 
     const CardHighlighted = (
-`import { Card, CardSplashHeader, CardSplashText } from '@ht2-labs/mural/Card';
+      `import { Card, CardSplashHeader, CardSplashText } from '@ht2-labs/mural/Card';
 
 <Card type={CardType.Highlighted} onClick>
   <CardSplashHeader>
@@ -66,7 +64,7 @@ class DocsCards extends React.Component {
 `);
 
     const cardPlaceholder = (
-`import { Card, CardSplashText } from '@ht2-labs/mural/Card';
+      `import { Card, CardSplashText } from '@ht2-labs/mural/Card';
 
 <Card type={CardType.Placeholder}>
   <CardSplashText>
@@ -75,9 +73,9 @@ class DocsCards extends React.Component {
 </Card>
 `);
 
-const cardOverlay = (
-`import { Card, CardSplashText } from '@ht2-labs/mural/Card';
-import { Button, ButtonTypes } from '@ht2-labs/mural/Button';
+    const cardOverlay = (
+      `import { Card, CardSplashText } from '@ht2-labs/mural/Card';
+import { Button } from '@ht2-labs/mural/Button';
 
 const actionOpen = () => {
   this.setState({overlay: true});
@@ -90,12 +88,11 @@ const actionClose = () => {
 const overlayContent = (
   <CardSplashText>
     <Button onClick={actionClose} fullWidth>Edit</Button>
-    <Button
+    <GhostButton
       onClick={actionClose}
-      type={ButtonType.Ghost}
       fullWidth
       danger
-    >Delete</Button>
+    >Delete</GhostButton>
   </CardSplashText>
 );
 
@@ -107,7 +104,7 @@ const overlayContent = (
 >
   <CardHeader>
     <CardTitle>Card Title</CardTitle>
-    <Button type={ButtonType.Ghost} onClick={actionOpen}><IconEllipsisV /></Button>
+    <GhostButton onClick={actionOpen}><IconEllipsisV /></GhostButton>
   </CardHeader>
   <CardBody>
     <strong>The new home for all shared components</strong>
@@ -117,26 +114,26 @@ const overlayContent = (
 `);
 
     const changeCode = (code: string) => {
-      this.setState({codeSnippet: code});
+      this.setState({ codeSnippet: code });
     };
 
     const actionOpen = () => {
-      this.setState({overlay: true});
+      this.setState({ overlay: true });
     };
 
     const actionClose = () => {
-      this.setState({overlay: false});
+      this.setState({ overlay: false });
     };
 
     const overlayContent = (
       <CardSplashText>
         <Button onClick={actionClose} fullWidth>Edit</Button>
-        <Button
+        <GhostButton
           onClick={actionClose}
-          type={ButtonType.Ghost}
+
           fullWidth
           danger
-        >Delete</Button>
+        >Delete</GhostButton>
       </CardSplashText>
     );
 
@@ -165,7 +162,7 @@ const overlayContent = (
           >
             <CardSplashHeader>
               <CardHeader />
-              <IconEllipsisV color={'#fff'}/>
+              <IconEllipsisV color={'#fff'} />
             </CardSplashHeader>
             <CardSplashText>
               <strong>Shared components</strong>
@@ -190,9 +187,9 @@ const overlayContent = (
           >
             <CardHeader>
               <CardTitle>Card Title</CardTitle>
-              <Button type={ButtonType.Ghost} onClick={actionOpen} ghostColor="#fff">
+              <GhostButton onClick={actionOpen} ghostColor="#fff">
                 <IconEllipsisV />
-              </Button>
+              </GhostButton>
             </CardHeader>
             <CardBody>
               <strong>The new home for all shared components</strong>
@@ -206,11 +203,11 @@ const overlayContent = (
         <DocsCode code={this.state.codeSnippet} />
         <H2 size={SizeType.Large}>Props</H2>
         <code>Prop: onClick</code> - <code>Default: none</code>
-        <br/>
+        <br />
         <code>Prop: type</code> - <code>Default: none</code>
-        <br/>
+        <br />
         <code>Prop: overlay</code> - <code>Default: true</code>
-        <br/>
+        <br />
         <code>Prop: overlayContent</code> - <code>Type: JSX</code> - <code>Default: none</code>
         <hr />
       </>
