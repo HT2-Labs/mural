@@ -6,8 +6,12 @@ import * as React from 'react';
 
 import { H1, H2, H3, P, SizeType } from '../Text';
 
-import { Button, ButtonGroup, GhostButton, InvisibleButton } from '../Button';
+import { Button, ButtonGroup, GhostButton, IconInvisibleButton } from '../Button';
 import { IconClose } from '../Icon';
+import FullPageModal from '../modal/FullPageModal';
+import FullPageModalActions from '../modal/FullPageModalActions';
+import FullPageModalBody from '../modal/FullPageModalBody';
+import FullPageModalHeader from '../modal/FullPageModalHeader';
 import Modal from '../modal/Modal';
 import ModalActions from '../modal/ModalActions';
 import ModalBody from '../modal/ModalBody';
@@ -16,7 +20,9 @@ import ModalHeader from '../modal/ModalHeader';
 import DocsCode from './DocsCode';
 
 const codeSnippet =
-  `<Modal open={this.state.modalOpen} onCloseFn={this.closeModal}>
+  `
+//Modal
+<Modal open={this.state.modalOpen} onCloseFn={this.closeModal}>
 <ModalHeader>
   <H3 size={SizeType.Large}>This is a Modal</H3>
   <ModalActions>
@@ -45,10 +51,34 @@ const codeSnippet =
     </ButtonGroup>
   </ModalActions>
 </ModalFooter>
-</Modal>`;
+</Modal>
+
+//FullPage Modal
+<FullPageModal open={this.state.fullpageModalOpen}>
+  <FullPageModalHeader>
+    <ModalActions>
+      <IconInvisibleButton onClick={this.closeFullpageModal}>
+        <IconClose />
+      </IconInvisibleButton>
+    </ModalActions>
+  </FullPageModalHeader>
+<FullPageModalBody>
+  <H3 size={SizeType.Large} >This is a Fullpage Modal</H3>
+  <p>Blah</p>
+<FullPageModalActions>
+  <ButtonGroup>
+    <Button danger> DO NOT CLICK</Button>
+    < Button> Do Click </Button>
+  </ButtonGroup>
+</FullPageModalActions>
+</FullPageModalBody>
+<ModalFooter>
+</ModalFooter>
+</FullPageModal>`;
 
 export default class DocsModal extends React.Component {
   public readonly state = {
+    fullpageModalOpen: false,
     modalOpen: false,
   };
 
@@ -63,20 +93,34 @@ export default class DocsModal extends React.Component {
       modalOpen: false,
     });
   }
+  public readonly openFullpageModal = () => {
+    this.setState({
+      fullpageModalOpen: true,
+    });
+  }
+
+  public readonly closeFullpageModal = () => {
+    this.setState({
+      fullpageModalOpen: false,
+    });
+  }
 
   public render() {
     return (
       <>
         <H1 size={SizeType.ExtraLarge}>Headers</H1>
         <hr />
-        <Button onClick={this.openModal}>Open Modal</Button>
+        <ButtonGroup>
+          <Button onClick={this.openModal}>Open Modal</Button>
+          <Button onClick={this.openFullpageModal}>Open Fullpage Modal</Button>
+        </ButtonGroup>
         <Modal open={this.state.modalOpen} onCloseFn={this.closeModal}>
           <ModalHeader>
             <H3 size={SizeType.Large}>This is a Modal</H3>
             <ModalActions>
-              <InvisibleButton onClick={this.closeModal}>
+              <IconInvisibleButton onClick={this.closeModal}>
                 <IconClose />
-              </InvisibleButton>
+              </IconInvisibleButton>
             </ModalActions>
           </ModalHeader>
 
@@ -100,6 +144,28 @@ export default class DocsModal extends React.Component {
             </ModalActions>
           </ModalFooter>
         </Modal>
+
+        <FullPageModal open={this.state.fullpageModalOpen}>
+          <FullPageModalHeader>
+            <ModalActions>
+              <IconInvisibleButton onClick={this.closeFullpageModal}>
+                <IconClose />
+              </IconInvisibleButton>
+            </ModalActions>
+          </FullPageModalHeader>
+          <FullPageModalBody>
+            <H3 size={SizeType.Large} >This is a Fullpage Modal</H3>
+            Blah
+            <FullPageModalActions>
+              <ButtonGroup>
+                <Button danger> DO NOT CLICK</Button>
+                <Button> Do Click </Button>
+              </ButtonGroup>
+            </FullPageModalActions>
+          </FullPageModalBody>
+          <ModalFooter>
+          </ModalFooter>
+        </FullPageModal>
 
         <H2 size={SizeType.Large}>Examples</H2>
         <hr />
