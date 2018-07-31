@@ -4,11 +4,15 @@
 // tslint:disable:max-line-length
 import * as React from 'react';
 
-import { Button, ButtonGroup, GhostButton, InvisibleButton } from '../Button';
-
-import { IconChevronRight } from '../Icon';
+import { Button, ButtonGroup, GhostButton, IconButton, IconGhostButton, IconInvisibleButton, InvisibleButton } from '../Button';
+import { IconAsterisk, IconChevronRight, IconEllipsisV } from '../Icon';
 import { H1, H2, P, SizeType } from '../Text';
 import DocsCode from './DocsCode';
+
+import IconBullseye from '../icons/IconBullseye';
+import IconCalendar from '../icons/IconCalendar';
+import IconFlagCheckered from '../icons/IconFlagCheckered';
+import IconTimesCircle from '../icons/IconTimesCircle';
 
 class DocsButton extends React.Component {
   public readonly state = {
@@ -106,7 +110,36 @@ class DocsButton extends React.Component {
 
         <H2 size={SizeType.Large}>IconButton</H2>
         <hr />
-        <P>Coming soon...</P>
+        <P>Icon Button</P>
+        <ButtonGroup>
+          <IconButton><IconAsterisk /></IconButton>
+          <IconButton><IconEllipsisV /></IconButton>
+          <IconButton><IconChevronRight /></IconButton>
+          <IconButton><IconFlagCheckered /></IconButton>
+          <IconButton><IconCalendar /></IconButton>
+          <IconButton><IconTimesCircle /></IconButton>
+          <IconButton><IconBullseye /></IconButton>
+        </ButtonGroup>
+        <P>Invisible Icon Button</P>
+        <ButtonGroup>
+          <IconInvisibleButton><IconAsterisk /></IconInvisibleButton>
+          <IconInvisibleButton><IconEllipsisV /></IconInvisibleButton>
+          <IconInvisibleButton><IconChevronRight /></IconInvisibleButton>
+          <IconInvisibleButton><IconFlagCheckered /></IconInvisibleButton>
+          <IconInvisibleButton><IconCalendar /></IconInvisibleButton>
+          <IconInvisibleButton><IconTimesCircle /></IconInvisibleButton>
+          <IconInvisibleButton><IconBullseye /></IconInvisibleButton>
+        </ButtonGroup>
+        <P>Ghost Icon Button</P>
+        <ButtonGroup>
+          <IconGhostButton><IconAsterisk /></IconGhostButton>
+          <IconGhostButton><IconEllipsisV /></IconGhostButton>
+          <IconGhostButton><IconChevronRight /></IconGhostButton>
+          <IconGhostButton><IconFlagCheckered /></IconGhostButton>
+          <IconGhostButton><IconCalendar /></IconGhostButton>
+          <IconGhostButton><IconTimesCircle /></IconGhostButton>
+          <IconGhostButton><IconBullseye /></IconGhostButton>
+        </ButtonGroup>
         {/* <DocsCode code={codeSnippetButtonGroup} /> */}
 
         <H2 size={SizeType.Large}>ButtonGroup</H2>
