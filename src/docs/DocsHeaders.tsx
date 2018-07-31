@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { H1, H3, SizeType } from '../Text';
 
-import { Button, ButtonType } from '../Button';
+import { GhostButton } from '../Button';
 import PageActions from '../headers/PageActions';
 import PageHeader from '../headers/PageHeader';
 import PageHeaderText from '../headers/PageHeaderText';
@@ -32,7 +32,7 @@ export default () => {
             </H3>
           </PageHeaderText>
           <PageActions>
-            <Button onClick={deadClick} type={ButtonType.Ghost}><IconEdit /> Edit</Button>
+            <GhostButton onClick={deadClick} ><IconEdit /> Edit</GhostButton>
           </PageActions>
         </PageTitle>
         <TabMenu>

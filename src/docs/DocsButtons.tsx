@@ -16,28 +16,28 @@ class DocsButton extends React.Component {
   };
   public render() {
     const normalButton = (
-      `import { Button, ButtonType } from '@ht2-labs/mural/Button';
+      `import { Button } from '@ht2-labs/mural/Button';
 
 <Button>Button</Button>
 <Button disabled>Button</Button>`
     );
 
     const ghostButton = (
-      `import { Button, ButtonType } from '@ht2-labs/mural/Button';
+      `import { Button } from '@ht2-labs/mural/Button';
 
 <GhostButton>Ghost Button</GhostButton>
 <GhostButton disabled>Disabled Ghost Button</GhostButton>`
     );
 
     const dangerButton = (
-      `import { Button, ButtonType } from '@ht2-labs/mural/Button';
+      `import { Button } from '@ht2-labs/mural/Button';
 
 <Button danger>Danger Button</Button>
 <GhostButton danger>Danger Ghost Button</GhostButton>`
     );
 
     const invisibleButton = (
-      `import { Button, ButtonType } from '@ht2-labs/mural/Button';
+      `import { Button } from '@ht2-labs/mural/Button';
 
 <InvisibleButton>Invisible Button</Button>
 <InvisibleButton disabled>Disabled Invisible Button</Button>`
@@ -50,7 +50,7 @@ class DocsButton extends React.Component {
     const codeSnippetButtonGroup =
       `<ButtonGroup>
   <Button>Button</Button>
-  <Button type={ButtonType.Ghost}>Disabled Button</Button>
+  <GhostButton>Ghost Button</Button>
 </ButtonGroup>`;
 
     return (
