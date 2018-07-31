@@ -4,7 +4,7 @@
 // tslint:disable:max-line-length
 import * as React from 'react';
 
-import { Button, ButtonGroup, ButtonType, GhostButton, InvisibleButton } from '../Button';
+import { Button, ButtonGroup, GhostButton, InvisibleButton } from '../Button';
 
 import { IconChevronRight } from '../Icon';
 import { H1, H2, P, SizeType } from '../Text';
@@ -16,39 +16,39 @@ class DocsButton extends React.Component {
   };
   public render() {
     const normalButton = (
-`import { Button, ButtonType } from '@ht2-labs/mural/Button';
+      `import { Button, ButtonType } from '@ht2-labs/mural/Button';
 
 <Button>Button</Button>
 <Button disabled>Button</Button>`
     );
 
     const ghostButton = (
-`import { Button, ButtonType } from '@ht2-labs/mural/Button';
+      `import { Button, ButtonType } from '@ht2-labs/mural/Button';
 
 <GhostButton>Ghost Button</GhostButton>
 <GhostButton disabled>Disabled Ghost Button</GhostButton>`
     );
 
     const dangerButton = (
-`import { Button, ButtonType } from '@ht2-labs/mural/Button';
+      `import { Button, ButtonType } from '@ht2-labs/mural/Button';
 
 <Button danger>Danger Button</Button>
 <GhostButton danger>Danger Ghost Button</GhostButton>`
     );
 
     const invisibleButton = (
-`import { Button, ButtonType } from '@ht2-labs/mural/Button';
+      `import { Button, ButtonType } from '@ht2-labs/mural/Button';
 
 <InvisibleButton>Invisible Button</Button>
 <InvisibleButton disabled>Disabled Invisible Button</Button>`
     );
 
     const changeCode = (code: string) => {
-      this.setState({codeSnippet: code});
+      this.setState({ codeSnippet: code });
     };
 
     const codeSnippetButtonGroup =
-`<ButtonGroup>
+      `<ButtonGroup>
   <Button>Button</Button>
   <Button type={ButtonType.Ghost}>Disabled Button</Button>
 </ButtonGroup>`;
@@ -91,9 +91,9 @@ class DocsButton extends React.Component {
         <ButtonGroup>
           <InvisibleButton
             onClick={() => { changeCode(invisibleButton); }}
-            >Invisible Button <IconChevronRight /></InvisibleButton>
+          >Invisible Button <IconChevronRight /></InvisibleButton>
           <InvisibleButton
-          onClick={() => { changeCode(invisibleButton); }}
+            onClick={() => { changeCode(invisibleButton); }}
             disabled
           >Disabled Invisible Button <IconChevronRight /></InvisibleButton>
         </ButtonGroup>

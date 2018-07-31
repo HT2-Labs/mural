@@ -2,7 +2,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import defaultTo from '../utils/defaultTo';
-import ButtonProps, { ButtonType } from './ButtonProps';
+import ButtonProps from './ButtonProps';
 
 export default ({
   children,
@@ -42,7 +42,7 @@ export default ({
   const color = danger
     ? ({ theme }: any) => theme.color.Danger
     : ({ theme }: any) => theme.color.Button
-  ;
+    ;
   const InvisibleButton = Button.extend`
     background-color: transparent;
     border: 2px solid transparent;
@@ -57,7 +57,7 @@ export default ({
   `;
   const chooseButton = () => {
     if (disabled) { return DisabledInvisibleButton; }
-    else { return InvisibleButton; }
+    return InvisibleButton;
 
   };
   const ChosenButton = chooseButton();

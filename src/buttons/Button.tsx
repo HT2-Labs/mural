@@ -1,8 +1,7 @@
 // tslint:disable:max-file-line-count
 import * as React from 'react';
 import styled from 'styled-components';
-import defaultTo from '../utils/defaultTo';
-import ButtonProps, { ButtonType } from './ButtonProps';
+import ButtonProps from './ButtonProps';
 
 export default ({
   children,
