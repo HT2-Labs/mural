@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styled from 'styled-components';
-// Import { JustifyContentProperty } from '../../node_modules/csstype';
 
 import { Align } from '../utils/AlignmentProps';
 
@@ -10,9 +9,9 @@ interface ButtonGroupProps {
 }
 const getAlignment = (alignment: Align) => {
   switch (alignment) {
-    case Align.Left: default: return 'flex-start';
-    case Align.Center: return 'center';
-    case Align.Right: return 'flex-end';
+    case Align.Left: default: return 'justify-content: flex-start';
+    case Align.Center: return 'justify-content: center';
+    case Align.Right: return 'justify-content: flex-end';
   }
 };
 
@@ -24,7 +23,7 @@ export default ({ children, alignment = Align.Left }: ButtonGroupProps) => {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    justify-content: ${alignType};
+    ${alignType};
 
     > Button {
       margin-left: 8px;

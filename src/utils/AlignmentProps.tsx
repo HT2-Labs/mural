@@ -5,5 +5,5 @@ export enum Align {
 }
 
 export default interface AlignmentProps {
-  readonly alignment: Align;
+  readonly alignment?: Align;
 }
