@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import { IconGithub, IconNpm } from '../Icon';
 
 export default () => {
-
   const Sidebar = styled.div`
     background-color: #344a58;
   `;
@@ -18,7 +17,7 @@ export default () => {
     min-height: 100vh;
   `;
 
-  const Logo = styled.div `
+  const Logo = styled.div`
     background-image: url('https://www.ht2labs.com/wp-content/uploads/2016/09/ht2-labs-logo2x.png');
     background-size: 100%;
     padding-top: 19%;
@@ -74,22 +73,27 @@ export default () => {
     margin: auto auto 0;
   `;
 
+  const active = {
+    backgroundColor: '#fff',
+    color: '#344a58',
+  };
+
   return (
     <Sidebar>
       <SidebarFixed>
         <Name>Mural</Name>
         <Menu>
-          <MenuItem to="/">Home</MenuItem>
-          <MenuItem to="/themes">Themes</MenuItem>
-          <MenuItem to="/buttons">Buttons</MenuItem>
-          <MenuItem to="/cards">Cards</MenuItem>
-          <MenuItem to="/forms">Forms</MenuItem>
-          <MenuItem to="/headers">Headers</MenuItem>
-          <MenuItem to="/icons">Icons</MenuItem>
-          <MenuItem to="/lists">Lists</MenuItem>
-          <MenuItem to="/menus">Menus</MenuItem>
-          <MenuItem to="/modal">Modal</MenuItem>
-          <MenuItem to="/text">Text</MenuItem>
+          <MenuItem activeStyle={active} to="/" exact>Home</MenuItem>
+          <MenuItem activeStyle={active} to="/themes">Themes</MenuItem>
+          <MenuItem activeStyle={active} to="/buttons">Buttons</MenuItem>
+          <MenuItem activeStyle={active} to="/cards">Cards</MenuItem>
+          <MenuItem activeStyle={active} to="/forms">Forms</MenuItem>
+          <MenuItem activeStyle={active} to="/headers">Headers</MenuItem>
+          <MenuItem activeStyle={active} to="/icons">Icons</MenuItem>
+          <MenuItem activeStyle={active} to="/lists">Lists</MenuItem>
+          <MenuItem activeStyle={active} to="/menus">Menus</MenuItem>
+          <MenuItem activeStyle={active} to="/modal">Modal</MenuItem>
+          <MenuItem activeStyle={active} to="/text">Text</MenuItem>
         </Menu>
         <GithubLink href="https://github.com/ht2-labs/mural"><IconGithub /></GithubLink>
         <NpmLink href="https://www.npmjs.com/package/@ht2-labs/mural"><IconNpm /></NpmLink>
