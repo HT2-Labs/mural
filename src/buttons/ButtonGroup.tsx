@@ -6,6 +6,7 @@ interface ButtonGroupProps {
 }
 
 export default ({ children }: ButtonGroupProps) => {
+
   const TabMenu = styled.nav`
     display: flex;
     > Button {
