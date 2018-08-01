@@ -5,7 +5,16 @@ export enum ButtonType {
   Invisible,
 }
 
+export default interface IconButtonProps {
+  readonly color?: string;
+  readonly height?: number | string;
+  readonly width?: number | string;
+}
+
 export default interface ButtonProps {
+  readonly color?: string;
+  readonly height?: number | string;
+  readonly width?: number | string;
   readonly children: ReactNode;
   readonly danger?: boolean | undefined;
   readonly disabled?: boolean | undefined;
@@ -13,7 +22,4 @@ export default interface ButtonProps {
   readonly ghostColor?: string;
   readonly onClick?: (e: React.MouseEvent<HTMLElement>) => void;
   readonly type?: ButtonType;
-  readonly color?: string;
-  readonly height?: number | string;
-  readonly width?: number | string;
 }
