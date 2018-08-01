@@ -1,10 +1,16 @@
 // tslint:disable:no-class
 // tslint:disable:no-this
+// tslint:disable:max-line-length
 import * as React from 'react';
 import { Button } from '../Button';
 import IconChevronDown from '../icons/IconChevronDown';
 
-// tslint:disable-next-line:max-line-length
+const Child = ({ children }: any) => (
+  <div>
+    {children}
+  </div>
+);
+
 export default class Parent extends React.Component<{ readonly text?: String }, { readonly isHidden: Boolean; readonly text?: String }> {
   public constructor(props: any) {
     super(props);
@@ -15,7 +21,7 @@ export default class Parent extends React.Component<{ readonly text?: String }, 
   }
   public toggleHidden() {
     this.setState({
-      isHidden: !this.state.isHidden,
+      isHidden: this.state.isHidden === true,
     });
   }
   public render() {
@@ -24,14 +30,8 @@ export default class Parent extends React.Component<{ readonly text?: String }, 
         <Button onClick={this.toggleHidden.bind(this)} >
           {this.state.text} <IconChevronDown />
         </Button>
-        {!this.state.isHidden && <Child children={this.props.children} />}
+        {this.state.isHidden !== true ? <Child children={this.props.children} /> : null}
       </div>
     );
   }
 }
-
-const Child = ({ children }: any) => (
-  <div>
-    {children}
-  </div>
-);
