@@ -4,8 +4,15 @@
 // tslint:disable:max-line-length
 import * as React from 'react';
 
-import { Button, ButtonGroup, GhostButton, IconButton, IconGhostButton, IconInvisibleButton, InvisibleButton } from '../Button';
-import { Size } from '../buttons/ButtonIcon';
+import {
+  Button,
+  ButtonGroup,
+  GhostButton,
+  IconButton,
+  IconGhostButton,
+  IconInvisibleButton,
+  InvisibleButton,
+} from '../Button';
 import { IconAsterisk, IconChevronRight, IconEllipsisV } from '../Icon';
 import { H1, H2, P, SizeType } from '../Text';
 import { Align } from '../utils/AlignmentProps';
@@ -70,9 +77,9 @@ class DocsButton extends React.Component {
     const codeSnippetIconButton =
       `<P>Icon Button</P>
 <ButtonGroup>
-  <IconButton size={Size.Small}><IconAsterisk /></IconButton>
+  <IconButton><IconAsterisk /></IconButton>
   <IconButton size={Size.Medium} danger><IconEllipsisV /></IconButton>
-  <IconButton size={Size.Large} disabled><IconChevronRight /></IconButton>
+  <IconButton disabled><IconChevronRight /></IconButton>
   <IconButton><IconFlagCheckered /></IconButton>
 </ButtonGroup>
 <P>Invisible Icon Button</P>
@@ -151,13 +158,13 @@ class DocsButton extends React.Component {
         <hr />
         <P>Icon Button</P>
         <ButtonGroup>
-          <IconButton size={Size.Small}><IconAsterisk /></IconButton>
+          <IconButton><IconAsterisk /></IconButton>
           <IconButton danger><IconEllipsisV /></IconButton>
-          <IconButton size={Size.Large} disabled><IconChevronRight /></IconButton>
+          <IconButton disabled><IconChevronRight /></IconButton>
           <IconButton><IconFlagCheckered /></IconButton>
-          <IconButton size={Size.Small}><IconCalendar /></IconButton>
+          <IconButton><IconCalendar /></IconButton>
           <IconButton><IconTimesCircle /></IconButton>
-          <IconButton size={Size.Large}><IconBullseye /></IconButton>
+          <IconButton><IconBullseye /></IconButton>
         </ButtonGroup>
         <P>Invisible Icon Button</P>
         <ButtonGroup>
@@ -188,15 +195,15 @@ class DocsButton extends React.Component {
         <P>If you are using more than one button, you should use a ButtonGroup to contain them</P>
         <ButtonGroup>
           <Button>1</Button>
-          <Button> 2 </Button>
+          <Button>2</Button>
         </ButtonGroup>
         <ButtonGroup alignment={Align.Center}>
           <Button>3</Button>
-          <Button> 4 </Button>
+          <Button>4</Button>
         </ButtonGroup>
         <ButtonGroup alignment={Align.Right}>
           <Button>5</Button>
-          <Button> 6 </Button>
+          <Button>6</Button>
         </ButtonGroup>
         <DocsCode code={codeSnippetButtonGroup} />
       </>
