@@ -1,52 +1,30 @@
-// tslint:disable:max-file-line-count
-// tslint:disable:no-magic-numbers
-import { ReactNode } from 'react';
 import * as React from 'react';
 import styled from 'styled-components';
-import defaultTo from '../utils/defaultTo';
-
-export enum Size {
-  Small,
-  Medium,
-  Large,
-}
-
-interface ButtonProps {
-  readonly children: ReactNode;
-  readonly size?: Size;
-  readonly color?: string;
-  readonly ghostColor?: string;
-  readonly backgroundColor?: string;
-  readonly danger?: boolean;
-  readonly disabled?: boolean;
-  readonly onClick?: (e: React.MouseEvent<HTMLElement>) => void;
-}
+import IconButtonProps, { Size } from './IconButtonProps';
 
 const getButtonSize = (size: Size) => {
   switch (size) {
-    case Size.Small: return 32;
-    case Size.Medium: default: return 50;
-    case Size.Large: return 80;
+    case Size.Small: return '32px';
+    case Size.Medium: default: return '50px';
+    case Size.Large: return '80px';
   }
 };
 
 const getFontSize = (size: Size) => {
   switch (size) {
-    case Size.Small: return 16;
-    case Size.Medium: default: return 25;
-    case Size.Large: return 40;
+    case Size.Small: return '16px';
+    case Size.Medium: default: return '25px';
+    case Size.Large: return '40px';
   }
 };
 
 export default ({
   children,
-  danger = false,
   disabled = false,
   size = Size.Medium,
-  ghostColor,
   onClick,
+}: IconButtonProps) => {
 
-}: ButtonProps) => {
   const buttonSize = getButtonSize(size);
   const fontSize = getFontSize(size);
   const Button = styled.button`
@@ -55,14 +33,14 @@ export default ({
     cursor: ${disabled ? 'not-allowed' : 'pointer'};
     display: block;
     flex-shrink: 0;
-    font-size: ${fontSize}px;
+    font-size: ${fontSize};
     font-weight: 500;
     padding: 2px;
     text-align: center;
     text-transform: uppercase;
     font-family: 'Roboto', sans-serif;
-    width: ${buttonSize}px;
-    height: ${buttonSize}px};
+    width: ${buttonSize};
+    height: ${buttonSize}};
     &:hover {
       background-color: #eee;
     }
@@ -74,16 +52,14 @@ export default ({
       top: .15em;
     }
   `;
-  const color = danger
-    ? ({ theme }: any) => theme.color.Danger
-    : ({ theme }: any) => theme.color.Button
-    ;
+
   const GhostButton = Button.extend`
     background-color: transparent;
-    border: 2px solid ${defaultTo(ghostColor, color)};
+    border: 2px solid ${({ theme }) => theme.color.Button};
     box-shadow: none;
-    color: ${defaultTo(ghostColor, color)};
+    color: ${({ theme }) => theme.color.Button};
   `;
+
   const DisabledGhostButton = Button.extend`
     background-color: transparent;
     border: 2px solid ${({ theme }) => theme.color.Disabled};
@@ -95,6 +71,7 @@ export default ({
     if (disabled) { return DisabledGhostButton; }
     return GhostButton;
   };
+
   const ChosenButton = chooseButton();
 
   return (
