@@ -20,6 +20,7 @@ import { Button, GhostButton } from '../Button';
 import IconEllipsisV from '../icons/IconEllipsisV';
 import { H1, H2, SizeType } from '../Text';
 import DocsCode from './DocsCode';
+import DocsPlayground from './DocsPlayground';
 
 class DocsCards extends React.Component {
   public readonly state = {
@@ -200,8 +201,11 @@ const overlayContent = (
 
         <H2 size={SizeType.Large}>Examples</H2>
         <hr />
-        <DocsCode code={this.state.codeSnippet} />
+        <DocsPlayground>
+          <DocsCode code={this.state.codeSnippet} />
+        </DocsPlayground>
         <H2 size={SizeType.Large}>Props</H2>
+        <DocsPlayground>
         <code>Prop: onClick</code> - <code>Default: none</code>
         <br />
         <code>Prop: type</code> - <code>Default: none</code>
@@ -210,6 +214,7 @@ const overlayContent = (
         <br />
         <code>Prop: overlayContent</code> - <code>Type: JSX</code> - <code>Default: none</code>
         <hr />
+        </DocsPlayground>
       </>
     );
   }

@@ -8,6 +8,7 @@ import { Button, ButtonGroup, GhostButton, IconButton, IconGhostButton, IconInvi
 import { IconAsterisk, IconChevronRight, IconEllipsisV } from '../Icon';
 import { H1, H2, P, SizeType } from '../Text';
 import DocsCode from './DocsCode';
+import DocsPlayground from './DocsPlayground';
 
 import IconBullseye from '../icons/IconBullseye';
 import IconCalendar from '../icons/IconCalendar';
@@ -106,7 +107,7 @@ class DocsButton extends React.Component {
         use their space, add the <code>fullWidth</code> prop.</P>
 
         <H2 size={SizeType.Large}>Examples</H2>
-        <DocsCode code={this.state.codeSnippet} />
+        <DocsPlayground> <DocsCode code={this.state.codeSnippet} /> </DocsPlayground>
 
         <H2 size={SizeType.Large}>IconButton</H2>
         <hr />
@@ -145,7 +146,7 @@ class DocsButton extends React.Component {
         <H2 size={SizeType.Large}>ButtonGroup</H2>
         <hr />
         <P>If you are using more than one button, you should use a ButtonGroup to contain them</P>
-        <DocsCode code={codeSnippetButtonGroup} />
+        <DocsPlayground text="click to show code"> <DocsCode code={codeSnippetButtonGroup} /> </DocsPlayground>
       </>
     );
   }

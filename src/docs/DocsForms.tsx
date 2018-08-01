@@ -4,9 +4,10 @@ import * as React from 'react';
 import FormInput from '../forms/FormInput';
 import { H1, H2, SizeType } from '../Text';
 import DocsCode from './DocsCode';
+import DocsPlayground from './DocsPlayground';
 
 const codeSnippet =
-`import { H1, H2, H3, H4, P, SizeType } from '@ht2-labs/mural/Text';
+  `import { H1, H2, H3, H4, P, SizeType } from '@ht2-labs/mural/Text';
 
 <H1 size={SizeType.ExtraLarge}>Header 1 Element</H1>
 <H2 size={SizeType.Large}>Header 2 Element</H2>
@@ -25,10 +26,14 @@ export default () => {
 
       <H2 size={SizeType.Large}>Examples</H2>
       <hr />
-      <DocsCode code={codeSnippet} />
+      <DocsPlayground>
+        <DocsCode code={codeSnippet} />
+      </DocsPlayground>
       <H2 size={SizeType.Large}>Props</H2>
-      <code>Prop: size</code> - <code>Default: body</code>
-      <hr />
+      <DocsPlayground>
+        <code>Prop: size</code> - <code>Default: body</code>
+        <hr />
+      </DocsPlayground>
     </>
   );
 };

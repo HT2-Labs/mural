@@ -5,9 +5,10 @@ import TabMenu from '../menus/TabMenu';
 
 import { H1, H2, P, SizeType } from '../Text';
 import DocsCode from './DocsCode';
+import DocsPlayground from './DocsPlayground';
 
 const codeSnippet =
-`import { TabMenu, TabItem } from '@ht2-labs/mural/Menu';
+  `import { TabMenu, TabItem } from '@ht2-labs/mural/Menu';
 
 <TabMenu>
   <TabItem active>Goals</TabItem>
@@ -31,10 +32,14 @@ export default () => {
 
       <H2 size={SizeType.Large}>Examples</H2>
       <hr />
-      <DocsCode code={codeSnippet} />
+      <DocsPlayground>
+        <DocsCode code={codeSnippet} />
+      </DocsPlayground>
       <H2 size={SizeType.Large}>Props</H2>
-      <code>Prop: active</code> - <code>Default: none</code>
-      <hr />
+      <DocsPlayground>
+        <code>Prop: active</code> - <code>Default: none</code>
+        <hr />
+      </DocsPlayground>
     </>
   );
 };
