@@ -159,7 +159,7 @@ class DocsButton extends React.Component {
         <P>Icon Button</P>
         <ButtonGroup>
           <IconButton><IconAsterisk /></IconButton>
-          <IconButton danger><IconEllipsisV /></IconButton>
+          <IconButton><IconEllipsisV /></IconButton>
           <IconButton disabled><IconChevronRight /></IconButton>
           <IconButton><IconFlagCheckered /></IconButton>
           <IconButton><IconCalendar /></IconButton>
@@ -179,14 +179,13 @@ class DocsButton extends React.Component {
         <P>Ghost Icon Button</P>
         <ButtonGroup>
           <IconGhostButton><IconAsterisk /></IconGhostButton>
-          <IconGhostButton danger><IconEllipsisV /></IconGhostButton>
+          <IconGhostButton><IconEllipsisV /></IconGhostButton>
           <IconGhostButton disabled><IconChevronRight /></IconGhostButton>
           <IconGhostButton><IconFlagCheckered /></IconGhostButton>
           <IconGhostButton><IconCalendar /></IconGhostButton>
           <IconGhostButton><IconTimesCircle /></IconGhostButton>
           <IconGhostButton><IconBullseye /></IconGhostButton>
         </ButtonGroup>
-        <P>You should only use the danger prop on buttons with text. This means the user know exactly what they're doing</P>
         <DocsCode code={codeSnippetIconButton} />
         {/* <DocsCode code={codeSnippetButtonGroup} /> */}
 
