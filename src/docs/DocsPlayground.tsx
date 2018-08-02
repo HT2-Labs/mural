@@ -1,11 +1,16 @@
 // tslint:disable:no-class
 // tslint:disable:no-this
+// tslint:disable:max-line-length
 import * as React from 'react';
 import styled from 'styled-components';
-import { Button, ButtonGroup } from '../Button';
+import { ButtonGroup, InvisibleButton } from '../Button';
 import DocsCode from './DocsCode';
 
-const Example = ({ children }) => {
+import { IconChevronLeft, IconChevronRight, IconEllipsisV } from '../Icon';
+import IconCheckCircle from '../icons/IconCheckCircle';
+import { Align } from '../utils/AlignmentProps';
+
+const Example = ({ children }: any) => {
   return <div>{children}</div>;
 };
 
@@ -15,15 +20,15 @@ export enum Tab {
   Props,
 }
 
-const getContent = (content, children) => {
+const getContent = (content: any, children: any, code: any, props: any) => {
   switch (content) {
     case Tab.Example: default: return <Example children={children} />;
-    case Tab.Code: return <DocsCode code={`${children}`} />;
-    case Tab.Props: return '80px';
+    case Tab.Code: return <DocsCode code={code} />;
+    case Tab.Props: return props;
   }
 };
 
-export default class Parent extends React.Component {
+export default class Parent extends React.Component<{ readonly code?: String; readonly props?: String; readonly children?: any }> {
 
   public readonly state = {
     exampleTab: Tab,
@@ -36,26 +41,56 @@ export default class Parent extends React.Component {
     });
   }
 
+  public getCodeButton() {
+    if (this.props.code !== undefined) {
+      return (
+        <InvisibleButton onClick={() => { this.swapTab(Tab.Code); }} >
+          Code <IconChevronLeft /><IconChevronRight />
+        </InvisibleButton>
+      );
+    }
+    return ('');
+  }
+
+  public getPropsButton() {
+    if (this.props.props !== undefined) {
+      return (
+        <InvisibleButton onClick={() => { this.swapTab(Tab.Props); }} >
+          Props <IconEllipsisV />
+        </InvisibleButton>
+      );
+    }
+    return ('');
+  }
+
   public render() {
+
     const PlayGround = styled.div`
-      padding: 40px;
-      background-color: #eee;
+      background-color: #f0f0f0;
+      padding: 8px;
+    `;
+
+    const Content = styled.div`
+      padding: 12px;
     `;
 
     return (
       <PlayGround>
-        <ButtonGroup>
-          <Button onClick={() => { this.swapTab(Tab.Example); }} >
-            Example
-          </Button>
-          <Button onClick={() => { this.swapTab(Tab.Code); }} >
-            Code
-          </Button>
-          <Button onClick={() => { this.swapTab(Tab.Props); }} >
-            Props
-          </Button>
+        <ButtonGroup alignment={Align.Right}>
+          <InvisibleButton onClick={() => { this.swapTab(Tab.Example); }} >
+            Example <IconCheckCircle />
+          </InvisibleButton>
+          {this.getCodeButton()}
+          {this.getPropsButton()}
         </ButtonGroup>
-        {getContent(this.state.exampleTab, this.props.children)}
+        <Content>
+          {getContent(
+            this.state.exampleTab,
+            this.props.children,
+            this.props.code,
+            <code>{this.props.props}</code>,
+          )}
+        </Content>
       </PlayGround>
     );
   }
