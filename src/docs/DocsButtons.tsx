@@ -52,23 +52,19 @@ class DocsButton extends React.Component {
       this.setState({ codeSnippet: code });
     };
 
-    const codeSnippetButtonGroup =
-      `<ButtonGroup>
-  <Button>Button</Button>
-  <GhostButton>Ghost Button</Button>
-</ButtonGroup>`;
-
     return (
       <>
         <H1 size={SizeType.ExtraLarge}>Buttons</H1>
         <hr />
         <P>This is the default button that should be used.</P>
-        <ButtonGroup>
-          <Button
-            onClick={() => { changeCode(normalButton); }}
-          >Button</Button>
-          <Button disabled>Disabled Button</Button>
-        </ButtonGroup>
+        <DocsPlayground>
+          <ButtonGroup>
+            <Button
+              onClick={() => { changeCode(normalButton); }}
+            >Button</Button>
+            <Button disabled>Disabled Button</Button>
+          </ButtonGroup>
+        </DocsPlayground>
 
         <P>Ghost buttons can be used as a secondary option or to overlay on splash images. Ghost buttons can have their color overwritten by using the <code>ghostColor</code> prop.</P>
         <ButtonGroup>
@@ -146,7 +142,6 @@ class DocsButton extends React.Component {
         <H2 size={SizeType.Large}>ButtonGroup</H2>
         <hr />
         <P>If you are using more than one button, you should use a ButtonGroup to contain them</P>
-        <DocsPlayground text="click to show code"> <DocsCode code={codeSnippetButtonGroup} /> </DocsPlayground>
       </>
     );
   }

@@ -1,37 +1,62 @@
 // tslint:disable:no-class
 // tslint:disable:no-this
-// tslint:disable:max-line-length
 import * as React from 'react';
-import { Button } from '../Button';
-import IconChevronDown from '../icons/IconChevronDown';
+import styled from 'styled-components';
+import { Button, ButtonGroup } from '../Button';
+import DocsCode from './DocsCode';
 
-const Child = ({ children }: any) => (
-  <div>
-    {children}
-  </div>
-);
+const Example = ({ children }) => {
+  return <div>{children}</div>;
+};
 
-export default class Parent extends React.Component<{ readonly text?: String }, { readonly isHidden: Boolean; readonly text?: String }> {
-  public constructor(props: any) {
-    super(props);
-    this.state = {
-      isHidden: true,
-      text: 'click to show',
-    };
+export enum Tab {
+  Example,
+  Code,
+  Props,
+}
+
+const getContent = (content, children) => {
+  switch (content) {
+    case Tab.Example: default: return <Example children={children} />;
+    case Tab.Code: return <DocsCode code={`${children}`} />;
+    case Tab.Props: return '80px';
   }
-  public toggleHidden() {
+};
+
+export default class Parent extends React.Component {
+
+  public readonly state = {
+    exampleTab: Tab,
+    text: 'click to show',
+  };
+
+  public swapTab(tab: any) {
     this.setState({
-      isHidden: this.state.isHidden === true,
+      exampleTab: tab,
     });
   }
+
   public render() {
+    const PlayGround = styled.div`
+      padding: 40px;
+      background-color: #eee;
+    `;
+
     return (
-      <div>
-        <Button onClick={this.toggleHidden.bind(this)} >
-          {this.state.text} <IconChevronDown />
-        </Button>
-        {this.state.isHidden !== true ? <Child children={this.props.children} /> : null}
-      </div>
+      <PlayGround>
+        <ButtonGroup>
+          <Button onClick={() => { this.swapTab(Tab.Example); }} >
+            Example
+          </Button>
+          <Button onClick={() => { this.swapTab(Tab.Code); }} >
+            Code
+          </Button>
+          <Button onClick={() => { this.swapTab(Tab.Props); }} >
+            Props
+          </Button>
+        </ButtonGroup>
+        {getContent(this.state.exampleTab, this.props.children)}
+      </PlayGround>
     );
   }
 }
