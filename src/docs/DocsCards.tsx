@@ -16,7 +16,7 @@ import {
   CardType,
 } from '../Card';
 
-import { Button, GhostButton } from '../Button';
+import { Button, GhostButton, IconInvisibleButton } from '../Button';
 import IconEllipsisV from '../icons/IconEllipsisV';
 import { H1, H2, SizeType } from '../Text';
 import DocsCode from './DocsCode';
@@ -187,9 +187,9 @@ const overlayContent = (
           >
             <CardHeader>
               <CardTitle>Card Title</CardTitle>
-              <GhostButton onClick={actionOpen} ghostColor="#fff">
+              <IconInvisibleButton onClick={actionOpen} color="#fff">
                 <IconEllipsisV />
-              </GhostButton>
+              </IconInvisibleButton>
             </CardHeader>
             <CardBody>
               <strong>The new home for all shared components</strong>

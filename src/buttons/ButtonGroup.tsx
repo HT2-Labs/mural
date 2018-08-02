@@ -20,7 +20,7 @@ const getAlignment = (alignment?: Align) => {
 export default ({ children, alignment }: ButtonGroupProps) => {
   const alignType = getAlignment(alignment);
 
-  const TabMenu = styled.div`
+  const ButtonGroup = styled.div`
     display: flex;
     width: 100%;
     margin-left: auto;
@@ -35,5 +35,5 @@ export default ({ children, alignment }: ButtonGroupProps) => {
     }
   `;
 
-  return <TabMenu>{children}</TabMenu>;
+  return <ButtonGroup>{children}</ButtonGroup>;
 };
