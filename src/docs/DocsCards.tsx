@@ -16,24 +16,22 @@ import {
   CardType,
 } from '../Card';
 
-import { Button, GhostButton, IconInvisibleButton } from '../Button';
-import IconEllipsisV from '../icons/IconEllipsisV';
+import { Button, GhostButton } from '../Button';
 import { H1, H2, SizeType } from '../Text';
-import DocsCode from './DocsCode';
+import DocsPlayground from './DocsPlayground';
 
 class DocsCards extends React.Component {
   public readonly state = {
     codeSnippet: 'Click component to see example...',
     overlay: false,
   };
+  // tslint:disable-next-line:prefer-function-over-method
   public render() {
     const CardGrid = styled.div`
       display: grid;
-      grid-column-gap: 2%;
-      grid-row-gap: 20px;
+      grid-column-gap: 20px;
       grid-template-columns: 32% 32% 32%;
-      grid-template-rows: 144px;
-      margin-bottom: 40px;
+      grid-template-rows: 150px;
     `;
 
     const normalCard = (
@@ -74,142 +72,103 @@ class DocsCards extends React.Component {
 `);
 
     const cardOverlay = (
-      `import { Card, CardSplashText } from '@ht2-labs/mural/Card';
-import { Button } from '@ht2-labs/mural/Button';
+      `import { Card, CardBody, CardHeader, CardTitle } from '@ht2-labs/mural/Card';
+import { Button, GhostButton } from '@ht2-labs/mural/Button';
 
-const actionOpen = () => {
-  this.setState({overlay: true});
-};
-
-const actionClose = () => {
-  this.setState({overlay: false});
-};
 
 const overlayContent = (
-  <CardSplashText>
-    <Button onClick={actionClose} fullWidth>Edit</Button>
+  <>
+    <Button fullWidth>Edit</Button>
     <GhostButton
-      onClick={actionClose}
       fullWidth
       danger
     >Delete</GhostButton>
-  </CardSplashText>
+  </>
 );
 
-<Card
-  onClick={() => { changeCode(cardOverlay); }}
-  type={CardType.Highlighted}
-  overlayContent={overlayContent}
-  overlay={this.state.overlay}
->
+<Card overlayContent={overlayContent}>
   <CardHeader>
     <CardTitle>Card Title</CardTitle>
-    <GhostButton onClick={actionOpen}><IconEllipsisV /></GhostButton>
   </CardHeader>
   <CardBody>
     <strong>The new home for all shared components</strong>
   </CardBody>
-  <CardFooter>Card Title</CardFooter>
 </Card>
 `);
 
-    const changeCode = (code: string) => {
-      this.setState({ codeSnippet: code });
-    };
-
-    const actionOpen = () => {
-      this.setState({ overlay: true });
-    };
-
-    const actionClose = () => {
-      this.setState({ overlay: false });
-    };
-
     const overlayContent = (
-      <CardSplashText>
-        <Button onClick={actionClose} fullWidth>Edit</Button>
+      <>
+        <Button fullWidth>Edit</Button>
         <GhostButton
-          onClick={actionClose}
-
           fullWidth
           danger
         >Delete</GhostButton>
-      </CardSplashText>
+      </>
     );
 
     return (
       <>
         <H1 size={SizeType.ExtraLarge}>Cards</H1>
         <hr />
-        <CardGrid>
-          <Card
-            onClick={() => { changeCode(normalCard); }}
-          >
-            <CardHeader>
-              <CardTitle>Card Title</CardTitle>
-              <IconEllipsisV />
-            </CardHeader>
-            <CardBody>
-              <strong>The new home for all shared components</strong>
-            </CardBody>
-            <CardFooter>Card Title</CardFooter>
-          </Card>
+        <H2 size={SizeType.Large}>Basic Card</H2>
+        <DocsPlayground code={normalCard}>
+          <CardGrid>
+            <Card>
+              <CardHeader>
+                <CardTitle>Card Title</CardTitle>
+              </CardHeader>
+              <CardBody>
+                <strong>The new home for all shared components</strong>
+              </CardBody>
+              <CardFooter>Card Title</CardFooter>
+            </Card>
+          </CardGrid>
+        </DocsPlayground>
 
-          <Card
-            onClick={() => { changeCode(CardHighlighted); }}
-            type={CardType.Highlighted}
-            active
-          >
-            <CardSplashHeader>
-              <CardHeader />
-              <IconEllipsisV color={'#fff'} />
-            </CardSplashHeader>
-            <CardSplashText>
-              <strong>Shared components</strong>
-              <CardSplashSubText>(0/3) things are cool</CardSplashSubText>
-            </CardSplashText>
-          </Card>
+        <H2 size={SizeType.Large}>Highlighted Card</H2>
+        <DocsPlayground code={CardHighlighted}>
+          <CardGrid>
+            <Card
+              type={CardType.Highlighted}
+              active
+            >
+              <CardSplashHeader>
+                <CardHeader />
+              </CardSplashHeader>
+              <CardSplashText>
+                <strong>Shared components</strong>
+                <CardSplashSubText>(0/3) things are cool</CardSplashSubText>
+              </CardSplashText>
+            </Card>
+          </CardGrid>
+        </DocsPlayground>
 
-          <Card
-            onClick={() => { changeCode(cardPlaceholder); }}
-            type={CardType.Placeholder}
-          >
-            <CardSplashText>
-              <strong>Shared components</strong>
-            </CardSplashText>
-          </Card>
+        <H2 size={SizeType.Large}>Placeholder Card</H2>
+        <DocsPlayground code={cardPlaceholder}>
+          <CardGrid>
+            <Card
+              type={CardType.Placeholder}
+              >
+              <CardSplashText>
+                <strong>Shared components</strong>
+              </CardSplashText>
+            </Card>
+          </CardGrid>
+        </DocsPlayground>
 
-          <Card
-            onClick={() => { changeCode(cardOverlay); }}
-            type={CardType.Highlighted}
-            overlayContent={overlayContent}
-            overlay={this.state.overlay}
-          >
-            <CardHeader>
-              <CardTitle>Card Title</CardTitle>
-              <IconInvisibleButton onClick={actionOpen} color="#fff">
-                <IconEllipsisV />
-              </IconInvisibleButton>
-            </CardHeader>
-            <CardBody>
-              <strong>The new home for all shared components</strong>
-            </CardBody>
-            <CardFooter>Card Title</CardFooter>
-          </Card>
-        </CardGrid>
-
-        <H2 size={SizeType.Large}>Examples</H2>
-        <hr />
-        <DocsCode code={this.state.codeSnippet} />
-        <H2 size={SizeType.Large}>Props</H2>
-        <code>Prop: onClick</code> - <code>Default: none</code>
-        <br />
-        <code>Prop: type</code> - <code>Default: none</code>
-        <br />
-        <code>Prop: overlay</code> - <code>Default: true</code>
-        <br />
-        <code>Prop: overlayContent</code> - <code>Type: JSX</code> - <code>Default: none</code>
-        <hr />
+        <H2 size={SizeType.Large}>Card with Overlay</H2>
+        <DocsPlayground code={cardOverlay}>
+          <CardGrid>
+            <Card overlayContent={overlayContent}>
+              <CardHeader>
+                <CardTitle>Card Title</CardTitle>
+              </CardHeader>
+              <CardBody>
+                <strong>The new home for all shared components</strong>
+              </CardBody>
+            </Card>
+          </CardGrid>
+        </DocsPlayground>
       </>
     );
   }

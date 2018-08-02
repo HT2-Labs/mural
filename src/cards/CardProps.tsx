@@ -5,11 +5,10 @@ export enum CardType {
   Placeholder,
 }
 
-export default interface IconProps {
+export default interface CardProps {
   readonly active?: boolean;
   readonly children?: ReactNode;
   readonly onClick?: (e: React.MouseEvent<HTMLElement>) => void;
-  readonly overlay?: boolean;
   readonly overlayContent?: ReactNode;
   readonly type?: CardType;
 }
