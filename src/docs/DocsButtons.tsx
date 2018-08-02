@@ -17,6 +17,7 @@ import { IconAsterisk, IconChevronRight, IconEllipsisV } from '../Icon';
 import { H1, H2, P, SizeType } from '../Text';
 import { Align } from '../utils/AlignmentProps';
 import DocsCode from './DocsCode';
+import DocsPlayground from './DocsPlayground';
 
 import IconBullseye from '../icons/IconBullseye';
 import IconCalendar from '../icons/IconCalendar';
@@ -108,12 +109,14 @@ class DocsButton extends React.Component {
         <H1 size={SizeType.ExtraLarge}>Buttons</H1>
         <hr />
         <P>This is the default button that should be used.</P>
-        <ButtonGroup>
-          <Button
-            onClick={() => { changeCode(normalButton); }}
-          >Button</Button>
-          <Button disabled>Disabled Button</Button>
-        </ButtonGroup>
+        <DocsPlayground>
+          <ButtonGroup>
+            <Button
+              onClick={() => { changeCode(normalButton); }}
+            >Button</Button>
+            <Button disabled>Disabled Button</Button>
+          </ButtonGroup>
+        </DocsPlayground>
 
         <P>Ghost buttons can be used as a secondary option or to overlay on splash images. Ghost buttons can have their color overwritten by using the <code>ghostColor</code> prop.</P>
         <ButtonGroup>
@@ -152,7 +155,7 @@ class DocsButton extends React.Component {
         use their space, add the <code>fullWidth</code> prop.</P>
 
         <H2 size={SizeType.Large}>Examples</H2>
-        <DocsCode code={this.state.codeSnippet} />
+        <DocsPlayground> <DocsCode code={this.state.codeSnippet} /> </DocsPlayground>
 
         <H2 size={SizeType.Large}>IconButton</H2>
         <hr />

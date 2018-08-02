@@ -19,6 +19,7 @@ import ModalFooter from '../modal/ModalFooter';
 import ModalHeader from '../modal/ModalHeader';
 import { Align } from '../utils/AlignmentProps';
 import DocsCode from './DocsCode';
+import DocsPlayground from './DocsPlayground';
 
 const codeSnippet =
   `
@@ -170,7 +171,9 @@ export default class DocsModal extends React.Component {
 
         <H2 size={SizeType.Large}>Examples</H2>
         <hr />
+        <DocsPlayground>
         <DocsCode code={codeSnippet} />
+        </DocsPlayground>
       </>
     );
   }

@@ -1,6 +1,7 @@
 // tslint:disable:max-line-length
 import * as React from 'react';
 import styled from 'styled-components';
+import DocsPlayground from './DocsPlayground';
 
 import { H1, P, SizeType } from '../Text';
 
@@ -33,6 +34,9 @@ export default () => {
         Keep things as clean and DRY as possible and feel free to make changes through PRs!
       </P>
       <hr/>
+      <DocsPlayground>
+        Hello
+      </DocsPlayground>
     </>
   );
 };

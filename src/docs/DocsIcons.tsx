@@ -2,6 +2,8 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
+import DocsPlayground from './DocsPlayground';
+
 import {
   IconArrowDown,
   IconArrowLeft,
@@ -98,9 +100,13 @@ export default () => {
       </Grid>
       <H2 size={SizeType.Large}>Examples</H2>
       <hr />
+      <DocsPlayground>
       <DocsCode code={codeSnippet} />
+      </DocsPlayground>
       <H2 size={SizeType.Large}>Props</H2>
+      <DocsPlayground>
       <code>Prop: size</code> - <code>Default: body</code>
+      </DocsPlayground>
       <hr />
     </>
   );

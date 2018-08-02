@@ -3,9 +3,10 @@ import * as React from 'react';
 
 import { H1, H2, P, SizeType } from '../Text';
 import DocsCode from './DocsCode';
+import DocsPlayground from './DocsPlayground';
 
 const codeSnippet =
-`const theme = {
+  `const theme = {
   color: {
     BodyText: '#2f2f2f',
     Button: '#076699',
@@ -38,7 +39,9 @@ export default () => {
 
       <H2 size={SizeType.Large}>Examples</H2>
       <hr />
-      <DocsCode code={codeSnippet} />
+      <DocsPlayground>
+        <DocsCode code={codeSnippet} />
+      </DocsPlayground>
     </>
   );
 };
