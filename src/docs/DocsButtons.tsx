@@ -4,9 +4,18 @@
 // tslint:disable:max-line-length
 import * as React from 'react';
 
-import { Button, ButtonGroup, GhostButton, IconButton, IconGhostButton, IconInvisibleButton, InvisibleButton } from '../Button';
+import {
+  Button,
+  ButtonGroup,
+  GhostButton,
+  IconButton,
+  IconGhostButton,
+  IconInvisibleButton,
+  InvisibleButton,
+} from '../Button';
 import { IconAsterisk, IconChevronRight, IconEllipsisV } from '../Icon';
 import { H1, H2, P, SizeType } from '../Text';
+import { Align } from '../utils/AlignmentProps';
 import DocsCode from './DocsCode';
 
 import IconBullseye from '../icons/IconBullseye';
@@ -53,8 +62,45 @@ class DocsButton extends React.Component {
 
     const codeSnippetButtonGroup =
       `<ButtonGroup>
-  <Button>Button</Button>
-  <GhostButton>Ghost Button</Button>
+  <Button>1</Button>
+  <Button> 2 </Button>
+</ButtonGroup>
+<ButtonGroup alignment={Align.Center}>
+  <Button>3</Button>
+  <Button> 4 </Button>
+</ButtonGroup>
+<ButtonGroup alignment={Align.Right}>
+  <Button>5</Button>
+  <Button> 6 </Button>
+</ButtonGroup>`;
+
+    const codeSnippetIconButton =
+      `<P>Icon Button</P>
+<ButtonGroup>
+  <IconButton><IconAsterisk /></IconButton>
+  <IconButton size={Size.Medium} danger><IconEllipsisV /></IconButton>
+  <IconButton disabled><IconChevronRight /></IconButton>
+  <IconButton><IconFlagCheckered /></IconButton>
+</ButtonGroup>
+<P>Invisible Icon Button</P>
+<ButtonGroup>
+  <IconInvisibleButton><IconAsterisk /></IconInvisibleButton>
+  <IconInvisibleButton><IconEllipsisV /></IconInvisibleButton>
+  <IconInvisibleButton><IconChevronRight /></IconInvisibleButton>
+  <IconInvisibleButton><IconFlagCheckered /></IconInvisibleButton>
+  <IconInvisibleButton><IconCalendar /></IconInvisibleButton>
+  <IconInvisibleButton><IconTimesCircle /></IconInvisibleButton>
+  <IconInvisibleButton><IconBullseye /></IconInvisibleButton>
+</ButtonGroup>
+<P>Ghost Icon Button</P>
+<ButtonGroup>
+  <IconGhostButton><IconAsterisk /></IconGhostButton>
+  <IconGhostButton danger><IconEllipsisV /></IconGhostButton>
+  <IconGhostButton disabled><IconChevronRight /></IconGhostButton>
+  <IconGhostButton><IconFlagCheckered /></IconGhostButton>
+  <IconGhostButton><IconCalendar /></IconGhostButton>
+  <IconGhostButton><IconTimesCircle /></IconGhostButton>
+  <IconGhostButton><IconBullseye /></IconGhostButton>
 </ButtonGroup>`;
 
     return (
@@ -113,8 +159,8 @@ class DocsButton extends React.Component {
         <P>Icon Button</P>
         <ButtonGroup>
           <IconButton><IconAsterisk /></IconButton>
-          <IconButton><IconEllipsisV /></IconButton>
-          <IconButton><IconChevronRight /></IconButton>
+          <IconButton danger><IconEllipsisV /></IconButton>
+          <IconButton disabled><IconChevronRight /></IconButton>
           <IconButton><IconFlagCheckered /></IconButton>
           <IconButton><IconCalendar /></IconButton>
           <IconButton><IconTimesCircle /></IconButton>
@@ -133,18 +179,32 @@ class DocsButton extends React.Component {
         <P>Ghost Icon Button</P>
         <ButtonGroup>
           <IconGhostButton><IconAsterisk /></IconGhostButton>
-          <IconGhostButton><IconEllipsisV /></IconGhostButton>
-          <IconGhostButton><IconChevronRight /></IconGhostButton>
+          <IconGhostButton danger><IconEllipsisV /></IconGhostButton>
+          <IconGhostButton disabled><IconChevronRight /></IconGhostButton>
           <IconGhostButton><IconFlagCheckered /></IconGhostButton>
           <IconGhostButton><IconCalendar /></IconGhostButton>
           <IconGhostButton><IconTimesCircle /></IconGhostButton>
           <IconGhostButton><IconBullseye /></IconGhostButton>
         </ButtonGroup>
+        <P>You should only use the danger prop on buttons with text. This means the user know exactly what they're doing</P>
+        <DocsCode code={codeSnippetIconButton} />
         {/* <DocsCode code={codeSnippetButtonGroup} /> */}
 
         <H2 size={SizeType.Large}>ButtonGroup</H2>
         <hr />
         <P>If you are using more than one button, you should use a ButtonGroup to contain them</P>
+        <ButtonGroup>
+          <Button>1</Button>
+          <Button>2</Button>
+        </ButtonGroup>
+        <ButtonGroup alignment={Align.Center}>
+          <Button>3</Button>
+          <Button>4</Button>
+        </ButtonGroup>
+        <ButtonGroup alignment={Align.Right}>
+          <Button>5</Button>
+          <Button>6</Button>
+        </ButtonGroup>
         <DocsCode code={codeSnippetButtonGroup} />
       </>
     );
