@@ -17,6 +17,7 @@ import ModalActions from '../modal/ModalActions';
 import ModalBody from '../modal/ModalBody';
 import ModalFooter from '../modal/ModalFooter';
 import ModalHeader from '../modal/ModalHeader';
+import { Align } from '../utils/AlignmentProps';
 import DocsCode from './DocsCode';
 import DocsPlayground from './DocsPlayground';
 
@@ -158,7 +159,7 @@ export default class DocsModal extends React.Component {
             <H3 size={SizeType.Large} >This is a Fullpage Modal</H3>
             Blah
             <FullPageModalActions>
-              <ButtonGroup>
+              <ButtonGroup alignment={Align.Center}>
                 <Button danger> DO NOT CLICK</Button>
                 <Button> Do Click </Button>
               </ButtonGroup>
