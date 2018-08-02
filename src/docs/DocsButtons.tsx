@@ -14,8 +14,9 @@ import {
   InvisibleButton,
 } from '../Button';
 import { IconAsterisk, IconChevronRight, IconEllipsisV } from '../Icon';
-import { H1, H2, P, SizeType } from '../Text';
+import { H1, P, SizeType } from '../Text';
 import { Align } from '../utils/AlignmentProps';
+import DocsDescription from './DocsDescription';
 import DocsPlayground from './DocsPlayground';
 
 import IconBullseye from '../icons/IconBullseye';
@@ -110,42 +111,46 @@ export default () => {
   return (
     <>
       <H1 size={SizeType.ExtraLarge}>Buttons</H1>
-      <hr />
-      <P>This is the default button that should be used.</P>
-      <DocsPlayground code={codeSnippetButton} props={availablePropsButton}>
-        <ButtonGroup>
-          <Button
+      <DocsDescription title="Normal Button">
+        <P>This is the default button that should be used.</P>
+        <DocsPlayground code={codeSnippetButton} props={availablePropsButton}>
+          <ButtonGroup>
+            <Button
 
-          >Button</Button>
-          <Button disabled>Disabled Button</Button>
-        </ButtonGroup>
-      </DocsPlayground>
+            >Button</Button>
+            <Button disabled>Disabled Button</Button>
+          </ButtonGroup>
+        </DocsPlayground>
+      </DocsDescription>
+      <DocsDescription title="Ghost Button">
+        <P>Ghost buttons can be used as a secondary option or to overlay on splash images. Ghost buttons can have their color overwritten by using the <code>ghostColor</code> prop.</P>
+        <DocsPlayground code={codeSnippetGhostButton} props={availablePropsButton}>
+          <ButtonGroup>
+            <GhostButton
 
-      <P>Ghost buttons can be used as a secondary option or to overlay on splash images. Ghost buttons can have their color overwritten by using the <code>ghostColor</code> prop.</P>
-      <DocsPlayground code={codeSnippetGhostButton} props={availablePropsButton}>
-        <ButtonGroup>
-          <GhostButton
+            >Ghost Button</GhostButton>
+            <GhostButton
+              disabled
+            >Disabled Ghost Button</GhostButton>
+          </ButtonGroup>
+        </DocsPlayground>
+      </DocsDescription>
+      <DocsDescription title="Danger Button">
+        <P>Use the <code>danger</code> prop to signify a destructive action (the color is set in the theme).</P>
+        <DocsPlayground code={codeSnippetDangerButton} props={availablePropsButton}>
+          <ButtonGroup>
+            <Button
 
-          >Ghost Button</GhostButton>
-          <GhostButton
-            disabled
-          >Disabled Ghost Button</GhostButton>
-        </ButtonGroup>
-      </DocsPlayground>
-      <P>Use the <code>danger</code> prop to signify a destructive action (the color is set in the theme).</P>
-      <DocsPlayground code={codeSnippetDangerButton} props={availablePropsButton}>
-        <ButtonGroup>
-          <Button
+              danger
+            >Danger !</Button>
+            <GhostButton
 
-            danger
-          >Danger !</Button>
-          <GhostButton
-
-            danger
-          >Danger Ghost Button</GhostButton>
-        </ButtonGroup>
-      </DocsPlayground>
-
+              danger
+            >Danger Ghost Button</GhostButton>
+          </ButtonGroup>
+        </DocsPlayground>
+      </DocsDescription>
+      <DocsDescription title="Invisible Button">
       <P>Only use invisible buttons in combination with other buttons (i.e. in a  <code>ButtonGroup</code>). Do NOT use them by themselves as this can be confusing.</P>
       <DocsPlayground code={codeSnippetInvisibleButton} props={availablePropsButton}>
         <ButtonGroup>
@@ -158,11 +163,11 @@ export default () => {
           >Disabled Invisible Button <IconChevronRight /></InvisibleButton>
         </ButtonGroup>
       </DocsPlayground>
+      </DocsDescription>
       <P>Buttons will adjust their width to their content by default. To force them to
         use their space, add the <code>fullWidth</code> prop.</P>
 
-      <H2 size={SizeType.Large}>IconButton</H2>
-      <hr />
+      <DocsDescription title="Icon Button">
       <DocsPlayground code={codeSnippetIconButton} props={availablePropsIconButton}>
         <P>Icon Button</P>
         <ButtonGroup>
@@ -195,10 +200,10 @@ export default () => {
           <IconGhostButton><IconBullseye /></IconGhostButton>
         </ButtonGroup>
       </DocsPlayground>
+      </DocsDescription>
       {/* <DocsCode code={codeSnippetButtonGroup} /> */}
 
-      <H2 size={SizeType.Large}>ButtonGroup</H2>
-      <hr />
+      <DocsDescription title="Button Group">
       <P>If you are using more than one button, you should use a ButtonGroup to contain them</P>
       <DocsPlayground code={codeSnippetButtonGroup} props={availablePropsButtonGroup}>
         <ButtonGroup>
@@ -214,6 +219,7 @@ export default () => {
           <Button>6</Button>
         </ButtonGroup>
       </DocsPlayground>
+      </DocsDescription>
     </>
   );
 };
