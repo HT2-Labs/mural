@@ -16,52 +16,22 @@ import {
 import { IconAsterisk, IconChevronRight, IconEllipsisV } from '../Icon';
 import { H1, H2, P, SizeType } from '../Text';
 import { Align } from '../utils/AlignmentProps';
-import DocsCode from './DocsCode';
+import DocsPlayground from './DocsPlayground';
 
 import IconBullseye from '../icons/IconBullseye';
 import IconCalendar from '../icons/IconCalendar';
 import IconFlagCheckered from '../icons/IconFlagCheckered';
 import IconTimesCircle from '../icons/IconTimesCircle';
 
-class DocsButton extends React.Component {
-  public readonly state = {
-    codeSnippet: 'Click component to see example...',
-  };
-  public render() {
-    const normalButton = (
-      `import { Button } from '@ht2-labs/mural/Button';
+const codeSnippetButton =
+  `import { Button } from '@ht2-labs/mural/Button';
+<ButtonGroup>
+  <Button>Button</Button>
+  <Button disabled>Button</Button>
+</ButtonGroup>`;
 
-<Button>Button</Button>
-<Button disabled>Button</Button>`
-    );
-
-    const ghostButton = (
-      `import { Button } from '@ht2-labs/mural/Button';
-
-<GhostButton>Ghost Button</GhostButton>
-<GhostButton disabled>Disabled Ghost Button</GhostButton>`
-    );
-
-    const dangerButton = (
-      `import { Button } from '@ht2-labs/mural/Button';
-
-<Button danger>Danger Button</Button>
-<GhostButton danger>Danger Ghost Button</GhostButton>`
-    );
-
-    const invisibleButton = (
-      `import { Button } from '@ht2-labs/mural/Button';
-
-<InvisibleButton>Invisible Button</Button>
-<InvisibleButton disabled>Disabled Invisible Button</Button>`
-    );
-
-    const changeCode = (code: string) => {
-      this.setState({ codeSnippet: code });
-    };
-
-    const codeSnippetButtonGroup =
-      `<ButtonGroup>
+const codeSnippetGhostButton =
+  `<ButtonGroup>
   <Button>1</Button>
   <Button> 2 </Button>
 </ButtonGroup>
@@ -74,8 +44,37 @@ class DocsButton extends React.Component {
   <Button> 6 </Button>
 </ButtonGroup>`;
 
-    const codeSnippetIconButton =
-      `<P>Icon Button</P>
+const codeSnippetDangerButton =
+  `<ButtonGroup>
+  <Button danger> Danger Button</Button>
+  <GhostButton danger> Danger Ghost Button </Button>
+</ButtonGroup>`;
+
+const codeSnippetInvisibleButton =
+  `import { Button } from '@ht2-labs/mural/Button';
+<ButtonGroup>
+  <InvisibleButton>Invisible Button</Button>
+  <InvisibleButton disabled>Disabled Invisible Button</Button>
+</ButtonGroup>`;
+
+const codeSnippetButtonGroup =
+  `<ButtonGroup>
+  <Button>1</Button>
+  <Button> 2 </Button>
+</ButtonGroup>
+<ButtonGroup alignment={Align.Center}>
+  <Button>3</Button>
+  <Button> 4 </Button>
+</ButtonGroup>
+<ButtonGroup alignment={Align.Right}>
+  <Button>5</Button>
+  <Button> 6 </Button>
+</ButtonGroup>`;
+
+const codeSnippetIconButton =
+  `
+import Size from '../buttons/IconButtonProps';
+<P>Icon Button</P>
 <ButtonGroup>
   <IconButton><IconAsterisk /></IconButton>
   <IconButton size={Size.Medium} danger><IconEllipsisV /></IconButton>
@@ -103,59 +102,68 @@ class DocsButton extends React.Component {
   <IconGhostButton><IconBullseye /></IconGhostButton>
 </ButtonGroup>`;
 
-    return (
-      <>
-        <H1 size={SizeType.ExtraLarge}>Buttons</H1>
-        <hr />
-        <P>This is the default button that should be used.</P>
+const availablePropsButtonGroup = `Prop: alignment [Align.Left/Align.Right/Align.Center] - Default: undefined`;
+const availablePropsIconButton = `Prop: disabled - Default: undefined;
+Prop: size [Size.Small/Size.Medium/Size.Large] - Default: Size.Medium`;
+const availablePropsButton = `Prop: disabled - Default: undefined; Prop: danger - Default: undefined`;
+export default () => {
+  return (
+    <>
+      <H1 size={SizeType.ExtraLarge}>Buttons</H1>
+      <hr />
+      <P>This is the default button that should be used.</P>
+      <DocsPlayground code={codeSnippetButton} props={availablePropsButton}>
         <ButtonGroup>
           <Button
-            onClick={() => { changeCode(normalButton); }}
+
           >Button</Button>
           <Button disabled>Disabled Button</Button>
         </ButtonGroup>
+      </DocsPlayground>
 
-        <P>Ghost buttons can be used as a secondary option or to overlay on splash images. Ghost buttons can have their color overwritten by using the <code>ghostColor</code> prop.</P>
+      <P>Ghost buttons can be used as a secondary option or to overlay on splash images. Ghost buttons can have their color overwritten by using the <code>ghostColor</code> prop.</P>
+      <DocsPlayground code={codeSnippetGhostButton} props={availablePropsButton}>
         <ButtonGroup>
           <GhostButton
-            onClick={() => { changeCode(ghostButton); }}
+
           >Ghost Button</GhostButton>
           <GhostButton
             disabled
           >Disabled Ghost Button</GhostButton>
         </ButtonGroup>
-
-        <P>Use the <code>danger</code> prop to signify a destructive action (the color is set in the theme).</P>
+      </DocsPlayground>
+      <P>Use the <code>danger</code> prop to signify a destructive action (the color is set in the theme).</P>
+      <DocsPlayground code={codeSnippetDangerButton} props={availablePropsButton}>
         <ButtonGroup>
           <Button
-            onClick={() => { changeCode(dangerButton); }}
+
             danger
           >Danger !</Button>
           <GhostButton
-            onClick={() => { changeCode(dangerButton); }}
+
             danger
           >Danger Ghost Button</GhostButton>
         </ButtonGroup>
+      </DocsPlayground>
 
-        <P>Only use invisible buttons in combination with other buttons (i.e. in a  <code>ButtonGroup</code>). Do NOT use them by themselves as this can be confusing.</P>
+      <P>Only use invisible buttons in combination with other buttons (i.e. in a  <code>ButtonGroup</code>). Do NOT use them by themselves as this can be confusing.</P>
+      <DocsPlayground code={codeSnippetInvisibleButton} props={availablePropsButton}>
         <ButtonGroup>
           <InvisibleButton
-            onClick={() => { changeCode(invisibleButton); }}
+
           >Invisible Button <IconChevronRight /></InvisibleButton>
           <InvisibleButton
-            onClick={() => { changeCode(invisibleButton); }}
+
             disabled
           >Disabled Invisible Button <IconChevronRight /></InvisibleButton>
         </ButtonGroup>
-
-        <P>Buttons will adjust their width to their content by default. To force them to
+      </DocsPlayground>
+      <P>Buttons will adjust their width to their content by default. To force them to
         use their space, add the <code>fullWidth</code> prop.</P>
 
-        <H2 size={SizeType.Large}>Examples</H2>
-        <DocsCode code={this.state.codeSnippet} />
-
-        <H2 size={SizeType.Large}>IconButton</H2>
-        <hr />
+      <H2 size={SizeType.Large}>IconButton</H2>
+      <hr />
+      <DocsPlayground code={codeSnippetIconButton} props={availablePropsIconButton}>
         <P>Icon Button</P>
         <ButtonGroup>
           <IconButton><IconAsterisk /></IconButton>
@@ -186,12 +194,13 @@ class DocsButton extends React.Component {
           <IconGhostButton><IconTimesCircle /></IconGhostButton>
           <IconGhostButton><IconBullseye /></IconGhostButton>
         </ButtonGroup>
-        <DocsCode code={codeSnippetIconButton} />
-        {/* <DocsCode code={codeSnippetButtonGroup} /> */}
+      </DocsPlayground>
+      {/* <DocsCode code={codeSnippetButtonGroup} /> */}
 
-        <H2 size={SizeType.Large}>ButtonGroup</H2>
-        <hr />
-        <P>If you are using more than one button, you should use a ButtonGroup to contain them</P>
+      <H2 size={SizeType.Large}>ButtonGroup</H2>
+      <hr />
+      <P>If you are using more than one button, you should use a ButtonGroup to contain them</P>
+      <DocsPlayground code={codeSnippetButtonGroup} props={availablePropsButtonGroup}>
         <ButtonGroup>
           <Button>1</Button>
           <Button>2</Button>
@@ -204,10 +213,7 @@ class DocsButton extends React.Component {
           <Button>5</Button>
           <Button>6</Button>
         </ButtonGroup>
-        <DocsCode code={codeSnippetButtonGroup} />
-      </>
-    );
-  }
-}
-
-export default DocsButton;
+      </DocsPlayground>
+    </>
+  );
+};

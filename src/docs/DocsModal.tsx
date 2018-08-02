@@ -4,7 +4,7 @@
 // tslint:disable:max-file-line-count
 import * as React from 'react';
 
-import { H1, H2, H3, P, SizeType } from '../Text';
+import { H1, H3, P, SizeType } from '../Text';
 
 import { Button, ButtonGroup, GhostButton, IconInvisibleButton } from '../Button';
 import { IconClose } from '../Icon';
@@ -18,7 +18,7 @@ import ModalBody from '../modal/ModalBody';
 import ModalFooter from '../modal/ModalFooter';
 import ModalHeader from '../modal/ModalHeader';
 import { Align } from '../utils/AlignmentProps';
-import DocsCode from './DocsCode';
+import DocsPlayground from './DocsPlayground';
 
 const codeSnippet =
   `
@@ -109,68 +109,67 @@ export default class DocsModal extends React.Component {
   public render() {
     return (
       <>
+
         <H1 size={SizeType.ExtraLarge}>Headers</H1>
         <hr />
-        <ButtonGroup>
-          <Button onClick={this.openModal}>Open Modal</Button>
-          <Button onClick={this.openFullpageModal}>Open Fullpage Modal</Button>
-        </ButtonGroup>
-        <Modal open={this.state.modalOpen} onCloseFn={this.closeModal}>
-          <ModalHeader>
-            <H3 size={SizeType.Large}>This is a Modal</H3>
-            <ModalActions>
-              <IconInvisibleButton onClick={this.closeModal}>
-                <IconClose />
-              </IconInvisibleButton>
-            </ModalActions>
-          </ModalHeader>
+        <DocsPlayground code={codeSnippet}>
+          <ButtonGroup>
+            <Button onClick={this.openModal}>Open Modal</Button>
+            <Button onClick={this.openFullpageModal}>Open Fullpage Modal</Button>
+          </ButtonGroup>
+          <Modal open={this.state.modalOpen} onCloseFn={this.closeModal}>
+            <ModalHeader>
+              <H3 size={SizeType.Large}>This is a Modal</H3>
+              <ModalActions>
+                <IconInvisibleButton onClick={this.closeModal}>
+                  <IconClose />
+                </IconInvisibleButton>
+              </ModalActions>
+            </ModalHeader>
 
-          <ModalBody>
-            <P>Oh what a cool thing!</P>
-            <P>Oh what a cool thing!</P>
-            <P>Oh what a cool thing!</P>
-            <P>Oh what a cool thing!</P>
-            <P>Oh what a cool thing!</P>
-            <P>Oh what a cool thing!</P>
-          </ModalBody>
+            <ModalBody>
+              <P>Oh what a cool thing!</P>
+              <P>Oh what a cool thing!</P>
+              <P>Oh what a cool thing!</P>
+              <P>Oh what a cool thing!</P>
+              <P>Oh what a cool thing!</P>
+              <P>Oh what a cool thing!</P>
+            </ModalBody>
 
-          <ModalFooter>
-            <P>Oh what a cool thing!</P>
-            <ModalActions>
-              <ButtonGroup>
-                <Button>Yes</Button>
-                <GhostButton>Hmm</GhostButton>
-                <Button onClick={this.closeModal} danger>No!</Button>
-              </ButtonGroup>
-            </ModalActions>
-          </ModalFooter>
-        </Modal>
+            <ModalFooter>
+              <P>Oh what a cool thing!</P>
+              <ModalActions>
+                <ButtonGroup>
+                  <Button>Yes</Button>
+                  <GhostButton>Hmm</GhostButton>
+                  <Button onClick={this.closeModal} danger>No!</Button>
+                </ButtonGroup>
+              </ModalActions>
+            </ModalFooter>
+          </Modal>
 
-        <FullPageModal open={this.state.fullpageModalOpen}>
-          <FullPageModalHeader>
-            <ModalActions>
-              <IconInvisibleButton onClick={this.closeFullpageModal}>
-                <IconClose />
-              </IconInvisibleButton>
-            </ModalActions>
-          </FullPageModalHeader>
-          <FullPageModalBody>
-            <H3 size={SizeType.Large} >This is a Fullpage Modal</H3>
-            Blah
+          <FullPageModal open={this.state.fullpageModalOpen}>
+            <FullPageModalHeader>
+              <ModalActions>
+                <IconInvisibleButton onClick={this.closeFullpageModal}>
+                  <IconClose />
+                </IconInvisibleButton>
+              </ModalActions>
+            </FullPageModalHeader>
+            <FullPageModalBody>
+              <H3 size={SizeType.Large} >This is a Fullpage Modal</H3>
+              Blah
             <FullPageModalActions>
-              <ButtonGroup alignment={Align.Center}>
-                <Button danger> DO NOT CLICK</Button>
-                <Button> Do Click </Button>
-              </ButtonGroup>
-            </FullPageModalActions>
-          </FullPageModalBody>
-          <ModalFooter>
-          </ModalFooter>
-        </FullPageModal>
-
-        <H2 size={SizeType.Large}>Examples</H2>
-        <hr />
-        <DocsCode code={codeSnippet} />
+                <ButtonGroup alignment={Align.Center}>
+                  <Button danger> DO NOT CLICK</Button>
+                  <Button> Do Click </Button>
+                </ButtonGroup>
+              </FullPageModalActions>
+            </FullPageModalBody>
+            <ModalFooter>
+            </ModalFooter>
+          </FullPageModal>
+        </DocsPlayground>
       </>
     );
   }

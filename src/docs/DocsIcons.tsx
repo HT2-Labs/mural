@@ -33,14 +33,16 @@ import {
 } from '../Icon';
 
 import IconClose from '../icons/IconClose';
-import { H1, H2, SizeType } from '../Text';
-import DocsCode from './DocsCode';
+import { H1, SizeType } from '../Text';
+import DocsPlayground from './DocsPlayground';
 
 const codeSnippet =
-`import { IconArrowDown } from '@ht2-labs/mural/Icon';
+  `import { IconArrowDown } from '@ht2-labs/mural/Icon';
 
 <IconArrowDown />
 `;
+
+const availableProps = 'Prop: size - Default: body';
 
 export default () => {
   const Grid = styled.div`
@@ -66,42 +68,38 @@ export default () => {
     <>
       <H1 size={SizeType.ExtraLarge}>Icons</H1>
       <hr />
-      <Grid>
-        <GridItem><IconArrowDown /><GridItemText>IconArrowDown</GridItemText></GridItem>
-        <GridItem><IconArrowLeft /><GridItemText>IconArrowLeft</GridItemText></GridItem>
-        <GridItem><IconArrowRight /><GridItemText>IconArrowRight</GridItemText></GridItem>
-        <GridItem><IconArrowUp /><GridItemText>IconArrowUp</GridItemText></GridItem>
-        <GridItem><IconAsterisk /><GridItemText>IconAsterisk</GridItemText></GridItem>
-        <GridItem><IconBullseye /><GridItemText>IconBullseye</GridItemText></GridItem>
-        <GridItem><IconCalendar /><GridItemText>IconCalendar</GridItemText></GridItem>
-        <GridItem><IconCheck /><GridItemText>IconCheck</GridItemText></GridItem>
-        <GridItem><IconCheckCircle /><GridItemText>IconCheckCircle</GridItemText></GridItem>
-        <GridItem><IconChevronDown /><GridItemText>IconChevronDown</GridItemText></GridItem>
-        <GridItem><IconChevronLeft /><GridItemText>IconChevronLeft</GridItemText></GridItem>
-        <GridItem><IconChevronRight /><GridItemText>IconChevronRight</GridItemText></GridItem>
-        <GridItem><IconClose /><GridItemText>IconClose</GridItemText></GridItem>
-        <GridItem><IconChevronUp /><GridItemText>IconChevronUp</GridItemText></GridItem>
-        <GridItem><IconCuratr /><GridItemText>IconCuratr</GridItemText></GridItem>
-        <GridItem><IconEllipsisV /><GridItemText>IconEllipsisV</GridItemText></GridItem>
-        <GridItem><IconFilter /><GridItemText>IconFilter</GridItemText></GridItem>
-        <GridItem><IconFlagCheckered /><GridItemText>IconFlagCheckered</GridItemText></GridItem>
-        <GridItem><IconGithub /><GridItemText>IconGithub</GridItemText></GridItem>
-        <GridItem><IconHome /><GridItemText>IconHome</GridItemText></GridItem>
-        <GridItem><IconLink /><GridItemText>IconLink</GridItemText></GridItem>
-        <GridItem><IconNpm /><GridItemText>IconNpm</GridItemText></GridItem>
-        <GridItem><IconPlusCircle /><GridItemText>IconPlusCircle</GridItemText></GridItem>
-        <GridItem><IconSearch /><GridItemText>IconSearch</GridItemText></GridItem>
-        <GridItem><IconTachometer /><GridItemText>IconTachometer</GridItemText></GridItem>
-        <GridItem><IconThumbsUp /><GridItemText>IconThumbsUp</GridItemText></GridItem>
-        <GridItem><IconTimes /><GridItemText>IconTimes</GridItemText></GridItem>
-        <GridItem><IconTimesCircle /><GridItemText>IconTimesCircle</GridItemText></GridItem>
-      </Grid>
-      <H2 size={SizeType.Large}>Examples</H2>
-      <hr />
-      <DocsCode code={codeSnippet} />
-      <H2 size={SizeType.Large}>Props</H2>
-      <code>Prop: size</code> - <code>Default: body</code>
-      <hr />
+      <DocsPlayground code={codeSnippet} props={availableProps}>
+        <Grid>
+          <GridItem><IconArrowDown /><GridItemText>IconArrowDown</GridItemText></GridItem>
+          <GridItem><IconArrowLeft /><GridItemText>IconArrowLeft</GridItemText></GridItem>
+          <GridItem><IconArrowRight /><GridItemText>IconArrowRight</GridItemText></GridItem>
+          <GridItem><IconArrowUp /><GridItemText>IconArrowUp</GridItemText></GridItem>
+          <GridItem><IconAsterisk /><GridItemText>IconAsterisk</GridItemText></GridItem>
+          <GridItem><IconBullseye /><GridItemText>IconBullseye</GridItemText></GridItem>
+          <GridItem><IconCalendar /><GridItemText>IconCalendar</GridItemText></GridItem>
+          <GridItem><IconCheck /><GridItemText>IconCheck</GridItemText></GridItem>
+          <GridItem><IconCheckCircle /><GridItemText>IconCheckCircle</GridItemText></GridItem>
+          <GridItem><IconChevronDown /><GridItemText>IconChevronDown</GridItemText></GridItem>
+          <GridItem><IconChevronLeft /><GridItemText>IconChevronLeft</GridItemText></GridItem>
+          <GridItem><IconChevronRight /><GridItemText>IconChevronRight</GridItemText></GridItem>
+          <GridItem><IconClose /><GridItemText>IconClose</GridItemText></GridItem>
+          <GridItem><IconChevronUp /><GridItemText>IconChevronUp</GridItemText></GridItem>
+          <GridItem><IconCuratr /><GridItemText>IconCuratr</GridItemText></GridItem>
+          <GridItem><IconEllipsisV /><GridItemText>IconEllipsisV</GridItemText></GridItem>
+          <GridItem><IconFilter /><GridItemText>IconFilter</GridItemText></GridItem>
+          <GridItem><IconFlagCheckered /><GridItemText>IconFlagCheckered</GridItemText></GridItem>
+          <GridItem><IconGithub /><GridItemText>IconGithub</GridItemText></GridItem>
+          <GridItem><IconHome /><GridItemText>IconHome</GridItemText></GridItem>
+          <GridItem><IconLink /><GridItemText>IconLink</GridItemText></GridItem>
+          <GridItem><IconNpm /><GridItemText>IconNpm</GridItemText></GridItem>
+          <GridItem><IconPlusCircle /><GridItemText>IconPlusCircle</GridItemText></GridItem>
+          <GridItem><IconSearch /><GridItemText>IconSearch</GridItemText></GridItem>
+          <GridItem><IconTachometer /><GridItemText>IconTachometer</GridItemText></GridItem>
+          <GridItem><IconThumbsUp /><GridItemText>IconThumbsUp</GridItemText></GridItem>
+          <GridItem><IconTimes /><GridItemText>IconTimes</GridItemText></GridItem>
+          <GridItem><IconTimesCircle /><GridItemText>IconTimesCircle</GridItemText></GridItem>
+        </Grid>
+      </DocsPlayground>
     </>
   );
 };

@@ -10,10 +10,31 @@ import PageTitle from '../headers/PageTitle';
 import IconEdit from '../icons/IconEdit';
 import TabItem from '../menus/TabItem';
 import TabMenu from '../menus/TabMenu';
+import DocsPlayground from './DocsPlayground';
 
 const deadClick = () => {
   return;
 };
+const codeSnippet = `<PageHeader>
+<PageTitle>
+  <PageHeaderText>
+    <H1 size={SizeType.Large}>
+      Promote
+    </H1>
+    <H3 size={SizeType.Small}>
+      Grow into a new role
+    </H3>
+  </PageHeaderText>
+  <PageActions>
+    <GhostButton onClick={deadClick} ><IconEdit /> Edit</GhostButton>
+  </PageActions>
+</PageTitle>
+<TabMenu>
+  <TabItem active>Goals</TabItem>
+  <TabItem>Archive</TabItem>
+  <TabItem>Reports</TabItem>
+</TabMenu>
+</PageHeader>`;
 
 export default () => {
 
@@ -21,26 +42,28 @@ export default () => {
     <>
       <H1 size={SizeType.ExtraLarge}>Headers</H1>
       <hr />
-      <PageHeader>
-        <PageTitle>
-          <PageHeaderText>
-            <H1 size={SizeType.Large}>
-              Promote
+      <DocsPlayground code={codeSnippet}>
+        <PageHeader>
+          <PageTitle>
+            <PageHeaderText>
+              <H1 size={SizeType.Large}>
+                Promote
             </H1>
-            <H3 size={SizeType.Small}>
-              Grow into a new role
+              <H3 size={SizeType.Small}>
+                Grow into a new role
             </H3>
-          </PageHeaderText>
-          <PageActions>
-            <GhostButton onClick={deadClick} ><IconEdit /> Edit</GhostButton>
-          </PageActions>
-        </PageTitle>
-        <TabMenu>
-          <TabItem active>Goals</TabItem>
-          <TabItem>Archive</TabItem>
-          <TabItem>Reports</TabItem>
-        </TabMenu>
-      </PageHeader>
+            </PageHeaderText>
+            <PageActions>
+              <GhostButton onClick={deadClick} ><IconEdit /> Edit</GhostButton>
+            </PageActions>
+          </PageTitle>
+          <TabMenu>
+            <TabItem active>Goals</TabItem>
+            <TabItem>Archive</TabItem>
+            <TabItem>Reports</TabItem>
+          </TabMenu>
+        </PageHeader >
+      </DocsPlayground>
     </>
   );
 };

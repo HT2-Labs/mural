@@ -1,11 +1,10 @@
 // tslint:disable:max-line-length
 import * as React from 'react';
-
-import { H1, H2, P, SizeType } from '../Text';
-import DocsCode from './DocsCode';
+import { H1, P, SizeType } from '../Text';
+import DocsPlayground from './DocsPlayground';
 
 const codeSnippet =
-`const theme = {
+  `const theme = {
   color: {
     BodyText: '#2f2f2f',
     Button: '#076699',
@@ -34,11 +33,9 @@ export default () => {
     <>
       <H1 size={SizeType.ExtraLarge}>Theme</H1>
       <hr />
-      <P>Mural uses Styled Components themes to configure styling. You can override the theme using <a href="https://www.styled-components.com/docs/advanced#theming">the theme prop</a> (only do this if you have a good reason).</P>
-
-      <H2 size={SizeType.Large}>Examples</H2>
-      <hr />
-      <DocsCode code={codeSnippet} />
+      <DocsPlayground code={codeSnippet}>
+        <P>Mural uses Styled Components themes to configure styling. You can override the theme using <a href="https://www.styled-components.com/docs/advanced#theming">the theme prop</a> (only do this if you have a good reason).</P>
+      </DocsPlayground>
     </>
   );
 };

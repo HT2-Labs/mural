@@ -2,7 +2,7 @@
 import * as React from 'react';
 
 import { H1, H2, H3, H4, P, SizeType } from '../Text';
-import DocsCode from './DocsCode';
+import DocsPlayground from './DocsPlayground';
 
 const codeSnippet =
 `import { H1, H2, H3, H4, P, SizeType } from '@ht2-labs/mural/Text';
@@ -15,9 +15,12 @@ const codeSnippet =
 <P>Paragraph Element</P>
 `;
 
+const availableProps =
+'Prop: size - Default: body';
 export default () => {
   return (
     <>
+    <DocsPlayground code={codeSnippet} props={availableProps}>
       <H1 size={SizeType.ExtraLarge}>Text</H1>
       <hr />
       <P>The component you use H1, H2, P, ect... depends only on your symantec structure. How the element looks depends on the <code>size</code> prop.</P>
@@ -30,10 +33,10 @@ export default () => {
 
       <H2 size={SizeType.Large}>Examples</H2>
       <hr />
-      <DocsCode code={codeSnippet} />
+
       <H2 size={SizeType.Large}>Props</H2>
-      <code>Prop: size</code> - <code>Default: body</code>
       <hr />
+      </DocsPlayground>
     </>
   );
 };
