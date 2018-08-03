@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 export interface Props {
-  readonly fullWidth: Any;
-  readonly disabled: Any;
+  readonly fullWidth: any;
+  readonly disabled: any;
 }
 
-export default (fullWidth, disabled) => {
+export default (fullWidth: any, disabled: any) => {
   const Button = styled.button`
     border-radius: ${({ theme }) => theme.radius.Button};
     box-sizing: border-box;

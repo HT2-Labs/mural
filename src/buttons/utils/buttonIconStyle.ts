@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 export interface Props {
-  readonly buttonSize: Any;
-  readonly fontSize: Any;
-  readonly disabled: Any;
+  readonly buttonSize: any;
+  readonly fontSize: any;
+  readonly disabled: any;
 }
 
-export default (buttonSize, fontSize, disabled) => {
+export default (buttonSize: any, fontSize: any, disabled: any) => {
   const Button = styled.button`
     border-radius: 50%;
     box-sizing: border-box;
