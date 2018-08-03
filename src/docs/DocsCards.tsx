@@ -18,7 +18,8 @@ import {
 } from '../Card';
 
 import { Button, GhostButton } from '../Button';
-import { H1, H2, SizeType } from '../Text';
+import { H1, SizeType } from '../Text';
+import DocsDescription from './DocsDescription';
 import DocsPlayground from './DocsPlayground';
 
 class DocsCards extends React.Component {
@@ -113,60 +114,64 @@ const overlayContent = (
       <>
         <H1 size={SizeType.ExtraLarge}>Cards</H1>
         <hr />
-        <H2 size={SizeType.Large}>Basic Card</H2>
-        <DocsPlayground code={normalCard} props={availableProps}>
-          <CardGrid>
-            <Card>
-              <CardHeader>
-                <CardTitle>Card Title</CardTitle>
-              </CardHeader>
-              <CardBody>
-                <strong>The new home for all shared components</strong>
-              </CardBody>
-              <CardFooter>Card Title</CardFooter>
-            </Card>
-          </CardGrid>
-        </DocsPlayground>
+        <DocsDescription title="Normal Card">
+          <DocsPlayground code={normalCard} props={availableProps}>
+            <CardGrid>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Card Title</CardTitle>
+                </CardHeader>
+                <CardBody>
+                  <strong>The new home for all shared components</strong>
+                </CardBody>
+                <CardFooter>Card Title</CardFooter>
+              </Card>
+            </CardGrid>
+          </DocsPlayground>
+        </DocsDescription>
 
-        <H2 size={SizeType.Large}>Highlighted Card</H2>
-        <DocsPlayground code={cardHighlighted} props={availableProps}>
-          <CardGrid>
-            <CardHighlighted active>
-              <CardSplashHeader>
-                <CardHeader />
-              </CardSplashHeader>
-              <CardSplashText>
-                <strong>Shared components</strong>
-                <CardSplashSubText>(0/3) things are cool</CardSplashSubText>
-              </CardSplashText>
-            </CardHighlighted>
-          </CardGrid>
-        </DocsPlayground>
+        <DocsDescription title="Higlighted Card">
+          <DocsPlayground code={cardHighlighted} props={availableProps}>
+            <CardGrid>
+              <CardHighlighted active>
+                <CardSplashHeader>
+                  <CardHeader />
+                </CardSplashHeader>
+                <CardSplashText>
+                  <strong>Shared components</strong>
+                  <CardSplashSubText>(0/3) things are cool</CardSplashSubText>
+                </CardSplashText>
+              </CardHighlighted>
+            </CardGrid>
+          </DocsPlayground>
+        </DocsDescription>
 
-        <H2 size={SizeType.Large}>Placeholder Card</H2>
-        <DocsPlayground code={cardPlaceholder} props={availableProps}>
-          <CardGrid>
-            <CardPlaceholder>
-              <CardSplashText>
-                <strong>Shared components</strong>
-              </CardSplashText>
-            </CardPlaceholder>
-          </CardGrid>
-        </DocsPlayground>
+        <DocsDescription title="Placeholder Card">
+          <DocsPlayground code={cardPlaceholder} props={availableProps}>
+            <CardGrid>
+              <CardPlaceholder>
+                <CardSplashText>
+                  <strong>Shared components</strong>
+                </CardSplashText>
+              </CardPlaceholder>
+            </CardGrid>
+          </DocsPlayground>
+        </DocsDescription>
 
-        <H2 size={SizeType.Large}>Card with Overlay</H2>
-        <DocsPlayground code={cardOverlay} props={availableProps}>
-          <CardGrid>
-            <Card overlayContent={overlayContent}>
-              <CardHeader>
-                <CardTitle>Card Title</CardTitle>
-              </CardHeader>
-              <CardBody>
-                <strong>The new home for all shared components</strong>
-              </CardBody>
-            </Card>
-          </CardGrid>
-        </DocsPlayground>
+        <DocsDescription title="Card with Overlay">
+          <DocsPlayground code={cardOverlay}>
+            <CardGrid>
+              <Card overlayContent={overlayContent}>
+                <CardHeader>
+                  <CardTitle>Card Title</CardTitle>
+                </CardHeader>
+                <CardBody>
+                  <strong>The new home for all shared components</strong>
+                </CardBody>
+              </Card>
+            </CardGrid>
+          </DocsPlayground>
+        </DocsDescription>
       </>
     );
   }

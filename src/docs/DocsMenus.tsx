@@ -31,7 +31,7 @@ export default () => {
 
   return (
     <>
-      <H1 size={SizeType.ExtraLarge}>Headers</H1>
+      <H1 size={SizeType.ExtraLarge}>Menus</H1>
       <hr />
       <P>Simple tab menu. Only use for top level page specific navigation.</P>
       <DocsPlayground code={codeSnippet} props="bleep">

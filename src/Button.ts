@@ -1,10 +1,10 @@
-import Button from './buttons/Button';
+import Button from './buttons/BasicButtons/Button';
+import GhostButton from './buttons/BasicButtons/GhostButton';
+import InvisibleButton from './buttons/BasicButtons/InvisibleButton';
 import ButtonGroup from './buttons/ButtonGroup';
-import GhostButton from './buttons/GhostButton';
-import IconButton from './buttons/IconButton';
-import IconGhostButton from './buttons/IconGhostButton';
-import IconInvisibleButton from './buttons/IconInvisibleButton';
-import InvisibleButton from './buttons/InvisibleButton';
+import IconButton from './buttons/IconButtons/IconButton';
+import IconGhostButton from './buttons/IconButtons/IconGhostButton';
+import IconInvisibleButton from './buttons/IconButtons/IconInvisibleButton';
 export {
   Button,
   ButtonGroup,

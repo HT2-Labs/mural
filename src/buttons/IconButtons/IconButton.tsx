@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styled from 'styled-components';
-import IconButtonProps, { Size } from './IconButtonProps';
+import buttonIconStyle from '../utils/buttonIconStyle';
+import IconButtonProps, { Size } from './iconButtonProps';
 
 const getButtonSize = (size: Size) => {
   switch (size) {
@@ -28,31 +28,7 @@ export default ({
   const buttonSize = getButtonSize(size);
   const fontSize = getFontSize(size);
 
-  const Button = styled.button`
-    border-radius: 50%;
-    box-sizing: border-box;
-    cursor: ${disabled ? 'not-allowed' : 'pointer'};
-    display: block;
-    flex-shrink: 0;
-    font-size: ${fontSize};
-    font-weight: 500;
-    padding: 2px;
-    text-align: center;
-    text-transform: uppercase;
-    font-family: 'Roboto', sans-serif;
-    width: ${buttonSize};
-    height: ${buttonSize};
-    &:hover {
-      background-color: #168ccc;
-    }
-    &:active {
-      box-shadow: none;
-    }
-    & svg {
-      position: relative;
-      top: .15em;
-    }
-  `;
+  const Button = buttonIconStyle(buttonSize, fontSize, disabled);
 
   const NormalButton = Button.extend`
     background-color: ${({ theme }) => theme.color.Button};
