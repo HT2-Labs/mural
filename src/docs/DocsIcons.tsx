@@ -40,12 +40,10 @@ import { H1, SizeType } from '../Text';
 import DocsPlayground from './DocsPlayground';
 
 const codeSnippet =
-  `import { IconArrowDown } from '@ht2-labs/mural/Icon';
+  `import { IconArrowDown } from '@ht2-labs/mural/src//Icon';
 
 <IconArrowDown />
 `;
-
-const availableProps = 'Prop: size - Default: body';
 
 export default () => {
   const Grid = styled.div`
@@ -71,7 +69,7 @@ export default () => {
     <>
       <H1 size={SizeType.ExtraLarge}>Icons</H1>
       <hr />
-      <DocsPlayground code={codeSnippet} props={availableProps}>
+      <DocsPlayground code={codeSnippet}>
         <Grid>
           <GridItem><IconArrowDown /><GridItemText>IconArrowDown</GridItemText></GridItem>
           <GridItem><IconArrowLeft /><GridItemText>IconArrowLeft</GridItemText></GridItem>

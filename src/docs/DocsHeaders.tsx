@@ -15,7 +15,11 @@ import DocsPlayground from './DocsPlayground';
 const deadClick = () => {
   return;
 };
-const codeSnippet = `<PageHeader>
+const codeSnippet = `import { H1, H3, SizeType } from '../Text';
+import PageHeader from '@ht2-labs/mural/headers/PageHeader';
+import PageHeaderText from '@ht2-labs/mural/headers/PageHeaderText';
+import PageTitle from '@ht2-labs/mural/headers/PageTitle';
+<PageHeader>
 <PageTitle>
   <PageHeaderText>
     <H1 size={SizeType.Large}>
@@ -29,11 +33,6 @@ const codeSnippet = `<PageHeader>
     <GhostButton onClick={deadClick} ><IconEdit /> Edit</GhostButton>
   </PageActions>
 </PageTitle>
-<TabMenu>
-  <TabItem active>Goals</TabItem>
-  <TabItem>Archive</TabItem>
-  <TabItem>Reports</TabItem>
-</TabMenu>
 </PageHeader>`;
 
 export default () => {
