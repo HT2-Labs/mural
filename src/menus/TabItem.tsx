@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import MenuProps from '../utils/MenuProps';
+import MenuProps from './menuProps';
 
 export default ({ active = false, children, onClick }: MenuProps) => {
   const TabItem = styled.div`
