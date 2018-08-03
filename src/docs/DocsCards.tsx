@@ -9,11 +9,12 @@ import {
   CardBody,
   CardFooter,
   CardHeader,
+  CardHighlighted,
+  CardPlaceholder,
   CardSplashHeader,
   CardSplashSubText,
   CardSplashText,
   CardTitle,
-  CardType,
 } from '../Card';
 
 import { Button, GhostButton } from '../Button';
@@ -49,33 +50,35 @@ class DocsCards extends React.Component {
 </Card>
 `);
 
-    const CardHighlighted = (
-      `import { Card, CardSplashHeader, CardSplashText } from '@ht2-labs/mural/Card';
+    const cardHighlighted = (
+      `import { CardHighlighted, CardSplashHeader, CardSplashText } from '@ht2-labs/mural/Card';
 
-<Card type={CardType.Highlighted} onClick>
+<CardHighlighted active>
   <CardSplashHeader>
     <IconEllipsisV color={'#fff'}/>
   </CardSplashHeader>
   <CardSplashText>
     <strong>Shared components</strong>
   </CardSplashText>
-</Card>
+</CardHighlighted>
 `);
 
     const cardPlaceholder = (
-      `import { Card, CardSplashText } from '@ht2-labs/mural/Card';
+      `import { CardPlaceholder, CardSplashText } from '@ht2-labs/mural/Card';
 
-<Card type={CardType.Placeholder}>
+<CardPlaceholder>
   <CardSplashText>
     <strong>Shared components</strong>
   </CardSplashText>
-</Card>
+</CardPlaceholder>
 `);
+    const availableProps = (
+      'Prop: active - Default: undefined; Prop: overlayContent - Default: undefined'
+    );
 
     const cardOverlay = (
       `import { Card, CardBody, CardHeader, CardTitle } from '@ht2-labs/mural/Card';
 import { Button, GhostButton } from '@ht2-labs/mural/Button';
-
 
 const overlayContent = (
   <>
@@ -112,7 +115,7 @@ const overlayContent = (
         <H1 size={SizeType.ExtraLarge}>Cards</H1>
         <hr />
         <DocsDescription title="Normal Card">
-          <DocsPlayground code={normalCard}>
+          <DocsPlayground code={normalCard} props={availableProps}>
             <CardGrid>
               <Card>
                 <CardHeader>
@@ -128,12 +131,9 @@ const overlayContent = (
         </DocsDescription>
 
         <DocsDescription title="Higlighted Card">
-          <DocsPlayground code={CardHighlighted}>
+          <DocsPlayground code={cardHighlighted} props={availableProps}>
             <CardGrid>
-              <Card
-                type={CardType.Highlighted}
-                active
-              >
+              <CardHighlighted active>
                 <CardSplashHeader>
                   <CardHeader />
                 </CardSplashHeader>
@@ -141,21 +141,19 @@ const overlayContent = (
                   <strong>Shared components</strong>
                   <CardSplashSubText>(0/3) things are cool</CardSplashSubText>
                 </CardSplashText>
-              </Card>
+              </CardHighlighted>
             </CardGrid>
           </DocsPlayground>
         </DocsDescription>
 
         <DocsDescription title="Placeholder Card">
-          <DocsPlayground code={cardPlaceholder}>
+          <DocsPlayground code={cardPlaceholder} props={availableProps}>
             <CardGrid>
-              <Card
-                type={CardType.Placeholder}
-              >
+              <CardPlaceholder>
                 <CardSplashText>
                   <strong>Shared components</strong>
                 </CardSplashText>
-              </Card>
+              </CardPlaceholder>
             </CardGrid>
           </DocsPlayground>
         </DocsDescription>
