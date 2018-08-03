@@ -12,8 +12,10 @@ import IconChevronLeft from './icons/IconChevronLeft';
 import IconChevronRight from './icons/IconChevronRight';
 import IconChevronUp from './icons/IconChevronUp';
 import IconClose from './icons/IconClose';
+import IconCode from './icons/IconCode';
 import IconCuratr from './icons/IconCuratr';
 import IconEllipsisV from './icons/IconEllipsisV';
+import IconEye from './icons/IconEye';
 import IconFilter from './icons/IconFilter';
 import IconFlagCheckered from './icons/IconFlagCheckered';
 import IconGithub from './icons/IconGithub';
@@ -21,6 +23,7 @@ import IconHome from './icons/IconHome';
 import IconLink from './icons/IconLink';
 import IconNpm from './icons/IconNpm';
 import IconPlusCircle from './icons/IconPlusCircle';
+import IconProject from './icons/IconProject';
 import IconProps from './icons/IconProps';
 import IconSearch from './icons/IconSearch';
 import IconTachometer from './icons/IconTachometer';
@@ -42,8 +45,10 @@ export {
   IconChevronRight,
   IconChevronUp,
   IconClose,
+  IconCode,
   IconCuratr,
   IconEllipsisV,
+  IconEye,
   IconFilter,
   IconFlagCheckered,
   IconGithub,
@@ -52,6 +57,7 @@ export {
   IconNpm,
   IconPlusCircle,
   IconProps,
+  IconProject,
   IconSearch,
   IconTachometer,
   IconThumbsUp,
