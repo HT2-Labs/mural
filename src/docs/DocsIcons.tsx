@@ -16,8 +16,10 @@ import {
   IconChevronLeft,
   IconChevronRight,
   IconChevronUp,
+  IconCode,
   IconCuratr,
   IconEllipsisV,
+  IconEye,
   IconFilter,
   IconFlagCheckered,
   IconGithub,
@@ -25,6 +27,7 @@ import {
   IconLink,
   IconNpm,
   IconPlusCircle,
+  IconProject,
   IconSearch,
   IconTachometer,
   IconThumbsUp,
@@ -98,6 +101,9 @@ export default () => {
           <GridItem><IconThumbsUp /><GridItemText>IconThumbsUp</GridItemText></GridItem>
           <GridItem><IconTimes /><GridItemText>IconTimes</GridItemText></GridItem>
           <GridItem><IconTimesCircle /><GridItemText>IconTimesCircle</GridItemText></GridItem>
+          <GridItem><IconCode /><GridItemText>IconCode</GridItemText></GridItem>
+          <GridItem><IconProject /><GridItemText>IconProject</GridItemText></GridItem>
+          <GridItem><IconEye /><GridItemText>IconEye</GridItemText></GridItem>
         </Grid>
       </DocsPlayground>
     </>
