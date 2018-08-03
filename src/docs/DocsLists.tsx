@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 import { ListContainer, ListItem } from '../List';
-import { H1, H2, SizeType } from '../Text';
+import { H1, SizeType } from '../Text';
 
 import DocsPlayground from './DocsPlayground';
 
@@ -69,8 +69,6 @@ export default () => {
             <ListItem>Mimosa</ListItem>
           </ListContainer>
         </Wrapper>
-        <H2 size={SizeType.Large}>Examples</H2>
-        <hr />
       </DocsPlayground>
     </>
   );
