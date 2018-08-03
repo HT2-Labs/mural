@@ -1,4 +1,5 @@
 import * as React from 'react';
+import buttonGhostDisabledStyle from '../utils/buttonGhostDisabledStyle';
 import ghostButtonStyle from '../utils/buttonGhostStyle';
 import buttonStyle from '../utils/buttonStyle';
 import ButtonProps from './buttonProps';
@@ -20,12 +21,7 @@ export default ({
 
   const GhostButton = ghostButtonStyle(Button, color);
 
-  const DisabledGhostButton = Button.extend`
-    background-color: transparent;
-    border: 2px solid ${({ theme }) => theme.color.Disabled};
-    box-shadow: none;
-    color: ${({ theme }) => theme.color.DisabledText};
-  `;
+  const DisabledGhostButton = buttonGhostDisabledStyle(Button);
 
   const chooseButton = () => {
     if (disabled) { return DisabledGhostButton; }

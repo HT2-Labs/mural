@@ -1,4 +1,6 @@
 import * as React from 'react';
+import buttonGhostDisabledStyle from '../utils/buttonGhostDisabledStyle';
+import buttonGhostStyle from '../utils/buttonGhostStyle';
 import buttonIconStyle from '../utils/buttonIconStyle';
 import IconButtonProps, { Size } from './IconButtonProps';
 
@@ -29,19 +31,9 @@ export default ({
   const fontSize = getFontSize(size);
   const Button = buttonIconStyle(buttonSize, fontSize, disabled);
 
-  const GhostButton = Button.extend`
-    background-color: transparent;
-    border: 2px solid ${({ theme }) => theme.color.Button};
-    box-shadow: none;
-    color: ${({ theme }) => theme.color.Button};
-  `;
+  const GhostButton = buttonGhostStyle(Button, ({ theme }: any) => theme.color.Button);
 
-  const DisabledGhostButton = Button.extend`
-    background-color: transparent;
-    border: 2px solid ${({ theme }) => theme.color.Disabled};
-    box-shadow: none;
-    color: ${({ theme }) => theme.color.DisabledText};
-  `;
+  const DisabledGhostButton = buttonGhostDisabledStyle(Button);
 
   const chooseButton = () => {
     if (disabled) { return DisabledGhostButton; }

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import buttonIconStyle from '../utils/buttonIconStyle';
+import buttonInvisibleDisabledStyle from '../utils/buttonInvisibleDisabledStyle';
 import IconButtonProps, { Size } from './IconButtonProps';
 
 const getButtonSize = (size: Size) => {
@@ -40,12 +41,7 @@ export default ({
     color: ${pickedColor};
   `;
 
-  const DisabledInvisibleButton = Button.extend`
-    background-color: transparent;
-    border: 2px solid transparent;
-    box-shadow: none;
-    color: ${({ theme }) => theme.color.DisabledText};
-  `;
+  const DisabledInvisibleButton = buttonInvisibleDisabledStyle(Button);
 
   const chooseButton = () => {
     if (disabled) { return DisabledInvisibleButton; }
