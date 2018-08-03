@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styled from 'styled-components';
-import ButtonProps from './ButtonProps';
+import buttonStyle from '../utils/buttonStyle';
+import ButtonProps from './buttonProps';
 
 export default ({
   children,
@@ -10,37 +10,12 @@ export default ({
   onClick,
 }: ButtonProps) => {
 
-  const Button = styled.button`
-    border-radius: ${({ theme }) => theme.radius.Button};
-    box-sizing: border-box;
-    cursor: ${disabled ? 'not-allowed' : 'pointer'};
-    display: block;
-    flex-shrink: 0;
-    font-size: 16px;
-    font-weight: 500;
-    padding: 8px 16px;
-    text-align: center;
-    text-transform: uppercase;
-    font-family: 'Roboto', sans-serif;
-    width: ${fullWidth ? '100%' : 'auto'};
-    &:hover {
-      box-shadow: ${disabled ? 'none' : ({ theme }) => theme.shadow.Large};
-      transform: ${disabled ? 'none' : 'translate3D(0, 2px, 0)'};
-      transition: all 0.15s ease 0s;
-    }
-    &:active {
-      box-shadow: none;
-    }
-    & svg {
-      position: relative;
-      top: .1em;
-    }
-  `;
+  const Button = buttonStyle(fullWidth, disabled);
 
   const color = danger
     ? ({ theme }: any) => theme.color.Danger
     : ({ theme }: any) => theme.color.Button
-  ;
+    ;
 
   const NormalButton = Button.extend`
     background-color: ${color};

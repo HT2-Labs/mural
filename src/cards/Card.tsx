@@ -5,7 +5,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { ButtonGroup, IconInvisibleButton } from '../Button';
-import { Size } from '../buttons/IconButtonProps';
+import { Size } from '../buttons/IconButtons/iconButtonProps';
 import { IconEllipsisV, IconTimes } from '../Icon';
 import { Align } from '../utils/AlignmentProps';
 import CardProps, { CardType } from './CardProps';
@@ -108,10 +108,10 @@ export default class extends React.Component<CardProps> {
         <ButtonGroup alignment={Align.Right}>
           {this.state.showOverlay ?
             <IconInvisibleButton onClick={actionClose} size={Size.Small}>
-              <IconTimes color={'#000'}/>
+              <IconTimes color={'#000'} />
             </IconInvisibleButton> :
             <IconInvisibleButton onClick={actionOpen} size={Size.Small}>
-              <IconEllipsisV color={'#000'}/>
+              <IconEllipsisV color={'#000'} />
             </IconInvisibleButton>}
         </ButtonGroup>
         {this.state.showOverlay ? <OverlayContent>{overlayContent}</OverlayContent> : null}
