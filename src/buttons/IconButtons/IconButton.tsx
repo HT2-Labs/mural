@@ -1,6 +1,6 @@
 import * as React from 'react';
 import buttonIconStyle from '../utils/buttonIconStyle';
-import IconButtonProps, { Size } from './IconButtonProps';
+import IconButtonProps, { Size } from './iconButtonProps';
 
 const getButtonSize = (size: Size) => {
   switch (size) {

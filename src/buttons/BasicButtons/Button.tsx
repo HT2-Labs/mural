@@ -1,6 +1,6 @@
 import * as React from 'react';
 import buttonStyle from '../utils/buttonStyle';
-import ButtonProps from './ButtonProps';
+import ButtonProps from './buttonProps';
 
 export default ({
   children,
