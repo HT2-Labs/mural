@@ -1,6 +1,5 @@
 import * as React from 'react';
 import * as dom from 'react-dom';
-import { ThemeProvider } from 'styled-components';
 import styled from 'styled-components';
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
@@ -16,20 +15,17 @@ import DocsModal from './docs/DocsModal';
 import DocsSidebar from './docs/DocsSidebar';
 import DocsText from './docs/DocsText';
 import DocsThemes from './docs/DocsThemes';
+import { ThemeProvider } from './ThemeProvider';
 
 const Demo = () => {
-  const theme = {
+  const themeSet = {
     color: {
-      BodyText: '#2f2f2f',
+      Body: '#efefef',
       Button: '#076699',
-      ButtonText: '#ffffff',
-      Danger: '#ff0000',
+      Danger: '#ce0000',
       Disabled: '#eeeeee',
-      DisabledText: '#5d5d5d',
       Primary: '#41bfee',
-      PrimaryText: '#ffffff',
       Secondary: '#344a58',
-      SecondaryText: '#ffffff',
     },
     radius: {
       Button: '2px',
@@ -54,7 +50,7 @@ const Demo = () => {
   `;
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={themeSet}>
       <MainWrap>
         <DocsSidebar />
         <Main>
