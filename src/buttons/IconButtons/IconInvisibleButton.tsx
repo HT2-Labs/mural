@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styled from 'styled-components';
+import buttonIconStyle from '../utils/buttonIconStyle';
 import IconButtonProps, { Size } from './IconButtonProps';
 
 const getButtonSize = (size: Size) => {
@@ -20,6 +20,7 @@ const getFontSize = (size: Size) => {
 
 export default ({
   children,
+  color,
   disabled = false,
   size = Size.Medium,
   onClick,
@@ -27,49 +28,29 @@ export default ({
 
   const buttonSize = getButtonSize(size);
   const fontSize = getFontSize(size);
-  const Button = styled.button`
-    border-radius: 50%;
-    box-sizing: border-box;
-    cursor: ${disabled ? 'not-allowed' : 'pointer'};
-    display: block;
-    flex-shrink: 0;
-    font-size: ${fontSize};
-    font-weight: 500;
-    padding: 2px;
-    text-align: center;
-    text-transform: uppercase;
-    font-family: 'Roboto', sans-serif;
-    width: ${buttonSize};
-    height: ${buttonSize}};
-    &:hover {
-      background-color: #eee;
-    }
-    &:active {
-      box-shadow: none;
-    }
-    & svg {
-      position: relative;
-      top: .15em;
-    }
-  `;
 
-  const GhostButton = Button.extend`
+  const Button = buttonIconStyle(buttonSize, fontSize, disabled);
+
+  const pickedColor = color !== undefined ? color : ({ theme }: any) => theme.color.Button;
+
+  const InvisibleButton = Button.extend`
     background-color: transparent;
-    border: 2px solid ${({ theme }) => theme.color.Button};
+    border: 2px solid transparent;
     box-shadow: none;
-    color: ${({ theme }) => theme.color.Button};
+    color: ${pickedColor};
   `;
 
-  const DisabledGhostButton = Button.extend`
+  const DisabledInvisibleButton = Button.extend`
     background-color: transparent;
-    border: 2px solid ${({ theme }) => theme.color.Disabled};
+    border: 2px solid transparent;
     box-shadow: none;
     color: ${({ theme }) => theme.color.DisabledText};
   `;
 
   const chooseButton = () => {
-    if (disabled) { return DisabledGhostButton; }
-    return GhostButton;
+    if (disabled) { return DisabledInvisibleButton; }
+    return InvisibleButton;
+
   };
 
   const ChosenButton = chooseButton();
