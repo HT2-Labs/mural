@@ -25,41 +25,51 @@ import IconFlagCheckered from '../icons/IconFlagCheckered';
 import IconTimesCircle from '../icons/IconTimesCircle';
 
 const codeSnippetButton =
-  `import { Button } from '@ht2-labs/mural/Button';
+  `import {
+  Button,
+  ButtonGroup,
+} from ''@ht2-labs/mural/Button';
 <ButtonGroup>
   <Button>Button</Button>
   <Button disabled>Button</Button>
 </ButtonGroup>`;
 
 const codeSnippetGhostButton =
-  `<ButtonGroup>
-  <Button>1</Button>
-  <Button> 2 </Button>
-</ButtonGroup>
-<ButtonGroup alignment={Align.Center}>
-  <Button>3</Button>
-  <Button> 4 </Button>
-</ButtonGroup>
-<ButtonGroup alignment={Align.Right}>
-  <Button>5</Button>
-  <Button> 6 </Button>
+  `import {
+  GhostButton,
+  ButtonGroup,
+} from '@ht2-labs/mural/Button';
+<ButtonGroup>
+  <GhostButton> Ghost Button</GButton>
+  <GhostButton disable> Disabled Ghost Button </Button>
 </ButtonGroup>`;
 
 const codeSnippetDangerButton =
-  `<ButtonGroup>
+  `import {
+  Button,
+  GhostButton,
+  ButtonGroup,
+} from '@ht2-labs/mural/Button';
+<ButtonGroup>
   <Button danger> Danger Button</Button>
   <GhostButton danger> Danger Ghost Button </Button>
 </ButtonGroup>`;
 
 const codeSnippetInvisibleButton =
-  `import { Button } from '@ht2-labs/mural/Button';
+  `import { InvisibleButton, ButtonGroup } from '@ht2-labs/mural/Button';
 <ButtonGroup>
   <InvisibleButton>Invisible Button</Button>
   <InvisibleButton disabled>Disabled Invisible Button</Button>
 </ButtonGroup>`;
 
 const codeSnippetButtonGroup =
-  `<ButtonGroup>
+  `import {
+  Button,
+  ButtonGroup,
+} from '@ht2-labs/mural/Button';
+import { Align } from '@ht2-labs/mural/utils/AlignmentProps';
+
+<ButtonGroup>
   <Button>1</Button>
   <Button> 2 </Button>
 </ButtonGroup>
@@ -75,6 +85,13 @@ const codeSnippetButtonGroup =
 const codeSnippetIconButton =
   `
 import Size from '../buttons/IconButtonProps';
+import {
+  IconButton,
+  IconInvisibleButton,
+  IconGhostButton,
+  ButtonGroup,
+} from '@ht2-labs/mural/Button';
+
 <P>Icon Button</P>
 <ButtonGroup>
   <IconButton><IconAsterisk /></IconButton>
@@ -151,74 +168,74 @@ export default () => {
         </DocsPlayground>
       </DocsDescription>
       <DocsDescription title="Invisible Button">
-      <P>Only use invisible buttons in combination with other buttons (i.e. in a  <code>ButtonGroup</code>). Do NOT use them by themselves as this can be confusing.</P>
-      <DocsPlayground code={codeSnippetInvisibleButton} props={availablePropsButton}>
-        <ButtonGroup>
-          <InvisibleButton
+        <P>Only use invisible buttons in combination with other buttons (i.e. in a  <code>ButtonGroup</code>). Do NOT use them by themselves as this can be confusing.</P>
+        <DocsPlayground code={codeSnippetInvisibleButton} props={availablePropsButton}>
+          <ButtonGroup>
+            <InvisibleButton
 
-          >Invisible Button <IconChevronRight /></InvisibleButton>
-          <InvisibleButton
+            >Invisible Button <IconChevronRight /></InvisibleButton>
+            <InvisibleButton
 
-            disabled
-          >Disabled Invisible Button <IconChevronRight /></InvisibleButton>
-        </ButtonGroup>
-      </DocsPlayground>
+              disabled
+            >Disabled Invisible Button <IconChevronRight /></InvisibleButton>
+          </ButtonGroup>
+        </DocsPlayground>
       </DocsDescription>
       <P>Buttons will adjust their width to their content by default. To force them to
         use their space, add the <code>fullWidth</code> prop.</P>
 
       <DocsDescription title="Icon Button">
-      <DocsPlayground code={codeSnippetIconButton} props={availablePropsIconButton}>
-        <P>Icon Button</P>
-        <ButtonGroup>
-          <IconButton><IconAsterisk /></IconButton>
-          <IconButton><IconEllipsisV /></IconButton>
-          <IconButton disabled><IconChevronRight /></IconButton>
-          <IconButton><IconFlagCheckered /></IconButton>
-          <IconButton><IconCalendar /></IconButton>
-          <IconButton><IconTimesCircle /></IconButton>
-          <IconButton><IconBullseye /></IconButton>
-        </ButtonGroup>
-        <P>Invisible Icon Button</P>
-        <ButtonGroup>
-          <IconInvisibleButton><IconAsterisk /></IconInvisibleButton>
-          <IconInvisibleButton><IconEllipsisV /></IconInvisibleButton>
-          <IconInvisibleButton><IconChevronRight /></IconInvisibleButton>
-          <IconInvisibleButton><IconFlagCheckered /></IconInvisibleButton>
-          <IconInvisibleButton><IconCalendar /></IconInvisibleButton>
-          <IconInvisibleButton><IconTimesCircle /></IconInvisibleButton>
-          <IconInvisibleButton><IconBullseye /></IconInvisibleButton>
-        </ButtonGroup>
-        <P>Ghost Icon Button</P>
-        <ButtonGroup>
-          <IconGhostButton><IconAsterisk /></IconGhostButton>
-          <IconGhostButton><IconEllipsisV /></IconGhostButton>
-          <IconGhostButton disabled><IconChevronRight /></IconGhostButton>
-          <IconGhostButton><IconFlagCheckered /></IconGhostButton>
-          <IconGhostButton><IconCalendar /></IconGhostButton>
-          <IconGhostButton><IconTimesCircle /></IconGhostButton>
-          <IconGhostButton><IconBullseye /></IconGhostButton>
-        </ButtonGroup>
-      </DocsPlayground>
+        <DocsPlayground code={codeSnippetIconButton} props={availablePropsIconButton}>
+          <P>Icon Button</P>
+          <ButtonGroup>
+            <IconButton><IconAsterisk /></IconButton>
+            <IconButton><IconEllipsisV /></IconButton>
+            <IconButton disabled><IconChevronRight /></IconButton>
+            <IconButton><IconFlagCheckered /></IconButton>
+            <IconButton><IconCalendar /></IconButton>
+            <IconButton><IconTimesCircle /></IconButton>
+            <IconButton><IconBullseye /></IconButton>
+          </ButtonGroup>
+          <P>Invisible Icon Button</P>
+          <ButtonGroup>
+            <IconInvisibleButton><IconAsterisk /></IconInvisibleButton>
+            <IconInvisibleButton><IconEllipsisV /></IconInvisibleButton>
+            <IconInvisibleButton><IconChevronRight /></IconInvisibleButton>
+            <IconInvisibleButton><IconFlagCheckered /></IconInvisibleButton>
+            <IconInvisibleButton><IconCalendar /></IconInvisibleButton>
+            <IconInvisibleButton><IconTimesCircle /></IconInvisibleButton>
+            <IconInvisibleButton><IconBullseye /></IconInvisibleButton>
+          </ButtonGroup>
+          <P>Ghost Icon Button</P>
+          <ButtonGroup>
+            <IconGhostButton><IconAsterisk /></IconGhostButton>
+            <IconGhostButton><IconEllipsisV /></IconGhostButton>
+            <IconGhostButton disabled><IconChevronRight /></IconGhostButton>
+            <IconGhostButton><IconFlagCheckered /></IconGhostButton>
+            <IconGhostButton><IconCalendar /></IconGhostButton>
+            <IconGhostButton><IconTimesCircle /></IconGhostButton>
+            <IconGhostButton><IconBullseye /></IconGhostButton>
+          </ButtonGroup>
+        </DocsPlayground>
       </DocsDescription>
       {/* <DocsCode code={codeSnippetButtonGroup} /> */}
 
       <DocsDescription title="Button Group">
-      <P>If you are using more than one button, you should use a ButtonGroup to contain them</P>
-      <DocsPlayground code={codeSnippetButtonGroup} props={availablePropsButtonGroup}>
-        <ButtonGroup>
-          <Button>1</Button>
-          <Button>2</Button>
-        </ButtonGroup>
-        <ButtonGroup alignment={Align.Center}>
-          <Button>3</Button>
-          <Button>4</Button>
-        </ButtonGroup>
-        <ButtonGroup alignment={Align.Right}>
-          <Button>5</Button>
-          <Button>6</Button>
-        </ButtonGroup>
-      </DocsPlayground>
+        <P>If you are using more than one button, you should use a ButtonGroup to contain them</P>
+        <DocsPlayground code={codeSnippetButtonGroup} props={availablePropsButtonGroup}>
+          <ButtonGroup>
+            <Button>1</Button>
+            <Button>2</Button>
+          </ButtonGroup>
+          <ButtonGroup alignment={Align.Center}>
+            <Button>3</Button>
+            <Button>4</Button>
+          </ButtonGroup>
+          <ButtonGroup alignment={Align.Right}>
+            <Button>5</Button>
+            <Button>6</Button>
+          </ButtonGroup>
+        </DocsPlayground>
       </DocsDescription>
     </>
   );

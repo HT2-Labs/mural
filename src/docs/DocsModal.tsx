@@ -21,7 +21,20 @@ import { Align } from '../utils/AlignmentProps';
 import DocsPlayground from './DocsPlayground';
 
 const codeSnippet =
-  `
+  `import { H1, H3, P, SizeType } from '../Text';
+
+import { Button, ButtonGroup, GhostButton, IconInvisibleButton } from '@ht2-labs/mural/Button';
+import { IconClose } from '@ht2-labs/mural/Icon';
+import FullPageModal from '@ht2-labs/mural/modal/FullPageModal';
+import FullPageModalActions from '@ht2-labs/mural/modal/FullPageModalActions';
+import FullPageModalBody from '@ht2-labs/mural/modal/FullPageModalBody';
+import FullPageModalHeader from '@ht2-labs/mural/modal/FullPageModalHeader';
+import Modal from '@ht2-labs/mural/modal/Modal';
+import ModalActions from '@ht2-labs/mural/modal/ModalActions';
+import ModalBody from '@ht2-labs/mural/modal/ModalBody';
+import ModalFooter from '@ht2-labs/mural/modal/ModalFooter';
+import ModalHeader from '@ht2-labs/mural/modal/ModalHeader';
+import { Align } from '@ht2-labs/mural/utils/AlignmentProps';
 //Modal
 <Modal open={this.state.modalOpen} onCloseFn={this.closeModal}>
 <ModalHeader>
