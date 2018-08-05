@@ -4,6 +4,7 @@ import MenuProps from './menuProps';
 
 export default ({ active = false, children, onClick }: MenuProps) => {
   const TabItem = styled.div`
+    display: flex;
     border-bottom: 4px solid;
     border-color: ${active ? ({ theme }) => theme.color.Button : 'transparent'};
     box-sizing: border-box;
@@ -21,6 +22,11 @@ export default ({ active = false, children, onClick }: MenuProps) => {
       border-color: ${({ theme }) => theme.color.Button};
       color: ${({ theme }) => theme.color.Button};
       cursor: pointer;
+    }
+    & svg {
+      position: relative;
+      top: .15em;
+      margin-left: 6px;
     }
   `;
 
