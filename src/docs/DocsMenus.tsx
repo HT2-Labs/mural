@@ -9,7 +9,7 @@ import DocsPlayground from './DocsPlayground';
 
 const codeSnippet =
   `import { TabMenu, TabItem } from '@ht2-labs/mural/Menu';
-import { Align } from '../utils/AlignmentProps';
+import { Align } from '@ht2-labs/mural/utils/AlignmentProps';
 <TabMenu>
   <TabItem active>Goals</TabItem>
   <TabItem>Archive</TabItem>

@@ -8,14 +8,16 @@ import TabItem from '../menus/TabItem';
 import TabMenu from '../menus/TabMenu';
 import DocsCode from './DocsCode';
 
+import { IconCode, IconProject } from '../Icon';
+import IconEye from '../icons/IconEye';
 import { Align } from '../utils/AlignmentProps';
 
-const Example = ({ children }: any) => {
+const Preview = ({ children }: any) => {
   return <div>{children}</div>;
 };
 
 export enum Tab {
-  Example,
+  Preview,
   Code,
   Props,
 }
@@ -28,7 +30,7 @@ export interface PlaygroundProps {
 
 const getContent = (content: any, children: any, code: any, props: any) => {
   switch (content) {
-    case Tab.Example: default: return <Example children={children} />;
+    case Tab.Preview: default: return <Preview children={children} />;
     case Tab.Code: return <DocsCode code={code} />;
     case Tab.Props: return props;
   }
@@ -53,7 +55,7 @@ export default class extends React.Component<PlaygroundProps> {
           active={this.checkIfActive(Tab.Code)}
           onClick={() => { this.swapTab(Tab.Code); }}
         >
-          Code
+          Code <IconCode />
         </TabItem>
       );
     }
@@ -67,7 +69,7 @@ export default class extends React.Component<PlaygroundProps> {
           active={this.checkIfActive(Tab.Props)}
           onClick={() => { this.swapTab(Tab.Props); }}
         >
-          Props
+          Props <IconProject />
         </TabItem>
       );
     }
@@ -98,10 +100,10 @@ export default class extends React.Component<PlaygroundProps> {
         <Header>
           <TabMenu alignment={Align.Right}>
             <TabItem
-              active={this.checkIfActive(Tab.Example)}
-              onClick={() => { this.swapTab(Tab.Example); }}
+              active={this.checkIfActive(Tab.Preview)}
+              onClick={() => { this.swapTab(Tab.Preview); }}
             >
-              Example
+              Preview <IconEye />
             </TabItem>
             {this.getCodeButton()}
             {this.getPropsButton()}
