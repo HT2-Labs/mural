@@ -1,5 +1,6 @@
 // tslint:disable:no-magic-numbers
-import { darken, lighten, readableColor } from 'polished';
+// tslint:disable:object-literal-sort-keys
+import { darken, em, lighten, modularScale, readableColor } from 'polished';
 import * as React from 'react';
 import { ThemeProvider } from 'styled-components';
 
@@ -9,35 +10,47 @@ export interface ThemeProps {
 }
 
 export default ({ children, theme }: ThemeProps) => {
+
+  const lightenValue = 0.1;
+  const DarkenValue = 0.1;
+  const modularScaleValue = 'perfectFourth';
+
   const constructedTheme = {
     color: {
       Body: theme.color.Body,
       BodyText: readableColor(theme.color.Body),
 
       Button: theme.color.Button,
-      ButtonDark: darken(0.1, theme.color.Button),
-      ButtonLight: lighten(0.1, theme.color.Button),
+      ButtonDark: darken(DarkenValue, theme.color.Button),
+      ButtonLight: lighten(lightenValue, theme.color.Button),
       ButtonText: readableColor(theme.color.Button),
 
       Danger: theme.color.Danger,
-      DangerDark: darken(0.1, theme.color.Danger),
-      DangerLight: lighten(0.1, theme.color.Danger),
+      DangerDark: darken(DarkenValue, theme.color.Danger),
+      DangerLight: lighten(lightenValue, theme.color.Danger),
       DangerText: readableColor(theme.color.Danger),
 
       Disabled: theme.color.Disabled,
-      DisabledDark: darken(0.1, theme.color.Disabled),
-      DisabledLight: lighten(0.1, theme.color.Disabled),
+      DisabledDark: darken(DarkenValue, theme.color.Disabled),
+      DisabledLight: lighten(lightenValue, theme.color.Disabled),
       DisabledText: readableColor(theme.color.Disabled),
 
       Primary: theme.color.Primary,
-      PrimaryDark: darken(0.1, theme.color.Primary),
-      PrimaryLight: lighten(0.1, theme.color.Primary),
+      PrimaryDark: darken(DarkenValue, theme.color.Primary),
+      PrimaryLight: lighten(lightenValue, theme.color.Primary),
       PrimaryText: readableColor(theme.color.Primary),
 
       Secondary: theme.color.Secondary,
-      SecondaryDark: darken(0.1, theme.color.Secondary),
-      SecondaryLight: lighten(0.1, theme.color.Secondary),
+      SecondaryDark: darken(DarkenValue, theme.color.Secondary),
+      SecondaryLight: lighten(lightenValue, theme.color.Secondary),
       SecondaryText: readableColor(theme.color.Secondary),
+    },
+    font: {
+      Small: modularScale(-1, em(theme.font.Base), modularScaleValue),
+      Base: em(theme.font.Base),
+      Medium: modularScale(2, em(theme.font.Base), modularScaleValue),
+      Large: modularScale(3, em(theme.font.Base), modularScaleValue),
+      ExtraLarge: modularScale(4, em(theme.font.Base), modularScaleValue),
     },
     radius: {
       Button: '2px',

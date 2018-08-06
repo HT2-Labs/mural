@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
 
 export enum SizeType {
-  Body,
   Small,
+  Body,
   Medium,
   Large,
   ExtraLarge,
