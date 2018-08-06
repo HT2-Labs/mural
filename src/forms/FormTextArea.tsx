@@ -3,8 +3,7 @@
 // tslint:disable:no-this
 import * as React from 'react';
 import styled from 'styled-components';
-import { SizeType } from '../Text';
-import H3 from '../text/H1';
+import { Label, SizeType } from '../Text';
 
 export interface Props {
     readonly label?: string;
@@ -12,12 +11,7 @@ export interface Props {
 }
 
 export default class FormInput extends React.Component<Props> {
-    private getLabel() {
-        if (this.props.label !== undefined) {
-            return(<H3 size={SizeType.Body}>{this.props.label}</H3>);
-        }
-        return null;
-    }
+
   public render() {
     const Input = styled.textarea`
       background-color: #fff;
@@ -39,7 +33,10 @@ export default class FormInput extends React.Component<Props> {
     return (
       <>
       <InputContainer>
-        {this.getLabel()}
+        {this.props.label !== undefined
+          ? <Label size={SizeType.Body}>{this.props.label}</Label>
+          : null
+        }
         <Input placeholder={this.props.placeholder}/>
       </InputContainer>
       </ >
