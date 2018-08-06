@@ -1,6 +1,11 @@
 // tslint:disable:max-line-length
 import * as React from 'react';
 
+import Table from '../tables/Table';
+import TableCell from '../tables/TableCell';
+import TableRow from '../tables/TableRow';
+
+import DocsPropsTableHeader from '../docs/DocsPropsTableHeader';
 import { H1, H2, H3, H4, P, SizeType } from '../Text';
 import DocsDescription from './DocsDescription';
 import DocsPlayground from './DocsPlayground';
@@ -17,7 +22,17 @@ const codeSnippet =
 `;
 
 const availableProps =
-  'Prop: size - Default: body';
+<Table>
+<DocsPropsTableHeader/>
+  <TableRow>
+    <TableCell>size</TableCell>
+    <TableCell>
+      SizeType.Body, SizeType.Small, SizeType.Medium, SizeType.Large, SizeType.ExtraLarge
+    </TableCell>
+    <TableCell>SizeType.Body </TableCell>
+    <TableCell>Defines the text size of the header</TableCell>
+  </TableRow>
+</Table>;
 export default () => {
   return (
     <>
