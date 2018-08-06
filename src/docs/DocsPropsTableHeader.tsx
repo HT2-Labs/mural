@@ -1,6 +1,3 @@
-// tslint:disable:max-file-line-count
-// tslint:disable:no-class
-// tslint:disable:no-this
 import * as React from 'react';
 import TableHeader from '../tables/TableHeader';
 import TableRow from '../tables/TableRow';
