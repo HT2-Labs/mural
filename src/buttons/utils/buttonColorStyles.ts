@@ -2,16 +2,24 @@
 export interface ButtonColorProps {
   readonly danger?: boolean | undefined;
   readonly disabled?: boolean | undefined;
+  readonly useTextColor?: boolean | undefined;
 }
 
-export default ({danger, disabled}: ButtonColorProps) => {
+export default ({danger = false, disabled = false, useTextColor = false}: ButtonColorProps) => {
+
   let background = null;
   let backgroundLight = null;
   let text = null;
 
   if (disabled) {
-    background = ({ theme }: any) => theme.color.Disabled;
-    backgroundLight = ({ theme }: any) => theme.color.Disabled;
+    // Check if we should use the text color over the background color
+    // This is only needed for 'disabled' and 'ghost' buttons
+    background = useTextColor
+      ? ({ theme }: any) => theme.color.DisabledText
+      : ({ theme }: any) => theme.color.Disabled;
+    backgroundLight = useTextColor
+      ? ({ theme }: any) => theme.color.DisabledText
+      : ({ theme }: any) => theme.color.Disabled;
     text = ({ theme }: any) => theme.color.DisabledText;
   } else if (danger) {
     background = ({ theme }: any) => theme.color.Danger;
