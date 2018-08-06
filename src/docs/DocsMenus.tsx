@@ -4,7 +4,12 @@ import TabItem from '../menus/TabItem';
 import TabMenu from '../menus/TabMenu';
 import { Align } from '../utils/AlignmentProps';
 
-import { H1, H2, P, SizeType } from '../Text';
+import Table from '../tables/Table';
+import TableCell from '../tables/TableCell';
+import TableRow from '../tables/TableRow';
+
+import DocsPropsTableHeader from '../docs/DocsPropsTableHeader';
+import { H1, P, SizeType } from '../Text';
 import DocsPlayground from './DocsPlayground';
 
 const codeSnippet =
@@ -27,6 +32,17 @@ import { Align } from '@ht2-labs/mural/utils/AlignmentProps';
 </TabMenu>
 `;
 
+const availableProps =
+<Table>
+<DocsPropsTableHeader/>
+  <TableRow>
+    <TableCell>active</TableCell>
+    <TableCell>Boolean</TableCell>
+    <TableCell>Undefined </TableCell>
+    <TableCell>Defines whether this is the active tab</TableCell>
+  </TableRow>
+</Table>;
+
 export default () => {
 
   return (
@@ -34,7 +50,7 @@ export default () => {
       <H1 size={SizeType.ExtraLarge}>Menus</H1>
       <hr />
       <P>Simple tab menu. Only use for top level page specific navigation.</P>
-      <DocsPlayground code={codeSnippet} props="bleep">
+      <DocsPlayground code={codeSnippet} props={availableProps}>
         <TabMenu>
           <TabItem active>Goals</TabItem>
           <TabItem>Archive</TabItem>
@@ -51,11 +67,6 @@ export default () => {
           <TabItem>Reports</TabItem>
         </TabMenu>
       </DocsPlayground>
-      <H2 size={SizeType.Large}>Props</H2>
-
-      <code>Prop: active</code> - <code>Default: none</code>
-      <hr />
-
     </>
   );
 };

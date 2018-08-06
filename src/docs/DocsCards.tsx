@@ -18,6 +18,10 @@ import {
 } from '../Card';
 
 import { Button, GhostButton } from '../Button';
+import DocsPropsTableHeader from '../docs/DocsPropsTableHeader';
+import Table from '../tables/Table';
+import TableCell from '../tables/TableCell';
+import TableRow from '../tables/TableRow';
 import { H1, SizeType } from '../Text';
 import DocsDescription from './DocsDescription';
 import DocsPlayground from './DocsPlayground';
@@ -72,9 +76,22 @@ class DocsCards extends React.Component {
   </CardSplashText>
 </CardPlaceholder>
 `);
-    const availableProps = (
-      'Prop: active - Default: undefined; Prop: overlayContent - Default: undefined'
-    );
+    const availableProps =
+<Table>
+  <DocsPropsTableHeader/>
+  <TableRow>
+    <TableCell>active</TableCell>
+    <TableCell>Boolean</TableCell>
+    <TableCell>Undefined</TableCell>
+    <TableCell>Size of button</TableCell>
+  </TableRow>
+  <TableRow>
+    <TableCell>overlayContent</TableCell>
+    <TableCell>JSX</TableCell>
+    <TableCell>Undefined</TableCell>
+    <TableCell>Defines whether the button is disabled or not</TableCell>
+  </TableRow>
+</Table>;
 
     const cardOverlay = (
       `import { Card, CardBody, CardHeader, CardTitle } from '@ht2-labs/mural/Card';

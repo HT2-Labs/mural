@@ -24,7 +24,7 @@ export enum Tab {
 
 export interface PlaygroundProps {
   readonly code?: String;
-  readonly props?: String;
+  readonly props?: any;
   readonly children?: any;
 }
 
@@ -114,7 +114,7 @@ export default class extends React.Component<PlaygroundProps> {
             this.state.playgroundTab,
             this.props.children,
             this.props.code,
-            <code>{this.props.props}</code>,
+            this.props.props,
           )}
         </Content>
       </PlayGround >
