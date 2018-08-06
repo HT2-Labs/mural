@@ -1,9 +1,9 @@
 // tslint:disable:no-class
 // tslint:disable:no-this
-
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import styled from 'styled-components';
+import ModalCard from './ModalCard';
 
 export interface IModalProps {
   readonly children?: React.ReactNode;
@@ -48,17 +48,6 @@ class Modal extends React.Component<IModalProps> {
 export default (props: IModalProps) => {
 
   const isModalOpen = props.open !== undefined ? props.open : false;
-
-  const ModalCard = styled.div`
-    border-radius: ${({ theme }) => theme.radius.Button};
-    background-color: #fff;
-    height: auto;
-    max-width: 600px;
-    padding: 20px;
-    position: absolute;
-    width: 100%;
-    z-index: 1600;
-  `;
 
   const PageCover = styled.div`
     align-items: center;
