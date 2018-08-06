@@ -13,7 +13,10 @@ import IconEye from '../icons/IconEye';
 import { Align } from '../utils/AlignmentProps';
 
 const Preview = ({ children }: any) => {
-  return <div>{children}</div>;
+  const PreviewWrap = styled.div`
+    width: 100%;
+  `;
+  return <PreviewWrap>{children}</PreviewWrap>;
 };
 
 export enum Tab {
