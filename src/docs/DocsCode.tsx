@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 export default ({ code = 'Code Demo' }) => {
   const Code = styled.div`
-    max-width: 657px;
+    width: 100%;
   `;
   return (
     <Code>
