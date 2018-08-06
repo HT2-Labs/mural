@@ -6,7 +6,7 @@ import * as React from 'react';
 
 import { H1, H3, P, SizeType } from '../Text';
 
-import { Button, ButtonGroup, GhostButton, IconButtonInvisible } from '../buttons';
+import { Button, ButtonGhost, ButtonGroup, IconButtonInvisible } from '../buttons';
 import { IconClose } from '../Icon';
 import FullPageModal from '../modal/FullPageModal';
 import FullPageModalActions from '../modal/FullPageModalActions';
@@ -23,7 +23,7 @@ import DocsPlayground from './DocsPlayground';
 const codeSnippet =
   `import { H1, H3, P, SizeType } from '../Text';
 
-import { Button, ButtonGroup, GhostButton, IconButtonInvisible } from '@ht2-labs/mural/Button';
+import { Button, ButtonGroup, ButtonGhost, IconButtonInvisible } from '@ht2-labs/mural/Button';
 import { IconClose } from '@ht2-labs/mural/Icon';
 import FullPageModal from '@ht2-labs/mural/modal/FullPageModal';
 import FullPageModalActions from '@ht2-labs/mural/modal/FullPageModalActions';
@@ -40,7 +40,7 @@ import { Align } from '@ht2-labs/mural/utils/AlignmentProps';
 <ModalHeader>
   <H3 size={SizeType.Large}>This is a Modal</H3>
   <ModalActions>
-    <InvisibleButton onClick={this.closeModal}>
+    <ButtonInvisible onClick={this.closeModal}>
       <IconClose />
     </InvisbleButton>
   </ModalActions>
@@ -60,7 +60,7 @@ import { Align } from '@ht2-labs/mural/utils/AlignmentProps';
   <ModalActions>
     <ButtonGroup>
       <Button>Yes</Button>
-      <GhostButton>Hmm</GhostButton>
+      <ButtonGhost>Hmm</ButtonGhost>
       <Button onClick={this.closeModal} danger>No!</Button>
     </ButtonGroup>
   </ModalActions>
@@ -154,7 +154,7 @@ export default class DocsModal extends React.Component {
               <ModalActions>
                 <ButtonGroup>
                   <Button>Yes</Button>
-                  <GhostButton>Hmm</GhostButton>
+                  <ButtonGhost>Hmm</ButtonGhost>
                   <Button onClick={this.closeModal} danger>No!</Button>
                 </ButtonGroup>
               </ModalActions>

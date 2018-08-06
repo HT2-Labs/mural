@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 export interface Props {
-  readonly fullWidth: any;
-  readonly disabled: any;
+  readonly fullWidth: boolean | undefined;
+  readonly disabled: boolean | undefined;
 }
 
-export default (fullWidth: any, disabled: any) => {
+export default ({ fullWidth = false, disabled = false }: Props) => {
   const Button = styled.button`
-    border-radius: ${({ theme }) => theme.radius.Button};
+    border-radius: ${({ theme }) => theme.radius.Small};
     box-sizing: border-box;
     cursor: ${disabled ? 'not-allowed' : 'pointer'};
     display: block;
@@ -20,9 +20,8 @@ export default (fullWidth: any, disabled: any) => {
     font-family: 'Roboto', sans-serif;
     width: ${fullWidth ? '100%' : 'auto'};
     &:hover {
-      box-shadow: ${disabled ? 'none' : ({ theme }) => theme.shadow.Large};
-      transform: ${disabled ? 'none' : 'translate3D(0, 2px, 0)'};
-      transition: all 0.15s ease 0s;
+      box-shadow: ${disabled ? 'none' : ({ theme }) => theme.shadow.Small};
+      transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
     }
     &:active {
       box-shadow: none;

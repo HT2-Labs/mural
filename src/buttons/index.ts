@@ -1,7 +1,7 @@
 // Basic buttons
 import Button from './BasicButtons/Button';
-import GhostButton from './BasicButtons/GhostButton';
-import InvisibleButton from './BasicButtons/InvisibleButton';
+import ButtonGhost from './BasicButtons/ButtonGhost';
+import ButtonInvisible from './BasicButtons/ButtonInvisible';
 
 // Icon buttons
 import IconButton from './IconButtons/IconButton';
@@ -13,8 +13,8 @@ import ButtonGroup from './ButtonGroup';
 export {
   Button,
   ButtonGroup,
-  GhostButton,
-  InvisibleButton,
+  ButtonGhost,
+  ButtonInvisible,
   IconButton,
   IconButtonInvisible,
 };

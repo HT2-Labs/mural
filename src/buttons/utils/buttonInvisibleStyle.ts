@@ -1,14 +1,17 @@
 
-export interface Props {
+export interface InvisibleButtonProps {
   readonly Button: any;
   readonly color: any;
 }
-export default (Button: any, color: any) => {
-  const InvisibleButton = Button.extend`
+export default ({ Button, color }: InvisibleButtonProps ) => {
+  const ButtonInvisible = Button.extend`
     background-color: transparent;
     border: 2px solid transparent;
     box-shadow: none;
-    color: ${color};
+    color: ${color.background};
+    &:hover {
+      color: ${color.backgroundLight};
+    }
   `;
-  return InvisibleButton;
+  return ButtonInvisible;
 };

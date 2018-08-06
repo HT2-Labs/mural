@@ -1,7 +1,7 @@
 import * as React from 'react';
 import buttonStyle from '../utils/buttonBasicStyle';
 import buttonColorStyles from '../utils/buttonColorStyles';
-import buttonNormalStyles from '../utils/buttonNormalStyles';
+import buttonGhostStyle from '../utils/buttonGhostStyle';
 import ButtonProps from './buttonProps';
 
 export default ({
@@ -14,14 +14,15 @@ export default ({
 
   const Button = buttonStyle({ fullWidth, disabled });
   const color = buttonColorStyles({ danger, disabled });
-  const NormalButton = buttonNormalStyles({ Button, color });
+  const ButtonGhost = buttonGhostStyle({ Button, color });
 
   return (
-    <NormalButton
+    <ButtonGhost
       disabled={disabled}
       onClick={onClick}
+      role={'button'}
     >
       {children}
-    </NormalButton>
+    </ButtonGhost>
   );
 };

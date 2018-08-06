@@ -34,18 +34,18 @@ export default ({
 
   const pickedColor = color !== undefined ? color : ({ theme }: any) => theme.color.Button;
 
-  const InvisibleButton = Button.extend`
+  const ButtonInvisible = Button.extend`
     background-color: transparent;
     border: 2px solid transparent;
     box-shadow: none;
     color: ${pickedColor};
   `;
 
-  const DisabledInvisibleButton = buttonInvisibleDisabledStyle(Button);
+  const DisabledButtonInvisible = buttonInvisibleDisabledStyle(Button);
 
   const chooseButton = () => {
-    if (disabled) { return DisabledInvisibleButton; }
-    return InvisibleButton;
+    if (disabled) { return DisabledButtonInvisible; }
+    return ButtonInvisible;
 
   };
 

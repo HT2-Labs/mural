@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { H1, H3, SizeType } from '../Text';
 
-import { GhostButton } from '../buttons';
+import { ButtonGhost } from '../buttons';
 import PageActions from '../headers/PageActions';
 import PageHeader from '../headers/PageHeader';
 import PageHeaderText from '../headers/PageHeaderText';
@@ -30,7 +30,7 @@ import PageTitle from '@ht2-labs/mural/headers/PageTitle';
     </H3>
   </PageHeaderText>
   <PageActions>
-    <GhostButton onClick={deadClick} ><IconEdit /> Edit</GhostButton>
+    <ButtonGhost onClick={deadClick} ><IconEdit /> Edit</ButtonGhost>
   </PageActions>
 </PageTitle>
 </PageHeader>`;
@@ -53,7 +53,7 @@ export default () => {
             </H3>
             </PageHeaderText>
             <PageActions>
-              <GhostButton onClick={deadClick} ><IconEdit /> Edit</GhostButton>
+              <ButtonGhost onClick={deadClick} ><IconEdit /> Edit</ButtonGhost>
             </PageActions>
           </PageTitle>
           <TabMenu>

@@ -23,7 +23,7 @@ const Demo = () => {
       Body: '#efefef',
       Button: '#076699',
       Danger: '#ce0000',
-      Disabled: '#eeeeee',
+      Disabled: '#ddd',
       Primary: '#41bfee',
       Secondary: '#344a58',
     },
@@ -31,12 +31,14 @@ const Demo = () => {
       Base: '16px',
     },
     radius: {
-      Button: '2px',
-      Card: '12px',
+      Large: '50%',
+      Medium: '12px',
+      Small: '2px',
     },
     shadow: {
       Large: '0 2px 2px 2px rgba(0, 0, 0, 0.12)',
-      Main: '0px 1px 3px 0px rgba(0, 0, 0, 0.05)',
+      Medium: '0px 1px 5px 0px rgba(0, 0, 0, 0.3)',
+      Small: 'rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px',
     },
   };
 
