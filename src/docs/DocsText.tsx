@@ -28,9 +28,9 @@ export default () => {
           <H1 size={SizeType.ExtraLarge}>Header 1 Element</H1>
           <H2 size={SizeType.Large}>Header 2 Element</H2>
           <H3 size={SizeType.Medium}>Header 3 Element</H3>
-          <H4 size={SizeType.Small}>Header 4 Element</H4>
+          <H4 size={SizeType.Body}>Header 4 Element</H4>
           <P size={SizeType.Body}>Paragraph Element</P>
-          <H1>Header 1 Element</H1>
+          <P size={SizeType.Small}>Small Paragraph Element</P>
         </DocsPlayground>
       </DocsDescription>
     </>
