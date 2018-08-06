@@ -1,5 +1,5 @@
 import * as React from 'react';
-import buttonStyle from '../utils/buttonBasicStyle';
+import buttonStyle from '../utils/buttonBasicStyles';
 import buttonColorStyles from '../utils/buttonColorStyles';
 import buttonNormalStyles from '../utils/buttonNormalStyles';
 import ButtonProps from './buttonProps';

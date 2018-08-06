@@ -1,7 +1,7 @@
 import * as React from 'react';
-import buttonStyle from '../utils/buttonBasicStyle';
+import buttonStyle from '../utils/buttonBasicStyles';
 import buttonColorStyles from '../utils/buttonColorStyles';
-import buttonInvisibleStyle from '../utils/buttonInvisibleStyle';
+import buttonInvisibleStyle from '../utils/buttonInvisibleStyles';
 import ButtonProps from './buttonProps';
 
 export default ({
