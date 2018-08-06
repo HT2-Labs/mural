@@ -40,42 +40,41 @@ const Demo = () => {
     },
   };
 
-    const MainWrap = styled.div`
-      display: grid;
-      grid-template-columns: 250px auto;
-      grid-template-rows: auto;
-      max-width: 1200px;
-      height: 100%;
-    `;
+  const MainWrap = styled.div`
+    display: grid;
+    grid-template-columns: 250px auto;
+    grid-template-rows: auto;
+    max-width: 1200px;
+    height: 100%;
+  `;
 
-    const Main = styled.main`
-      padding: 20px;
-    `;
+  const Main = styled.main`
+    padding: 20px;
+  `;
 
-    return (
-      <ThemeProvider theme={theme}>
-        <MainWrap>
-          <DocsSidebar />
-          <Main>
-            <Switch>
-              <Route exact path="/" component={DocsIntro} />
-              <Route path="/themes" component={DocsThemes} />
-              <Route path="/buttons" component={DocsButtons} />
-              <Route path="/cards" component={DocsCards} />
-              <Route path="/forms" component={DocsForms} />
-              <Route path="/headers" component={DocsHeaders} />
-              <Route path="/icons" component={DocsIcons} />
-              <Route path="/lists" component={DocsLists} />
-              <Route path="/menus" component={DocsMenus} />
-              <Route path="/modal" component={DocsModal} />
-              <Route path="/text" component={DocsText} />
-            </Switch>
-          </Main>
-        </MainWrap>
-      </ThemeProvider>
-    );
-  };
-}
+  return (
+    <ThemeProvider theme={theme}>
+      <MainWrap>
+        <DocsSidebar />
+        <Main>
+          <Switch>
+            <Route exact path="/" component={DocsIntro} />
+            <Route path="/themes" component={DocsThemes} />
+            <Route path="/buttons" component={DocsButtons} />
+            <Route path="/cards" component={DocsCards} />
+            <Route path="/forms" component={DocsForms} />
+            <Route path="/headers" component={DocsHeaders} />
+            <Route path="/icons" component={DocsIcons} />
+            <Route path="/lists" component={DocsLists} />
+            <Route path="/menus" component={DocsMenus} />
+            <Route path="/modal" component={DocsModal} />
+            <Route path="/text" component={DocsText} />
+          </Switch>
+        </Main>
+      </MainWrap>
+    </ThemeProvider>
+  );
+};
 
 const element = document.getElementsByClassName('app')[0];
 dom.render(<BrowserRouter><Demo /></BrowserRouter>, element);
