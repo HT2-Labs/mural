@@ -13,7 +13,10 @@ import IconEye from '../icons/IconEye';
 import { Align } from '../utils/AlignmentProps';
 
 const Preview = ({ children }: any) => {
-  return <div>{children}</div>;
+  const PreviewWrap = styled.div`
+    width: 100%;
+  `;
+  return <PreviewWrap>{children}</PreviewWrap>;
 };
 
 export enum Tab {
@@ -83,6 +86,7 @@ export default class extends React.Component<PlaygroundProps> {
   public render() {
     const PlayGround = styled.div`
       background-color: #f0f0f0;
+      margin-bottom: 20px;
     `;
 
     const Content = styled.div`

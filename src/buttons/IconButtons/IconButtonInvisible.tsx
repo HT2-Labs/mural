@@ -1,7 +1,7 @@
 import * as React from 'react';
-import buttonGhostDisabledStyle from '../utils/buttonGhostDisabledStyle';
-import buttonGhostStyle from '../utils/buttonGhostStyle';
-import buttonIconStyle from '../utils/buttonIconStyle';
+import buttonColorStyles from '../utils/buttonColorStyles';
+import buttonIconStyle from '../utils/buttonIconBasicStyles';
+import buttonInvisibleStyles from '../utils/buttonInvisibleStyles';
 import IconButtonProps, { Size } from './iconButtonProps';
 
 const getButtonSize = (size: Size) => {
@@ -29,26 +29,20 @@ export default ({
 
   const buttonSize = getButtonSize(size);
   const fontSize = getFontSize(size);
+
+  // Add to buttonColorStyles to set text color in place of background color
+  const useTextColor = true;
+
   const Button = buttonIconStyle(buttonSize, fontSize, disabled);
-
-  const GhostButton = buttonGhostStyle(Button, ({ theme }: any) => theme.color.Button);
-
-  const DisabledGhostButton = buttonGhostDisabledStyle(Button);
-
-  const chooseButton = () => {
-    if (disabled) { return DisabledGhostButton; }
-    return GhostButton;
-  };
-
-  const ChosenButton = chooseButton();
+  const color = buttonColorStyles({ disabled, useTextColor });
+  const IconButtonInvisible = buttonInvisibleStyles({ Button, color });
 
   return (
-    <ChosenButton
+    <IconButtonInvisible
       disabled={disabled}
       onClick={onClick}
-      role={'button'}
     >
       {children}
-    </ChosenButton>
+    </IconButtonInvisible>
   );
 };

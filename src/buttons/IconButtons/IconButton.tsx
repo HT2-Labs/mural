@@ -1,5 +1,7 @@
 import * as React from 'react';
-import buttonIconStyle from '../utils/buttonIconStyle';
+import buttonColorStyles from '../utils/buttonColorStyles';
+import buttonIconStyle from '../utils/buttonIconBasicStyles';
+import buttonNormalStyles from '../utils/buttonNormalStyles';
 import IconButtonProps, { Size } from './iconButtonProps';
 
 const getButtonSize = (size: Size) => {
@@ -29,35 +31,15 @@ export default ({
   const fontSize = getFontSize(size);
 
   const Button = buttonIconStyle(buttonSize, fontSize, disabled);
-
-  const NormalButton = Button.extend`
-    background-color: ${({ theme }) => theme.color.Button};
-    border: ${({ theme }) => theme.color.Button};
-    box-shadow: ${({ theme }) => theme.shadow.Main};
-    color: ${({ theme }) => theme.color.ButtonText};
-  `;
-
-  const DisabledButton = Button.extend`
-    background-color: ${({ theme }) => theme.color.Disabled};
-    border: 2px solid ${({ theme }) => theme.color.Disabled};
-    box-shadow: none;
-    color: ${({ theme }) => theme.color.DisabledText};
-  `;
-
-  const chooseButton = () => {
-    if (disabled) { return DisabledButton; }
-    return NormalButton;
-  };
-
-  const ChosenButton = chooseButton();
+  const color = buttonColorStyles({ disabled });
+  const IconButtonNormal = buttonNormalStyles({ Button, color});
 
   return (
-    <ChosenButton
+    <IconButtonNormal
       disabled={disabled}
       onClick={onClick}
-      role={'button'}
     >
       {children}
-    </ChosenButton>
+    </IconButtonNormal>
   );
 };

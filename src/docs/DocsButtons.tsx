@@ -6,13 +6,12 @@ import * as React from 'react';
 
 import {
   Button,
+  ButtonGhost,
   ButtonGroup,
-  GhostButton,
+  ButtonInvisible,
   IconButton,
-  IconGhostButton,
-  IconInvisibleButton,
-  InvisibleButton,
-} from '../Button';
+  IconButtonInvisible,
+} from '../buttons';
 
 import DocsPropsTableHeader from '../docs/DocsPropsTableHeader';
 import { IconAsterisk, IconChevronRight, IconEllipsisV } from '../Icon';
@@ -41,32 +40,32 @@ const codeSnippetButton =
   <Button disabled>Button</Button>
 </ButtonGroup>`;
 
-const codeSnippetGhostButton =
+const codeSnippetButtonGhost =
   `import {
-  GhostButton,
+  ButtonGhost,
   ButtonGroup,
 } from '@ht2-labs/mural/Button';
 <ButtonGroup>
-  <GhostButton> Ghost Button</GButton>
-  <GhostButton disable> Disabled Ghost Button </Button>
+  <ButtonGhost> Ghost Button</GButton>
+  <ButtonGhost disable> Disabled Ghost Button </Button>
 </ButtonGroup>`;
 
 const codeSnippetDangerButton =
   `import {
   Button,
-  GhostButton,
+  ButtonGhost,
   ButtonGroup,
 } from '@ht2-labs/mural/Button';
 <ButtonGroup>
   <Button danger> Danger Button</Button>
-  <GhostButton danger> Danger Ghost Button </Button>
+  <ButtonGhost danger> Danger Ghost Button </Button>
 </ButtonGroup>`;
 
-const codeSnippetInvisibleButton =
-  `import { InvisibleButton, ButtonGroup } from '@ht2-labs/mural/Button';
+const codeSnippetButtonInvisible =
+  `import { ButtonInvisible, ButtonGroup } from '@ht2-labs/mural/Button';
 <ButtonGroup>
-  <InvisibleButton>Invisible Button</Button>
-  <InvisibleButton disabled>Disabled Invisible Button</Button>
+  <ButtonInvisible>Invisible Button</Button>
+  <ButtonInvisible disabled>Disabled Invisible Button</Button>
 </ButtonGroup>`;
 
 const codeSnippetButtonGroup =
@@ -94,8 +93,8 @@ const codeSnippetIconButton =
 import Size from '../buttons/IconButtonProps';
 import {
   IconButton,
-  IconInvisibleButton,
-  IconGhostButton,
+  IconButtonInvisible,
+  IconButtonGhost,
   ButtonGroup,
 } from '@ht2-labs/mural/Button';
 
@@ -108,23 +107,13 @@ import {
 </ButtonGroup>
 <P>Invisible Icon Button</P>
 <ButtonGroup>
-  <IconInvisibleButton><IconAsterisk /></IconInvisibleButton>
-  <IconInvisibleButton><IconEllipsisV /></IconInvisibleButton>
-  <IconInvisibleButton><IconChevronRight /></IconInvisibleButton>
-  <IconInvisibleButton><IconFlagCheckered /></IconInvisibleButton>
-  <IconInvisibleButton><IconCalendar /></IconInvisibleButton>
-  <IconInvisibleButton><IconTimesCircle /></IconInvisibleButton>
-  <IconInvisibleButton><IconBullseye /></IconInvisibleButton>
-</ButtonGroup>
-<P>Ghost Icon Button</P>
-<ButtonGroup>
-  <IconGhostButton><IconAsterisk /></IconGhostButton>
-  <IconGhostButton danger><IconEllipsisV /></IconGhostButton>
-  <IconGhostButton disabled><IconChevronRight /></IconGhostButton>
-  <IconGhostButton><IconFlagCheckered /></IconGhostButton>
-  <IconGhostButton><IconCalendar /></IconGhostButton>
-  <IconGhostButton><IconTimesCircle /></IconGhostButton>
-  <IconGhostButton><IconBullseye /></IconGhostButton>
+  <IconButtonInvisible><IconAsterisk /></IconButtonInvisible>
+  <IconButtonInvisible><IconEllipsisV /></IconButtonInvisible>
+  <IconButtonInvisible><IconChevronRight /></IconButtonInvisible>
+  <IconButtonInvisible><IconFlagCheckered /></IconButtonInvisible>
+  <IconButtonInvisible><IconCalendar /></IconButtonInvisible>
+  <IconButtonInvisible><IconTimesCircle /></IconButtonInvisible>
+  <IconButtonInvisible><IconBullseye /></IconButtonInvisible>
 </ButtonGroup>`;
 
 const availablePropsButtonGroup = <Table>
@@ -185,14 +174,14 @@ export default () => {
       </DocsDescription>
       <DocsDescription title="Ghost Button">
         <P>Ghost buttons can be used as a secondary option or to overlay on splash images. Ghost buttons can have their color overwritten by using the <code>ghostColor</code> prop.</P>
-        <DocsPlayground code={codeSnippetGhostButton} props={availablePropsButton}>
+        <DocsPlayground code={codeSnippetButtonGhost} props={availablePropsButton}>
           <ButtonGroup>
-            <GhostButton
+            <ButtonGhost
 
-            >Ghost Button</GhostButton>
-            <GhostButton
+            >Ghost Button</ButtonGhost>
+            <ButtonGhost
               disabled
-            >Disabled Ghost Button</GhostButton>
+            >Disabled Ghost Button</ButtonGhost>
           </ButtonGroup>
         </DocsPlayground>
       </DocsDescription>
@@ -204,24 +193,23 @@ export default () => {
 
               danger
             >Danger !</Button>
-            <GhostButton
+            <ButtonGhost
 
               danger
-            >Danger Ghost Button</GhostButton>
+            >Danger Ghost Button</ButtonGhost>
           </ButtonGroup>
         </DocsPlayground>
       </DocsDescription>
       <DocsDescription title="Invisible Button">
         <P>Only use invisible buttons in combination with other buttons (i.e. in a  <code>ButtonGroup</code>). Do NOT use them by themselves as this can be confusing.</P>
-        <DocsPlayground code={codeSnippetInvisibleButton} props={availablePropsButton}>
+        <DocsPlayground code={codeSnippetButtonInvisible} props={availablePropsButton}>
           <ButtonGroup>
-            <InvisibleButton
-
-            >Invisible Button <IconChevronRight /></InvisibleButton>
-            <InvisibleButton
-
-              disabled
-            >Disabled Invisible Button <IconChevronRight /></InvisibleButton>
+            <ButtonInvisible>
+              Invisible Button <IconChevronRight />
+            </ButtonInvisible>
+            <ButtonInvisible disabled>
+              Disabled Invisible Button <IconChevronRight />
+            </ButtonInvisible>
           </ButtonGroup>
         </DocsPlayground>
       </DocsDescription>
@@ -242,27 +230,16 @@ export default () => {
           </ButtonGroup>
           <P>Invisible Icon Button</P>
           <ButtonGroup>
-            <IconInvisibleButton><IconAsterisk /></IconInvisibleButton>
-            <IconInvisibleButton><IconEllipsisV /></IconInvisibleButton>
-            <IconInvisibleButton><IconChevronRight /></IconInvisibleButton>
-            <IconInvisibleButton><IconFlagCheckered /></IconInvisibleButton>
-            <IconInvisibleButton><IconCalendar /></IconInvisibleButton>
-            <IconInvisibleButton><IconTimesCircle /></IconInvisibleButton>
-            <IconInvisibleButton><IconBullseye /></IconInvisibleButton>
-          </ButtonGroup>
-          <P>Ghost Icon Button</P>
-          <ButtonGroup>
-            <IconGhostButton><IconAsterisk /></IconGhostButton>
-            <IconGhostButton><IconEllipsisV /></IconGhostButton>
-            <IconGhostButton disabled><IconChevronRight /></IconGhostButton>
-            <IconGhostButton><IconFlagCheckered /></IconGhostButton>
-            <IconGhostButton><IconCalendar /></IconGhostButton>
-            <IconGhostButton><IconTimesCircle /></IconGhostButton>
-            <IconGhostButton><IconBullseye /></IconGhostButton>
+            <IconButtonInvisible><IconAsterisk /></IconButtonInvisible>
+            <IconButtonInvisible><IconEllipsisV /></IconButtonInvisible>
+            <IconButtonInvisible disabled><IconChevronRight /></IconButtonInvisible>
+            <IconButtonInvisible><IconFlagCheckered /></IconButtonInvisible>
+            <IconButtonInvisible><IconCalendar /></IconButtonInvisible>
+            <IconButtonInvisible><IconTimesCircle /></IconButtonInvisible>
+            <IconButtonInvisible><IconBullseye /></IconButtonInvisible>
           </ButtonGroup>
         </DocsPlayground>
       </DocsDescription>
-      {/* <DocsCode code={codeSnippetButtonGroup} /> */}
 
       <DocsDescription title="Button Group">
         <P>If you are using more than one button, you should use a ButtonGroup to contain them</P>

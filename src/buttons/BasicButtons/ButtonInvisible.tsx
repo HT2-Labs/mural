@@ -1,7 +1,7 @@
 import * as React from 'react';
 import buttonStyle from '../utils/buttonBasicStyles';
 import buttonColorStyles from '../utils/buttonColorStyles';
-import buttonNormalStyles from '../utils/buttonNormalStyles';
+import buttonInvisibleStyle from '../utils/buttonInvisibleStyles';
 import ButtonProps from './buttonProps';
 
 export default ({
@@ -12,16 +12,20 @@ export default ({
   onClick,
 }: ButtonProps) => {
 
+  // Add to buttonColorStyles to set text color in place of background color
+  const useTextColor = true;
+
   const Button = buttonStyle({ fullWidth, disabled });
-  const color = buttonColorStyles({ danger, disabled });
-  const NormalButton = buttonNormalStyles({ Button, color });
+  const color = buttonColorStyles({ danger, disabled, useTextColor });
+  const InvisibleButton = buttonInvisibleStyle({ Button, color });
 
   return (
-    <NormalButton
+    <InvisibleButton
       disabled={disabled}
       onClick={onClick}
+      role={'button'}
     >
       {children}
-    </NormalButton>
+    </InvisibleButton>
   );
 };

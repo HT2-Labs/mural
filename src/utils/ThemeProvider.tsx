@@ -1,6 +1,12 @@
 // tslint:disable:no-magic-numbers
 // tslint:disable:object-literal-sort-keys
-import { darken, em, lighten, modularScale, readableColor } from 'polished';
+import {
+  darken,
+  em,
+  lighten,
+  modularScale,
+  readableColor,
+} from 'polished';
 import * as React from 'react';
 import { ThemeProvider } from 'styled-components';
 
@@ -33,7 +39,7 @@ export default ({ children, theme }: ThemeProps) => {
       Disabled: theme.color.Disabled,
       DisabledDark: darken(DarkenValue, theme.color.Disabled),
       DisabledLight: lighten(lightenValue, theme.color.Disabled),
-      DisabledText: readableColor(theme.color.Disabled),
+      DisabledText: darken(0.5, theme.color.Disabled),
 
       Primary: theme.color.Primary,
       PrimaryDark: darken(DarkenValue, theme.color.Primary),
@@ -53,12 +59,14 @@ export default ({ children, theme }: ThemeProps) => {
       ExtraLarge: modularScale(4, em(theme.font.Base), modularScaleValue),
     },
     radius: {
-      Button: '2px',
-      Card: '12px',
+      Large: theme.radius.Large,
+      Medium: theme.radius.Medium,
+      Small: theme.radius.Small,
     },
     shadow: {
-      Large: '0 2px 2px 2px rgba(0, 0, 0, 0.12)',
-      Main: '0px 1px 3px 0px rgba(0, 0, 0, 0.05)',
+      Large: theme.shadow.Large,
+      Medium: theme.shadow.Medium,
+      Small: theme.shadow.Small,
     },
   };
   return (

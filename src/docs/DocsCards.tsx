@@ -17,7 +17,7 @@ import {
   CardTitle,
 } from '../Card';
 
-import { Button, GhostButton } from '../Button';
+import { Button, ButtonGhost } from '../buttons';
 import DocsPropsTableHeader from '../docs/DocsPropsTableHeader';
 import Table from '../tables/Table';
 import TableCell from '../tables/TableCell';
@@ -95,15 +95,15 @@ class DocsCards extends React.Component {
 
     const cardOverlay = (
       `import { Card, CardBody, CardHeader, CardTitle } from '@ht2-labs/mural/Card';
-import { Button, GhostButton } from '@ht2-labs/mural/Button';
+import { Button, ButtonGhost } from '@ht2-labs/mural/Button';
 
 const overlayContent = (
   <>
     <Button fullWidth>Edit</Button>
-    <GhostButton
+    <ButtonGhost
       fullWidth
       danger
-    >Delete</GhostButton>
+    >Delete</ButtonGhost>
   </>
 );
 
@@ -120,10 +120,10 @@ const overlayContent = (
     const overlayContent = (
       <>
         <Button fullWidth>Edit</Button>
-        <GhostButton
+        <ButtonGhost
           fullWidth
           danger
-        >Delete</GhostButton>
+        >Delete</ButtonGhost>
       </>
     );
 
