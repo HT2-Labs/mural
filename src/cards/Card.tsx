@@ -4,7 +4,7 @@
 // tslint:disable:prefer-function-over-method
 import * as React from 'react';
 import styled from 'styled-components';
-import { ButtonGroup, IconInvisibleButton } from '../Button';
+import { ButtonGroup, IconButtonInvisible } from '../buttons';
 import { Size } from '../buttons/IconButtons/iconButtonProps';
 import { IconEllipsisV, IconTimes } from '../Icon';
 import { Align } from '../utils/AlignmentProps';
@@ -107,12 +107,12 @@ export default class extends React.Component<CardProps> {
       <Overlay>
         <ButtonGroup alignment={Align.Right}>
           {this.state.showOverlay ?
-            <IconInvisibleButton onClick={actionClose} size={Size.Small}>
+            <IconButtonInvisible onClick={actionClose} size={Size.Small}>
               <IconTimes color={'#000'} />
-            </IconInvisibleButton> :
-            <IconInvisibleButton onClick={actionOpen} size={Size.Small}>
+            </IconButtonInvisible> :
+            <IconButtonInvisible onClick={actionOpen} size={Size.Small}>
               <IconEllipsisV color={'#000'} />
-            </IconInvisibleButton>}
+            </IconButtonInvisible>}
         </ButtonGroup>
         {this.state.showOverlay ? <OverlayContent>{overlayContent}</OverlayContent> : null}
       </Overlay>

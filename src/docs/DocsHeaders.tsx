@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { H1, H3, SizeType } from '../Text';
 
-import { GhostButton } from '../Button';
+import { GhostButton } from '../buttons';
 import PageActions from '../headers/PageActions';
 import PageHeader from '../headers/PageHeader';
 import PageHeaderText from '../headers/PageHeaderText';

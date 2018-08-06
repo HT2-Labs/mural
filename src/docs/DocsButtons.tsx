@@ -9,10 +9,9 @@ import {
   ButtonGroup,
   GhostButton,
   IconButton,
-  IconGhostButton,
-  IconInvisibleButton,
+  IconButtonInvisible,
   InvisibleButton,
-} from '../Button';
+} from '../buttons';
 import { IconAsterisk, IconChevronRight, IconEllipsisV } from '../Icon';
 import { H1, P, SizeType } from '../Text';
 import { Align } from '../utils/AlignmentProps';
@@ -87,7 +86,7 @@ const codeSnippetIconButton =
 import Size from '../buttons/IconButtonProps';
 import {
   IconButton,
-  IconInvisibleButton,
+  IconButtonInvisible,
   IconGhostButton,
   ButtonGroup,
 } from '@ht2-labs/mural/Button';
@@ -101,23 +100,13 @@ import {
 </ButtonGroup>
 <P>Invisible Icon Button</P>
 <ButtonGroup>
-  <IconInvisibleButton><IconAsterisk /></IconInvisibleButton>
-  <IconInvisibleButton><IconEllipsisV /></IconInvisibleButton>
-  <IconInvisibleButton><IconChevronRight /></IconInvisibleButton>
-  <IconInvisibleButton><IconFlagCheckered /></IconInvisibleButton>
-  <IconInvisibleButton><IconCalendar /></IconInvisibleButton>
-  <IconInvisibleButton><IconTimesCircle /></IconInvisibleButton>
-  <IconInvisibleButton><IconBullseye /></IconInvisibleButton>
-</ButtonGroup>
-<P>Ghost Icon Button</P>
-<ButtonGroup>
-  <IconGhostButton><IconAsterisk /></IconGhostButton>
-  <IconGhostButton danger><IconEllipsisV /></IconGhostButton>
-  <IconGhostButton disabled><IconChevronRight /></IconGhostButton>
-  <IconGhostButton><IconFlagCheckered /></IconGhostButton>
-  <IconGhostButton><IconCalendar /></IconGhostButton>
-  <IconGhostButton><IconTimesCircle /></IconGhostButton>
-  <IconGhostButton><IconBullseye /></IconGhostButton>
+  <IconButtonInvisible><IconAsterisk /></IconButtonInvisible>
+  <IconButtonInvisible><IconEllipsisV /></IconButtonInvisible>
+  <IconButtonInvisible><IconChevronRight /></IconButtonInvisible>
+  <IconButtonInvisible><IconFlagCheckered /></IconButtonInvisible>
+  <IconButtonInvisible><IconCalendar /></IconButtonInvisible>
+  <IconButtonInvisible><IconTimesCircle /></IconButtonInvisible>
+  <IconButtonInvisible><IconBullseye /></IconButtonInvisible>
 </ButtonGroup>`;
 
 const availablePropsButtonGroup = `Prop: alignment [Align.Left/Align.Right/Align.Center] - Default: undefined`;
@@ -198,23 +187,13 @@ export default () => {
           </ButtonGroup>
           <P>Invisible Icon Button</P>
           <ButtonGroup>
-            <IconInvisibleButton><IconAsterisk /></IconInvisibleButton>
-            <IconInvisibleButton><IconEllipsisV /></IconInvisibleButton>
-            <IconInvisibleButton><IconChevronRight /></IconInvisibleButton>
-            <IconInvisibleButton><IconFlagCheckered /></IconInvisibleButton>
-            <IconInvisibleButton><IconCalendar /></IconInvisibleButton>
-            <IconInvisibleButton><IconTimesCircle /></IconInvisibleButton>
-            <IconInvisibleButton><IconBullseye /></IconInvisibleButton>
-          </ButtonGroup>
-          <P>Ghost Icon Button</P>
-          <ButtonGroup>
-            <IconGhostButton><IconAsterisk /></IconGhostButton>
-            <IconGhostButton><IconEllipsisV /></IconGhostButton>
-            <IconGhostButton disabled><IconChevronRight /></IconGhostButton>
-            <IconGhostButton><IconFlagCheckered /></IconGhostButton>
-            <IconGhostButton><IconCalendar /></IconGhostButton>
-            <IconGhostButton><IconTimesCircle /></IconGhostButton>
-            <IconGhostButton><IconBullseye /></IconGhostButton>
+            <IconButtonInvisible><IconAsterisk /></IconButtonInvisible>
+            <IconButtonInvisible><IconEllipsisV /></IconButtonInvisible>
+            <IconButtonInvisible><IconChevronRight /></IconButtonInvisible>
+            <IconButtonInvisible><IconFlagCheckered /></IconButtonInvisible>
+            <IconButtonInvisible><IconCalendar /></IconButtonInvisible>
+            <IconButtonInvisible><IconTimesCircle /></IconButtonInvisible>
+            <IconButtonInvisible><IconBullseye /></IconButtonInvisible>
           </ButtonGroup>
         </DocsPlayground>
       </DocsDescription>

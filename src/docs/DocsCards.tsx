@@ -17,7 +17,7 @@ import {
   CardTitle,
 } from '../Card';
 
-import { Button, GhostButton } from '../Button';
+import { Button, GhostButton } from '../buttons';
 import { H1, SizeType } from '../Text';
 import DocsDescription from './DocsDescription';
 import DocsPlayground from './DocsPlayground';
