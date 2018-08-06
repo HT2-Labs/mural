@@ -17,8 +17,12 @@ import ModalActions from '../modal/ModalActions';
 import ModalBody from '../modal/ModalBody';
 import ModalFooter from '../modal/ModalFooter';
 import ModalHeader from '../modal/ModalHeader';
+import Table from '../tables/Table';
+import TableCell from '../tables/TableCell';
+import TableRow from '../tables/TableRow';
 import { Align } from '../utils/AlignmentProps';
 import DocsPlayground from './DocsPlayground';
+import DocsPropsTableHeader from './DocsPropsTableHeader';
 
 const codeSnippet =
   `import { H1, H3, P, SizeType } from '../Text';
@@ -90,6 +94,23 @@ import { Align } from '@ht2-labs/mural/utils/AlignmentProps';
 </ModalFooter>
 </FullPageModal>`;
 
+const availableProps =
+<Table>
+<DocsPropsTableHeader/>
+  <TableRow>
+    <TableCell>open</TableCell>
+    <TableCell>Boolean</TableCell>
+    <TableCell>Undefined </TableCell>
+    <TableCell>Defines whether the modal is open</TableCell>
+  </TableRow>
+  <TableRow>
+    <TableCell>onCloseFn</TableCell>
+    <TableCell>Function</TableCell>
+    <TableCell>Undefined</TableCell>
+    <TableCell>A function to call when a user attempts to close the modal</TableCell>
+  </TableRow>
+</Table>;
+
 export default class DocsModal extends React.Component {
   public readonly state = {
     fullpageModalOpen: false,
@@ -125,7 +146,7 @@ export default class DocsModal extends React.Component {
 
         <H1 size={SizeType.ExtraLarge}>Headers</H1>
         <hr />
-        <DocsPlayground code={codeSnippet}>
+        <DocsPlayground code={codeSnippet} props={availableProps}>
           <ButtonGroup>
             <Button onClick={this.openModal}>Open Modal</Button>
             <Button onClick={this.openFullpageModal}>Open Fullpage Modal</Button>

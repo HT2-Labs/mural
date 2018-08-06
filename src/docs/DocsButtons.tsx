@@ -12,7 +12,14 @@ import {
   IconButton,
   IconButtonInvisible,
 } from '../buttons';
+
+import DocsPropsTableHeader from '../docs/DocsPropsTableHeader';
 import { IconAsterisk, IconChevronRight, IconEllipsisV } from '../Icon';
+
+import Table from '../tables/Table';
+import TableCell from '../tables/TableCell';
+import TableRow from '../tables/TableRow';
+
 import { H1, P, SizeType } from '../Text';
 import { Align } from '../utils/AlignmentProps';
 import DocsDescription from './DocsDescription';
@@ -109,10 +116,47 @@ import {
   <IconButtonInvisible><IconBullseye /></IconButtonInvisible>
 </ButtonGroup>`;
 
-const availablePropsButtonGroup = `Prop: alignment [Align.Left/Align.Right/Align.Center] - Default: undefined`;
-const availablePropsIconButton = `Prop: disabled - Default: undefined;
-Prop: size [Size.Small/Size.Medium/Size.Large] - Default: Size.Medium`;
-const availablePropsButton = `Prop: disabled - Default: undefined; Prop: danger - Default: undefined`;
+const availablePropsButtonGroup = <Table>
+<DocsPropsTableHeader/>
+<TableRow>
+  <TableCell>alignment</TableCell>
+  <TableCell>Align.Left, Align.Right, Align.Center</TableCell>
+  <TableCell> </TableCell>
+  <TableCell>Horizontal alignment of component</TableCell>
+  </TableRow>
+</Table>;
+const availablePropsIconButton =
+<Table>
+<DocsPropsTableHeader/>
+  <TableRow>
+    <TableCell>size</TableCell>
+    <TableCell>Size.Small, Size.Medium, Size.Large</TableCell>
+    <TableCell>Size.Medium</TableCell>
+    <TableCell>Size of button</TableCell>
+  </TableRow>
+  <TableRow>
+    <TableCell>disabled</TableCell>
+    <TableCell>Boolean</TableCell>
+    <TableCell>Undefined</TableCell>
+    <TableCell>Defines whether the button is disabled or not</TableCell>
+  </TableRow>
+</Table>;
+const availablePropsButton =
+<Table>
+<DocsPropsTableHeader/>
+  <TableRow>
+    <TableCell>danger</TableCell>
+    <TableCell>Boolean</TableCell>
+    <TableCell>Undefined </TableCell>
+    <TableCell>Shows the user that this is a dangerous button eg. Delete</TableCell>
+  </TableRow>
+  <TableRow>
+    <TableCell>disabled</TableCell>
+    <TableCell>Boolean</TableCell>
+    <TableCell>Undefined</TableCell>
+    <TableCell>Defines whether the button is disabled or not</TableCell>
+  </TableRow>
+</Table>;
 export default () => {
   return (
     <>
