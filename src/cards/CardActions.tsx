@@ -4,7 +4,9 @@ import CardProps from './CardProps';
 
 export default ({ children }: CardProps) => {
   const CardActions = styled.div`
-    margin: auto 4px auto auto;
+    display: flex;
+    position: absolute;
+    bottom: 0;
   `;
 
   return (

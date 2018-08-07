@@ -6,6 +6,7 @@ import { Align } from '../utils/AlignmentProps';
 interface ButtonGroupProps {
   readonly children: React.ReactNode;
   readonly alignment?: Align;
+  readonly condensed?: boolean;
 }
 
 const getAlignment = (alignment?: Align) => {
@@ -17,7 +18,7 @@ const getAlignment = (alignment?: Align) => {
   }
 };
 
-export default ({ children, alignment }: ButtonGroupProps) => {
+export default ({ children, alignment, condensed = false }: ButtonGroupProps) => {
   const alignType = getAlignment(alignment);
 
   const ButtonGroup = styled.div`
@@ -28,7 +29,7 @@ export default ({ children, alignment }: ButtonGroupProps) => {
     ${alignType};
 
     > Button {
-      margin-left: 8px;
+      ${!condensed ? 'margin-left: 8px;' : null}
     }
     > Button:first-child {
       margin-left: 0;
