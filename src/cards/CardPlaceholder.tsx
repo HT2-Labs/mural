@@ -29,7 +29,7 @@ export default class extends React.Component<CardProps> {
 
     const Card = styled.div`
       border-bottom: ${active === true ? '8px solid rgba(0, 0, 0, 0.2)' : 'none'};
-      border-radius: ${({ theme }) => theme.radius.Card};
+      border-radius: ${({ theme }) => theme.radius.Medium};
       box-sizing: border-box;
       color: ${({ theme }) => theme.color.BodyText};
       cursor: ${onClick !== undefined ? 'pointer' : 'initial'};
@@ -51,7 +51,6 @@ export default class extends React.Component<CardProps> {
     `;
 
     const Overlay = styled.div`
-      bottom: 0;
       box-sizing: border-box;
       padding: 4px;
       position: absolute;
