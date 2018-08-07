@@ -3,11 +3,12 @@ import styled from '../../node_modules/styled-components';
 
 interface TabMenuProps {
     readonly children: React.ReactNode;
+    readonly alignment?: string;
   }
 
-  export default ({ children }: TabMenuProps) => {
+  export default ({ children, alignment }: TabMenuProps) => {
     const Table = styled.th`
-      text-align: left;
+      ${alignment !== undefined ? `text-align: ${alignment};` : `text-align: left`};
       border-bottom: solid 3px #ddd;
       border-collapse: collapse;
       padding: 4px;
