@@ -8,6 +8,7 @@ import {
   Button,
   ButtonGhost,
   ButtonGroup,
+  ButtonGroupVertical,
   ButtonInvisible,
   IconButton,
   IconButtonInvisible,
@@ -257,6 +258,15 @@ export default () => {
             <Button>5</Button>
             <Button>6</Button>
           </ButtonGroup>
+        </DocsPlayground>
+      </DocsDescription>
+      <DocsDescription title="Button Group Vertical">
+        <P>If you are using more than one button, you should use a ButtonGroup to contain them</P>
+        <DocsPlayground code={codeSnippetButtonGroup} props={availablePropsButtonGroup}>
+          <ButtonGroupVertical>
+            <Button>1</Button>
+            <Button>2</Button>
+          </ButtonGroupVertical>
         </DocsPlayground>
       </DocsDescription>
       <DocsDescription title="Dos And Don'ts">
