@@ -48,7 +48,6 @@ export default class extends React.Component<CardProps> {
       display: flex;
       flex-direction: column;
       height: 100%;
-      padding: 16px 20px;
     `;
 
     const Overlay = styled.div`
@@ -63,7 +62,7 @@ export default class extends React.Component<CardProps> {
     `;
 
     const OverlayContent = styled.div`
-      Padding: 12px 16px;
+      padding: 12px 16px;
     `;
 
     const NormalCard = Card.extend`

@@ -17,8 +17,9 @@ import {
   CardTitle,
 } from '../Card';
 
-import { Button, ButtonGhost } from '../buttons';
+import { Button, ButtonGhost, ButtonGroup, ButtonInvisible } from '../buttons';
 import DocsPropsTableHeader from '../docs/DocsPropsTableHeader';
+import { IconCheck } from '../Icon';
 import Table from '../tables/Table';
 import TableCell from '../tables/TableCell';
 import TableRow from '../tables/TableRow';
@@ -36,6 +37,7 @@ class DocsCards extends React.Component {
     const CardGrid = styled.div`
       display: grid;
       grid-column-gap: 20px;
+      grid-row-gap: 20px;
       grid-template-columns: 32% 32% 32%;
       grid-template-rows: 150px;
     `;
@@ -185,6 +187,42 @@ const overlayContent = (
                 <CardBody>
                   <strong>The new home for all shared components</strong>
                 </CardBody>
+                <CardFooter>
+                   <ButtonGroup>
+                      <ButtonInvisible>Beep</ButtonInvisible>
+                      <ButtonInvisible>Boop</ButtonInvisible>
+                    </ButtonGroup>
+                </CardFooter>
+              </Card>
+
+              <Card overlayContent={overlayContent}>
+              </Card>
+
+              <Card overlayContent={overlayContent}>
+              </Card>
+
+              <Card overlayContent={overlayContent}>
+              </Card>
+
+              <Card overlayContent={overlayContent}>
+                <CardHeader>
+                  <CardTitle>Card Title</CardTitle>
+                </CardHeader>
+              </Card>
+
+              <Card overlayContent={overlayContent}>
+                <CardBody>
+                  <strong>The new home for all shared components</strong>
+                </CardBody>
+              </Card>
+
+              <Card overlayContent={overlayContent}>
+                <CardFooter>
+                   <ButtonGroup condensed>
+                      <ButtonInvisible>Complete <IconCheck/></ButtonInvisible>
+                      <ButtonInvisible>Reflect</ButtonInvisible>
+                    </ButtonGroup>
+                </CardFooter>
               </Card>
             </CardGrid>
           </DocsPlayground>

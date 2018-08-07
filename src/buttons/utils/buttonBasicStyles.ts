@@ -14,7 +14,7 @@ export default ({ fullWidth = false, disabled = false }: Props) => {
     flex-shrink: 0;
     font-size: 16px;
     font-weight: 500;
-    padding: 8px 16px;
+    padding: 8px 12px;
     text-align: center;
     text-transform: uppercase;
     font-family: 'Roboto', sans-serif;
