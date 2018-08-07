@@ -8,7 +8,7 @@ import { ButtonGroup, IconButtonInvisible } from '../buttons';
 import { Size } from '../buttons/IconButtons/iconButtonProps';
 import { IconEllipsisV, IconTimes } from '../Icon';
 import { Align } from '../utils/AlignmentProps';
-import CardProps, { CardType } from './CardProps';
+import CardProps from './CardProps';
 
 export default class extends React.Component<CardProps> {
   public static readonly defaultProps = {
@@ -25,12 +25,12 @@ export default class extends React.Component<CardProps> {
       children,
       onClick,
       overlayContent,
-      type,
+
     } = this.props;
 
     const Card = styled.div`
       border-bottom: ${active === true ? '8px solid rgba(0, 0, 0, 0.2)' : 'none'};
-      border-radius: ${({ theme }) => theme.radius.Card};
+      border-radius: ${({ theme }) => theme.radius.Medium};
       box-sizing: border-box;
       color: ${({ theme }) => theme.color.BodyText};
       cursor: ${onClick !== undefined ? 'pointer' : 'initial'};
@@ -52,7 +52,6 @@ export default class extends React.Component<CardProps> {
     `;
 
     const Overlay = styled.div`
-      bottom: 0;
       box-sizing: border-box;
       padding: 4px;
       position: absolute;
@@ -71,25 +70,6 @@ export default class extends React.Component<CardProps> {
       background-color: #fff;
       box-shadow: ${({ theme }) => theme.shadow.Main};
     `;
-
-    const HighlightedCard = Card.extend`
-      background-color: ${({ theme }) => theme.color.Secondary};
-      box-shadow: ${({ theme }) => theme.shadow.main};
-      color: ${({ theme }) => theme.color.SecondaryText};
-    `;
-
-    const PlaceholderCard = Card.extend`
-      background-color: ${({ theme }) => theme.color.Disabled};
-      color: ${({ theme }) => theme.color.DisabledText};
-    `;
-
-    const chooseCard = () => {
-      if (type === CardType.Highlighted) { return HighlightedCard; }
-      if (type === CardType.Placeholder) { return PlaceholderCard; }
-      return NormalCard;
-    };
-
-    const ChosenCard = chooseCard();
 
     const actionOpen = () => {
       this.setState({
@@ -119,12 +99,12 @@ export default class extends React.Component<CardProps> {
     );
 
     return (
-      <ChosenCard
+      <NormalCard
         role={onClick !== undefined ? 'button' : ''}
       >
         {overlayContent !== undefined ? renderOverlay : null}
         <InnerCard>{children}</InnerCard>
-      </ChosenCard >
+      </NormalCard >
     );
   }
 }
