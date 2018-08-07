@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Table from '../tables/Table';
-import TableHeader from '../tables/TableHeader';
 import TableRow from '../tables/TableRow';
+import DocsDosDontsHeader from './DocsGuidanceHeader';
 
 interface Props {
   readonly children: React.ReactNode;
@@ -13,8 +13,8 @@ export default ({
 }: Props) => {
   return (
     <Table layout="fixed">
-        <TableRow><TableHeader alignment="center">Do</TableHeader>
-        <TableHeader alignment="center">Don't</TableHeader></TableRow>
+        <TableRow><DocsDosDontsHeader alignment="center" color="do">Do</DocsDosDontsHeader>
+        <DocsDosDontsHeader alignment="center" color="dont">Don't</DocsDosDontsHeader></TableRow>
         {children}
     </Table>
   );

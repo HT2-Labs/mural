@@ -9,7 +9,7 @@ interface TabMenuProps {
     const Table = styled.td`
       border-bottom: solid 1px #ddd;
       border-collapse: collapse;
-      padding: 8px 4px;
+      padding: 16px 8px;
     `;
 
     return (

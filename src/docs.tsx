@@ -26,6 +26,7 @@ const Demo = () => {
       Disabled: '#ddd',
       Primary: '#41bfee',
       Secondary: '#344a58',
+      Success: '#22c65b',
     },
     font: {
       Base: '16px',
