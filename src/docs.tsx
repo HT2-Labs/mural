@@ -52,29 +52,27 @@ const Demo = () => {
     height: 100%;
   `;
 
-  const Main = styled.main`
+const Main = styled.main`
     padding: 20px;
   `;
 
-  const path = checkForGithubPages() ? 'mural' : '';
-
-  return (
-    <ThemeProvider theme={theme}>
+return (
+  <ThemeProvider theme={theme}>
       <MainWrap>
         <DocsSidebar />
         <Main>
           <Switch>
-            <Route path={`${path}/`} exact component={DocsIntro} />
-            <Route path={`${path}/themes`} component={DocsThemes} />
-            <Route path={`${path}/buttons`} component={DocsButtons} />
-            <Route path={`${path}/cards`} component={DocsCards} />
-            <Route path={`${path}/forms`} component={DocsForms} />
-            <Route path={`${path}/headers`} component={DocsHeaders} />
-            <Route path={`${path}/icons`} component={DocsIcons} />
-            <Route path={`${path}/lists`} component={DocsLists} />
-            <Route path={`${path}/menus`} component={DocsMenus} />
-            <Route path={`${path}/modal`} component={DocsModal} />
-            <Route path={`${path}/text`} component={DocsText} />
+            <Route path="/themes" component={DocsThemes} />
+            <Route path="/buttons" component={DocsButtons} />
+            <Route path="/cards" component={DocsCards} />
+            <Route path="/forms" component={DocsForms} />
+            <Route path="/headers" component={DocsHeaders} />
+            <Route path="/icons" component={DocsIcons} />
+            <Route path="/lists" component={DocsLists} />
+            <Route path="/menus" component={DocsMenus} />
+            <Route path="/modal" component={DocsModal} />
+            <Route path="/text" component={DocsText} />
+            <Route component={DocsIntro} />
           </Switch>
         </Main>
       </MainWrap>
@@ -82,5 +80,6 @@ const Demo = () => {
   );
 };
 
+const path = checkForGithubPages() ? 'mural/' : '';
 const element = document.getElementsByClassName('app')[0];
-dom.render(<BrowserRouter><Demo /></BrowserRouter>, element);
+dom.render(<BrowserRouter basename={path}><Demo /></BrowserRouter>, element);
