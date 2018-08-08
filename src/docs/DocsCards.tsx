@@ -1,3 +1,4 @@
+// tslint:disable:prefer-function-over-method
 // tslint:disable:max-file-line-count
 // tslint:disable:no-this
 // tslint:disable:no-class
@@ -32,7 +33,10 @@ class DocsCards extends React.Component {
     codeSnippet: 'Click component to see example...',
     overlay: false,
   };
-  // tslint:disable-next-line:prefer-function-over-method
+  public readonly deadClick = () => {
+    return null;
+  }
+
   public render() {
     const CardGrid = styled.div`
       display: grid;
@@ -41,7 +45,6 @@ class DocsCards extends React.Component {
       grid-template-columns: 32% 32% 32%;
       grid-template-rows: 150px;
     `;
-
     const normalCard = (
       `import { Card, CardBody, CardFooter, CardHeader, CardTitle } from '@ht2-labs/mural/Card';
 <Card>
@@ -153,6 +156,16 @@ const overlayContent = (
           <DocsPlayground code={cardHighlighted} props={availableProps}>
             <CardGrid>
               <CardHighlighted active>
+                <CardSplashHeader>
+                  <CardHeader />
+                </CardSplashHeader>
+                <CardSplashText>
+                  <strong>Shared components</strong>
+                  <CardSplashSubText>(0/3) things are cool</CardSplashSubText>
+                </CardSplashText>
+              </CardHighlighted>
+
+              <CardHighlighted onClick={this.deadClick}>
                 <CardSplashHeader>
                   <CardHeader />
                 </CardSplashHeader>
