@@ -17,7 +17,7 @@ export default ({
 
   const Button = buttonStyle({ fullWidth, disabled });
   const color = buttonColorStyles({ danger, disabled, useTextColor });
-  const ButtonGhost = buttonGhostStyle({ Button, color });
+  const ButtonGhost = buttonGhostStyle({ Button, color, disabled });
 
   return (
     <ButtonGhost

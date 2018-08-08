@@ -32,7 +32,7 @@ export default ({
 
   const Button = buttonIconStyle(buttonSize, fontSize, disabled);
   const color = buttonColorStyles({ disabled });
-  const IconButtonNormal = buttonNormalStyles({ Button, color});
+  const IconButtonNormal = buttonNormalStyles({ Button, color, disabled});
 
   return (
     <IconButtonNormal
