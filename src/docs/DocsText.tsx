@@ -51,7 +51,7 @@ export default () => {
           <Link>yellow gems</Link>
           </P>
           <P>
-          <Link external>yellow gems</Link>
+          <Link external color="blue">yellow gems</Link>
           </P>
         </DocsPlayground>
       </DocsDescription>

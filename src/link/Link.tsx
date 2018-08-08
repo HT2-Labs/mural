@@ -6,9 +6,11 @@ import LinkProps from './linkProps';
 export default ({
   children,
   external = false,
-}: LinkProps) => {
+  color = String(({ theme }: any ) => theme.color.Button),
+} : LinkProps) => {
   const Link = styled.a`
     cursor: pointer;
+    color: ${color};
     &:hover{
       -webkit-text-decoration-skip: auto;
       text-decoration: underline;
