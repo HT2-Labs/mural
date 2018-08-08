@@ -119,6 +119,7 @@ const overlayContent = (
 </Card>
 `);
 
+    // tslint:disable-next-line:prefer-function-over-method
     const overlayContent = (
       <>
         <Button fullWidth>Edit</Button>
@@ -153,6 +154,16 @@ const overlayContent = (
           <DocsPlayground code={cardHighlighted} props={availableProps}>
             <CardGrid>
               <CardHighlighted active>
+                <CardSplashHeader>
+                  <CardHeader />
+                </CardSplashHeader>
+                <CardSplashText>
+                  <strong>Shared components</strong>
+                  <CardSplashSubText>(0/3) things are cool</CardSplashSubText>
+                </CardSplashText>
+              </CardHighlighted>
+
+              <CardHighlighted>
                 <CardSplashHeader>
                   <CardHeader />
                 </CardSplashHeader>
