@@ -8,7 +8,6 @@ export default (renderSvg: () => React.ReactNode, viewBox = '0 0 512 512') => {
       fill: ${color};
       height: ${height};
       width: ${width};
-      margin-left: 4px;
     `;
 
     return (

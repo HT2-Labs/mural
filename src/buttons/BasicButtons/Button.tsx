@@ -14,7 +14,7 @@ export default ({
 
   const Button = buttonStyle({ fullWidth, disabled });
   const color = buttonColorStyles({ danger, disabled });
-  const NormalButton = buttonNormalStyles({ Button, color });
+  const NormalButton = buttonNormalStyles({ Button, color, disabled });
 
   return (
     <NormalButton
