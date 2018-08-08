@@ -122,7 +122,6 @@ const overlayContent = (
 </Card>
 `);
 
-    // tslint:disable-next-line:prefer-function-over-method
     const overlayContent = (
       <>
         <Button fullWidth>Edit</Button>
