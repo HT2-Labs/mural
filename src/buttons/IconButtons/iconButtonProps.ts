@@ -9,6 +9,7 @@ export default interface IconButtonProps {
   readonly children: ReactNode;
   readonly color?: string;
   readonly disabled?: boolean | undefined;
+  readonly useTextColor?: boolean | undefined;
   readonly onClick?: (e: React.MouseEvent<HTMLElement>) => void;
   readonly size?: Size;
 }

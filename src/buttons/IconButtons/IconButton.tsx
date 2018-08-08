@@ -23,6 +23,7 @@ const getFontSize = (size: Size) => {
 export default ({
   children,
   disabled = false,
+  useTextColor = false,
   size = Size.Medium,
   onClick,
 }: IconButtonProps) => {
@@ -31,7 +32,7 @@ export default ({
   const fontSize = getFontSize(size);
 
   const Button = buttonIconStyle(buttonSize, fontSize, disabled);
-  const color = buttonColorStyles({ disabled });
+  const color = buttonColorStyles({ disabled, useTextColor});
   const IconButtonNormal = buttonNormalStyles({ Button, color});
 
   return (

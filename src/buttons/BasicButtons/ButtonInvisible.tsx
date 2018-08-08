@@ -9,11 +9,9 @@ export default ({
   danger = false,
   disabled = false,
   fullWidth = false,
+  useTextColor = false,
   onClick,
 }: ButtonProps) => {
-
-  // Add to buttonColorStyles to set text color in place of background color
-  const useTextColor = true;
 
   const Button = buttonStyle({ fullWidth, disabled });
   const color = buttonColorStyles({ danger, disabled, useTextColor });

@@ -25,6 +25,8 @@ export default ({danger = false, disabled = false, useTextColor = false}: Button
     background = ({ theme }: any) => theme.color.Danger;
     backgroundLight = ({ theme }: any) => theme.color.DangerLight;
     text = ({ theme }: any) => theme.color.DangerText;
+  } else if (useTextColor) {
+    text = ({ theme }: any) => theme.color.text;
   } else {
     background = ({ theme }: any) => theme.color.Button;
     backgroundLight = ({ theme }: any) => theme.color.ButtonLight;
