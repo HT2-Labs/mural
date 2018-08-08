@@ -30,6 +30,7 @@ import IconBullseye from '../icons/IconBullseye';
 import IconCalendar from '../icons/IconCalendar';
 import IconFlagCheckered from '../icons/IconFlagCheckered';
 import IconTimesCircle from '../icons/IconTimesCircle';
+import Switch from '../switches/Switch';
 import DocsDoDont from './DocsDoDont';
 
 const codeSnippetButton =
@@ -277,6 +278,7 @@ export default () => {
         <TableRow><TableCell> Use ghost buttons to overlay splash images </TableCell><TableCell> </TableCell></TableRow>
       </DocsDoDont>
       </DocsDescription>
+      <Switch/>
     </>
   );
 };
