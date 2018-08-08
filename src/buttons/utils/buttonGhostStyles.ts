@@ -3,7 +3,7 @@ export interface Props {
   readonly color: any;
   readonly disabled: boolean | undefined;
 }
-export default ({ Button, color, disabled }: Props) => {
+export default ({ Button, color, disabled = false }: Props) => {
   const ButtonGhost = Button.extend`
     background-color: transparent;
     border: 2px solid ${color.background};
@@ -12,7 +12,7 @@ export default ({ Button, color, disabled }: Props) => {
     &:hover {
       border: 2px solid ${color.backgroundLight};
       color: ${color.backgroundLight};
-      box-shadow: ${disabled === true ? 'none' : ({ theme }: any ) => theme.shadow.Small};
+      box-shadow: ${disabled ? 'none' : ({ theme }: any ) => theme.shadow.Small};
     }
   `;
   return ButtonGhost;
