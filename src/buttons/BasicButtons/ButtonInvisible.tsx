@@ -10,6 +10,7 @@ export default ({
   disabled = false,
   fullWidth = false,
   onClick,
+  type,
 }: ButtonProps) => {
 
   // Add to buttonColorStyles to set text color in place of background color
@@ -23,7 +24,7 @@ export default ({
     <InvisibleButton
       disabled={disabled}
       onClick={onClick}
-      role={'button'}
+      type={type}
     >
       {children}
     </InvisibleButton>

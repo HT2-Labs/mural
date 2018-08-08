@@ -10,6 +10,7 @@ export default ({
   disabled = false,
   fullWidth = false,
   onClick,
+  type,
 }: ButtonProps) => {
 
   const Button = buttonStyle({ fullWidth, disabled });
@@ -20,6 +21,7 @@ export default ({
     <NormalButton
       disabled={disabled}
       onClick={onClick}
+      type={type}
     >
       {children}
     </NormalButton>
