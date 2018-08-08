@@ -1,3 +1,4 @@
+// tslint:disable:prefer-function-over-method
 // tslint:disable:max-file-line-count
 // tslint:disable:no-this
 // tslint:disable:no-class
@@ -32,11 +33,10 @@ class DocsCards extends React.Component {
     codeSnippet: 'Click component to see example...',
     overlay: false,
   };
-  // tslint:disable-next-line:prefer-function-over-method
   public readonly deadClick = () => {
     return null;
   }
-  // tslint:disable-next-line:prefer-function-over-method
+
   public render() {
     const CardGrid = styled.div`
       display: grid;

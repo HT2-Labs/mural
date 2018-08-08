@@ -118,7 +118,7 @@ export default class extends React.Component<CardProps> {
       >
         {overlayContent !== undefined ? renderOverlay : null}
         <InnerCard>{children}</InnerCard>
-        <Droplet></Droplet>
+        <Droplet/>
       </HighlightedCard >
     );
   }
