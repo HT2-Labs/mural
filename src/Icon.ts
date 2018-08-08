@@ -16,6 +16,7 @@ import IconCode from './icons/IconCode';
 import IconCuratr from './icons/IconCuratr';
 import IconEdit from './icons/IconEdit';
 import IconEllipsisV from './icons/IconEllipsisV';
+import IconExternalLink from './icons/IconExternalLink';
 import IconEye from './icons/IconEye';
 import IconFilter from './icons/IconFilter';
 import IconFlagCheckered from './icons/IconFlagCheckered';
@@ -50,6 +51,7 @@ export {
   IconCuratr,
   IconEdit,
   IconEllipsisV,
+  IconExternalLink,
   IconEye,
   IconFilter,
   IconFlagCheckered,
