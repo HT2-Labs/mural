@@ -11,7 +11,7 @@ export default ({ Button, color, disabled }: NormalButtonProps) => {
     &:hover {
       border: 2px solid ${color.backgroundLight};
       background-color: ${color.backgroundLight};
-      box-shadow: ${disabled ? 'none' : ({ theme }: any ) => theme.shadow.Small};
+      box-shadow: ${disabled === true ? 'none' : ({ theme }: any ) => theme.shadow.Small};
     }
   `;
   return NormalButton;

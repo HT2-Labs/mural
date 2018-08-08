@@ -12,7 +12,7 @@ export default ({ Button, color, disabled }: Props) => {
     &:hover {
       border: 2px solid ${color.backgroundLight};
       color: ${color.backgroundLight};
-      box-shadow: ${disabled ? 'none' : ({ theme }: any ) => theme.shadow.Small};
+      box-shadow: ${disabled === true ? 'none' : ({ theme }: any ) => theme.shadow.Small};
     }
   `;
   return ButtonGhost;
