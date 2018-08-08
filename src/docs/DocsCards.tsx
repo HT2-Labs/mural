@@ -33,6 +33,10 @@ class DocsCards extends React.Component {
     overlay: false,
   };
   // tslint:disable-next-line:prefer-function-over-method
+  public readonly deadClick = () => {
+    return null;
+  }
+  // tslint:disable-next-line:prefer-function-over-method
   public render() {
     const CardGrid = styled.div`
       display: grid;
@@ -41,7 +45,6 @@ class DocsCards extends React.Component {
       grid-template-columns: 32% 32% 32%;
       grid-template-rows: 150px;
     `;
-
     const normalCard = (
       `import { Card, CardBody, CardFooter, CardHeader, CardTitle } from '@ht2-labs/mural/Card';
 <Card>
@@ -163,7 +166,7 @@ const overlayContent = (
                 </CardSplashText>
               </CardHighlighted>
 
-              <CardHighlighted>
+              <CardHighlighted onClick={this.deadClick}>
                 <CardSplashHeader>
                   <CardHeader />
                 </CardSplashHeader>

@@ -35,6 +35,7 @@ export default class extends React.Component<CardProps> {
       cursor: ${onClick !== undefined ? 'pointer' : 'initial'};
       position: relative;
       width: 100%;
+      transition: 0.25s;
       &:hover {
         ${onClick !== undefined ? 'box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.12)' : ''} ;
         transform: ${onClick !== undefined ? 'scale(1.01)' : 'none'};
@@ -78,8 +79,9 @@ export default class extends React.Component<CardProps> {
       border-radius: 3px;
       width: 50px;
       background-color: ${active === true ? ({ theme }: any) => theme.color.Secondary : 'transparent'};
+
       ${HighlightedCard}:hover & {
-        ${onClick !== undefined ? 'background-color: ({ theme }: any) => theme.color.SecondaryLight' : null };
+        background-color: ${onClick !== undefined ? ({ theme }: any) => theme.color.SecondaryLight : null };
       }
     `;
 
