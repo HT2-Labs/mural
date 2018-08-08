@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from '../../node_modules/styled-components';
 
-interface TabMenuProps {
+interface DocsGuidanceProps {
     readonly children: React.ReactNode;
     readonly alignment?: string;
     readonly color?: string;
@@ -13,13 +13,12 @@ interface TabMenuProps {
       default: return `#ddd`;
     }
   };
-  export default ({ children, alignment, color }: TabMenuProps) => {
+  export default ({ children, alignment, color }: DocsGuidanceProps) => {
     const borderColor = getColor(color);
     const Table = styled.th`
       ${alignment !== undefined ? `text-align: ${alignment};` : `text-align: left`};
       border-bottom: solid 3px;
       border-color: ${borderColor};
-      /* border-collapse: collapse; */
       padding: 16px 8px;
     `;
 
