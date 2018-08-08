@@ -50,6 +50,11 @@ export default ({ children, theme }: ThemeProps) => {
       SecondaryDark: darken(DarkenValue, theme.color.Secondary),
       SecondaryLight: lighten(lightenValue, theme.color.Secondary),
       SecondaryText: readableColor(theme.color.Secondary),
+
+      Success: theme.color.Success,
+      SuccessDark: darken(DarkenValue, theme.color.Success),
+      SuccessLight: lighten(lightenValue, theme.color.Success),
+      SuccessText: readableColor(theme.color.Success),
     },
     font: {
       Small: modularScale(-1, em(theme.font.Base), modularScaleValue),
