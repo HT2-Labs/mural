@@ -16,6 +16,7 @@ import DocsSidebar from './docs/DocsSidebar';
 import DocsText from './docs/DocsText';
 import DocsThemes from './docs/DocsThemes';
 import { ThemeProvider } from './ThemeProvider';
+import checkForGithubPages from './utils/checkForGithubPages';
 
 const Demo = () => {
   const theme = {
@@ -55,23 +56,25 @@ const Demo = () => {
     padding: 20px;
   `;
 
+  const path = checkForGithubPages() ? 'mural' : '';
+
   return (
     <ThemeProvider theme={theme}>
       <MainWrap>
         <DocsSidebar />
         <Main>
           <Switch>
-            <Route exact path="/" component={DocsIntro} />
-            <Route path="/themes" component={DocsThemes} />
-            <Route path="/buttons" component={DocsButtons} />
-            <Route path="/cards" component={DocsCards} />
-            <Route path="/forms" component={DocsForms} />
-            <Route path="/headers" component={DocsHeaders} />
-            <Route path="/icons" component={DocsIcons} />
-            <Route path="/lists" component={DocsLists} />
-            <Route path="/menus" component={DocsMenus} />
-            <Route path="/modal" component={DocsModal} />
-            <Route path="/text" component={DocsText} />
+            <Route path={`${path}/`} exact component={DocsIntro} />
+            <Route path={`${path}/themes`} component={DocsThemes} />
+            <Route path={`${path}/buttons`} component={DocsButtons} />
+            <Route path={`${path}/cards`} component={DocsCards} />
+            <Route path={`${path}/forms`} component={DocsForms} />
+            <Route path={`${path}/headers`} component={DocsHeaders} />
+            <Route path={`${path}/icons`} component={DocsIcons} />
+            <Route path={`${path}/lists`} component={DocsLists} />
+            <Route path={`${path}/menus`} component={DocsMenus} />
+            <Route path={`${path}/modal`} component={DocsModal} />
+            <Route path={`${path}/text`} component={DocsText} />
           </Switch>
         </Main>
       </MainWrap>
