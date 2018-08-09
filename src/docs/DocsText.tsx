@@ -6,6 +6,7 @@ import TableCell from '../tables/TableCell';
 import TableRow from '../tables/TableRow';
 
 import DocsPropsTableHeader from '../docs/DocsPropsTableHeader';
+import Link from '../link/Link';
 import { H1, H2, H3, H4, P, SizeType } from '../Text';
 import DocsDescription from './DocsDescription';
 import DocsPlayground from './DocsPlayground';
@@ -46,6 +47,12 @@ export default () => {
           <H4 size={SizeType.Body}>Header 4 Element</H4>
           <P size={SizeType.Body}>Paragraph Element</P>
           <P size={SizeType.Small}>Small Paragraph Element</P>
+          <P>
+          <Link>yellow gems</Link>
+          </P>
+          <P>
+          <Link external color="blue">yellow gems</Link>
+          </P>
         </DocsPlayground>
       </DocsDescription>
     </>

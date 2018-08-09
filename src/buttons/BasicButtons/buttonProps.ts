@@ -7,5 +7,6 @@ export default interface ButtonProps {
   readonly fullWidth?: boolean | undefined;
   readonly height?: number | string;
   readonly onClick?: (e: React.MouseEvent<HTMLElement>) => void;
+  readonly type?: string | undefined;
   readonly width?: number | string;
 }

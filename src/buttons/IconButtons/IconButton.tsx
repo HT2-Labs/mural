@@ -25,6 +25,7 @@ export default ({
   disabled = false,
   size = Size.Medium,
   onClick,
+  type,
 }: IconButtonProps) => {
 
   const buttonSize = getButtonSize(size);
@@ -32,12 +33,13 @@ export default ({
 
   const Button = buttonIconStyle(buttonSize, fontSize, disabled);
   const color = buttonColorStyles({ disabled });
-  const IconButtonNormal = buttonNormalStyles({ Button, color});
+  const IconButtonNormal = buttonNormalStyles({ Button, color, disabled});
 
   return (
     <IconButtonNormal
       disabled={disabled}
       onClick={onClick}
+      type={type}
     >
       {children}
     </IconButtonNormal>

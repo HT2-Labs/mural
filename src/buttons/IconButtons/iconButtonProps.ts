@@ -11,4 +11,5 @@ export default interface IconButtonProps {
   readonly disabled?: boolean | undefined;
   readonly onClick?: (e: React.MouseEvent<HTMLElement>) => void;
   readonly size?: Size;
+  readonly type?: string | undefined;
 }

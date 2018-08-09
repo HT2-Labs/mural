@@ -25,6 +25,7 @@ export default ({
   disabled = false,
   size = Size.Medium,
   onClick,
+  type,
 }: IconButtonProps) => {
 
   const buttonSize = getButtonSize(size);
@@ -41,6 +42,7 @@ export default ({
     <IconButtonInvisible
       disabled={disabled}
       onClick={onClick}
+      type={type}
     >
       {children}
     </IconButtonInvisible>

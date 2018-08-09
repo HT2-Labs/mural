@@ -16,6 +16,7 @@ import DocsSidebar from './docs/DocsSidebar';
 import DocsText from './docs/DocsText';
 import DocsThemes from './docs/DocsThemes';
 import { ThemeProvider } from './ThemeProvider';
+import checkForGithubPages from './utils/checkForGithubPages';
 
 const Demo = () => {
   const theme = {
@@ -26,6 +27,7 @@ const Demo = () => {
       Disabled: '#ddd',
       Primary: '#41bfee',
       Secondary: '#344a58',
+      Success: '#22c65b',
     },
     font: {
       Base: '16px',
@@ -50,17 +52,16 @@ const Demo = () => {
     height: 100%;
   `;
 
-  const Main = styled.main`
+const Main = styled.main`
     padding: 20px;
   `;
 
-  return (
-    <ThemeProvider theme={theme}>
+return (
+  <ThemeProvider theme={theme}>
       <MainWrap>
         <DocsSidebar />
         <Main>
           <Switch>
-            <Route exact path="/" component={DocsIntro} />
             <Route path="/themes" component={DocsThemes} />
             <Route path="/buttons" component={DocsButtons} />
             <Route path="/cards" component={DocsCards} />
@@ -71,6 +72,7 @@ const Demo = () => {
             <Route path="/menus" component={DocsMenus} />
             <Route path="/modal" component={DocsModal} />
             <Route path="/text" component={DocsText} />
+            <Route component={DocsIntro} />
           </Switch>
         </Main>
       </MainWrap>
@@ -78,5 +80,6 @@ const Demo = () => {
   );
 };
 
+const path = checkForGithubPages() ? 'mural/' : '';
 const element = document.getElementsByClassName('app')[0];
-dom.render(<BrowserRouter><Demo /></BrowserRouter>, element);
+dom.render(<BrowserRouter basename={path}><Demo /></BrowserRouter>, element);

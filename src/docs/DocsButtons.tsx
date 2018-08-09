@@ -24,14 +24,15 @@ import TableRow from '../tables/TableRow';
 import { H1, P, SizeType } from '../Text';
 import { Align } from '../utils/AlignmentProps';
 import DocsDescription from './DocsDescription';
+import DocsGuidance from './DocsGuidance';
 import DocsPlayground from './DocsPlayground';
+
+import Switch from '../switches/Switch';
 
 import IconBullseye from '../icons/IconBullseye';
 import IconCalendar from '../icons/IconCalendar';
 import IconFlagCheckered from '../icons/IconFlagCheckered';
 import IconTimesCircle from '../icons/IconTimesCircle';
-import Switch from '../switches/Switch';
-import DocsDoDont from './DocsDoDont';
 
 const codeSnippetButton =
   `import {
@@ -270,13 +271,13 @@ export default () => {
           </ButtonGroupVertical>
         </DocsPlayground>
       </DocsDescription>
-      <DocsDescription title="Dos And Don'ts">
-      <DocsDoDont>
+      <DocsDescription title="Guidance">
+      <DocsGuidance>
         <TableRow><TableCell> Use button group if using more than one button</TableCell><TableCell> Don't use invisible buttons on their own</TableCell></TableRow>
         <TableRow><TableCell> Use invisible buttons along with normal buttons</TableCell><TableCell> Don't use icon buttons for dangerous actions</TableCell></TableRow>
         <TableRow><TableCell> Use danger buttons to indicate dangerous actions</TableCell><TableCell> Don't use normal buttons for dangerous actions</TableCell></TableRow>
         <TableRow><TableCell> Use ghost buttons to overlay splash images </TableCell><TableCell> </TableCell></TableRow>
-      </DocsDoDont>
+      </DocsGuidance>
       </DocsDescription>
       <Switch/>
     </>
