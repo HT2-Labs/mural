@@ -16,6 +16,7 @@ import {
   IconChevronLeft,
   IconChevronRight,
   IconChevronUp,
+  IconClose,
   IconCode,
   IconCuratr,
   IconEllipsisV,
@@ -33,11 +34,9 @@ import {
   IconThumbsUp,
   IconTimes,
   IconTimesCircle,
-} from '../Icon';
-
-import IconClose from '../icons/IconClose';
-import { H1, SizeType } from '../Text';
-import DocsPlayground from './DocsPlayground';
+} from '../../../Icon';
+import { H1, SizeType } from '../../../Text';
+import { DocsPlayground } from '../../shared';
 
 const codeSnippet =
   `import { IconArrowDown } from '@ht2-labs/mural/src//Icon';
@@ -45,7 +44,7 @@ const codeSnippet =
 <IconArrowDown />
 `;
 
-export default () => {
+const DocsIcons = () => {
   const Grid = styled.div`
     display: grid;
     grid-template-columns: 200px 200px 200px 200px;
@@ -107,3 +106,5 @@ export default () => {
     </>
   );
 };
+
+export default DocsIcons;

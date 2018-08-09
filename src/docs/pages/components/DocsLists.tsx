@@ -1,10 +1,9 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import { ListContainer, ListItem } from '../List';
-import { H1, SizeType } from '../Text';
-
-import DocsPlayground from './DocsPlayground';
+import { ListContainer, ListItem } from '../../../List';
+import { H1, SizeType } from '../../../Text';
+import { DocsPlayground } from '../../shared';
 
 const codeSnippet =
   `import { ListContainer, ListItem } from '@ht2-labs/mural/List';
@@ -33,7 +32,7 @@ const codeSnippet =
 </ListContainer>
 `;
 
-export default () => {
+const DocsLists = () => {
 
   const Wrapper = styled.div`
     height: 400px;
@@ -73,3 +72,5 @@ export default () => {
     </>
   );
 };
+
+export default DocsLists;

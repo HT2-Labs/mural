@@ -2,9 +2,9 @@
 // tslint:disable:max-line-length
 import * as React from 'react';
 import styled from 'styled-components';
-import { H1, H4, P, SizeType } from '../Text';
-import DocsColor from './DocsColor';
-import DocsPlayground from './DocsPlayground';
+import { Link } from '../../../link';
+import { H1, H4, P, SizeType } from '../../../Text';
+import { DocsColor, DocsPlayground } from '../../shared';
 
 const codeSnippet =
 `import { ThemeProvider } from './ThemeProvider';
@@ -17,7 +17,7 @@ export default () => {
       Danger: '#ff0000',
       Disabled: '#eeeeee',
       Primary: '#41bfee',
-      Secondary: '#344a58',
+      Secondary: '#3/*  */44a58',
     },
     radius: {
       Button: '2px',
@@ -37,7 +37,7 @@ export default () => {
 );
 `;
 
-export default () => {
+const DocsThemes = () => {
   const ColorGrid = styled.div`
     display: grid;
     grid-column-gap: 20px;
@@ -122,8 +122,10 @@ export default () => {
       </ColorGrid>
 
       <DocsPlayground code={codeSnippet}>
-        <P>Mural uses Styled Components themes to configure styling. You can override the theme using <a href="https://www.styled-components.com/docs/advanced#theming">the theme prop</a> (only do this if you have a good reason).</P>
+        <P>Mural uses Styled Components themes to configure styling. You can override the theme using <Link href="https://www.styled-components.com/docs/advanced#theming" external>the theme prop</Link> (only do this if you have a good reason).</P>
       </DocsPlayground>
     </>
   );
 };
+
+export default DocsThemes;

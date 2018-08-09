@@ -4,24 +4,19 @@
 // tslint:disable:max-file-line-count
 import * as React from 'react';
 
-import { H1, H3, P, SizeType } from '../Text';
-
-import { Button, ButtonGhost, ButtonGroup, IconButtonInvisible } from '../buttons';
-import { IconClose } from '../Icon';
-import FullPageModal from '../modal/FullPageModal';
-import FullPageModalActions from '../modal/FullPageModalActions';
-import FullPageModalBody from '../modal/FullPageModalBody';
-import FullPageModalHeader from '../modal/FullPageModalHeader';
-import Modal from '../modal/Modal';
-import ModalBody from '../modal/ModalBody';
-import ModalFooter from '../modal/ModalFooter';
-import ModalHeader from '../modal/ModalHeader';
-import Table from '../tables/Table';
-import TableCell from '../tables/TableCell';
-import TableRow from '../tables/TableRow';
-import { Align } from '../utils/AlignmentProps';
-import DocsPlayground from './DocsPlayground';
-import DocsPropsTableHeader from './DocsPropsTableHeader';
+import { Button, ButtonGhost, ButtonGroup, IconButtonInvisible } from '../../../buttons';
+import { IconClose } from '../../../Icon';
+import { FullPageModal,
+  FullPageModalBody,
+  FullPageModalHeader,
+  Modal,
+  ModalBody,
+  ModalFooter,
+  ModalHeader } from '../../../modal';
+import { Table, TableCell, TableRow } from '../../../tables';
+import { H1, H3, P, SizeType } from '../../../Text';
+import { Align } from '../../../utils/AlignmentProps';
+import { DocsPlayground, DocsPropsTableHeader } from '../../shared';
 
 const codeSnippet =
   `import { H1, H3, P, SizeType } from '../Text';
@@ -110,7 +105,7 @@ const availableProps =
   </TableRow>
 </Table>;
 
-export default class DocsModal extends React.Component {
+class DocsModals extends React.Component {
   public readonly state = {
     fullpageModalOpen: false,
     modalOpen: false,
@@ -142,7 +137,6 @@ export default class DocsModal extends React.Component {
   public render() {
     return (
       <>
-
         <H1 size={SizeType.ExtraLarge}>Headers</H1>
         <hr />
         <DocsPlayground code={codeSnippet} props={availableProps}>
@@ -190,12 +184,10 @@ export default class DocsModal extends React.Component {
             <FullPageModalBody>
               <H3 size={SizeType.Large} >This is a Fullpage Modal</H3>
               Blah
-            <FullPageModalActions>
-                <ButtonGroup alignment={Align.Center}>
-                  <Button danger> DO NOT CLICK</Button>
-                  <Button> Do Click </Button>
-                </ButtonGroup>
-              </FullPageModalActions>
+              <ButtonGroup alignment={Align.Center}>
+                <Button danger> DO NOT CLICK</Button>
+                <Button> Do Click </Button>
+              </ButtonGroup>
             </FullPageModalBody>
             <ModalFooter>
             </ModalFooter>
@@ -205,3 +197,5 @@ export default class DocsModal extends React.Component {
     );
   }
 }
+
+export default DocsModals;

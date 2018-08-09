@@ -6,6 +6,12 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 import {
+  Button,
+  ButtonGhost,
+  ButtonGroup,
+  ButtonInvisible,
+} from '../../../buttons';
+import {
   Card,
   CardBody,
   CardFooter,
@@ -16,17 +22,11 @@ import {
   CardSplashSubText,
   CardSplashText,
   CardTitle,
-} from '../Card';
-
-import { Button, ButtonGhost, ButtonGroup, ButtonInvisible } from '../buttons';
-import DocsPropsTableHeader from '../docs/DocsPropsTableHeader';
-import { IconCheck } from '../Icon';
-import Table from '../tables/Table';
-import TableCell from '../tables/TableCell';
-import TableRow from '../tables/TableRow';
-import { H1, SizeType } from '../Text';
-import DocsDescription from './DocsDescription';
-import DocsPlayground from './DocsPlayground';
+} from '../../../Card';
+import { IconCheck } from '../../../Icon';
+import { Table, TableCell, TableRow } from '../../../tables';
+import { H1, SizeType } from '../../../Text';
+import { DocsDescription, DocsPlayground, DocsPropsTableHeader } from '../../shared';
 
 class DocsCards extends React.Component {
   public readonly state = {

@@ -12,27 +12,20 @@ import {
   ButtonInvisible,
   IconButton,
   IconButtonInvisible,
-} from '../buttons';
-
-import DocsPropsTableHeader from '../docs/DocsPropsTableHeader';
-import { IconAsterisk, IconChevronRight, IconEllipsisV } from '../Icon';
-
-import Table from '../tables/Table';
-import TableCell from '../tables/TableCell';
-import TableRow from '../tables/TableRow';
-
-import { H1, P, SizeType } from '../Text';
-import { Align } from '../utils/AlignmentProps';
-import DocsDescription from './DocsDescription';
-import DocsGuidance from './DocsGuidance';
-import DocsPlayground from './DocsPlayground';
-
-import Switch from '../switches/Switch';
-
-import IconBullseye from '../icons/IconBullseye';
-import IconCalendar from '../icons/IconCalendar';
-import IconFlagCheckered from '../icons/IconFlagCheckered';
-import IconTimesCircle from '../icons/IconTimesCircle';
+} from '../../../buttons';
+import {
+  IconAsterisk,
+  IconBullseye,
+  IconCalendar,
+  IconChevronRight,
+  IconEllipsisV,
+  IconFlagCheckered,
+  IconTimesCircle,
+} from '../../../Icon';
+import { Table, TableCell, TableRow } from '../../../tables';
+import { H1, P, SizeType } from '../../../Text';
+import { Align } from '../../../utils/AlignmentProps';
+import { DocsDescription, DocsGuidance, DocsPlayground, DocsPropsTableHeader } from '../../shared';
 
 const codeSnippetButton =
   `import {
@@ -279,7 +272,6 @@ export default () => {
         <TableRow><TableCell> Use ghost buttons to overlay splash images </TableCell><TableCell> </TableCell></TableRow>
       </DocsGuidance>
       </DocsDescription>
-      <Switch/>
     </>
   );
 };
