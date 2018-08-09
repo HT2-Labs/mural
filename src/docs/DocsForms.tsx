@@ -3,6 +3,7 @@ import * as React from 'react';
 
 import FormCheckbox from '../forms/FormCheckbox';
 import FormInput from '../forms/FormInput';
+import FormRadio from '../forms/FormRadio';
 import FormTextArea from '../forms/FormTextArea';
 import Switch from '../switches/Switch';
 import { H1, SizeType } from '../Text';
@@ -34,6 +35,14 @@ export default () => {
       </DocsPlayground>
       <DocsPlayground>
         <FormCheckbox/>
+      </DocsPlayground>
+      <DocsPlayground>
+        <FormRadio group="group1"/>
+        <FormRadio group="group1"/>
+        <FormRadio group="group1"/>
+        <FormRadio group="group2"/>
+        <FormRadio group="group2"/>
+        <FormRadio group="group2"/>
       </DocsPlayground>
     </>
   );

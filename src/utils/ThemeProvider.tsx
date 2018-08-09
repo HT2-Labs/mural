@@ -24,6 +24,8 @@ export default ({ children, theme }: ThemeProps) => {
   const constructedTheme = {
     color: {
       Body: theme.color.Body,
+      BodyDark: darken(DarkenValue, theme.color.Body),
+      BodyLight: lighten(lightenValue, theme.color.Body),
       BodyText: readableColor(theme.color.Body),
 
       Button: theme.color.Button,
