@@ -33,6 +33,12 @@ const availableProps =
     <TableCell>SizeType.Body </TableCell>
     <TableCell>Defines the text size of the header</TableCell>
   </TableRow>
+  <TableRow>
+  <TableCell>color</TableCell>
+    <TableCell>string</TableCell>
+    <TableCell> undefined </TableCell>
+    <TableCell>Overrides the default color</TableCell>
+  </TableRow>
 </Table>;
 export default () => {
   return (
