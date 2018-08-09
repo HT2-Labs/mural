@@ -1,22 +1,22 @@
 import * as React from 'react';
-import { SizeType } from '../Text';
-import H2 from '../text/H1';
+import { H2, SizeType } from '../../Text';
 
-interface Props {
+interface DocsDescriptionProps {
   readonly children: React.ReactNode;
   readonly title?: String;
 }
 
-export default ({
+const DocsDescription = ({
   children,
   title,
-}: Props) => {
+}: DocsDescriptionProps) => {
   return (
-    <div>
+    <>
       <H2 size={SizeType.Large}>{title}</H2>
       <hr />
       {children}
-    </div>
+    </>
   );
-
 };
+
+export default DocsDescription;

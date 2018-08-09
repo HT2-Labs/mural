@@ -2,11 +2,16 @@ import { readableColor } from 'polished';
 import * as React from 'react';
 import styled from 'styled-components';
 
-export default ( {color, children }: any) => {
+interface DocsColorProps {
+  readonly children?: React.ReactNode;
+  readonly color?: any;
+}
+
+const DocsColor = ( { color, children }: DocsColorProps) => {
 
   const ColorItem = styled.div`
     background-color: ${color};
-    color: ${({ theme } ) => readableColor(color({theme}))};
+    color: ${({ theme }) => readableColor(color({theme}))};
     width: 80px;
     height: 80px;
     display: flex;
@@ -20,3 +25,5 @@ export default ( {color, children }: any) => {
     </ColorItem>
   );
 };
+
+export default DocsColor;
