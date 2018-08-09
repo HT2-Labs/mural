@@ -83,17 +83,17 @@ export default () => {
       <SidebarFixed>
         <Name>Mural</Name>
         <Menu>
-          <MenuItem activeStyle={active} to="/" exact>Home</MenuItem>
-          <MenuItem activeStyle={active} to="/themes">Themes</MenuItem>
-          <MenuItem activeStyle={active} to="/buttons">Buttons</MenuItem>
-          <MenuItem activeStyle={active} to="/cards">Cards</MenuItem>
-          <MenuItem activeStyle={active} to="/forms">Forms</MenuItem>
-          <MenuItem activeStyle={active} to="/headers">Headers</MenuItem>
-          <MenuItem activeStyle={active} to="/icons">Icons</MenuItem>
-          <MenuItem activeStyle={active} to="/lists">Lists</MenuItem>
-          <MenuItem activeStyle={active} to="/menus">Menus</MenuItem>
-          <MenuItem activeStyle={active} to="/modal">Modal</MenuItem>
-          <MenuItem activeStyle={active} to="/text">Text</MenuItem>
+          <MenuItem activeStyle={active} to="">Home</MenuItem>
+          <MenuItem activeStyle={active} to="themes">Themes</MenuItem>
+          <MenuItem activeStyle={active} to="buttons">Buttons</MenuItem>
+          <MenuItem activeStyle={active} to="cards">Cards</MenuItem>
+          <MenuItem activeStyle={active} to="forms">Forms</MenuItem>
+          <MenuItem activeStyle={active} to="headers">Headers</MenuItem>
+          <MenuItem activeStyle={active} to="icons">Icons</MenuItem>
+          <MenuItem activeStyle={active} to="lists">Lists</MenuItem>
+          <MenuItem activeStyle={active} to="menus">Menus</MenuItem>
+          <MenuItem activeStyle={active} to="modal">Modal</MenuItem>
+          <MenuItem activeStyle={active} to="text">Text</MenuItem>
         </Menu>
         <GithubLink href="https://github.com/ht2-labs/mural"><IconGithub /></GithubLink>
         <NpmLink href="https://www.npmjs.com/package/@ht2-labs/mural"><IconNpm /></NpmLink>
