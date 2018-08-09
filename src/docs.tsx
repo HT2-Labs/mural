@@ -21,30 +21,6 @@ import { ThemeProvider } from './ThemeProvider';
 import checkForGithubPages from './utils/checkForGithubPages';
 
 const Demo = () => {
-  const theme = {
-    color: {
-      Body: '#efefef',
-      Button: '#076699',
-      Danger: '#ce0000',
-      Disabled: '#ddd',
-      Primary: '#41bfee',
-      Secondary: '#344a58',
-      Success: '#22c65b',
-    },
-    font: {
-      Base: '16px',
-    },
-    radius: {
-      Large: '50%',
-      Medium: '12px',
-      Small: '2px',
-    },
-    shadow: {
-      Large: '0 2px 2px 2px rgba(0, 0, 0, 0.12)',
-      Medium: '0px 1px 5px 0px rgba(0, 0, 0, 0.3)',
-      Small: 'rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px',
-    },
-  };
 
   const MainWrap = styled.div`
     display: grid;
@@ -54,12 +30,12 @@ const Demo = () => {
     height: 100%;
   `;
 
-const Main = styled.main`
+  const Main = styled.main`
     padding: 20px;
   `;
 
 return (
-  <ThemeProvider theme={theme}>
+  <ThemeProvider>
       <MainWrap>
         <DocsSidebar />
         <Main>

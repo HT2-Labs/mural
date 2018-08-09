@@ -11,22 +11,20 @@ const codeSnippet =
 
 export default () => {
   const theme = {
-    color: {
-      Body: '#efefef',
-      Button: '#076699',
-      Danger: '#ff0000',
-      Disabled: '#eeeeee',
-      Primary: '#41bfee',
-      Secondary: '#3/*  */44a58',
-    },
-    radius: {
-      Button: '2px',
-      Card: '12px',
-    },
-    shadow: {
-      Large: '0 2px 2px 2px rgba(0, 0, 0, 0.12)',
-      Main: '0 2px 2px 0 rgba(0, 0, 0, 0.24)',
-    },
+    colorBody: '#efefef',
+    colorButton: '#076699',
+    colorDanger: '#ce0000',
+    colorDisabled: '#ddd',
+    colorPrimary: '#41bfee',
+    colorSecondary: '#344a58',
+    colorSuccess: '#22c65b',
+    fontBase: '16px',
+    radiusLarge: '50%',
+    radiusMedium: '12px',
+    radiusSmall: '2px',
+    shadowLarge: '0 2px 2px 2px rgba(0, 0, 0, 0.12)',
+    shadowMedium: '0px 1px 5px 0px rgba(0, 0, 0, 0.3)',
+    shadowSmall: 'rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px',
   };
 
   return (
