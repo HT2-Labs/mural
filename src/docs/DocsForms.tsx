@@ -1,6 +1,7 @@
 // tslint:disable:max-line-length
 import * as React from 'react';
 
+import FormCheckbox from '../forms/FormCheckbox';
 import FormInput from '../forms/FormInput';
 import FormTextArea from '../forms/FormTextArea';
 import { H1, SizeType } from '../Text';
@@ -27,6 +28,7 @@ export default () => {
       <DocsPlayground code={codeSnippetTextArea}>
         <FormTextArea label="Label" placeholder="Type something here..."/>
       </DocsPlayground>
+      <FormCheckbox/>
     </>
   );
 };
