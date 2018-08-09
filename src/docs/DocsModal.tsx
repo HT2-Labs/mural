@@ -13,7 +13,6 @@ import FullPageModalActions from '../modal/FullPageModalActions';
 import FullPageModalBody from '../modal/FullPageModalBody';
 import FullPageModalHeader from '../modal/FullPageModalHeader';
 import Modal from '../modal/Modal';
-import ModalActions from '../modal/ModalActions';
 import ModalBody from '../modal/ModalBody';
 import ModalFooter from '../modal/ModalFooter';
 import ModalHeader from '../modal/ModalHeader';
@@ -154,11 +153,11 @@ export default class DocsModal extends React.Component {
           <Modal open={this.state.modalOpen} onCloseFn={this.closeModal}>
             <ModalHeader>
               <H3 size={SizeType.Large}>This is a Modal</H3>
-              <ModalActions>
+              <ButtonGroup alignment={Align.Right}>
                 <IconButtonInvisible onClick={this.closeModal}>
                   <IconClose />
                 </IconButtonInvisible>
-              </ModalActions>
+              </ButtonGroup>
             </ModalHeader>
 
             <ModalBody>
@@ -172,23 +171,21 @@ export default class DocsModal extends React.Component {
 
             <ModalFooter>
               <P>Oh what a cool thing!</P>
-              <ModalActions>
-                <ButtonGroup>
-                  <Button>Yes</Button>
-                  <ButtonGhost>Hmm</ButtonGhost>
-                  <Button onClick={this.closeModal} danger>No!</Button>
-                </ButtonGroup>
-              </ModalActions>
+              <ButtonGroup alignment={Align.Right}>
+                <Button>Yes</Button>
+                <ButtonGhost>Hmm</ButtonGhost>
+                <Button onClick={this.closeModal} danger>No!</Button>
+              </ButtonGroup>
             </ModalFooter>
           </Modal>
 
           <FullPageModal open={this.state.fullpageModalOpen}>
             <FullPageModalHeader>
-              <ModalActions>
+              <ButtonGroup alignment={Align.Right}>
                 <IconButtonInvisible onClick={this.closeFullpageModal}>
                   <IconClose />
                 </IconButtonInvisible>
-              </ModalActions>
+              </ButtonGroup>
             </FullPageModalHeader>
             <FullPageModalBody>
               <H3 size={SizeType.Large} >This is a Fullpage Modal</H3>

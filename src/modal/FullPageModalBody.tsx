@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import ModalProps from './ModalProps';
 
-export default ({ children }: ModalProps) => {
+const FullPageModalBody = ({ children }: ModalProps) => {
   const ModalBody = styled.div`
     margin: 5% auto 0 auto;
     width: 42%;
@@ -17,3 +17,5 @@ export default ({ children }: ModalProps) => {
     </ModalBody>
   );
 };
+
+export default FullPageModalBody;

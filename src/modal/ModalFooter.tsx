@@ -3,16 +3,18 @@ import styled from 'styled-components';
 
 import ModalProps from './ModalProps';
 
-export default ({ children }: ModalProps) => {
-  const ModalFooter = styled.div`
+const ModalFooter = ({ children }: ModalProps) => {
+  const Footer = styled.div`
     align-items: center;
     display: flex;
     margin-top: auto;
     width: 100%;
   `;
   return (
-    <ModalFooter>
+    <Footer>
       {children}
-    </ModalFooter>
+    </Footer>
   );
 };
+
+export default ModalFooter;
