@@ -6,15 +6,15 @@ import ButtonProps from './buttonProps';
 
 export default ({
   children,
+  colorOverride,
   danger = false,
   disabled = false,
   fullWidth = false,
-  useTextColor = false,
   onClick,
 }: ButtonProps) => {
-
+  const useTextColor = true;
   const Button = buttonStyle({ fullWidth, disabled });
-  const color = buttonColorStyles({ danger, disabled, useTextColor });
+  const color = buttonColorStyles({ danger, disabled, useTextColor, colorOverride });
   const InvisibleButton = buttonInvisibleStyle({ Button, color });
 
   return (

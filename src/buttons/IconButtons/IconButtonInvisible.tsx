@@ -23,16 +23,16 @@ const getFontSize = (size: Size) => {
 export default ({
   children,
   disabled = false,
-  useTextColor,
   size = Size.Medium,
   onClick,
+  colorOverride,
 }: IconButtonProps) => {
-
+  const useTextColor = true;
   const buttonSize = getButtonSize(size);
   const fontSize = getFontSize(size);
 
   const Button = buttonIconStyle(buttonSize, fontSize, disabled);
-  const color = buttonColorStyles({ disabled, useTextColor });
+  const color = buttonColorStyles({ disabled, useTextColor, colorOverride });
   const IconButtonInvisible = buttonInvisibleStyles({ Button, color });
 
   return (

@@ -23,11 +23,10 @@ const getFontSize = (size: Size) => {
 export default ({
   children,
   disabled = false,
-  useTextColor = false,
   size = Size.Medium,
   onClick,
 }: IconButtonProps) => {
-
+  const useTextColor = false;
   const buttonSize = getButtonSize(size);
   const fontSize = getFontSize(size);
 

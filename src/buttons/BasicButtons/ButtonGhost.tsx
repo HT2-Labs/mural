@@ -10,13 +10,14 @@ export default ({
   disabled = false,
   fullWidth = false,
   onClick,
+  colorOverride,
 }: ButtonProps) => {
 
   // Add to buttonColorStyles to set text color in place of background color
   const useTextColor = true;
 
   const Button = buttonStyle({ fullWidth, disabled });
-  const color = buttonColorStyles({ danger, disabled, useTextColor });
+  const color = buttonColorStyles({ danger, disabled, useTextColor, colorOverride });
   const ButtonGhost = buttonGhostStyle({ Button, color });
 
   return (
