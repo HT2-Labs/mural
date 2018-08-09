@@ -1,6 +1,7 @@
 // tslint:disable:max-line-length
 import * as React from 'react';
 
+import FormCheckbox from '../forms/FormCheckbox';
 import FormInput from '../forms/FormInput';
 import FormTextArea from '../forms/FormTextArea';
 import Switch from '../switches/Switch';
@@ -30,6 +31,9 @@ export default () => {
       </DocsPlayground>
       <DocsPlayground code={codeSnippetTextArea}>
         <Switch/>
+      </DocsPlayground>
+      <DocsPlayground>
+        <FormCheckbox/>
       </DocsPlayground>
     </>
   );
