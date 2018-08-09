@@ -46,10 +46,10 @@ export default ({ children, theme }: ThemeProps) => {
 
   const constructedTheme = {
     color: {
-      Body: mergedTheme.color.Body,
-      BodyDark: darken(DarkenValue, mergedTheme.color.Body),
-      BodyLight: lighten(lightenValue, mergedTheme.color.Body),
-      BodyText: readableColor(mergedTheme.color.Body),
+      Body: mergedTheme.colorBody,
+      BodyDark: darken(DarkenValue, mergedTheme.colorBody),
+      BodyLight: lighten(lightenValue, mergedTheme.colorBody),
+      BodyText: readableColor(mergedTheme.colorBody),
 
       Button: mergedTheme.colorButton,
       ButtonDark: darken(DarkenValue, mergedTheme.colorButton),
