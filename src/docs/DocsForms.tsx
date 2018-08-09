@@ -3,6 +3,7 @@ import * as React from 'react';
 
 import FormInput from '../forms/FormInput';
 import FormTextArea from '../forms/FormTextArea';
+import Switch from '../switches/Switch';
 import { H1, SizeType } from '../Text';
 import DocsPlayground from './DocsPlayground';
 
@@ -26,6 +27,9 @@ export default () => {
       </DocsPlayground>
       <DocsPlayground code={codeSnippetTextArea}>
         <FormTextArea label="Label" placeholder="Type something here..."/>
+      </DocsPlayground>
+      <DocsPlayground code={codeSnippetTextArea}>
+        <Switch/>
       </DocsPlayground>
     </>
   );
