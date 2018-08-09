@@ -11,4 +11,5 @@ export enum SizeType {
 export default interface TextProps {
   readonly children: ReactNode;
   readonly size?: SizeType;
+  readonly color?: string;
 }

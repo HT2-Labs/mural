@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 import ModalProps from './ModalProps';
 
-export default ({ children }: ModalProps) => {
-  const ModalHeader = styled.div`
+const FullPageModalHeader =  ({ children }: ModalProps) => {
+  const Header = styled.div`
     width: 100%;
     display: flex;
     align-self: flex-start;
@@ -12,8 +12,10 @@ export default ({ children }: ModalProps) => {
     justify-content: center;
   `;
   return (
-    <ModalHeader>
+    <Header>
       {children}
-    </ModalHeader>
+    </Header>
   );
 };
+
+export default FullPageModalHeader;
