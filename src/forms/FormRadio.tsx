@@ -4,7 +4,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import buttonColorStyles from '../buttons/utils/buttonColorStyles';
-import { IconCheck } from '../Icon';
 import FormProps from './FormProps';
 
 export default ({
@@ -13,7 +12,7 @@ export default ({
   }: FormProps) => {
 
     const activeColor = buttonColorStyles({disabled});
-    const SwitchBody = styled.label`
+    const RadioBody = styled.label`
     position: relative;
     display: inline-block;
     width: 24px;
@@ -29,48 +28,41 @@ export default ({
     background-color: #fff;
     -webkit-transition: .1s;
     transition: .1s;
-    border-radius: 4px;
+    border-radius: 50%;
     border: solid 2px #555;
     &:before {
-      border-radius: 2%;
+      border-radius: 50%;
       position: absolute;
       content: "";
-      height: 24px;
-      width: 24px;
+      top: 4px;
       left: 4px;
-      bottom: 4px;
+      height: 12px;
+      width: 12px;
       color: transparent;
       background-color: transparent;
       -webkit-transition: .1s;
       transition: .1s;
       text-align: center;
 }
-    & svg {
-      position: relative;
-      top: .025em;
-      margin: 2px;
-    }
+
   `;
 const CheckBox = styled.input`
     z-index: 1000;
-    &:checked + ${Slider} {
-      background-color: ${activeColor.backgroundLight};
-    }
     &:focus + ${Slider} {
       border-color: lightblue;
     }
     &:checked + ${Slider}:before {
-      color: #fff;
+      background-color: ${activeColor.backgroundLight};
     }
     &:checked + ${Slider} {
       border-color: ${activeColor.backgroundLight};
     }
   `;
   return (
-    <SwitchBody>
-      <CheckBox type="checkbox" name={group}/>
-      <Slider> <IconCheck color="white"/></Slider>
-    </SwitchBody>
+    <RadioBody>
+      <CheckBox type="radio" name={group}/>
+      <Slider/>
+    </RadioBody>
   );
 
 };
