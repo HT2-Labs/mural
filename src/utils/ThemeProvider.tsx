@@ -1,3 +1,4 @@
+// tslint:disable:max-file-line-count
 // tslint:disable:no-magic-numbers
 // tslint:disable:object-literal-sort-keys
 import {
@@ -11,67 +12,89 @@ import * as React from 'react';
 import { ThemeProvider } from 'styled-components';
 
 export interface ThemeProps {
-  readonly theme: any;
+  readonly theme?: any;
   readonly children: React.ReactNode;
 }
 
 export default ({ children, theme }: ThemeProps) => {
 
+  // Set all base theme values
+  const defaultTheme = {
+    colorBody: '#efefef',
+    colorButton: '#076699',
+    colorDanger: '#ce0000',
+    colorDisabled: '#ddd',
+    colorPrimary: '#41bfee',
+    colorSecondary: '#344a58',
+    colorSuccess: '#22c65b',
+    fontBase: '16px',
+    radiusLarge: '50%',
+    radiusMedium: '12px',
+    radiusSmall: '2px',
+    shadowLarge: '0 2px 2px 2px rgba(0, 0, 0, 0.12)',
+    shadowMedium: '0px 1px 5px 0px rgba(0, 0, 0, 0.3)',
+    shadowSmall: 'rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px',
+  };
+
+  // Apply app supplied theme over the mural default
+  const mergedTheme = {...defaultTheme, ...theme};
+
+  // Default values
   const lightenValue = 0.1;
   const DarkenValue = 0.1;
   const modularScaleValue = 'perfectFourth';
 
   const constructedTheme = {
     color: {
-      Body: theme.color.Body,
-      BodyText: readableColor(theme.color.Body),
+      Body: mergedTheme.colorBody,
+      BodyText: readableColor(mergedTheme.colorBody),
 
-      Button: theme.color.Button,
-      ButtonDark: darken(DarkenValue, theme.color.Button),
-      ButtonLight: lighten(lightenValue, theme.color.Button),
-      ButtonText: readableColor(theme.color.Button),
+      Button: mergedTheme.colorButton,
+      ButtonDark: darken(DarkenValue, mergedTheme.colorButton),
+      ButtonLight: lighten(lightenValue, mergedTheme.colorButton),
+      ButtonText: readableColor(mergedTheme.colorButton),
 
-      Danger: theme.color.Danger,
-      DangerDark: darken(DarkenValue, theme.color.Danger),
-      DangerLight: lighten(lightenValue, theme.color.Danger),
-      DangerText: readableColor(theme.color.Danger),
+      Danger: mergedTheme.colorDanger,
+      DangerDark: darken(DarkenValue, mergedTheme.colorDanger),
+      DangerLight: lighten(lightenValue, mergedTheme.colorDanger),
+      DangerText: readableColor(mergedTheme.colorDanger),
 
-      Disabled: theme.color.Disabled,
-      DisabledDark: darken(DarkenValue, theme.color.Disabled),
-      DisabledLight: lighten(lightenValue, theme.color.Disabled),
-      DisabledText: darken(0.5, theme.color.Disabled),
+      Disabled: mergedTheme.colorDisabled,
+      DisabledDark: darken(DarkenValue, mergedTheme.colorDisabled),
+      DisabledLight: lighten(lightenValue, mergedTheme.colorDisabled),
+      DisabledText: darken(0.5, mergedTheme.colorDisabled),
 
-      Primary: theme.color.Primary,
-      PrimaryDark: darken(DarkenValue, theme.color.Primary),
-      PrimaryLight: lighten(lightenValue, theme.color.Primary),
-      PrimaryText: readableColor(theme.color.Primary),
+      Primary: mergedTheme.colorPrimary,
+      PrimaryDark: darken(DarkenValue, mergedTheme.colorPrimary),
+      PrimaryLight: lighten(lightenValue, mergedTheme.colorPrimary),
+      PrimaryText: readableColor(mergedTheme.colorPrimary),
 
-      Secondary: theme.color.Secondary,
-      SecondaryDark: darken(DarkenValue, theme.color.Secondary),
-      SecondaryLight: lighten(lightenValue, theme.color.Secondary),
-      SecondaryText: readableColor(theme.color.Secondary),
+      Secondary: mergedTheme.colorSecondary,
+      SecondaryDark: darken(DarkenValue, mergedTheme.colorSecondary),
+      SecondaryLight: lighten(lightenValue, mergedTheme.colorSecondary),
+      SecondaryText: readableColor(mergedTheme.colorSecondary),
 
-      Success: theme.color.Success,
-      SuccessDark: darken(DarkenValue, theme.color.Success),
-      SuccessLight: lighten(lightenValue, theme.color.Success),
-      SuccessText: readableColor(theme.color.Success),
+      Success: mergedTheme.colorSuccess,
+      SuccessDark: darken(DarkenValue, mergedTheme.colorSuccess),
+      SuccessLight: lighten(lightenValue, mergedTheme.colorSuccess),
+      SuccessText: readableColor(mergedTheme.colorSuccess),
     },
     font: {
-      Small: modularScale(-1, em(theme.font.Base), modularScaleValue),
-      Base: em(theme.font.Base),
-      Medium: modularScale(2, em(theme.font.Base), modularScaleValue),
-      Large: modularScale(3, em(theme.font.Base), modularScaleValue),
-      ExtraLarge: modularScale(4, em(theme.font.Base), modularScaleValue),
+      Small: modularScale(-1, em(mergedTheme.fontBase), modularScaleValue),
+      Base: em(mergedTheme.fontBase),
+      Medium: modularScale(2, em(mergedTheme.fontBase), modularScaleValue),
+      Large: modularScale(3, em(mergedTheme.fontBase), modularScaleValue),
+      ExtraLarge: modularScale(4, em(mergedTheme.fontBase), modularScaleValue),
     },
     radius: {
-      Large: theme.radius.Large,
-      Medium: theme.radius.Medium,
-      Small: theme.radius.Small,
+      Large: mergedTheme.radiusLarge,
+      Medium: mergedTheme.radiusMedium,
+      Small: mergedTheme.radiusSmall,
     },
     shadow: {
-      Large: theme.shadow.Large,
-      Medium: theme.shadow.Medium,
-      Small: theme.shadow.Small,
+      Large: mergedTheme.shadowLarge,
+      Medium: mergedTheme.shadowMedium,
+      Small: mergedTheme.shadowSmall,
     },
   };
   return (
