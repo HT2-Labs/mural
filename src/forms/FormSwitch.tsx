@@ -1,19 +1,22 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import buttonColorStyles from '../buttons/utils/buttonColorStyles';
-import switchProps from './switchProps';
+import FormProps from './FormProps';
 
 export default ({
   danger = false,
   disabled = false,
-}: switchProps) => {
+}: FormProps) => {
+
   const color = buttonColorStyles({ danger, disabled });
+
   const SwitchBody = styled.label`
     position: relative;
     display: inline-block;
     width: 60px;
     height: 34px;
   `;
+
   const Slider = styled.div`
     position: absolute;
     cursor: pointer;
@@ -36,15 +39,14 @@ export default ({
       background-color: white;
       -webkit-transition: .4s;
       transition: .4s;
-}
+    }
   `;
-const CheckBox = styled.input`
-    /* display:none; */
+
+  const CheckBox = styled.input`
     z-index: 1000;
     &:checked + ${Slider} {
       background-color: ${color.backgroundLight};
     }
-
     &:focus + ${Slider} {
       box-shadow: 0 0 1px #2196F3;
     }
@@ -52,6 +54,7 @@ const CheckBox = styled.input`
       transform: translateX(26px);
     }
   `;
+
   return (
     <SwitchBody>
       <CheckBox type="checkbox"/>

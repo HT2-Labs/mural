@@ -5,9 +5,12 @@ import LinkProps from './linkProps';
 
 export default ({
   children,
-  external = false,
   color = String(({ theme }: any ) => theme.color.Button),
-} : LinkProps) => {
+  external = false,
+  href,
+  onClick,
+}: LinkProps) => {
+
   const Link = styled.a`
     cursor: pointer;
     color: ${color};
@@ -23,7 +26,7 @@ export default ({
   `;
 
   return(
-    <Link>
+    <Link href={href} onClick={onClick}>
       { children }
       { external ? <IconExternalLink/> : null}
     </Link>
