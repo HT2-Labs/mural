@@ -5,9 +5,9 @@ export interface ModalCardProps {
   readonly children?: React.ReactNode;
 }
 
-export default ({ children }: ModalCardProps) => {
+const ModalCard = ({ children }: ModalCardProps) => {
 
-  const ModalCard = styled.div`
+  const Card = styled.div`
     border-radius: ${({ theme }: any) => theme.radius.Button};
     background-color: #fff;
     height: auto;
@@ -19,8 +19,10 @@ export default ({ children }: ModalCardProps) => {
   `;
 
   return (
-    <ModalCard>
+    <Card>
       {children}
-    </ModalCard>
+    </Card>
   );
 };
+
+export default ModalCard;
