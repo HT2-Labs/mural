@@ -7,7 +7,7 @@ export enum Size {
 }
 export default interface IconButtonProps {
   readonly children: ReactNode;
-  readonly color?: string;
+  readonly colorOverride?: string;
   readonly disabled?: boolean | undefined;
   readonly onClick?: (e: React.MouseEvent<HTMLElement>) => void;
   readonly size?: Size;

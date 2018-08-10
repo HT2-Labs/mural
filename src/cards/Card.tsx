@@ -87,10 +87,10 @@ export default class extends React.Component<CardProps> {
         <ButtonGroup alignment={Align.Right}>
           {this.state.showOverlay ?
             <IconButtonInvisible onClick={actionClose} size={Size.Small}>
-              <IconTimes color={'#000'} />
+              <IconTimes  />
             </IconButtonInvisible> :
             <IconButtonInvisible onClick={actionOpen} size={Size.Small}>
-              <IconEllipsisV color={'#000'} />
+              <IconEllipsisV  />
             </IconButtonInvisible>}
         </ButtonGroup>
         {this.state.showOverlay ? <OverlayContent>{overlayContent}</OverlayContent> : null}

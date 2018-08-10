@@ -26,24 +26,20 @@ export default ({
   disabled = false,
   size = Size.Medium,
   onClick,
-  type,
+  colorOverride,
 }: IconButtonProps) => {
-
+  const useTextColor = true;
   const buttonSize = getButtonSize(size);
   const fontSize = getFontSize(size);
 
-  // Add to buttonColorStyles to set text color in place of background color
-  const useTextColor = true;
-
   const Button = buttonIconStyle(buttonSize, fontSize, disabled);
-  const color = buttonColorStyles({ disabled, useTextColor });
+  const color = buttonColorStyles({ disabled, useTextColor, colorOverride });
   const IconButtonInvisible = buttonInvisibleStyles({ Button, color });
 
   return (
     <IconButtonInvisible
       disabled={disabled}
       onClick={onClick}
-      type={type}
       aria-label={ariaLabel}
     >
       {children}

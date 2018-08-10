@@ -28,12 +28,12 @@ export default ({
   onClick,
   type,
 }: IconButtonProps) => {
-
+  const useTextColor = false;
   const buttonSize = getButtonSize(size);
   const fontSize = getFontSize(size);
 
   const Button = buttonIconStyle(buttonSize, fontSize, disabled);
-  const color = buttonColorStyles({ disabled });
+  const color = buttonColorStyles({ disabled, useTextColor});
   const IconButtonNormal = buttonNormalStyles({ Button, color, disabled});
 
   return (

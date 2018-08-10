@@ -1,12 +1,20 @@
+import { lighten } from 'polished';
+
 // tslint:disable:no-let
 export interface ButtonColorProps {
+  readonly colorOverride?: string | undefined;
   readonly danger?: boolean | undefined;
   readonly disabled?: boolean | undefined;
   readonly useTextColor?: boolean | undefined;
 }
 
-export default ({danger = false, disabled = false, useTextColor = false}: ButtonColorProps) => {
-
+export default ({
+  colorOverride,
+  danger = false,
+  disabled = false,
+  useTextColor = false,
+}: ButtonColorProps) => {
+  const lightenAmount = 0.1;
   let background = null;
   let backgroundLight = null;
   let text = null;
@@ -25,6 +33,10 @@ export default ({danger = false, disabled = false, useTextColor = false}: Button
     background = ({ theme }: any) => theme.color.Danger;
     backgroundLight = ({ theme }: any) => theme.color.DangerLight;
     text = ({ theme }: any) => theme.color.DangerText;
+  } else if (colorOverride !== undefined) {
+    background = colorOverride;
+    backgroundLight = lighten(lightenAmount, colorOverride);
+    text = colorOverride;
   } else {
     background = ({ theme }: any) => theme.color.Button;
     backgroundLight = ({ theme }: any) => theme.color.ButtonLight;

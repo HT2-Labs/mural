@@ -6,25 +6,21 @@ import ButtonProps from './buttonProps';
 
 export default ({
   children,
+  colorOverride,
   danger = false,
   disabled = false,
   fullWidth = false,
   onClick,
-  type,
 }: ButtonProps) => {
-
-  // Add to buttonColorStyles to set text color in place of background color
   const useTextColor = true;
-
   const Button = buttonStyle({ fullWidth, disabled });
-  const color = buttonColorStyles({ danger, disabled, useTextColor });
+  const color = buttonColorStyles({ danger, disabled, useTextColor, colorOverride });
   const InvisibleButton = buttonInvisibleStyle({ Button, color });
 
   return (
     <InvisibleButton
       disabled={disabled}
       onClick={onClick}
-      type={type}
     >
       {children}
     </InvisibleButton>

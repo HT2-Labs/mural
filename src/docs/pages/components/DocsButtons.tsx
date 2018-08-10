@@ -90,8 +90,6 @@ const codeSnippetIconButton =
 import Size from '../buttons/IconButtonProps';
 import {
   IconButton,
-  IconButtonInvisible,
-  IconButtonGhost,
   ButtonGroup,
 } from '@ht2-labs/mural/Button';
 
@@ -101,7 +99,16 @@ import {
   <IconButton size={Size.Medium} danger><IconEllipsisV /></IconButton>
   <IconButton disabled><IconChevronRight /></IconButton>
   <IconButton><IconFlagCheckered /></IconButton>
-</ButtonGroup>
+</ButtonGroup>`;
+
+const codeSnippetIconButtonInvisible =
+  `
+import Size from '../buttons/IconButtonProps';
+import {
+  IconButtonInvisible,
+  ButtonGroup,
+} from '@ht2-labs/mural/Button';
+
 <P>Invisible Icon Button</P>
 <ButtonGroup>
   <IconButtonInvisible><IconAsterisk /></IconButtonInvisible>
@@ -144,6 +151,28 @@ const availablePropsIconButton =
     <TableCell>Defines the aria label for this icon button</TableCell>
   </TableRow>
 </Table>;
+const availablePropsInvisibleIconButton =
+<Table>
+<DocsPropsTableHeader/>
+  <TableRow>
+    <TableCell>size</TableCell>
+    <TableCell>Size.Small, Size.Medium, Size.Large</TableCell>
+    <TableCell>Size.Medium</TableCell>
+    <TableCell>Size of button</TableCell>
+  </TableRow>
+  <TableRow>
+    <TableCell>disabled</TableCell>
+    <TableCell>Boolean</TableCell>
+    <TableCell>Undefined</TableCell>
+    <TableCell>Defines whether the button is disabled or not</TableCell>
+  </TableRow>
+  <TableRow>
+    <TableCell>colorOverride</TableCell>
+    <TableCell>String</TableCell>
+    <TableCell>Undefined</TableCell>
+    <TableCell>If a color string is passed into this prop, it will override the original color. This is not used when the danger or disabled prop are used</TableCell>
+  </TableRow>
+</Table>;
 const availablePropsButton =
 <Table>
 <DocsPropsTableHeader/>
@@ -158,6 +187,50 @@ const availablePropsButton =
     <TableCell>Boolean</TableCell>
     <TableCell>Undefined</TableCell>
     <TableCell>Defines whether the button is disabled or not</TableCell>
+  </TableRow>
+</Table>;
+const availablePropsGhostButton =
+<Table>
+<DocsPropsTableHeader/>
+  <TableRow>
+    <TableCell>danger</TableCell>
+    <TableCell>Boolean</TableCell>
+    <TableCell>Undefined </TableCell>
+    <TableCell>Shows the user that this is a dangerous button eg. Delete</TableCell>
+  </TableRow>
+  <TableRow>
+    <TableCell>disabled</TableCell>
+    <TableCell>Boolean</TableCell>
+    <TableCell>Undefined</TableCell>
+    <TableCell>Defines whether the button is disabled or not</TableCell>
+  </TableRow>
+  <TableRow>
+    <TableCell>colorOverride</TableCell>
+    <TableCell>String</TableCell>
+    <TableCell>Undefined</TableCell>
+    <TableCell>If a color string is passed into this prop, it will override the original color. This is not used when the danger or disabled prop are used</TableCell>
+  </TableRow>
+</Table>;
+const availablePropsInvisibleButton =
+<Table>
+<DocsPropsTableHeader/>
+  <TableRow>
+    <TableCell>danger</TableCell>
+    <TableCell>Boolean</TableCell>
+    <TableCell>Undefined </TableCell>
+    <TableCell>Shows the user that this is a dangerous button eg. Delete</TableCell>
+  </TableRow>
+  <TableRow>
+    <TableCell>disabled</TableCell>
+    <TableCell>Boolean</TableCell>
+    <TableCell>Undefined</TableCell>
+    <TableCell>Defines whether the button is disabled or not</TableCell>
+  </TableRow>
+  <TableRow>
+    <TableCell>colorOverride</TableCell>
+    <TableCell>String</TableCell>
+    <TableCell>Undefined</TableCell>
+    <TableCell>If a color string is passed into this prop, it will override the original color. This is not used when the danger or disabled prop are used</TableCell>
   </TableRow>
 </Table>;
 export default () => {
@@ -177,7 +250,7 @@ export default () => {
       </DocsDescription>
       <DocsDescription title="Ghost Button">
         <P>Ghost buttons can be used as a secondary option or to overlay on splash images. Ghost buttons can have their color overwritten by using the <code>ghostColor</code> prop.</P>
-        <DocsPlayground code={codeSnippetButtonGhost} props={availablePropsButton}>
+        <DocsPlayground code={codeSnippetButtonGhost} props={availablePropsGhostButton}>
           <ButtonGroup>
             <ButtonGhost
 
@@ -205,7 +278,7 @@ export default () => {
       </DocsDescription>
       <DocsDescription title="Invisible Button">
         <P>Only use invisible buttons in combination with other buttons (i.e. in a  <code>ButtonGroup</code>). Do NOT use them by themselves as this can be confusing.</P>
-        <DocsPlayground code={codeSnippetButtonInvisible} props={availablePropsButton}>
+        <DocsPlayground code={codeSnippetButtonInvisible} props={availablePropsInvisibleButton}>
           <ButtonGroup>
             <ButtonInvisible>
               Invisible Button <IconChevronRight />
@@ -221,7 +294,6 @@ export default () => {
 
       <DocsDescription title="Icon Button">
         <DocsPlayground code={codeSnippetIconButton} props={availablePropsIconButton}>
-          <P>Icon Button</P>
           <ButtonGroup>
             <IconButton><IconAsterisk /></IconButton>
             <IconButton><IconEllipsisV /></IconButton>
@@ -231,7 +303,10 @@ export default () => {
             <IconButton><IconTimesCircle /></IconButton>
             <IconButton><IconBullseye /></IconButton>
           </ButtonGroup>
-          <P>Invisible Icon Button</P>
+        </DocsPlayground>
+      </DocsDescription>
+      <DocsDescription title="Invisible Icon Button">
+        <DocsPlayground code={codeSnippetIconButtonInvisible} props={availablePropsInvisibleIconButton}>
           <ButtonGroup>
             <IconButtonInvisible ariaLabel="Asterisk"><IconAsterisk /></IconButtonInvisible>
             <IconButtonInvisible><IconEllipsisV /></IconButtonInvisible>
@@ -239,7 +314,7 @@ export default () => {
             <IconButtonInvisible><IconFlagCheckered /></IconButtonInvisible>
             <IconButtonInvisible><IconCalendar /></IconButtonInvisible>
             <IconButtonInvisible><IconTimesCircle /></IconButtonInvisible>
-            <IconButtonInvisible><IconBullseye /></IconButtonInvisible>
+            <IconButtonInvisible colorOverride="green"><IconBullseye /></IconButtonInvisible>
           </ButtonGroup>
         </DocsPlayground>
       </DocsDescription>
