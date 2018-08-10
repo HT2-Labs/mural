@@ -4,7 +4,7 @@ import H3 from './text/H3';
 import H4 from './text/H4';
 import Label from './text/Label';
 import P from './text/P';
-import { SizeType } from './text/TextProps';
+import { SizeType, Style } from './text/TextProps';
 export {
   H1,
   H2,
@@ -13,4 +13,5 @@ export {
   Label,
   P,
   SizeType,
+  Style,
 };

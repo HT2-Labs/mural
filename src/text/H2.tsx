@@ -1,10 +1,15 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import fontStyle from '../utils/fontStyle';
 import TextProps from './TextProps';
 import { getFontSize } from './textStyle';
 
 export default ({
-  children, size, color = String(({ theme }: any ) => theme.color.Button),
+  color = String(({ theme }: any ) => theme.color.Button),
+  italic,
+  strong,
+  size,
+  children,
 }: TextProps) => {
   const H2 = styled.h2`
     color: ${color};
@@ -14,7 +19,7 @@ export default ({
 
   return (
     <H2>
-      {children}
+      {fontStyle({italic, strong, children}) }
     </H2>
   );
 };

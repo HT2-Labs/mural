@@ -1,10 +1,15 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import fontStyle from '../utils/fontStyle';
 import TextProps from './TextProps';
 import { getFontSize } from './textStyle';
 
 export default ({
-   children, size, color = String(({ theme }: any ) => theme.color.Button),
+  color = String(({ theme }: any ) => theme.color.Button),
+  italic,
+  strong,
+  size,
+  children,
  }: TextProps) => {
   const Label = styled.label`
     display: block;
@@ -14,7 +19,7 @@ export default ({
 
   return (
     <Label>
-      {children}
+      {fontStyle({italic, strong, children}) }
     </Label>
   );
 };
