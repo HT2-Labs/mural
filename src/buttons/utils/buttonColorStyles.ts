@@ -2,14 +2,17 @@ import { lighten } from 'polished';
 
 // tslint:disable:no-let
 export interface ButtonColorProps {
+  readonly colorOverride?: string | undefined;
   readonly danger?: boolean | undefined;
   readonly disabled?: boolean | undefined;
   readonly useTextColor?: boolean | undefined;
-  readonly colorOverride?: string | undefined;
 }
 
 export default ({
-  danger = false, disabled = false, useTextColor = false, colorOverride,
+  colorOverride,
+  danger = false,
+  disabled = false,
+  useTextColor = false,
 }: ButtonColorProps) => {
   const lightenAmount = 0.1;
   let background = null;

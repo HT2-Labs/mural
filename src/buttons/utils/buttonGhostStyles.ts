@@ -1,8 +1,7 @@
 export interface Props {
   readonly Button: any;
   readonly color: any;
-  readonly disabled?: boolean | undefined;
-  readonly danger?: boolean | undefined;
+  readonly disabled?: boolean;
 }
 export default ({ Button, color, disabled = false }: Props) => {
   const ButtonGhost = Button.extend`
