@@ -99,7 +99,7 @@ class DocsPlayground extends React.Component<PlaygroundProps> {
     return (
       <PlayGround>
         <Header>
-          <TabMenu alignment={Align.Right}>
+          <TabMenu alignment={Align.Right} ariaLabel="Playground">
             <TabItem
               active={this.checkIfActive(Tab.Preview)}
               onClick={() => { this.swapTab(Tab.Preview); }}
@@ -110,7 +110,7 @@ class DocsPlayground extends React.Component<PlaygroundProps> {
             {this.getPropsButton()}
           </TabMenu>
         </Header>
-        <Content>
+        <Content aria-label={Tab[this.state.playgroundTab]}>
           {getContent(
             this.state.playgroundTab,
             this.props.children,

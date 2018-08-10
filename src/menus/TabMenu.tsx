@@ -6,6 +6,7 @@ import { Align } from '../utils/AlignmentProps';
 interface TabMenuProps {
   readonly children: React.ReactNode;
   readonly alignment?: Align;
+  readonly ariaLabel?: string | undefined;
 }
 
 const getAlignment = (alignment?: Align) => {
@@ -17,7 +18,7 @@ const getAlignment = (alignment?: Align) => {
   }
 };
 
-export default ({ children, alignment }: TabMenuProps) => {
+export default ({ children, alignment, ariaLabel }: TabMenuProps) => {
   const alignType = getAlignment(alignment);
 
   const TabMenu = styled.nav`
@@ -28,7 +29,7 @@ export default ({ children, alignment }: TabMenuProps) => {
   `;
 
   return (
-    <TabMenu>
+    <TabMenu role="presentation" aria-label={ariaLabel}>
       {children}
     </TabMenu>
   );

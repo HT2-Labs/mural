@@ -2,12 +2,16 @@ import * as React from 'react';
 import styled from 'styled-components';
 import MenuProps from './menuProps';
 
-export default ({ active = false, children, onClick }: MenuProps) => {
-  const TabItem = styled.div`
+export default ({ active = false, children, onClick}: MenuProps) => {
+  const TabItem = styled.button`
     display: flex;
+    border-left: none;
+    border-top: none;
+    border-right: none;
     border-bottom: 4px solid;
     border-color: ${active ? ({ theme }) => theme.color.Button : 'transparent'};
     box-sizing: border-box;
+    background: none;
     color: ${active
       ? ({ theme }) => theme.color.Button
       : ({ theme }) => theme.color.BodyText
@@ -31,7 +35,11 @@ export default ({ active = false, children, onClick }: MenuProps) => {
   `;
 
   return (
-    <TabItem onClick={onClick}>
+    <TabItem
+      aria-selected={active}
+      onClick={onClick}
+      role="tab"
+    >
       {children}
     </TabItem>
   );
