@@ -21,6 +21,7 @@ const getFontSize = (size: Size) => {
 };
 
 export default ({
+  ariaLabel,
   children,
   disabled = false,
   size = Size.Medium,
@@ -39,6 +40,7 @@ export default ({
     <IconButtonInvisible
       disabled={disabled}
       onClick={onClick}
+      aria-label={ariaLabel}
     >
       {children}
     </IconButtonInvisible>
