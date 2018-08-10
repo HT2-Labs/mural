@@ -137,6 +137,12 @@ const availablePropsIconButton =
     <TableCell>Undefined</TableCell>
     <TableCell>Defines whether the button is disabled or not</TableCell>
   </TableRow>
+  <TableRow>
+    <TableCell>ariaLabel</TableCell>
+    <TableCell>String</TableCell>
+    <TableCell>Undefined</TableCell>
+    <TableCell>Defines the aria label for this icon button</TableCell>
+  </TableRow>
 </Table>;
 const availablePropsButton =
 <Table>
@@ -227,7 +233,7 @@ export default () => {
           </ButtonGroup>
           <P>Invisible Icon Button</P>
           <ButtonGroup>
-            <IconButtonInvisible><IconAsterisk /></IconButtonInvisible>
+            <IconButtonInvisible ariaLabel="Asterisk"><IconAsterisk /></IconButtonInvisible>
             <IconButtonInvisible><IconEllipsisV /></IconButtonInvisible>
             <IconButtonInvisible disabled><IconChevronRight /></IconButtonInvisible>
             <IconButtonInvisible><IconFlagCheckered /></IconButtonInvisible>
