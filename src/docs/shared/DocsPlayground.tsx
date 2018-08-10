@@ -110,7 +110,7 @@ class DocsPlayground extends React.Component<PlaygroundProps> {
             {this.getPropsButton()}
           </TabMenu>
         </Header>
-        <Content aria-labelledby={Tab[this.state.playgroundTab]}>
+        <Content aria-label={Tab[this.state.playgroundTab]}>
           {getContent(
             this.state.playgroundTab,
             this.props.children,

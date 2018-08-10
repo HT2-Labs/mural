@@ -6,7 +6,7 @@ import { Align } from '../utils/AlignmentProps';
 interface TabMenuProps {
   readonly children: React.ReactNode;
   readonly alignment?: Align;
-  readonly ariaLabel?: string;
+  readonly ariaLabel?: string | undefined;
 }
 
 const getAlignment = (alignment?: Align) => {

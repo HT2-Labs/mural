@@ -35,8 +35,10 @@ export default ({ active = false, children, onClick}: MenuProps) => {
   `;
 
   return (
-    <TabItem onClick={onClick} role="tab"
-    aria-selected={active}
+    <TabItem
+      aria-selected={active}
+      onClick={onClick}
+      role="tab"
     >
       {children}
     </TabItem>
