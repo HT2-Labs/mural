@@ -56,7 +56,7 @@ class DocsPlayground extends React.Component<PlaygroundProps> {
           onClick={() => { this.swapTab(Tab.Code); }}
           ariaControl="code-tab"
           id="Code"
-          tabIndex={-1}
+          tabIndex={1}
         >
           Code <IconCode />
         </TabItem>
@@ -73,7 +73,8 @@ class DocsPlayground extends React.Component<PlaygroundProps> {
           onClick={() => { this.swapTab(Tab.Props); }}
           ariaControl="props-tab"
           id="Props"
-          tabIndex={-1}
+          // tslint:disable-next-line:no-magic-numbers
+          tabIndex={2}
         >
           Props <IconProject />
         </TabItem>
