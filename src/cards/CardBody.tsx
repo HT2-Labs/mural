@@ -13,7 +13,6 @@ export default ({ children, onClick }: CardBodyProps) => {
     height: 100%;
     line-height: 1.19;
     padding: 12px 0 12px 20px;
-    width: 100%;
     &:hover {
       ${onClick !== undefined ? 'cursor: pointer' : ''};
       ${onClick !== undefined ? 'text-decoration: underline' : ''};
