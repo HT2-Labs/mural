@@ -60,7 +60,7 @@ const Modal = (props: IModalProps) => {
     position: fixed;
     right: 0px;
     top: 0px;
-    z-index: 1400;
+    z-index: 1000;
   `;
 
   const ClickScreen = styled.div`
@@ -69,7 +69,7 @@ const Modal = (props: IModalProps) => {
     position: fixed;
     right: 0px;
     top: 0px;
-    z-index: 1500;
+    z-index: 1010;
   `;
 
   return (
