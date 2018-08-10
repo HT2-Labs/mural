@@ -15,8 +15,8 @@ interface TabMenuProps {
     const Table = styled.table`
       width: 100%;
       border-collapse: collapse;
-      background-color: #eaeaea;
-      padding: 4px;
+      background-color: #fff;
+      padding: 8px;
       ${layout !== undefined ? `table-layout: ${layout};` : null}
     `;
 

@@ -23,8 +23,8 @@ export default ({ active = false, children, onClick, ariaControl, id, tabIndex }
     text-align: center;
     width: 100%;
     &:hover {
-      border-color: ${({ theme }) => theme.color.Button};
-      color: ${({ theme }) => theme.color.Button};
+      border-color: ${({ theme }) => theme.color.ButtonLight};
+      color: ${({ theme }) => theme.color.ButtonLight};
       cursor: pointer;
     }
     & svg {

@@ -4,13 +4,10 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import TabItem from '../menus/TabItem';
-import TabMenu from '../menus/TabMenu';
+import { IconCode, IconEye, IconProject } from '../../Icon';
+import { TabItem, TabMenu } from '../../menus';
+import { Align } from '../../utils/AlignmentProps';
 import DocsCode from './DocsCode';
-
-import { IconCode, IconProject } from '../Icon';
-import IconEye from '../icons/IconEye';
-import { Align } from '../utils/AlignmentProps';
 
 const Preview = ({ children }: any) => {
   const PreviewWrap = styled.div`
@@ -39,7 +36,7 @@ const getContent = (content: any, children: any, code: any, props: any) => {
   }
 };
 
-export default class extends React.Component<PlaygroundProps> {
+class DocsPlayground extends React.Component<PlaygroundProps> {
 
   public readonly state = {
     playgroundTab: 0,
@@ -133,3 +130,5 @@ export default class extends React.Component<PlaygroundProps> {
     );
   }
 }
+
+export default DocsPlayground;

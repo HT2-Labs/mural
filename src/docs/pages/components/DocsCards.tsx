@@ -1,9 +1,16 @@
+// tslint:disable:prefer-function-over-method
 // tslint:disable:max-file-line-count
 // tslint:disable:no-this
 // tslint:disable:no-class
 import * as React from 'react';
 import styled from 'styled-components';
 
+import {
+  Button,
+  ButtonGhost,
+  ButtonGroup,
+  ButtonInvisible,
+} from '../../../buttons';
 import {
   Card,
   CardBody,
@@ -15,24 +22,21 @@ import {
   CardSplashSubText,
   CardSplashText,
   CardTitle,
-} from '../Card';
-
-import { Button, ButtonGhost, ButtonGroup, ButtonInvisible } from '../buttons';
-import DocsPropsTableHeader from '../docs/DocsPropsTableHeader';
-import { IconCheck } from '../Icon';
-import Table from '../tables/Table';
-import TableCell from '../tables/TableCell';
-import TableRow from '../tables/TableRow';
-import { H1, SizeType } from '../Text';
-import DocsDescription from './DocsDescription';
-import DocsPlayground from './DocsPlayground';
+} from '../../../Card';
+import { IconCheck } from '../../../Icon';
+import { Table, TableCell, TableRow } from '../../../tables';
+import { H1, SizeType } from '../../../Text';
+import { DocsDescription, DocsPlayground, DocsPropsTableHeader } from '../../shared';
 
 class DocsCards extends React.Component {
   public readonly state = {
     codeSnippet: 'Click component to see example...',
     overlay: false,
   };
-  // tslint:disable-next-line:prefer-function-over-method
+  public readonly deadClick = () => {
+    return null;
+  }
+
   public render() {
     const CardGrid = styled.div`
       display: grid;
@@ -41,7 +45,6 @@ class DocsCards extends React.Component {
       grid-template-columns: 32% 32% 32%;
       grid-template-rows: 150px;
     `;
-
     const normalCard = (
       `import { Card, CardBody, CardFooter, CardHeader, CardTitle } from '@ht2-labs/mural/Card';
 <Card>
@@ -153,6 +156,16 @@ const overlayContent = (
           <DocsPlayground code={cardHighlighted} props={availableProps}>
             <CardGrid>
               <CardHighlighted active>
+                <CardSplashHeader>
+                  <CardHeader />
+                </CardSplashHeader>
+                <CardSplashText>
+                  <strong>Shared components</strong>
+                  <CardSplashSubText>(0/3) things are cool</CardSplashSubText>
+                </CardSplashText>
+              </CardHighlighted>
+
+              <CardHighlighted onClick={this.deadClick}>
                 <CardSplashHeader>
                   <CardHeader />
                 </CardSplashHeader>

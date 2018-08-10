@@ -1,16 +1,10 @@
 import * as React from 'react';
 
-import TabItem from '../menus/TabItem';
-import TabMenu from '../menus/TabMenu';
-import { Align } from '../utils/AlignmentProps';
-
-import Table from '../tables/Table';
-import TableCell from '../tables/TableCell';
-import TableRow from '../tables/TableRow';
-
-import DocsPropsTableHeader from '../docs/DocsPropsTableHeader';
-import { H1, P, SizeType } from '../Text';
-import DocsPlayground from './DocsPlayground';
+import { TabItem, TabMenu } from '../../../menus';
+import { Table, TableCell, TableRow } from '../../../tables';
+import { H1, P, SizeType } from '../../../Text';
+import { Align } from '../../../utils/AlignmentProps';
+import { DocsPlayground, DocsPropsTableHeader } from '../../shared';
 
 const codeSnippet =
   `import { TabMenu, TabItem } from '@ht2-labs/mural/Menu';
@@ -43,7 +37,7 @@ const availableProps =
   </TableRow>
 </Table>;
 
-export default () => {
+const DocsMenus = () => {
 
   return (
     <>
@@ -70,3 +64,5 @@ export default () => {
     </>
   );
 };
+
+export default DocsMenus;

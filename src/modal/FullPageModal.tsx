@@ -1,8 +1,8 @@
 // tslint:disable:no-class
 // tslint:disable:no-this
-
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import FocusTrap from 'react-focus-trap';
 import styled from 'styled-components';
 
 export interface IModalProps {
@@ -17,7 +17,7 @@ export interface IModal {
 
 const modalRoot = document.getElementById('modal-root');
 
-class Modal extends React.Component<IModalProps> {
+class ModalContainer extends React.Component<IModalProps> {
   private readonly el: any;
 
   constructor(props: IModalProps) {
@@ -63,10 +63,12 @@ export default (props: IModalProps) => {
   `;
 
   return (
-    <Modal>
-      <PageCover>
-        {props.children}
-      </PageCover>
-    </Modal>
+    <ModalContainer>
+      <FocusTrap onExit={props.onCloseFn} active={props.open}>
+        <PageCover>
+          {props.children}
+        </PageCover>
+      </FocusTrap>
+    </ModalContainer>
   );
 };
