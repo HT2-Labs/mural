@@ -11,16 +11,16 @@ const H3 = ({
   size,
   children,
  }: TextProps) => {
-  const Header = styled.h3`
+  const HeaderText = styled.h3`
     color: ${color};
     font-size: ${getFontSize(size)};
     margin: 0;
   `;
 
   return (
-    <Header>
+    <HeaderText>
       {fontStyle({italic, strong, children}) }
-    </Header>
+    </HeaderText>
   );
 };
 

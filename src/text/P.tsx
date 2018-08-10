@@ -11,15 +11,15 @@ const P = ({
   size,
   children,
  }: TextProps) => {
-  const Para = styled.p`
+  const Paragraph = styled.p`
     color: ${color};
     font-size: ${getFontSize(size)};
   `;
 
   return (
-    <Para>
+    <Paragraph>
       {fontStyle({italic, strong, children}) }
-    </Para>
+    </Paragraph>
   );
 };
 
