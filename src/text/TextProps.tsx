@@ -8,11 +8,6 @@ export enum SizeType {
   ExtraLarge,
 }
 
-export enum Style {
-  strong,
-  italic,
-}
-
 export default interface TextProps {
   readonly children: ReactNode;
   readonly size?: SizeType;

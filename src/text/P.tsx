@@ -4,21 +4,23 @@ import fontStyle from '../utils/fontStyle';
 import TextProps from './TextProps';
 import { getFontSize } from './textStyle';
 
-export default ({
+const P = ({
   color = String(({ theme }: any ) => theme.color.Button),
   italic,
   strong,
   size,
   children,
  }: TextProps) => {
-  const P = styled.p`
+  const Para = styled.p`
     color: ${color};
     font-size: ${getFontSize(size)};
   `;
 
   return (
-    <P>
+    <Para>
       {fontStyle({italic, strong, children}) }
-    </P>
+    </Para>
   );
 };
+
+export default P;

@@ -4,22 +4,24 @@ import fontStyle from '../utils/fontStyle';
 import TextProps from './TextProps';
 import { getFontSize } from './textStyle';
 
-export default ({
+const H2 = ({
   color = String(({ theme }: any ) => theme.color.Button),
   italic,
   strong,
   size,
   children,
 }: TextProps) => {
-  const H2 = styled.h2`
+  const Header = styled.h2`
     color: ${color};
     font-size: ${getFontSize(size)};
     margin: 0;
   `;
 
   return (
-    <H2>
+    <Header>
       {fontStyle({italic, strong, children}) }
-    </H2>
+    </Header>
   );
 };
+
+export default H2;

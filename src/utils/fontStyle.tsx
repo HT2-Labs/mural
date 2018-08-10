@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 export interface FontStyleProps {
-  readonly children: any;
+  readonly children: React.ReactNode;
   readonly strong?: boolean;
   readonly italic?: boolean;
 }

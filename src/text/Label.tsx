@@ -4,22 +4,24 @@ import fontStyle from '../utils/fontStyle';
 import TextProps from './TextProps';
 import { getFontSize } from './textStyle';
 
-export default ({
+const Label = ({
   color = String(({ theme }: any ) => theme.color.Button),
   italic,
   strong,
   size,
   children,
  }: TextProps) => {
-  const Label = styled.label`
+  const LabelText = styled.label`
     display: block;
     color: ${color};
     font-size: ${getFontSize(size)};
   `;
 
   return (
-    <Label>
+    <LabelText>
       {fontStyle({italic, strong, children}) }
-    </Label>
+    </LabelText>
   );
 };
+
+export default Label;
