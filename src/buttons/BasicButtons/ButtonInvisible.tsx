@@ -11,6 +11,7 @@ export default ({
   disabled = false,
   fullWidth = false,
   onClick,
+  type,
 }: ButtonProps) => {
   const useTextColor = true;
   const Button = buttonStyle({ fullWidth, disabled });
@@ -21,7 +22,7 @@ export default ({
     <InvisibleButton
       disabled={disabled}
       onClick={onClick}
-      role={'button'}
+      type={type}
     >
       {children}
     </InvisibleButton>

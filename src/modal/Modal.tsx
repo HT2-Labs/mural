@@ -2,6 +2,7 @@
 // tslint:disable:no-this
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import FocusTrap from 'react-focus-trap';
 import styled from 'styled-components';
 import ModalCard from './ModalCard';
 
@@ -17,7 +18,7 @@ export interface IModal {
 
 const modalRoot = document.getElementById('modal-root');
 
-class Modal extends React.Component<IModalProps> {
+class ModalContainer extends React.Component<IModalProps> {
   private readonly el: any;
 
   constructor(props: IModalProps) {
@@ -45,7 +46,7 @@ class Modal extends React.Component<IModalProps> {
   }
 }
 
-export default (props: IModalProps) => {
+const Modal = (props: IModalProps) => {
 
   const isModalOpen = props.open !== undefined ? props.open : false;
 
@@ -72,13 +73,17 @@ export default (props: IModalProps) => {
   `;
 
   return (
-    <Modal>
-      <PageCover>
-        <ModalCard>
-          {props.children}
-        </ModalCard>
-        <ClickScreen onClick={props.onCloseFn}/>
-      </PageCover>
-    </Modal>
+    <ModalContainer>
+      <FocusTrap onExit={props.onCloseFn} active={props.open}>
+        <PageCover>
+          <ModalCard>
+            {props.children}
+          </ModalCard>
+          <ClickScreen onClick={props.onCloseFn}/>
+        </PageCover>
+      </FocusTrap>
+    </ModalContainer>
   );
 };
+
+export default Modal;

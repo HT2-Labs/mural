@@ -3,13 +3,15 @@ import styled from 'styled-components';
 
 import ModalProps from './ModalProps';
 
-export default ({ children }: ModalProps) => {
-  const ModalBody = styled.div`
+const ModalBody = ({ children }: ModalProps) => {
+  const Body = styled.div`
     width: 100%;
   `;
   return (
-    <ModalBody>
+    <Body>
       {children}
-    </ModalBody>
+    </Body>
   );
 };
+
+export default ModalBody;

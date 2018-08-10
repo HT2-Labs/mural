@@ -3,14 +3,16 @@ import styled from 'styled-components';
 
 import ModalProps from './ModalProps';
 
-export default ({ children }: ModalProps) => {
-  const ModalHeader = styled.div`
+const ModalHeader = ({ children }: ModalProps) => {
+  const Header = styled.div`
     width: 100%;
     display: flex;
   `;
   return (
-    <ModalHeader>
+    <Header>
       {children}
-    </ModalHeader>
+    </Header>
   );
 };
+
+export default ModalHeader;

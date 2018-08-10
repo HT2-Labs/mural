@@ -1,45 +1,30 @@
 import * as React from 'react';
 
-import { H1, H3, SizeType } from '../Text';
-
-import Table from '../tables/Table';
-import TableCell from '../tables/TableCell';
-import TableRow from '../tables/TableRow';
-
-import DocsPropsTableHeader from '../docs/DocsPropsTableHeader';
-import DocsPlayground from './DocsPlayground';
-
-import { ButtonGhost } from '../buttons';
-import PageActions from '../headers/PageActions';
-import PageHeader from '../headers/PageHeader';
-import PageHeaderText from '../headers/PageHeaderText';
-import PageTitle from '../headers/PageTitle';
-import IconEdit from '../icons/IconEdit';
-import TabItem from '../menus/TabItem';
-import TabMenu from '../menus/TabMenu';
-
-const deadClick = () => {
-  return;
-};
+import { ButtonGhost } from '../../../buttons';
+import { PageActions, PageHeader, PageHeaderText, PageTitle } from '../../../headers';
+import { TabItem, TabMenu } from '../../../menus';
+import { Table, TableCell, TableRow } from '../../../tables';
+import { H1, H3, SizeType } from '../../../Text';
+import { DocsPlayground, DocsPropsTableHeader } from '../../shared';
 
 const codeSnippet = `import { H1, H3, SizeType } from '../Text';
 import PageHeader from '@ht2-labs/mural/headers/PageHeader';
 import PageHeaderText from '@ht2-labs/mural/headers/PageHeaderText';
 import PageTitle from '@ht2-labs/mural/headers/PageTitle';
 <PageHeader>
-<PageTitle>
-  <PageHeaderText>
-    <H1 size={SizeType.Large}>
-      Promote
-    </H1>
-    <H3 size={SizeType.Small}>
-      Grow into a new role
-    </H3>
-  </PageHeaderText>
-  <PageActions>
-    <ButtonGhost onClick={deadClick} ><IconEdit /> Edit</ButtonGhost>
-  </PageActions>
-</PageTitle>
+  <PageTitle>
+    <PageHeaderText>
+      <H1 size={SizeType.Large}>
+        Promote
+      </H1>
+      <H3 size={SizeType.Small}>
+        Grow into a new role
+      </H3>
+    </PageHeaderText>
+    <PageActions>
+      <ButtonGhost onClick={deadClick} >Edit</ButtonGhost>
+    </PageActions>
+  </PageTitle>
 </PageHeader>`;
 
 const availableProps =
@@ -55,8 +40,7 @@ const availableProps =
   </TableRow>
 </Table>;
 
-export default () => {
-
+const DocsHeaders = () => {
   return (
     <>
       <H1 size={SizeType.ExtraLarge}>Headers</H1>
@@ -73,7 +57,7 @@ export default () => {
             </H3>
             </PageHeaderText>
             <PageActions>
-              <ButtonGhost onClick={deadClick} ><IconEdit /> Edit</ButtonGhost>
+              <ButtonGhost>Edit</ButtonGhost>
             </PageActions>
           </PageTitle>
           <TabMenu>
@@ -86,3 +70,5 @@ export default () => {
     </>
   );
 };
+
+export default DocsHeaders;

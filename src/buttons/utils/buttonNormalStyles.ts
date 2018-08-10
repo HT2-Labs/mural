@@ -1,8 +1,9 @@
 export interface NormalButtonProps {
   readonly Button: any;
   readonly color: any;
+  readonly disabled: boolean | undefined;
 }
-export default ({ Button, color }: NormalButtonProps) => {
+export default ({ Button, color, disabled = false }: NormalButtonProps) => {
   const NormalButton = Button.extend`
     background-color: ${color.background};
     border: 2px solid ${color.background};
@@ -10,6 +11,7 @@ export default ({ Button, color }: NormalButtonProps) => {
     &:hover {
       border: 2px solid ${color.backgroundLight};
       background-color: ${color.backgroundLight};
+      box-shadow: ${disabled ? 'none' : ({ theme }: any ) => theme.shadow.Small};
     }
   `;
   return NormalButton;

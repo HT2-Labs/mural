@@ -1,14 +1,10 @@
 // tslint:disable:max-line-length
 import * as React from 'react';
 
-import Table from '../tables/Table';
-import TableCell from '../tables/TableCell';
-import TableRow from '../tables/TableRow';
-
-import DocsPropsTableHeader from '../docs/DocsPropsTableHeader';
-import { H1, H2, H3, H4, P, SizeType } from '../Text';
-import DocsDescription from './DocsDescription';
-import DocsPlayground from './DocsPlayground';
+import { Link } from '../../../link';
+import { Table, TableCell, TableRow } from '../../../tables';
+import { H1, H2, H3, H4, P, SizeType } from '../../../Text';
+import { DocsDescription, DocsPlayground, DocsPropsTableHeader } from '../../shared';
 
 const codeSnippet =
   `import { H1, H2, H3, H4, P, SizeType } from '@ht2-labs/mural/Text';
@@ -23,7 +19,7 @@ const codeSnippet =
 
 const availableProps =
 <Table>
-<DocsPropsTableHeader/>
+  <DocsPropsTableHeader/>
   <TableRow>
     <TableCell>size</TableCell>
     <TableCell>
@@ -32,8 +28,15 @@ const availableProps =
     <TableCell>SizeType.Body </TableCell>
     <TableCell>Defines the text size of the header</TableCell>
   </TableRow>
+  <TableRow>
+  <TableCell>color</TableCell>
+    <TableCell>string</TableCell>
+    <TableCell> undefined </TableCell>
+    <TableCell>Overrides the default color</TableCell>
+  </TableRow>
 </Table>;
-export default () => {
+
+const DocsText = () => {
   return (
     <>
       <H1 size={SizeType.ExtraLarge}>Text</H1>
@@ -46,8 +49,16 @@ export default () => {
           <H4 size={SizeType.Body}>Header 4 Element</H4>
           <P size={SizeType.Body}>Paragraph Element</P>
           <P size={SizeType.Small}>Small Paragraph Element</P>
+          <P>
+          <Link>yellow gems</Link>
+          </P>
+          <P>
+          <Link external color="blue">yellow gems</Link>
+          </P>
         </DocsPlayground>
       </DocsDescription>
     </>
   );
 };
+
+export default DocsText;

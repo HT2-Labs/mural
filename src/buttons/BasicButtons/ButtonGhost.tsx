@@ -24,7 +24,6 @@ export default ({
     <ButtonGhost
       disabled={disabled}
       onClick={onClick}
-      role={'button'}
     >
       {children}
     </ButtonGhost>

@@ -10,16 +10,18 @@ export default ({
   disabled = false,
   fullWidth = false,
   onClick,
+  type,
 }: ButtonProps) => {
 
   const Button = buttonStyle({ fullWidth, disabled });
   const color = buttonColorStyles({ danger, disabled });
-  const NormalButton = buttonNormalStyles({ Button, color });
+  const NormalButton = buttonNormalStyles({ Button, color, disabled });
 
   return (
     <NormalButton
       disabled={disabled}
       onClick={onClick}
+      type={type}
     >
       {children}
     </NormalButton>

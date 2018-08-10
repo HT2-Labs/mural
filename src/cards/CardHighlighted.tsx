@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length
 // tslint:disable:max-file-line-count
 // tslint:disable:no-class
 // tslint:disable:no-this
@@ -28,14 +29,13 @@ export default class extends React.Component<CardProps> {
     } = this.props;
 
     const Card = styled.div`
-      border-bottom: ${active === true ? '8px solid rgba(0, 0, 0, 0.2)' : 'none'};
       border-radius: ${({ theme }) => theme.radius.Medium};
       box-sizing: border-box;
       color: ${({ theme }) => theme.color.BodyText};
       cursor: ${onClick !== undefined ? 'pointer' : 'initial'};
-      overflow: hidden;
       position: relative;
       width: 100%;
+      transition: 0.25s;
       &:hover {
         ${onClick !== undefined ? 'box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.12)' : ''} ;
         transform: ${onClick !== undefined ? 'scale(1.01)' : 'none'};
@@ -71,6 +71,20 @@ export default class extends React.Component<CardProps> {
       color: ${({ theme }) => theme.color.SecondaryText};
     `;
 
+    const Droplet = styled.div`
+      margin: 16px auto;
+      display: flex;
+      align-self: center;
+      padding: 3px 2px;
+      border-radius: 3px;
+      width: 50px;
+      background-color: ${active === true ? ({ theme }: any) => theme.color.Secondary : 'transparent'};
+
+      ${HighlightedCard}:hover & {
+        background-color: ${onClick !== undefined ? ({ theme }: any) => theme.color.SecondaryLight : null };
+      }
+    `;
+
     const actionOpen = () => {
       this.setState({
         showOverlay: true,
@@ -104,6 +118,7 @@ export default class extends React.Component<CardProps> {
       >
         {overlayContent !== undefined ? renderOverlay : null}
         <InnerCard>{children}</InnerCard>
+        <Droplet/>
       </HighlightedCard >
     );
   }

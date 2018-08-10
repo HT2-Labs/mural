@@ -12,25 +12,20 @@ import {
   ButtonInvisible,
   IconButton,
   IconButtonInvisible,
-} from '../buttons';
-
-import DocsPropsTableHeader from '../docs/DocsPropsTableHeader';
-import { IconAsterisk, IconChevronRight, IconEllipsisV } from '../Icon';
-
-import Table from '../tables/Table';
-import TableCell from '../tables/TableCell';
-import TableRow from '../tables/TableRow';
-
-import { H1, P, SizeType } from '../Text';
-import { Align } from '../utils/AlignmentProps';
-import DocsDescription from './DocsDescription';
-import DocsPlayground from './DocsPlayground';
-
-import IconBullseye from '../icons/IconBullseye';
-import IconCalendar from '../icons/IconCalendar';
-import IconFlagCheckered from '../icons/IconFlagCheckered';
-import IconTimesCircle from '../icons/IconTimesCircle';
-import DocsDoDont from './DocsDoDont';
+} from '../../../buttons';
+import {
+  IconAsterisk,
+  IconBullseye,
+  IconCalendar,
+  IconChevronRight,
+  IconEllipsisV,
+  IconFlagCheckered,
+  IconTimesCircle,
+} from '../../../Icon';
+import { Table, TableCell, TableRow } from '../../../tables';
+import { H1, P, SizeType } from '../../../Text';
+import { Align } from '../../../utils/AlignmentProps';
+import { DocsDescription, DocsGuidance, DocsPlayground, DocsPropsTableHeader } from '../../shared';
 
 const codeSnippetButton =
   `import {
@@ -344,13 +339,13 @@ export default () => {
           </ButtonGroupVertical>
         </DocsPlayground>
       </DocsDescription>
-      <DocsDescription title="Dos And Don'ts">
-        <DocsDoDont>
-          <TableRow><TableCell> Use button group if using more than one button</TableCell><TableCell> Don't use invisible buttons on their own</TableCell></TableRow>
-          <TableRow><TableCell> Use invisible buttons along with normal buttons</TableCell><TableCell> Don't use icon buttons for dangerous actions</TableCell></TableRow>
-          <TableRow><TableCell> Use danger buttons to indicate dangerous actions</TableCell><TableCell> Don't use normal buttons for dangerous actions</TableCell></TableRow>
-          <TableRow><TableCell> Use ghost buttons to overlay splash images </TableCell><TableCell> </TableCell></TableRow>
-        </DocsDoDont>
+      <DocsDescription title="Guidance">
+      <DocsGuidance>
+        <TableRow><TableCell> Use button group if using more than one button</TableCell><TableCell> Don't use invisible buttons on their own</TableCell></TableRow>
+        <TableRow><TableCell> Use invisible buttons along with normal buttons</TableCell><TableCell> Don't use icon buttons for dangerous actions</TableCell></TableRow>
+        <TableRow><TableCell> Use danger buttons to indicate dangerous actions</TableCell><TableCell> Don't use normal buttons for dangerous actions</TableCell></TableRow>
+        <TableRow><TableCell> Use ghost buttons to overlay splash images </TableCell><TableCell> </TableCell></TableRow>
+      </DocsGuidance>
       </DocsDescription>
     </>
   );
