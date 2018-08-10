@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import MenuProps from './menuProps';
 
-export default ({ active = false, children, onClick, ariaControl, id, tabIndex }: MenuProps) => {
+export default ({ active = false, children, onClick}: MenuProps) => {
   const TabItem = styled.button`
     display: flex;
     border-left: none;
@@ -37,9 +37,7 @@ export default ({ active = false, children, onClick, ariaControl, id, tabIndex }
   return (
     <TabItem onClick={onClick} role="tab"
     aria-selected={active}
-    aria-control={ariaControl}
-    id={id}
-    tab-index={tabIndex}>
+    >
       {children}
     </TabItem>
   );

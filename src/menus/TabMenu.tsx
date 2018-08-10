@@ -29,7 +29,7 @@ export default ({ children, alignment, ariaLabel }: TabMenuProps) => {
   `;
 
   return (
-    <TabMenu role="tablist" aria-label={ariaLabel}>
+    <TabMenu role="presentation" aria-label={ariaLabel}>
       {children}
     </TabMenu>
   );
