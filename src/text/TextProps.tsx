@@ -12,4 +12,6 @@ export default interface TextProps {
   readonly children: ReactNode;
   readonly size?: SizeType;
   readonly color?: string;
+  readonly strong?: boolean;
+  readonly italic?: boolean;
 }

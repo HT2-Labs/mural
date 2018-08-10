@@ -1,20 +1,27 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import fontStyle from '../utils/fontStyle';
 import TextProps from './TextProps';
 import { getFontSize } from './textStyle';
 
-export default ({
-  children, size, color = String(({ theme }: any ) => theme.color.Button),
+const H1 = ({
+  children,
+  color = String(({ theme }: any ) => theme.color.Button),
+  italic,
+  size,
+  strong,
 }: TextProps) => {
-  const H1 = styled.h1`
+  const HeaderText = styled.h1`
     color: ${color};
     font-size: ${getFontSize(size)};
     margin: 0;
   `;
 
   return (
-    <H1>
-      {children}
-    </H1>
+    <HeaderText>
+      {fontStyle({italic, strong, children}) }
+    </HeaderText>
   );
 };
+
+export default H1;
