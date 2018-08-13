@@ -3,7 +3,7 @@
 // tslint:disable:no-this
 import * as React from 'react';
 import styled from 'styled-components';
-import { Label, SizeType } from '../Text';
+import { Label, SizeType } from '../text';
 
 export interface Props {
     readonly label?: string;

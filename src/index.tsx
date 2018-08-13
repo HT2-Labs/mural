@@ -17,7 +17,7 @@ import {
   DocsText,
   DocsThemes,
 } from './docs/pages/components';
-import { ThemeProvider } from './ThemeProvider';
+import ThemeProvider from './themes/ThemeProvider';
 import checkForGithubPages from './utils/checkForGithubPages';
 
 const Demo = () => {

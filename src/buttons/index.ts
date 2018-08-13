@@ -8,8 +8,8 @@ import IconButton from './IconButtons/IconButton';
 import IconButtonInvisible from './IconButtons/IconButtonInvisible';
 
 // Button containers
-import ButtonGroup from '../buttonGroups/ButtonGroup';
-import ButtonGroupVertical from '../buttonGroups/ButtonGroupVertical';
+import ButtonGroup from './ButtonGroups/ButtonGroup';
+import ButtonGroupVertical from './ButtonGroups/ButtonGroupVertical';
 
 export {
   Button,

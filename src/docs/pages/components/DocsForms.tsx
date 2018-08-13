@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { FormCheckbox, FormInput, FormRadio, FormSwitch, FormTextArea } from '../../../forms';
-import { H1, SizeType } from '../../../Text';
+import { H1, SizeType } from '../../../text';
 import { DocsPlayground } from '../../shared';
 
 const codeSnippetInput =

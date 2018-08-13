@@ -1,8 +1,8 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import { ListContainer, ListItem } from '../../../List';
-import { H1, SizeType } from '../../../Text';
+import { ListContainer, ListItem } from '../../../lists';
+import { H1, SizeType } from '../../../text';
 import { DocsPlayground } from '../../shared';
 
 const codeSnippet =

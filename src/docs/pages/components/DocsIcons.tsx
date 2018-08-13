@@ -34,8 +34,8 @@ import {
   IconThumbsUp,
   IconTimes,
   IconTimesCircle,
-} from '../../../Icon';
-import { H1, SizeType } from '../../../Text';
+} from '../../../icons';
+import { H1, SizeType } from '../../../text';
 import { DocsPlayground } from '../../shared';
 
 const codeSnippet =

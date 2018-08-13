@@ -7,7 +7,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { ButtonGroup, IconButtonInvisible } from '../buttons';
 import { Size } from '../buttons/IconButtons/iconButtonProps';
-import { IconEllipsisV, IconTimes } from '../Icon';
+import { IconEllipsisV, IconTimes } from '../icons';
 import { Align } from '../utils/AlignmentProps';
 import CardProps from './CardProps';
 

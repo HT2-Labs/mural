@@ -21,9 +21,9 @@ import {
   IconEllipsisV,
   IconFlagCheckered,
   IconTimesCircle,
-} from '../../../Icon';
+} from '../../../icons';
 import { Table, TableCell, TableRow } from '../../../tables';
-import { H1, P, SizeType } from '../../../Text';
+import { H1, P, SizeType } from '../../../text';
 import { Align } from '../../../utils/AlignmentProps';
 import { DocsDescription, DocsGuidance, DocsPlayground, DocsPropsTableHeader } from '../../shared';
 
