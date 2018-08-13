@@ -4,7 +4,7 @@ import buttonColorStyles from '../utils/buttonColorStyles';
 import buttonInvisibleStyle from '../utils/buttonInvisibleStyles';
 import ButtonProps from './buttonProps';
 
-export default ({
+const ButtonInvisible = ({
   children,
   colorOverride,
   danger = false,
@@ -13,9 +13,9 @@ export default ({
   onClick,
 }: ButtonProps) => {
   const useTextColor = true;
-  const Button = buttonStyle({ fullWidth, disabled });
+  const BaseButton = buttonStyle({ fullWidth, disabled });
   const color = buttonColorStyles({ danger, disabled, useTextColor, colorOverride });
-  const InvisibleButton = buttonInvisibleStyle({ Button, color });
+  const InvisibleButton = buttonInvisibleStyle({ BaseButton, color });
 
   return (
     <InvisibleButton
@@ -26,3 +26,5 @@ export default ({
     </InvisibleButton>
   );
 };
+
+export default ButtonInvisible;

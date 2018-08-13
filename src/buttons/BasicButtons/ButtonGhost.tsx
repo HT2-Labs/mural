@@ -4,7 +4,7 @@ import buttonColorStyles from '../utils/buttonColorStyles';
 import buttonGhostStyle from '../utils/buttonGhostStyles';
 import ButtonProps from './buttonProps';
 
-export default ({
+const ButtonGhost = ({
   children,
   danger = false,
   disabled = false,
@@ -16,16 +16,18 @@ export default ({
   // Add to buttonColorStyles to set text color in place of background color
   const useTextColor = true;
 
-  const Button = buttonStyle({ fullWidth, disabled });
+  const BaseButton = buttonStyle({ fullWidth, disabled });
   const color = buttonColorStyles({ danger, disabled, useTextColor, colorOverride });
-  const ButtonGhost = buttonGhostStyle({ Button, color });
+  const GhostButton = buttonGhostStyle({ BaseButton, color });
 
   return (
-    <ButtonGhost
+    <GhostButton
       disabled={disabled}
       onClick={onClick}
     >
       {children}
-    </ButtonGhost>
+    </GhostButton>
   );
 };
+
+export default ButtonGhost;

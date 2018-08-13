@@ -1,10 +1,10 @@
 export interface Props {
-  readonly Button: any;
+  readonly BaseButton: any;
   readonly color: any;
   readonly disabled?: boolean;
 }
-export default ({ Button, color, disabled = false }: Props) => {
-  const ButtonGhost = Button.extend`
+export default ({ BaseButton, color, disabled = false }: Props) => {
+  const ButtonGhost = BaseButton.extend`
     background-color: transparent;
     border: 2px solid ${color.background};
     box-shadow: none;

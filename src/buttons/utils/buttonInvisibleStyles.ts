@@ -1,10 +1,10 @@
 
 export interface InvisibleButtonProps {
-  readonly Button: any;
+  readonly BaseButton: any;
   readonly color: any;
 }
-export default ({ Button, color }: InvisibleButtonProps ) => {
-  const ButtonInvisible = Button.extend`
+export default ({ BaseButton, color }: InvisibleButtonProps ) => {
+  const ButtonInvisible = BaseButton.extend`
     background-color: transparent;
     border: 2px solid transparent;
     box-shadow: none;

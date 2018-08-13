@@ -20,7 +20,7 @@ const getFontSize = (size: Size) => {
   }
 };
 
-export default ({
+const IconButtonInvisible = ({
   ariaLabel,
   children,
   disabled = false,
@@ -28,21 +28,24 @@ export default ({
   onClick,
   colorOverride,
 }: IconButtonProps) => {
+
   const useTextColor = true;
   const buttonSize = getButtonSize(size);
   const fontSize = getFontSize(size);
 
-  const Button = buttonIconStyle(buttonSize, fontSize, disabled);
+  const BaseButton = buttonIconStyle(buttonSize, fontSize, disabled);
   const color = buttonColorStyles({ disabled, useTextColor, colorOverride });
-  const IconButtonInvisible = buttonInvisibleStyles({ Button, color });
+  const InvisibleIconButton = buttonInvisibleStyles({ BaseButton, color });
 
   return (
-    <IconButtonInvisible
+    <InvisibleIconButton
       disabled={disabled}
       onClick={onClick}
       aria-label={ariaLabel}
     >
       {children}
-    </IconButtonInvisible>
+    </InvisibleIconButton>
   );
 };
+
+export default IconButtonInvisible;
