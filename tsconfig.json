@@ -4,6 +4,7 @@
     "rootDir": "src",
     "outDir": "dist",
     "jsx": "react",
+    "esModuleInterop": true,
     "typeRoots": [
       "./@types",
       "./node_modules/@types"
@@ -11,8 +12,7 @@
     "lib": [
       "dom",
       "es2015"
-    ],
-    "esModuleInterop": true
+    ]
   },
   "includes": [
     "src/**/*"
