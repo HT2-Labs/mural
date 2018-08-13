@@ -2,8 +2,8 @@ import * as React from 'react';
 import styled from 'styled-components';
 import ListProps from './ListProps';
 
-export default ({ children }: ListProps) => {
-  const ListContainer = styled.ul`
+const ListContainer = ({ children }: ListProps) => {
+  const List = styled.ul`
     background-color: #fff;
     box-shadow: ${({ theme }) => theme.shadow.Main};
     height: 100%;
@@ -13,8 +13,10 @@ export default ({ children }: ListProps) => {
   `;
 
   return (
-    <ListContainer>
+    <List>
       {children}
-    </ListContainer>
+    </List>
   );
 };
+
+export default ListContainer;

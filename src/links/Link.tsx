@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import IconExternalLink from '../icons/IconExternalLink';
 import LinkProps from './linkProps';
 
-export default ({
+const Link = ({
   children,
   color = String(({ theme }: any ) => theme.color.Button),
   external = false,
@@ -11,7 +11,7 @@ export default ({
   onClick,
 }: LinkProps) => {
 
-  const Link = styled.a`
+  const LinkContainer = styled.a`
     cursor: pointer;
     color: ${color};
     &:hover{
@@ -26,9 +26,11 @@ export default ({
   `;
 
   return(
-    <Link href={href} onClick={onClick}>
+    <LinkContainer href={href} onClick={onClick}>
       { children }
       { external ? <IconExternalLink/> : null}
-    </Link>
+    </LinkContainer>
   );
 };
+
+export default Link;
