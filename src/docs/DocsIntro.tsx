@@ -2,7 +2,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import { H1, P, SizeType } from '../Text';
+import { H1, P, SizeType } from '../text';
 
 export default () => {
   const Quote = styled.p`

@@ -5,16 +5,16 @@
 import * as React from 'react';
 
 import { Button, ButtonGhost, ButtonGroup, IconButtonInvisible } from '../../../buttons';
-import { IconClose } from '../../../Icon';
+import { IconClose } from '../../../icons';
 import { FullPageModal,
   FullPageModalBody,
   FullPageModalHeader,
   Modal,
   ModalBody,
   ModalFooter,
-  ModalHeader } from '../../../modal';
+  ModalHeader } from '../../../modals';
 import { Table, TableCell, TableRow } from '../../../tables';
-import { H1, H3, P, SizeType } from '../../../Text';
+import { H1, H3, P, SizeType } from '../../../text';
 import { Align } from '../../../utils/AlignmentProps';
 import { DocsPlayground, DocsPropsTableHeader } from '../../shared';
 

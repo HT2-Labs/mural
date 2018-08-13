@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { TabItem, TabMenu } from '../../../menus';
 import { Table, TableCell, TableRow } from '../../../tables';
-import { H1, P, SizeType } from '../../../Text';
+import { H1, P, SizeType } from '../../../text';
 import { Align } from '../../../utils/AlignmentProps';
 import { DocsPlayground, DocsPropsTableHeader } from '../../shared';
 

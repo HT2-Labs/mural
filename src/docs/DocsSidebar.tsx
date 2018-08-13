@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import { IconGithub, IconNpm } from '../Icon';
+import { IconGithub, IconNpm } from '../icons';
 
 export default () => {
   const Sidebar = styled.div`

@@ -22,10 +22,10 @@ import {
   CardSplashSubText,
   CardSplashText,
   CardTitle,
-} from '../../../Card';
-import { IconCheck } from '../../../Icon';
+} from '../../../cards';
+import { IconCheck } from '../../../icons';
 import { Table, TableCell, TableRow } from '../../../tables';
-import { H1, SizeType } from '../../../Text';
+import { H1, SizeType } from '../../../text';
 import { DocsDescription, DocsPlayground, DocsPropsTableHeader } from '../../shared';
 
 class DocsCards extends React.Component {

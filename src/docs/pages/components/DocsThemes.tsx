@@ -2,8 +2,8 @@
 // tslint:disable:max-line-length
 import * as React from 'react';
 import styled from 'styled-components';
-import { Link } from '../../../link';
-import { H1, H4, P, SizeType } from '../../../Text';
+import { Link } from '../../../links';
+import { H1, H4, P, SizeType } from '../../../text';
 import { DocsColor, DocsPlayground } from '../../shared';
 
 const codeSnippet =

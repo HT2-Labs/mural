@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { H2, SizeType } from '../../Text';
+import { H2, SizeType } from '../../text';
 
 interface DocsDescriptionProps {
   readonly children: React.ReactNode;

@@ -4,7 +4,7 @@ import { ButtonGhost } from '../../../buttons';
 import { PageActions, PageHeader, PageHeaderText, PageTitle } from '../../../headers';
 import { TabItem, TabMenu } from '../../../menus';
 import { Table, TableCell, TableRow } from '../../../tables';
-import { H1, H3, SizeType } from '../../../Text';
+import { H1, H3, SizeType } from '../../../text';
 import { DocsPlayground, DocsPropsTableHeader } from '../../shared';
 
 const codeSnippet = `import { H1, H3, SizeType } from '../Text';
