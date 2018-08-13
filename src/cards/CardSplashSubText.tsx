@@ -3,14 +3,16 @@ import styled from 'styled-components';
 
 import CardProps from './CardProps';
 
-export default ({ children }: CardProps) => {
-  const CardSplashSubText = styled.div`
+const CardSplashSubText = ({ children }: CardProps) => {
+  const CardSplashSubTextContainer = styled.div`
     font-size: 16px;
     padding-top: 10px;
   `;
   return (
-    <CardSplashSubText>
+    <CardSplashSubTextContainer>
       {children}
-    </CardSplashSubText>
+    </CardSplashSubTextContainer>
   );
 };
+
+export default CardSplashSubText;

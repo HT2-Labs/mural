@@ -6,8 +6,9 @@ export interface CardBodyProps {
   readonly onClick?: (e: React.MouseEvent<HTMLElement>) => void;
 }
 
-export default ({ children, onClick }: CardBodyProps) => {
-  const CardBody = styled.div`
+const CardBody = ({ children, onClick }: CardBodyProps) => {
+
+  const CardBodyContainer = styled.div`
     display: flex;
     font-size: 16px;
     height: 100%;
@@ -18,9 +19,12 @@ export default ({ children, onClick }: CardBodyProps) => {
       ${onClick !== undefined ? 'text-decoration: underline' : ''};
     }
   `;
+
   return (
-    <CardBody onClick={onClick}>
+    <CardBodyContainer onClick={onClick}>
       {children}
-    </CardBody>
+    </CardBodyContainer>
   );
 };
+
+export default CardBody;

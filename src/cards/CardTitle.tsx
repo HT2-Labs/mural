@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 import CardProps from './CardProps';
 
-export default ({ children }: CardProps) => {
-  const CardTitle = styled.h3`
+const CardTitle = ({ children }: CardProps) => {
+  const CardTitleContainer = styled.h3`
     font-size: 13px;
     font-weight: normal;
     line-height: 1.25;
@@ -12,8 +12,10 @@ export default ({ children }: CardProps) => {
     width: 100%;
   `;
   return (
-    <CardTitle>
+    <CardTitleContainer>
       {children}
-    </CardTitle>
+    </CardTitleContainer>
   );
 };
+
+export default CardTitle;

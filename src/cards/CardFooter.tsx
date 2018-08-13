@@ -3,16 +3,20 @@ import styled from 'styled-components';
 
 import CardProps from './CardProps';
 
-export default ({ children }: CardProps) => {
-  const CardFooter = styled.div`
+const CardFooter = ({ children }: CardProps) => {
+
+  const CardFooterContainer = styled.div`
     display: flex;
     font-size: 14px;
     justify-self: flex-end;
     width: 100%;
   `;
+
   return (
-    <CardFooter>
+    <CardFooterContainer>
       {children}
-    </CardFooter>
+    </CardFooterContainer>
   );
 };
+
+export default CardFooter;

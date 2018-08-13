@@ -3,16 +3,18 @@ import styled from 'styled-components';
 
 import CardProps from './CardProps';
 
-export default ({ children }: CardProps) => {
-  const CardSplashHeader = styled.div`
+const CardSplashHeader = ({ children }: CardProps) => {
+  const CardSplashHeaderContainer = styled.div`
     display: flex;
     height: 18px;
     margin-bottom: -18px;
     width: 100%;
   `;
   return (
-    <CardSplashHeader>
+    <CardSplashHeaderContainer>
       {children}
-    </CardSplashHeader>
+    </CardSplashHeaderContainer>
   );
 };
+
+export default CardSplashHeader;

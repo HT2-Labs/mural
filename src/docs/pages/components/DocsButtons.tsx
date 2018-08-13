@@ -346,12 +346,24 @@ export default () => {
         </DocsPlayground>
       </DocsDescription>
       <DocsDescription title="Guidance">
-      <DocsGuidance>
-        <TableRow><TableCell> Use button group if using more than one button</TableCell><TableCell> Don't use invisible buttons on their own</TableCell></TableRow>
-        <TableRow><TableCell> Use invisible buttons along with normal buttons</TableCell><TableCell> Don't use icon buttons for dangerous actions</TableCell></TableRow>
-        <TableRow><TableCell> Use danger buttons to indicate dangerous actions</TableCell><TableCell> Don't use normal buttons for dangerous actions</TableCell></TableRow>
-        <TableRow><TableCell> Use ghost buttons to overlay splash images </TableCell><TableCell> </TableCell></TableRow>
-      </DocsGuidance>
+        <DocsGuidance>
+          <TableRow>
+            <TableCell> Use button group if using more than one button</TableCell>
+            <TableCell> Don't use invisible buttons on their own</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell> Use invisible buttons along with normal buttons</TableCell>
+            <TableCell> Don't use icon buttons for dangerous actions</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell> Use danger buttons to indicate dangerous actions</TableCell>
+            <TableCell> Don't use normal buttons for dangerous actions</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell> Use ghost buttons to overlay splash images </TableCell>
+            <TableCell> test</TableCell>
+          </TableRow>
+        </DocsGuidance>
       </DocsDescription>
     </>
   );
