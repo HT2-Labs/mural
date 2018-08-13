@@ -16,7 +16,7 @@ export interface ThemeProps {
   readonly children: React.ReactNode;
 }
 
-export default ({ children, theme }: ThemeProps) => {
+const MuralThemeProvider = ({ children, theme }: ThemeProps) => {
 
   // Set all base theme values
   const defaultTheme = {
@@ -105,3 +105,5 @@ export default ({ children, theme }: ThemeProps) => {
     </ThemeProvider>
   );
 };
+
+export default MuralThemeProvider;
