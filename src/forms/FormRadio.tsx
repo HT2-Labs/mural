@@ -6,19 +6,21 @@ import styled from 'styled-components';
 import buttonColorStyles from '../buttons/utils/buttonColorStyles';
 import FormProps from './FormProps';
 
-export default ({
-    disabled = false,
-    group,
-  }: FormProps) => {
+const FormRadio = ({
+  disabled = false,
+  group,
+}: FormProps) => {
 
-    const activeColor = buttonColorStyles({disabled});
-    const RadioBody = styled.label`
+  const activeColor = buttonColorStyles({disabled});
+
+  const RadioBody = styled.label`
     position: relative;
     display: inline-block;
     width: 24px;
     height: 24px;
   `;
-    const Slider = styled.div`
+
+  const Slider = styled.div`
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -43,10 +45,10 @@ export default ({
       -webkit-transition: .1s;
       transition: .1s;
       text-align: center;
-}
-
+    }
   `;
-const CheckBox = styled.input`
+
+  const CheckBox = styled.input`
     z-index: 1000;
     &:focus + ${Slider} {
       border-color: lightblue;
@@ -58,6 +60,7 @@ const CheckBox = styled.input`
       border-color: ${activeColor.backgroundLight};
     }
   `;
+
   return (
     <RadioBody>
       <CheckBox type="radio" name={group}/>
@@ -66,3 +69,5 @@ const CheckBox = styled.input`
   );
 
 };
+
+export default FormRadio;

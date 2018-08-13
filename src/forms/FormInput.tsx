@@ -4,7 +4,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-export default class FormInput extends React.Component {
+class FormInput extends React.Component {
   public render() {
     const Input = styled.input`
       background-color: #fff;
@@ -25,3 +25,5 @@ export default class FormInput extends React.Component {
     );
   }
 }
+
+export default FormInput;

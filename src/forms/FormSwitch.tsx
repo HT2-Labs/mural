@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import buttonColorStyles from '../buttons/utils/buttonColorStyles';
 import FormProps from './FormProps';
 
-export default ({
+const FormSwitch = ({
   danger = false,
   disabled = false,
 }: FormProps) => {
@@ -62,3 +62,5 @@ export default ({
     </SwitchBody>
   );
 };
+
+export default FormSwitch;
