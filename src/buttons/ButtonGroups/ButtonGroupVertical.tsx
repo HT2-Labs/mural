@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import { Align } from '../utils/AlignmentProps';
+import { Align } from '../../utils/AlignmentProps';
 
 interface ButtonGroupProps {
   readonly children: React.ReactNode;
