@@ -18,10 +18,10 @@ const getAlignment = (alignment?: Align) => {
   }
 };
 
-export default ({ children, alignment, ariaLabel }: TabMenuProps) => {
+const TabMenu = ({ children, alignment, ariaLabel }: TabMenuProps) => {
   const alignType = getAlignment(alignment);
 
-  const TabMenu = styled.nav`
+  const TabMenuContainer = styled.nav`
     display: flex;
     height: 44px;
     margin: auto 4px 0;
@@ -29,8 +29,10 @@ export default ({ children, alignment, ariaLabel }: TabMenuProps) => {
   `;
 
   return (
-    <TabMenu role="presentation" aria-label={ariaLabel}>
+    <TabMenuContainer role="presentation" aria-label={ariaLabel}>
       {children}
-    </TabMenu>
+    </TabMenuContainer>
   );
 };
+
+export default TabMenu;
