@@ -10,7 +10,7 @@ export interface Props {
     readonly placeholder?: string;
 }
 
-export default class FormInput extends React.Component<Props> {
+class FormTextArea extends React.Component<Props> {
 
   public render() {
     const Input = styled.textarea`
@@ -27,19 +27,16 @@ export default class FormInput extends React.Component<Props> {
         outline: 8px solid aliceblue;
       }
     `;
-    const InputContainer = styled.div`
-
-    `;
     return (
       <>
-      <InputContainer>
         {this.props.label !== undefined
           ? <Label size={SizeType.Body}>{this.props.label}</Label>
           : null
         }
         <Input placeholder={this.props.placeholder}/>
-      </InputContainer>
-      </ >
+      </>
     );
   }
 }
+
+export default FormTextArea;

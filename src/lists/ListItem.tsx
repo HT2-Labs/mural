@@ -2,8 +2,8 @@ import * as React from 'react';
 import styled from 'styled-components';
 import ListProps from './ListProps';
 
-export default ({ children }: ListProps) => {
-  const ListItem = styled.li`
+const ListItem = ({ children }: ListProps) => {
+  const Item = styled.li`
     color: ${({ theme }) => theme.color.BodyText};
     font-size: 16px;
     list-style: none;
@@ -11,6 +11,8 @@ export default ({ children }: ListProps) => {
   `;
 
   return (
-    <ListItem>{children}</ListItem>
+    <Item>{children}</Item>
   );
 };
+
+export default ListItem;

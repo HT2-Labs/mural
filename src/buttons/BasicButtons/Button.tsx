@@ -4,7 +4,7 @@ import buttonColorStyles from '../utils/buttonColorStyles';
 import buttonNormalStyles from '../utils/buttonNormalStyles';
 import ButtonProps from './buttonProps';
 
-export default ({
+const Button = ({
   children,
   danger = false,
   disabled = false,
@@ -13,9 +13,9 @@ export default ({
   type,
 }: ButtonProps) => {
 
-  const Button = buttonStyle({ fullWidth, disabled });
+  const BaseButton = buttonStyle({ fullWidth, disabled });
   const color = buttonColorStyles({ danger, disabled });
-  const NormalButton = buttonNormalStyles({ Button, color, disabled });
+  const NormalButton = buttonNormalStyles({ BaseButton, color, disabled });
 
   return (
     <NormalButton
@@ -27,3 +27,5 @@ export default ({
     </NormalButton>
   );
 };
+
+export default Button;

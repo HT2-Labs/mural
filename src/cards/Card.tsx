@@ -10,7 +10,7 @@ import { IconEllipsisV, IconTimes } from '../icons';
 import { Align } from '../utils/AlignmentProps';
 import CardProps from './CardProps';
 
-export default class extends React.Component<CardProps> {
+class Card extends React.Component<CardProps> {
   public static readonly defaultProps = {
     active: false,
   };
@@ -28,7 +28,7 @@ export default class extends React.Component<CardProps> {
 
     } = this.props;
 
-    const Card = styled.div`
+    const BaseCard = styled.div`
       border-bottom: ${active === true ? '8px solid rgba(0, 0, 0, 0.2)' : 'none'};
       border-radius: ${({ theme }) => theme.radius.Medium};
       box-sizing: border-box;
@@ -65,7 +65,7 @@ export default class extends React.Component<CardProps> {
       padding: 12px 16px;
     `;
 
-    const NormalCard = Card.extend`
+    const NormalCard = BaseCard.extend`
       background-color: #fff;
       box-shadow: ${({ theme }) => theme.shadow.Main};
     `;
@@ -107,3 +107,5 @@ export default class extends React.Component<CardProps> {
     );
   }
 }
+
+export default Card;

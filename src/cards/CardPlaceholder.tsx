@@ -10,7 +10,7 @@ import { IconEllipsisV, IconTimes } from '../icons';
 import { Align } from '../utils/AlignmentProps';
 import CardProps from './CardProps';
 
-export default class extends React.Component<CardProps> {
+class CardPlaceholder extends React.Component<CardProps> {
   public static readonly defaultProps = {
     active: false,
   };
@@ -107,3 +107,5 @@ export default class extends React.Component<CardProps> {
     );
   }
 }
+
+export default CardPlaceholder;

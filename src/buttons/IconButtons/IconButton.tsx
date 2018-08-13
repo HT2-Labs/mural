@@ -20,7 +20,7 @@ const getFontSize = (size: Size) => {
   }
 };
 
-export default ({
+const IconButton = ({
   ariaLabel,
   children,
   disabled = false,
@@ -28,22 +28,25 @@ export default ({
   onClick,
   type,
 }: IconButtonProps) => {
+
   const useTextColor = false;
   const buttonSize = getButtonSize(size);
   const fontSize = getFontSize(size);
 
-  const Button = buttonIconStyle(buttonSize, fontSize, disabled);
-  const color = buttonColorStyles({ disabled, useTextColor});
-  const IconButtonNormal = buttonNormalStyles({ Button, color, disabled});
+  const BaseButton = buttonIconStyle(buttonSize, fontSize, disabled);
+  const color = buttonColorStyles({ disabled, useTextColor });
+  const NormalIconButton = buttonNormalStyles({ BaseButton, color, disabled });
 
   return (
-    <IconButtonNormal
+    <NormalIconButton
       disabled={disabled}
       onClick={onClick}
       type={type}
       aria-label={ariaLabel}
     >
       {children}
-    </IconButtonNormal>
+    </NormalIconButton>
   );
 };
+
+export default IconButton;

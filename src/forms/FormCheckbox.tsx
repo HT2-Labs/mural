@@ -7,7 +7,7 @@ import buttonColorStyles from '../buttons/utils/buttonColorStyles';
 import { IconCheck } from '../icons';
 import FormProps from './FormProps';
 
-export default ({
+const FormCheckbox = ({
     disabled = false,
     group,
   }: FormProps) => {
@@ -51,7 +51,8 @@ export default ({
       margin: 2px;
     }
   `;
-const CheckBox = styled.input`
+
+  const CheckBox = styled.input`
     z-index: 1000;
     &:checked + ${Slider} {
       background-color: ${activeColor.backgroundLight};
@@ -66,11 +67,14 @@ const CheckBox = styled.input`
       border-color: ${activeColor.backgroundLight};
     }
   `;
+
   return (
     <SwitchBody>
       <CheckBox type="checkbox" name={group}/>
-      <Slider> <IconCheck color="white"/></Slider>
+      <Slider><IconCheck color="white" /></Slider>
     </SwitchBody>
   );
 
 };
+
+export default FormCheckbox;

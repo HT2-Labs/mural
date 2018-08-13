@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 import CardProps from './CardProps';
 
-export default ({ children }: CardProps) => {
-  const CardSplashText = styled.div`
+const CardSplashText = ({ children }: CardProps ) => {
+  const CardSplashTextContainer = styled.div`
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -16,8 +16,10 @@ export default ({ children }: CardProps) => {
     width: 100%;
   `;
   return (
-    <CardSplashText>
+    <CardSplashTextContainer>
       {children}
-    </CardSplashText>
+    </CardSplashTextContainer>
   );
 };
+
+export default CardSplashText;

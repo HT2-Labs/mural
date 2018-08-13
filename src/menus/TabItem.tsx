@@ -2,8 +2,8 @@ import * as React from 'react';
 import styled from 'styled-components';
 import MenuProps from './menuProps';
 
-export default ({ active = false, children, onClick}: MenuProps) => {
-  const TabItem = styled.button`
+const TabItem = ({ active = false, children, onClick}: MenuProps) => {
+  const Item = styled.button`
     display: flex;
     border-left: none;
     border-top: none;
@@ -35,12 +35,14 @@ export default ({ active = false, children, onClick}: MenuProps) => {
   `;
 
   return (
-    <TabItem
+    <Item
       aria-selected={active}
       onClick={onClick}
       role="tab"
     >
       {children}
-    </TabItem>
+    </Item>
   );
 };
+
+export default TabItem;

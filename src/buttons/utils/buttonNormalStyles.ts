@@ -1,10 +1,10 @@
 export interface NormalButtonProps {
-  readonly Button: any;
+  readonly BaseButton: any;
   readonly color: any;
-  readonly disabled: boolean | undefined;
+  readonly disabled: boolean;
 }
-export default ({ Button, color, disabled = false }: NormalButtonProps) => {
-  const NormalButton = Button.extend`
+export default ({ BaseButton, color, disabled = false }: NormalButtonProps) => {
+  const NormalButton = BaseButton.extend`
     background-color: ${color.background};
     border: 2px solid ${color.background};
     color: ${color.text};

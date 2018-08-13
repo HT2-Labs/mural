@@ -18,10 +18,11 @@ const getAlignment = (alignment?: Align) => {
   }
 };
 
-export default ({ children, alignment, condensed = false }: ButtonGroupProps) => {
+const ButtonGroup = ({ children, alignment, condensed = false }: ButtonGroupProps) => {
+
   const alignType = getAlignment(alignment);
 
-  const ButtonGroup = styled.div`
+  const Group = styled.div`
     display: flex;
     width: 100%;
     margin-left: auto;
@@ -36,5 +37,7 @@ export default ({ children, alignment, condensed = false }: ButtonGroupProps) =>
     }
   `;
 
-  return <ButtonGroup>{children}</ButtonGroup>;
+  return <Group>{children}</Group>;
 };
+
+export default ButtonGroup;

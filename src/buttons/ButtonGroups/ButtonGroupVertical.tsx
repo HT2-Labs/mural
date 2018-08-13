@@ -17,10 +17,11 @@ const getAlignment = (alignment?: Align) => {
   }
 };
 
-export default ({ children, alignment }: ButtonGroupProps) => {
+const ButtonGroupVertical = ({ children, alignment }: ButtonGroupProps) => {
+
   const alignType = getAlignment(alignment);
 
-  const ButtonGroup = styled.div`
+  const Group = styled.div`
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -37,5 +38,7 @@ export default ({ children, alignment }: ButtonGroupProps) => {
     }
   `;
 
-  return <ButtonGroup>{children}</ButtonGroup>;
+  return <Group>{children}</Group>;
 };
+
+export default ButtonGroupVertical;

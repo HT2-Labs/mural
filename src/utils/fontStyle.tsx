@@ -7,7 +7,14 @@ export interface FontStyleProps {
 }
 
 export default ({strong = false, italic = false, children}: FontStyleProps) => {
-  return strong && italic ? <strong><i>{children}</i></strong> : children;
-  return strong ? <strong>{children}</strong> : children;
-  return italic ? <i>{children}</i> : children;
+  if (strong && italic) {
+    return <strong><i>{children}</i></strong>;
+  }
+  if (strong) {
+    return <strong>{children}</strong>;
+  }
+  if (italic) {
+    return <i>{children}</i>;
+  }
+  return children;
 };
