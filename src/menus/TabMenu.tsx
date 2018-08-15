@@ -22,10 +22,11 @@ const TabMenu = ({ children, alignment, ariaLabel }: TabMenuProps) => {
   const alignType = getAlignment(alignment);
 
   const TabMenuContainer = styled.nav`
+    ${alignType};
     display: flex;
     height: 44px;
     margin: auto 4px 0;
-    ${alignType};
+    width: 100%;
   `;
 
   return (

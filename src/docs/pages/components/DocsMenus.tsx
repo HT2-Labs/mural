@@ -44,7 +44,7 @@ const DocsMenus = () => {
       <H1 size={SizeType.ExtraLarge}>Menus</H1>
       <hr />
       <P>Simple tab menu. Only use for top level page specific navigation.</P>
-      <DocsPlayground code={codeSnippet} props={availableProps}>
+      <DocsPlayground code={codeSnippet} exampleProps={availableProps}>
         <TabMenu>
           <TabItem active>Goals</TabItem>
           <TabItem>Archive</TabItem>

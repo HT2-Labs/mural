@@ -137,7 +137,7 @@ const overlayContent = (
         <H1 size={SizeType.ExtraLarge}>Cards</H1>
         <hr />
         <DocsDescription title="Normal Card">
-          <DocsPlayground code={normalCard} props={availableProps}>
+          <DocsPlayground code={normalCard} exampleProps={availableProps}>
             <CardGrid>
               <Card>
                 <CardHeader>
@@ -153,7 +153,7 @@ const overlayContent = (
         </DocsDescription>
 
         <DocsDescription title="Higlighted Card">
-          <DocsPlayground code={cardHighlighted} props={availableProps}>
+          <DocsPlayground code={cardHighlighted} exampleProps={availableProps}>
             <CardGrid>
               <CardHighlighted active>
                 <CardSplashHeader>
@@ -179,7 +179,7 @@ const overlayContent = (
         </DocsDescription>
 
         <DocsDescription title="Placeholder Card">
-          <DocsPlayground code={cardPlaceholder} props={availableProps}>
+          <DocsPlayground code={cardPlaceholder} exampleProps={availableProps}>
             <CardGrid>
               <CardPlaceholder>
                 <CardSplashText>

@@ -6,15 +6,9 @@ import styled from 'styled-components';
 
 import { IconCode, IconEye, IconProject } from '../../icons';
 import { TabItem, TabMenu } from '../../menus';
+import { H4 } from '../../text';
 import { Align } from '../../utils/AlignmentProps';
 import DocsCode from './DocsCode';
-
-const Preview = ({ children }: any) => {
-  const PreviewWrap = styled.div`
-    width: 100%;
-  `;
-  return <PreviewWrap>{children}</PreviewWrap>;
-};
 
 export enum Tab {
   Preview,
@@ -23,18 +17,48 @@ export enum Tab {
 }
 
 export interface PlaygroundProps {
-  readonly code?: String;
-  readonly props?: any;
-  readonly children?: any;
+  readonly children?: React.ReactNode;
+  readonly code?: string;
+  readonly exampleProps?: any;
+  readonly title?: string;
 }
 
-const getContent = (content: any, children: any, code: any, props: any) => {
+const PreviewWrap = styled.div`
+  width: 100%;
+`;
+
+const Preview = ({ children }: any) => {
+  return <PreviewWrap>{children}</PreviewWrap>;
+};
+
+const getContent = (content: any, children: any, code: any, exampleProps: any) => {
   switch (content) {
     case Tab.Preview: default: return <Preview children={children} />;
     case Tab.Code: return <DocsCode code={code} />;
-    case Tab.Props: return props;
+    case Tab.Props: return exampleProps;
   }
 };
+
+const PlayGround = styled.div`
+  background-color: #f0f0f0;
+  margin-bottom: 20px;
+`;
+
+const Content = styled.div`
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+`;
+
+const Header = styled.div`
+  background-color: #eaeaea;
+  display: flex;
+`;
+
+const HeaderTitle = styled.div`
+  margin: auto 12px;
+  width: 100%;
+`;
 
 class DocsPlayground extends React.Component<PlaygroundProps> {
 
@@ -52,8 +76,8 @@ class DocsPlayground extends React.Component<PlaygroundProps> {
     if (this.props.code !== undefined) {
       return (
         <TabItem
-          active={this.checkIfActive(Tab.Code)}
-          onClick={() => { this.swapTab(Tab.Code); }}
+        active={this.checkIfActive(Tab.Code)}
+        onClick={() => { this.swapTab(Tab.Code); }}
         >
           Code <IconCode />
         </TabItem>
@@ -63,11 +87,11 @@ class DocsPlayground extends React.Component<PlaygroundProps> {
   }
 
   public getPropsButton() {
-    if (this.props.props !== undefined) {
+    if (this.props.exampleProps !== undefined) {
       return (
         <TabItem
-          active={this.checkIfActive(Tab.Props)}
-          onClick={() => { this.swapTab(Tab.Props); }}
+        active={this.checkIfActive(Tab.Props)}
+        onClick={() => { this.swapTab(Tab.Props); }}
         >
           Props <IconProject />
         </TabItem>
@@ -81,29 +105,16 @@ class DocsPlayground extends React.Component<PlaygroundProps> {
   }
 
   public render() {
-    const PlayGround = styled.div`
-      background-color: #f0f0f0;
-      margin-bottom: 20px;
-    `;
-
-    const Content = styled.div`
-      padding: 16px;
-      display: flex;
-      justify-content: center;
-    `;
-
-    const Header = styled.div`
-      background-color: #eaeaea;
-    `;
 
     return (
       <PlayGround>
         <Header>
+          <HeaderTitle><H4 color={'#222'}>Example: {this.props.title}</H4></HeaderTitle>
           <TabMenu alignment={Align.Right} ariaLabel="Playground">
             <TabItem
               active={this.checkIfActive(Tab.Preview)}
               onClick={() => { this.swapTab(Tab.Preview); }}
-            >
+              >
               Preview <IconEye />
             </TabItem>
             {this.getCodeButton()}
@@ -115,10 +126,10 @@ class DocsPlayground extends React.Component<PlaygroundProps> {
             this.state.playgroundTab,
             this.props.children,
             this.props.code,
-            this.props.props,
+            this.props.exampleProps,
           )}
         </Content>
-      </PlayGround >
+      </PlayGround>
     );
   }
 }
