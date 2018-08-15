@@ -1,137 +1,44 @@
 // tslint:disable:no-this
 // tslint:disable:prefer-function-over-method
 // tslint:disable:no-class
-// tslint:disable:max-file-line-count
 import * as React from 'react';
 
-import { Button, ButtonGhost, ButtonGroup, IconButtonInvisible } from '../../../buttons';
-import { IconClose } from '../../../icons';
-import { FullPageModal,
-  FullPageModalBody,
-  FullPageModalHeader,
-  Modal,
-  ModalBody,
-  ModalFooter,
-  ModalHeader } from '../../../modals';
-import { Table, TableCell, TableRow } from '../../../tables';
-import { H1, H3, P, SizeType } from '../../../text';
-import { Align } from '../../../utils/AlignmentProps';
-import { DocsPlayground, DocsPropsTableHeader } from '../../shared';
-
-const codeSnippet =
-  `import { H1, H3, P, SizeType } from '../Text';
-
-import { Button, ButtonGroup, ButtonGhost, IconButtonInvisible } from '@ht2-labs/mural/Button';
-import { IconClose } from '@ht2-labs/mural/Icon';
-import FullPageModal from '@ht2-labs/mural/modal/FullPageModal';
-import FullPageModalActions from '@ht2-labs/mural/modal/FullPageModalActions';
-import FullPageModalBody from '@ht2-labs/mural/modal/FullPageModalBody';
-import FullPageModalHeader from '@ht2-labs/mural/modal/FullPageModalHeader';
-import Modal from '@ht2-labs/mural/modal/Modal';
-import ModalActions from '@ht2-labs/mural/modal/ModalActions';
-import ModalBody from '@ht2-labs/mural/modal/ModalBody';
-import ModalFooter from '@ht2-labs/mural/modal/ModalFooter';
-import ModalHeader from '@ht2-labs/mural/modal/ModalHeader';
-import { Align } from '@ht2-labs/mural/utils/AlignmentProps';
-//Modal
-<Modal open={this.state.modalOpen} onCloseFn={this.closeModal}>
-<ModalHeader>
-  <H3 size={SizeType.Large}>This is a Modal</H3>
-  <ModalActions>
-    <ButtonInvisible onClick={this.closeModal}>
-      <IconClose />
-    </InvisbleButton>
-  </ModalActions>
-</ModalHeader>
-
-<ModalBody>
-  <P>Oh what a cool thing!</P>
-  <P>Oh what a cool thing!</P>
-  <P>Oh what a cool thing!</P>
-  <P>Oh what a cool thing!</P>
-  <P>Oh what a cool thing!</P>
-  <P>Oh what a cool thing!</P>
-</ModalBody>
-
-<ModalFooter>
-  <P>Oh what a cool thing!</P>
-  <ModalActions>
-    <ButtonGroup>
-      <Button>Yes</Button>
-      <ButtonGhost>Hmm</ButtonGhost>
-      <Button onClick={this.closeModal} danger>No!</Button>
-    </ButtonGroup>
-  </ModalActions>
-</ModalFooter>
-</Modal>
-
-//FullPage Modal
-<FullPageModal open={this.state.fullpageModalOpen}>
-  <FullPageModalHeader>
-    <ModalActions>
-      <IconButtonInvisible onClick={this.closeFullpageModal}>
-        <IconClose />
-      </IconButtonInvisible>
-    </ModalActions>
-  </FullPageModalHeader>
-<FullPageModalBody>
-  <H3 size={SizeType.Large} >This is a Fullpage Modal</H3>
-  <p>Blah</p>
-<FullPageModalActions>
-  <ButtonGroup>
-    <Button danger> DO NOT CLICK</Button>
-    < Button> Do Click </Button>
-  </ButtonGroup>
-</FullPageModalActions>
-</FullPageModalBody>
-<ModalFooter>
-</ModalFooter>
-</FullPageModal>`;
-
-const availableProps =
-<Table>
-<DocsPropsTableHeader/>
-  <TableRow>
-    <TableCell>open</TableCell>
-    <TableCell>Boolean</TableCell>
-    <TableCell>Undefined </TableCell>
-    <TableCell>Defines whether the modal is open</TableCell>
-  </TableRow>
-  <TableRow>
-    <TableCell>onCloseFn</TableCell>
-    <TableCell>Function</TableCell>
-    <TableCell>Undefined</TableCell>
-    <TableCell>A function to call when a user attempts to close the modal</TableCell>
-  </TableRow>
-</Table>;
+import { Button, ButtonGroup } from '../../../buttons';
+import DocsBasicModalCode from '../../../modals/BasicModal/docs/DocsBasicModalCode';
+import DocsBasicModalPreview from '../../../modals/BasicModal/docs/DocsBasicModalPreview';
+import DocsBasicModalProps from '../../../modals/BasicModal/docs/DocsBasicModalProps';
+import DocsFullPageModalCode from '../../../modals/FullPageModal/docs/DocsFullPageModalCode';
+import DocsFullPageModalPreview from '../../../modals/FullPageModal/docs/DocsFullPageModalPreview';
+import DocsFullPageModalProps from '../../../modals/FullPageModal/docs/DocsFullPageModalProps';
+import { H1, SizeType } from '../../../text';
+import { DocsPlayground } from '../../shared';
 
 class DocsModals extends React.Component {
+
   public readonly state = {
-    fullpageModalOpen: false,
+    fullPageModalOpen: false,
     modalOpen: false,
+    text: '',
   };
 
-  public readonly openModal = () => {
-    this.setState({
-      modalOpen: true,
-    });
+  public readonly modalOpen = () => {
+    this.setState({ modalOpen: true });
   }
 
-  public readonly closeModal = () => {
-    this.setState({
-      modalOpen: false,
-    });
-  }
-  public readonly openFullpageModal = () => {
-    this.setState({
-      fullpageModalOpen: true,
-    });
+  public readonly modalClose = () => {
+    this.setState({ modalOpen: false });
   }
 
-  public readonly closeFullpageModal = () => {
-    this.setState({
-      fullpageModalOpen: false,
-    });
+  public readonly fullPageModalOpen = () => {
+    this.setState({ fullPageModalOpen: true });
+  }
+
+  public readonly fullPageModalClose = () => {
+    this.setState({ fullPageModalOpen: false });
+  }
+
+  public readonly changeText = (event: any) => {
+    this.setState({ text: event.target.value });
   }
 
   public render() {
@@ -139,59 +46,38 @@ class DocsModals extends React.Component {
       <>
         <H1 size={SizeType.ExtraLarge}>Headers</H1>
         <hr />
-        <DocsPlayground code={codeSnippet} props={availableProps}>
+        <DocsPlayground
+          code={DocsBasicModalCode}
+          exampleProps={<DocsBasicModalProps />}
+          title="Basic Modal"
+        >
           <ButtonGroup>
-            <Button onClick={this.openModal}>Open Modal</Button>
-            <Button onClick={this.openFullpageModal}>Open Fullpage Modal</Button>
+            <Button onClick={this.modalOpen}>Open Modal</Button>
           </ButtonGroup>
-          <Modal open={this.state.modalOpen} onCloseFn={this.closeModal}>
-            <ModalHeader>
-              <H3 size={SizeType.Large}>This is a Modal</H3>
-              <ButtonGroup alignment={Align.Right}>
-                <IconButtonInvisible onClick={this.closeModal}>
-                  <IconClose />
-                </IconButtonInvisible>
-              </ButtonGroup>
-            </ModalHeader>
 
-            <ModalBody>
-              <P>Oh what a cool thing!</P>
-              <P>Oh what a cool thing!</P>
-              <P>Oh what a cool thing!</P>
-              <P>Oh what a cool thing!</P>
-              <P>Oh what a cool thing!</P>
-              <P>Oh what a cool thing!</P>
-            </ModalBody>
+          <DocsBasicModalPreview
+            modalOpen={this.state.modalOpen}
+            modalClose={this.modalClose}
+            text={this.state.text}
+            changeText={this.changeText}
+          />
+        </DocsPlayground>
 
-            <ModalFooter>
-              <P>Oh what a cool thing!</P>
-              <ButtonGroup alignment={Align.Right}>
-                <Button>Yes</Button>
-                <ButtonGhost>Hmm</ButtonGhost>
-                <Button onClick={this.closeModal} danger>No!</Button>
-              </ButtonGroup>
-            </ModalFooter>
-          </Modal>
+        <DocsPlayground
+          code={DocsFullPageModalCode}
+          exampleProps={<DocsFullPageModalProps />}
+          title="Full Page Modal"
+        >
+          <ButtonGroup>
+            <Button onClick={this.fullPageModalOpen}>Open FullPage Modal</Button>
+          </ButtonGroup>
 
-          <FullPageModal open={this.state.fullpageModalOpen}>
-            <FullPageModalHeader>
-              <ButtonGroup alignment={Align.Right}>
-                <IconButtonInvisible onClick={this.closeFullpageModal}>
-                  <IconClose />
-                </IconButtonInvisible>
-              </ButtonGroup>
-            </FullPageModalHeader>
-            <FullPageModalBody>
-              <H3 size={SizeType.Large} >This is a Fullpage Modal</H3>
-              Blah
-              <ButtonGroup alignment={Align.Center}>
-                <Button danger> DO NOT CLICK</Button>
-                <Button> Do Click </Button>
-              </ButtonGroup>
-            </FullPageModalBody>
-            <ModalFooter>
-            </ModalFooter>
-          </FullPageModal>
+          <DocsFullPageModalPreview
+            modalOpen={this.state.fullPageModalOpen}
+            modalClose={this.fullPageModalClose}
+            text={this.state.text}
+            changeText={this.changeText}
+          />
         </DocsPlayground>
       </>
     );

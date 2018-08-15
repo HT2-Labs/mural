@@ -45,7 +45,7 @@ const DocsHeaders = () => {
     <>
       <H1 size={SizeType.ExtraLarge}>Headers</H1>
       <hr />
-      <DocsPlayground code={codeSnippet} props={availableProps}>
+      <DocsPlayground code={codeSnippet} exampleProps={availableProps}>
         <PageHeader>
           <PageTitle>
             <PageHeaderText>

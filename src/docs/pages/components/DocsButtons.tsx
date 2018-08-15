@@ -239,7 +239,7 @@ export default () => {
       <H1 size={SizeType.ExtraLarge}>Buttons</H1>
       <DocsDescription title="Normal Button">
         <P>This is the default button that should be used.</P>
-        <DocsPlayground code={codeSnippetButton} props={availablePropsButton}>
+        <DocsPlayground code={codeSnippetButton} exampleProps={availablePropsButton}>
           <ButtonGroup>
             <Button
 
@@ -250,7 +250,7 @@ export default () => {
       </DocsDescription>
       <DocsDescription title="Ghost Button">
         <P>Ghost buttons can be used as a secondary option or to overlay on splash images. Ghost buttons can have their color overwritten by using the <code>ghostColor</code> prop.</P>
-        <DocsPlayground code={codeSnippetButtonGhost} props={availablePropsGhostButton}>
+        <DocsPlayground code={codeSnippetButtonGhost} exampleProps={availablePropsGhostButton}>
           <ButtonGroup>
             <ButtonGhost
 
@@ -263,7 +263,7 @@ export default () => {
       </DocsDescription>
       <DocsDescription title="Danger Button">
         <P>Use the <code>danger</code> prop to signify a destructive action (the color is set in the theme).</P>
-        <DocsPlayground code={codeSnippetDangerButton} props={availablePropsButton}>
+        <DocsPlayground code={codeSnippetDangerButton} exampleProps={availablePropsButton}>
           <ButtonGroup>
             <Button
 
@@ -278,7 +278,7 @@ export default () => {
       </DocsDescription>
       <DocsDescription title="Invisible Button">
         <P>Only use invisible buttons in combination with other buttons (i.e. in a  <code>ButtonGroup</code>). Do NOT use them by themselves as this can be confusing.</P>
-        <DocsPlayground code={codeSnippetButtonInvisible} props={availablePropsInvisibleButton}>
+        <DocsPlayground code={codeSnippetButtonInvisible} exampleProps={availablePropsInvisibleButton}>
           <ButtonGroup>
             <ButtonInvisible>
               Invisible Button <IconChevronRight />
@@ -293,7 +293,7 @@ export default () => {
         use their space, add the <code>fullWidth</code> prop.</P>
 
       <DocsDescription title="Icon Button">
-        <DocsPlayground code={codeSnippetIconButton} props={availablePropsIconButton}>
+        <DocsPlayground code={codeSnippetIconButton} exampleProps={availablePropsIconButton}>
           <ButtonGroup>
             <IconButton><IconAsterisk /></IconButton>
             <IconButton><IconEllipsisV /></IconButton>
@@ -306,7 +306,7 @@ export default () => {
         </DocsPlayground>
       </DocsDescription>
       <DocsDescription title="Invisible Icon Button">
-        <DocsPlayground code={codeSnippetIconButtonInvisible} props={availablePropsInvisibleIconButton}>
+        <DocsPlayground code={codeSnippetIconButtonInvisible} exampleProps={availablePropsInvisibleIconButton}>
           <ButtonGroup>
             <IconButtonInvisible ariaLabel="Asterisk"><IconAsterisk /></IconButtonInvisible>
             <IconButtonInvisible><IconEllipsisV /></IconButtonInvisible>
@@ -321,7 +321,7 @@ export default () => {
 
       <DocsDescription title="Button Group">
         <P>If you are using more than one button, you should use a ButtonGroup to contain them</P>
-        <DocsPlayground code={codeSnippetButtonGroup} props={availablePropsButtonGroup}>
+        <DocsPlayground code={codeSnippetButtonGroup} exampleProps={availablePropsButtonGroup}>
           <ButtonGroup>
             <Button>1</Button>
             <Button>2</Button>
@@ -338,7 +338,7 @@ export default () => {
       </DocsDescription>
       <DocsDescription title="Button Group Vertical">
         <P>If you are using more than one button, you should use a ButtonGroup to contain them</P>
-        <DocsPlayground code={codeSnippetButtonGroup} props={availablePropsButtonGroup}>
+        <DocsPlayground code={codeSnippetButtonGroup} exampleProps={availablePropsButtonGroup}>
           <ButtonGroupVertical>
             <Button>1</Button>
             <Button>2</Button>
