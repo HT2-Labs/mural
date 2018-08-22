@@ -3,12 +3,14 @@ import { TableHeader, TableRow } from '../../tables';
 
 const DocsPropsTableHeader = () => {
   return (
-    <TableRow>
-      <TableHeader>Name</TableHeader>
-      <TableHeader>Type</TableHeader>
-      <TableHeader>Default</TableHeader>
-      <TableHeader>Description</TableHeader>
-    </TableRow>
+    <thead>
+      <TableRow>
+        <TableHeader>Name</TableHeader>
+        <TableHeader>Type</TableHeader>
+        <TableHeader>Default</TableHeader>
+        <TableHeader>Description</TableHeader>
+      </TableRow>
+    </thead>
   );
 };
 

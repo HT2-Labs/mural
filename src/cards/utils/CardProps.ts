@@ -11,14 +11,11 @@ export default interface CardProps {
   // Set background color of header/title
   readonly headerColor?: ((props: { readonly theme: ThemeProvider }) => string) | string;
 
-  // Make content align centred vertically
-  readonly centerContent?: boolean;
-
   // Sets the on click action for the card
   readonly onClick?: (e: React.MouseEvent<HTMLElement>) => void;
 
   // Adds the overlay menu to the Card and displays the overlayContent as the contents
-  readonly overlayContent?: ReactNode;
+  readonly overlayContent?: ReactNode | ReactNode[];
 
   // Sets the Card title
   readonly title?: ReactNode | ReactNode[] | string;

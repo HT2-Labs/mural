@@ -4,7 +4,6 @@
 import * as React from 'react';
 import styled from '../utils/mural-styled-components';
 
-import { readableColor } from 'polished';
 import CardHeader from './utils/CardHeader';
 import BaseCard from './utils/BaseCard';
 import CardProps from './utils/CardProps';
@@ -85,7 +84,7 @@ class Card extends React.Component<CardProps> {
         backgroundColor={backgroundColor}
         onClick={onClick}
       >
-        {renderOverlay}
+        {overlayContent !== undefined ? renderOverlay : null}
         {title !== undefined ? <CardHeader headerColor={headerColor}>{title}</CardHeader> : null}
         {children}
       </BaseCard>
