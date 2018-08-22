@@ -3,6 +3,7 @@ import * as React from 'react';
 import { FormCheckbox, FormInput, FormRadio, FormSwitch, FormTextArea } from '../../../forms';
 import { H1, SizeType } from '../../../text';
 import { DocsPlayground } from '../../shared';
+import DocsPageProps from './DocsPageProps';
 
 const codeSnippetInput =
 `import FormInput from '@ht2-labs/mural/forms/FormInput';
@@ -14,7 +15,7 @@ const codeSnippetTextArea =
 <FormTextArea label="Label" placeholder="Type something here..."/>
 `;
 
-const DocsForms = () => {
+const DocsForms = ({}: DocsPageProps) => {
   return (
     <>
       <H1 size={SizeType.ExtraLarge}>Text</H1>

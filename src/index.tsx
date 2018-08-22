@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as dom from 'react-dom';
 import styled from './utils/mural-styled-components';
 
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Router } from '@reach/router';
 import DocsIntro from './docs/DocsIntro';
 import DocsSidebar from './docs/DocsSidebar';
 import {
@@ -18,7 +18,6 @@ import {
   DocsThemes,
 } from './docs/pages/components';
 import ThemeProvider from './themes/ThemeProvider';
-import checkForGithubPages from './utils/checkForGithubPages';
 
 const Demo = () => {
 
@@ -39,25 +38,24 @@ return (
       <MainWrap>
         <DocsSidebar />
         <Main>
-          <Switch>
-            <Route path="/themes" component={DocsThemes} />
-            <Route path="/buttons" component={DocsButtons} />
-            <Route path="/cards" component={DocsCards} />
-            <Route path="/forms" component={DocsForms} />
-            <Route path="/headers" component={DocsHeaders} />
-            <Route path="/icons" component={DocsIcons} />
-            <Route path="/lists" component={DocsLists} />
-            <Route path="/menus" component={DocsMenus} />
-            <Route path="/modal" component={DocsModals} />
-            <Route path="/text" component={DocsText} />
-            <Route component={DocsIntro} />
-          </Switch>
+          <Router>
+            <DocsThemes path="/themes" />
+            <DocsButtons path="/buttons" />
+            <DocsCards path="/cards" />
+            <DocsForms path="/forms" />
+            <DocsHeaders path="/headers" />
+            <DocsIcons path="/icons" />
+            <DocsLists path="/lists" />
+            <DocsMenus path="/menus" />
+            <DocsModals path="/modal" />
+            <DocsText path="/text" />
+            <DocsIntro path="/"/>
+          </Router>
         </Main>
       </MainWrap>
     </ThemeProvider>
   );
 };
 
-const path = checkForGithubPages() ? 'mural/' : '';
 const element = document.getElementsByClassName('app')[0];
-dom.render(<BrowserRouter basename={path}><Demo /></BrowserRouter>, element);
+dom.render(<Demo />, element);

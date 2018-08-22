@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { ListContainer, ListItem } from '../../../lists';
 import { H1, SizeType } from '../../../text';
 import { DocsPlayground } from '../../shared';
+import DocsPageProps from './DocsPageProps';
 
 const codeSnippet =
   `import { ListContainer, ListItem } from '@ht2-labs/mural/List';
@@ -32,7 +33,7 @@ const codeSnippet =
 </ListContainer>
 `;
 
-const DocsLists = () => {
+const DocsLists = ({}: DocsPageProps) => {
 
   const Wrapper = styled.div`
     height: 400px;

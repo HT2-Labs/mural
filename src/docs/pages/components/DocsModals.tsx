@@ -12,8 +12,9 @@ import DocsFullPageModalPreview from '../../../modals/FullPageModal/docs/DocsFul
 import DocsFullPageModalProps from '../../../modals/FullPageModal/docs/DocsFullPageModalProps';
 import { H1, SizeType } from '../../../text';
 import { DocsPlayground } from '../../shared';
+import DocsPageProps from './DocsPageProps';
 
-class DocsModals extends React.Component {
+class DocsModals extends React.Component<DocsPageProps> {
 
   public readonly state = {
     fullPageModalOpen: false,

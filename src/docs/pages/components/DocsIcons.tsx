@@ -37,6 +37,7 @@ import {
 } from '../../../icons';
 import { H1, SizeType } from '../../../text';
 import { DocsPlayground } from '../../shared';
+import DocsPageProps from './DocsPageProps';
 
 const codeSnippet =
   `import { IconArrowDown } from '@ht2-labs/mural/src//Icon';
@@ -44,7 +45,7 @@ const codeSnippet =
 <IconArrowDown />
 `;
 
-const DocsIcons = () => {
+const DocsIcons = ({}: DocsPageProps) => {
   const Grid = styled.div`
     display: grid;
     grid-template-columns: 200px 200px 200px 200px;

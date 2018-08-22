@@ -6,6 +6,7 @@ import { TabItem, TabMenu } from '../../../menus';
 import { Table, TableCell, TableRow } from '../../../tables';
 import { H1, H3, SizeType } from '../../../text';
 import { DocsPlayground, DocsPropsTableHeader } from '../../shared';
+import DocsPageProps from './DocsPageProps';
 
 const codeSnippet = `import { H1, H3, SizeType } from '../Text';
 import PageHeader from '@ht2-labs/mural/headers/PageHeader';
@@ -40,7 +41,7 @@ const availableProps =
   </TableRow>
 </Table>;
 
-const DocsHeaders = () => {
+const DocsHeaders = ({}: DocsPageProps) => {
   return (
     <>
       <H1 size={SizeType.ExtraLarge}>Headers</H1>

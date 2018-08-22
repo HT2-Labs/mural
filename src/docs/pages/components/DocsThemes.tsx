@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { Link } from '../../../links';
 import { H1, H4, P, SizeType } from '../../../text';
 import { DocsColor, DocsPlayground } from '../../shared';
+import DocsPageProps from './DocsPageProps';
 
 const codeSnippet =
 `import { ThemeProvider } from './ThemeProvider';
@@ -35,7 +36,7 @@ export default () => {
 );
 `;
 
-const DocsThemes = () => {
+const DocsThemes = ({}: DocsPageProps) => {
   const ColorGrid = styled.div`
     display: grid;
     grid-column-gap: 20px;

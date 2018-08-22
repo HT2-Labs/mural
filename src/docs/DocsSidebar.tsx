@@ -1,8 +1,24 @@
 // tslint:disable:max-file-line-count
 import * as React from 'react';
-import { NavLink } from 'react-router-dom';
-import styled from 'styled-components';
+import styled from '../utils/mural-styled-components';
+
+import { Link } from '@reach/router';
+
 import { IconGithub, IconNpm } from '../icons';
+
+const NavLink = (props: any) => (
+  <Link
+    {...props}
+    getProps={({ isCurrent }) => {
+      return {
+        style: {
+          background: isCurrent ? '#fff' : null,
+          color: isCurrent ? '#344a58' : null,
+        },
+      };
+    }}
+  />
+);
 
 export default () => {
   const Sidebar = styled.div`
@@ -73,27 +89,22 @@ export default () => {
     margin: auto auto 0;
   `;
 
-  const active = {
-    backgroundColor: '#fff',
-    color: '#344a58',
-  };
-
   return (
     <Sidebar>
       <SidebarFixed>
         <Name>Mural</Name>
         <Menu>
-          <MenuItem activeStyle={active} to="/" exact >Home</MenuItem>
-          <MenuItem activeStyle={active} to="/themes">Themes</MenuItem>
-          <MenuItem activeStyle={active} to="/buttons">Buttons</MenuItem>
-          <MenuItem activeStyle={active} to="/cards">Cards</MenuItem>
-          <MenuItem activeStyle={active} to="/forms">Forms</MenuItem>
-          <MenuItem activeStyle={active} to="/headers">Headers</MenuItem>
-          <MenuItem activeStyle={active} to="/icons">Icons</MenuItem>
-          <MenuItem activeStyle={active} to="/lists">Lists</MenuItem>
-          <MenuItem activeStyle={active} to="/menus">Menus</MenuItem>
-          <MenuItem activeStyle={active} to="/modal">Modal</MenuItem>
-          <MenuItem activeStyle={active} to="/text">Text</MenuItem>
+          <MenuItem to="/" >Home</MenuItem>
+          <MenuItem to="themes">Themes</MenuItem>
+          <MenuItem to="buttons">Buttons</MenuItem>
+          <MenuItem to="cards">Cards</MenuItem>
+          <MenuItem to="forms">Forms</MenuItem>
+          <MenuItem to="headers">Headers</MenuItem>
+          <MenuItem to="icons">Icons</MenuItem>
+          <MenuItem to="lists">Lists</MenuItem>
+          <MenuItem to="menus">Menus</MenuItem>
+          <MenuItem to="modal">Modal</MenuItem>
+          <MenuItem to="text">Text</MenuItem>
         </Menu>
         <GithubLink href="https://github.com/ht2-labs/mural"><IconGithub /></GithubLink>
         <NpmLink href="https://www.npmjs.com/package/@ht2-labs/mural"><IconNpm /></NpmLink>

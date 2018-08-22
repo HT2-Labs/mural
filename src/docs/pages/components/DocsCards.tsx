@@ -20,8 +20,9 @@ import {
 import DocsCardProps from '../../../cards/docs/DocsCardProps';
 import { Grid } from '../../../layouts';
 import { DocsPlayground } from '../../shared';
+import DocsPageProps from './DocsPageProps';
 
-class DocsCards extends React.Component {
+class DocsCards extends React.Component<DocsPageProps> {
 
   public readonly state = {
     overlay: false,

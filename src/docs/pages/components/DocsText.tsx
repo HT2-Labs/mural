@@ -5,6 +5,7 @@ import { Link } from '../../../links';
 import { Table, TableCell, TableRow } from '../../../tables';
 import { H1, H2, H3, H4, P, SizeType } from '../../../text';
 import { DocsDescription, DocsPlayground, DocsPropsTableHeader } from '../../shared';
+import DocsPageProps from './DocsPageProps';
 
 const codeSnippet =
   `import { H1, H2, H3, H4, P, SizeType } from '@ht2-labs/mural/Text';
@@ -36,7 +37,7 @@ const availableProps =
   </TableRow>
 </Table>;
 
-const DocsText = () => {
+const DocsText = ({}: DocsPageProps) => {
   return (
     <>
       <H1 size={SizeType.ExtraLarge}>Text</H1>

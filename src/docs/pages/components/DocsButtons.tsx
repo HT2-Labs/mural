@@ -26,6 +26,7 @@ import { Table, TableCell, TableRow } from '../../../tables';
 import { H1, P, SizeType } from '../../../text';
 import { Align } from '../../../utils/AlignmentProps';
 import { DocsDescription, DocsGuidance, DocsPlayground, DocsPropsTableHeader } from '../../shared';
+import DocsPageProps from './DocsPageProps';
 
 const codeSnippetButton =
   `import {
@@ -233,7 +234,7 @@ const availablePropsInvisibleButton =
     <TableCell>If a color string is passed into this prop, it will override the original color. This is not used when the danger or disabled prop are used</TableCell>
   </TableRow>
 </Table>;
-export default () => {
+export default ({}: DocsPageProps) => {
   return (
     <>
       <H1 size={SizeType.ExtraLarge}>Buttons</H1>

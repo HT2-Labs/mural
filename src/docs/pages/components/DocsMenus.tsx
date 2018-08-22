@@ -5,6 +5,7 @@ import { Table, TableCell, TableRow } from '../../../tables';
 import { H1, P, SizeType } from '../../../text';
 import { Align } from '../../../utils/AlignmentProps';
 import { DocsPlayground, DocsPropsTableHeader } from '../../shared';
+import DocsPageProps from './DocsPageProps';
 
 const codeSnippet =
   `import { TabMenu, TabItem } from '@ht2-labs/mural/Menu';
@@ -37,7 +38,7 @@ const availableProps =
   </TableRow>
 </Table>;
 
-const DocsMenus = () => {
+const DocsMenus = ({}: DocsPageProps) => {
 
   return (
     <>

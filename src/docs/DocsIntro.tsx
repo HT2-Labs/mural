@@ -1,26 +1,21 @@
-// tslint:disable:max-line-length
 import * as React from 'react';
 import styled from 'styled-components';
 
 import { H1, P, SizeType } from '../text';
+import DocsPageProps from './pages/components/DocsPageProps';
 
-export default () => {
-  const Quote = styled.p`
-    font-style: italic;
-    padding: 2% 10%;
-    text-align: center;
-    color: #333;
-    font-size: 20px;
-  `;
-  const SubTitle = styled.p`
-    text-align: center;
-    font-size: 24px;
-    font-style: italic;
-  `;
+const Quote = styled.p`
+  font-style: italic;
+  padding: 2% 10%;
+  text-align: center;
+  color: #333;
+  font-size: 20px;
+`;
+
+export default ({}: DocsPageProps) => {
   return (
     <>
-      <H1 size={SizeType.ExtraLarge}>The HT2Labs Component Library - MURAL</H1>
-      <SubTitle><strong>M</strong>ulti-<strong>U</strong>se <strong>R</strong>eact <strong>A</strong>esthetics <strong>L</strong>ibrary</SubTitle>
+      <H1 size={SizeType.Large}>The HT2Labs Component Library - MURAL</H1>
       <Quote>
         A distinguishing characteristic of mural painting is that the architectural
         elements of the given space are harmoniously incorporated into the picture
