@@ -1,6 +1,8 @@
 // tslint:disable:max-file-line-count
 // tslint:disable:no-magic-numbers
 // tslint:disable:object-literal-sort-keys
+import * as React from 'react';
+
 import {
   darken,
   em,
@@ -8,8 +10,8 @@ import {
   modularScale,
   readableColor,
 } from 'polished';
-import * as React from 'react';
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from '../utils/mural-styled-components';
+import defaultTheme from './defaultTheme';
 
 export interface ThemeProps {
   readonly theme?: any;
@@ -17,24 +19,6 @@ export interface ThemeProps {
 }
 
 const MuralThemeProvider = ({ children, theme }: ThemeProps) => {
-
-  // Set all base theme values
-  const defaultTheme = {
-    colorBody: '#efefef',
-    colorButton: '#076699',
-    colorDanger: '#ce0000',
-    colorDisabled: '#ddd',
-    colorPrimary: '#41bfee',
-    colorSecondary: '#344a58',
-    colorSuccess: '#22c65b',
-    fontBase: '16px',
-    radiusLarge: '50%',
-    radiusMedium: '12px',
-    radiusSmall: '2px',
-    shadowLarge: '0 2px 2px 2px rgba(0, 0, 0, 0.12)',
-    shadowMedium: '0px 1px 5px 0px rgba(0, 0, 0, 0.3)',
-    shadowSmall: 'rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px',
-  };
 
   // Apply app supplied theme over the mural default
   const mergedTheme = {...defaultTheme, ...theme};
@@ -80,6 +64,8 @@ const MuralThemeProvider = ({ children, theme }: ThemeProps) => {
       SuccessDark: darken(DarkenValue, mergedTheme.colorSuccess),
       SuccessLight: lighten(lightenValue, mergedTheme.colorSuccess),
       SuccessText: readableColor(mergedTheme.colorSuccess),
+
+      White: mergedTheme.colorWhite,
     },
     font: {
       Small: modularScale(-1, em(mergedTheme.fontBase), modularScaleValue),

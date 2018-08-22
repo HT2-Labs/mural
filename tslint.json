@@ -4,6 +4,7 @@
   ],
   "rules": {
     "no-unnecessary-type-assertion": false,
+    "no-magic-numbers": false,
     "variable-name": [
       true,
       "check-format",

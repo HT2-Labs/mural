@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as dom from 'react-dom';
-import styled from 'styled-components';
+import styled from './utils/mural-styled-components';
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import DocsIntro from './docs/DocsIntro';
