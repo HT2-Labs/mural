@@ -4,8 +4,8 @@
 import * as React from 'react';
 import styled from '../utils/mural-styled-components';
 
-import CardHeader from './utils/CardHeader';
 import BaseCard from './utils/BaseCard';
+import CardHeader from './utils/CardHeader';
 import CardProps from './utils/CardProps';
 
 import { ButtonGroup, IconButtonInvisible } from '../buttons';

@@ -23,7 +23,7 @@ const DocsCardBasic = () => {
       <CardFooter>Card Title</CardFooter>
     </Card>
   );
-}
+};
 
 const DocsCardHeroText = () => {
   return(
@@ -40,7 +40,7 @@ const DocsCardHeroText = () => {
       </CardHeroText>
     </Card>
   );
-}
+};
 
 const DocsCardHeader = ({overlayContent}: any) => {
   return(
@@ -56,7 +56,7 @@ const DocsCardHeader = ({overlayContent}: any) => {
       </CardFooter>
     </Card>
   );
-}
+};
 
 const DocsCardOverlay = ({overlayContent}: any) => {
   return(
@@ -75,11 +75,11 @@ const DocsCardOverlay = ({overlayContent}: any) => {
       </CardBody>
     </Card>
   );
-}
+};
 
 export {
   DocsCardBasic,
   DocsCardHeroText,
   DocsCardHeader,
   DocsCardOverlay,
-}
+};

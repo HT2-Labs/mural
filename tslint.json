@@ -4,13 +4,13 @@
   ],
   "rules": {
     "no-unnecessary-type-assertion": false,
+    "no-magic-numbers": false,
     "variable-name": [
       true,
       "check-format",
       "ban-keywords",
       "allow-leading-underscore",
-      "allow-pascal-case",
-      "no-magic-numbers",
+      "allow-pascal-case"
     ]
   }
 }

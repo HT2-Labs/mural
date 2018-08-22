@@ -1,3 +1,4 @@
+// tslint:disable:max-file-line-count
 const DocsCardBasicCode =
 `import {
   Card,
@@ -16,7 +17,7 @@ export default () => {
     </Card>
   );
 }
-`
+`;
 
 const DocsCardHeroTextCode =
 `import {
@@ -40,7 +41,7 @@ export default () => {
     </Card>
   );
 }
-`
+`;
 
 const DocsCardHeaderCode =
 `import {
@@ -69,7 +70,7 @@ export default = ({overlayContent}) => {
     </Card>
   );
 }
-`
+`;
 
 const DocsCardOverlayCode =
 `import {
@@ -99,11 +100,11 @@ export default ({overlayContent}) => {
     </Card>
   );
 }
-`
+`;
 
 export {
   DocsCardBasicCode,
   DocsCardHeroTextCode,
   DocsCardHeaderCode,
   DocsCardOverlayCode,
-}
+};

@@ -4,22 +4,22 @@
 // tslint:disable:no-class
 import * as React from 'react';
 
+import { Button, ButtonGhost, ButtonGroupVertical } from '../../../buttons';
 import {
   DocsCardBasicCode,
   DocsCardHeaderCode,
   DocsCardHeroTextCode,
-  DocsCardOverlayCode
+  DocsCardOverlayCode,
 } from '../../../cards/docs/DocsCardCode';
 import {
   DocsCardBasic,
   DocsCardHeader,
   DocsCardHeroText,
-  DocsCardOverlay
+  DocsCardOverlay,
 } from '../../../cards/docs/DocsCardPreview';
 import DocsCardProps from '../../../cards/docs/DocsCardProps';
-import { DocsPlayground } from '../../shared';
 import { Grid } from '../../../layouts';
-import { ButtonGroupVertical, Button, ButtonGhost } from '../../../buttons';
+import { DocsPlayground } from '../../shared';
 
 class DocsCards extends React.Component {
 
@@ -58,7 +58,7 @@ class DocsCards extends React.Component {
         <DocsPlayground
           title="Hero Text Card"
           exampleProps={<DocsCardProps />}
-          code={DocsCardHeaderCode}
+          code={DocsCardHeroTextCode}
         >
           <Grid columns={2} rowHeight={'150px'}>
             <DocsCardHeroText />

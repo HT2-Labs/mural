@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import { Table, TableCell, TableRow } from '../../tables';
 import { DocsPropsTableHeader } from '../../docs/shared';
+import { Table, TableCell, TableRow } from '../../tables';
 
 export default () => {
   return(
@@ -54,4 +54,4 @@ export default () => {
       </tbody>
     </Table>
   );
-}
+};
