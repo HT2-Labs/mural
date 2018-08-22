@@ -34,6 +34,8 @@ export default interface ThemeProvider {
       readonly SuccessDark: string;
       readonly SuccessLight: string;
       readonly SuccessText: string;
+
+      readonly White: string;
     };
     readonly font: {
       readonly Small: string;

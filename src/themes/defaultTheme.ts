@@ -6,6 +6,7 @@ export default ({
   colorPrimary: '#41bfee',
   colorSecondary: '#344a58',
   colorSuccess: '#22c65b',
+  colorWhite: '#fff',
   fontBase: '16px',
   radiusLarge: '50%',
   radiusMedium: '12px',

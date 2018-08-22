@@ -64,6 +64,8 @@ const MuralThemeProvider = ({ children, theme }: ThemeProps) => {
       SuccessDark: darken(DarkenValue, mergedTheme.colorSuccess),
       SuccessLight: lighten(lightenValue, mergedTheme.colorSuccess),
       SuccessText: readableColor(mergedTheme.colorSuccess),
+
+      White: mergedTheme.colorWhite,
     },
     font: {
       Small: modularScale(-1, em(mergedTheme.fontBase), modularScaleValue),

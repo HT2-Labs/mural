@@ -9,7 +9,8 @@
       "check-format",
       "ban-keywords",
       "allow-leading-underscore",
-      "allow-pascal-case"
+      "allow-pascal-case",
+      "no-magic-numbers",
     ]
   }
 }
