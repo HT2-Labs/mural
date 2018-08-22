@@ -1,4 +1,6 @@
 import { ReactNode } from 'react';
+import ThemeProvider from '../themes/themeProps';
+import { Align } from '../utils/AlignmentProps';
 
 export enum SizeType {
   Small,
@@ -11,7 +13,8 @@ export enum SizeType {
 export default interface TextProps {
   readonly children: ReactNode;
   readonly size?: SizeType;
-  readonly color?: string;
+  readonly color?: ((props: { readonly theme: ThemeProvider }) => string) | string;
   readonly strong?: boolean;
   readonly italic?: boolean;
+  readonly alignment?: Align;
 }
