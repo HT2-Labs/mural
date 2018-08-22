@@ -1,5 +1,4 @@
 import styled from '../utils/mural-styled-components';
-import { stripUnit } from 'polished';
 
 const Grid = styled.div<{
   readonly columns?: number;
