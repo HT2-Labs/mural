@@ -5,6 +5,7 @@ import styled from '../utils/mural-styled-components';
 import { Link } from '@reach/router';
 
 import { IconGithub, IconNpm } from '../icons';
+import getRootPath from '../utils/getRootPath';
 
 const NavLink = (props: any) => (
   <Link
@@ -94,17 +95,17 @@ export default () => {
       <SidebarFixed>
         <Name>Mural</Name>
         <Menu>
-          <MenuItem to="/" >Home</MenuItem>
-          <MenuItem to="themes">Themes</MenuItem>
-          <MenuItem to="buttons">Buttons</MenuItem>
-          <MenuItem to="cards">Cards</MenuItem>
-          <MenuItem to="forms">Forms</MenuItem>
-          <MenuItem to="headers">Headers</MenuItem>
-          <MenuItem to="icons">Icons</MenuItem>
-          <MenuItem to="lists">Lists</MenuItem>
-          <MenuItem to="menus">Menus</MenuItem>
-          <MenuItem to="modal">Modal</MenuItem>
-          <MenuItem to="text">Text</MenuItem>
+          <MenuItem to={getRootPath('/')} >Home</MenuItem>
+          <MenuItem to={getRootPath('/themes')}>Themes</MenuItem>
+          <MenuItem to={getRootPath('/buttons')}>Buttons</MenuItem>
+          <MenuItem to={getRootPath('/cards')}>Cards</MenuItem>
+          <MenuItem to={getRootPath('/forms')}>Forms</MenuItem>
+          <MenuItem to={getRootPath('/headers')}>Headers</MenuItem>
+          <MenuItem to={getRootPath('/icons')}>Icons</MenuItem>
+          <MenuItem to={getRootPath('/lists')}>Lists</MenuItem>
+          <MenuItem to={getRootPath('/menus')}>Menus</MenuItem>
+          <MenuItem to={getRootPath('/modal')}>Modal</MenuItem>
+          <MenuItem to={getRootPath('/text')}>Text</MenuItem>
         </Menu>
         <GithubLink href="https://github.com/ht2-labs/mural"><IconGithub /></GithubLink>
         <NpmLink href="https://www.npmjs.com/package/@ht2-labs/mural"><IconNpm /></NpmLink>

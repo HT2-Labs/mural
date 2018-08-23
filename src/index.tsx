@@ -18,6 +18,7 @@ import {
   DocsThemes,
 } from './docs/pages/components';
 import ThemeProvider from './themes/ThemeProvider';
+import getRootPath from './utils/getRootPath';
 
 const Demo = () => {
 
@@ -39,17 +40,17 @@ return (
         <DocsSidebar />
         <Main>
           <Router>
-            <DocsThemes path="themes" />
-            <DocsButtons path="buttons" />
-            <DocsCards path="cards" />
-            <DocsForms path="forms" />
-            <DocsHeaders path="headers" />
-            <DocsIcons path="icons" />
-            <DocsLists path="lists" />
-            <DocsMenus path="menus" />
-            <DocsModals path="modal" />
-            <DocsText path="text" />
-            <DocsIntro path="/"/>
+            <DocsThemes path={getRootPath('/themes')} />
+            <DocsButtons path={getRootPath('/buttons')} />
+            <DocsCards path={getRootPath('/cards')} />
+            <DocsForms path={getRootPath('/forms')} />
+            <DocsHeaders path={getRootPath('/headers')} />
+            <DocsIcons path={getRootPath('/icons')} />
+            <DocsLists path={getRootPath('/lists')} />
+            <DocsMenus path={getRootPath('/menus')} />
+            <DocsModals path={getRootPath('/modal')} />
+            <DocsText path={getRootPath('/text')} />
+            <DocsIntro path={getRootPath('/')} />
           </Router>
         </Main>
       </MainWrap>
