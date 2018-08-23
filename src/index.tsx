@@ -39,16 +39,16 @@ return (
         <DocsSidebar />
         <Main>
           <Router>
-            <DocsThemes path="/themes" />
-            <DocsButtons path="/buttons" />
-            <DocsCards path="/cards" />
-            <DocsForms path="/forms" />
-            <DocsHeaders path="/headers" />
-            <DocsIcons path="/icons" />
-            <DocsLists path="/lists" />
-            <DocsMenus path="/menus" />
-            <DocsModals path="/modal" />
-            <DocsText path="/text" />
+            <DocsThemes path="themes" />
+            <DocsButtons path="buttons" />
+            <DocsCards path="cards" />
+            <DocsForms path="forms" />
+            <DocsHeaders path="headers" />
+            <DocsIcons path="icons" />
+            <DocsLists path="lists" />
+            <DocsMenus path="menus" />
+            <DocsModals path="modal" />
+            <DocsText path="text" />
             <DocsIntro path="/"/>
           </Router>
         </Main>
