@@ -2,31 +2,31 @@
 // tslint:disable:max-file-line-count
 // tslint:disable:no-this
 // tslint:disable:no-class
-import * as React from "react";
+import * as React from 'react';
 
-import { Button, ButtonGhost, ButtonGroupVertical } from "../../../buttons";
+import { Button, ButtonGhost, ButtonGroupVertical } from '../../../buttons';
 import {
   DocsCardBasicCode,
   DocsCardOnClickCode,
   DocsCardHeaderCode,
   DocsCardHeroTextCode,
-  DocsCardOverlayCode
-} from "../../../cards/docs/DocsCardCode";
+  DocsCardOverlayCode,
+} from '../../../cards/docs/DocsCardCode';
 import {
   DocsCardBasic,
   DocsCardOnClick,
   DocsCardHeader,
   DocsCardHeroText,
-  DocsCardOverlay
-} from "../../../cards/docs/DocsCardPreview";
-import DocsCardProps from "../../../cards/docs/DocsCardProps";
-import { Grid } from "../../../layouts";
-import { DocsPlayground } from "../../shared";
-import DocsPageProps from "./DocsPageProps";
+  DocsCardOverlay,
+} from '../../../cards/docs/DocsCardPreview';
+import DocsCardProps from '../../../cards/docs/DocsCardProps';
+import { Grid } from '../../../layouts';
+import { DocsPlayground } from '../../shared';
+import DocsPageProps from './DocsPageProps';
 
 class DocsCards extends React.Component<DocsPageProps> {
   public readonly state = {
-    overlay: false
+    overlay: false,
   };
 
   public readonly deadClick = () => {
@@ -70,7 +70,7 @@ class DocsCards extends React.Component<DocsPageProps> {
           exampleProps={<DocsCardProps />}
           code={DocsCardHeroTextCode}
         >
-          <Grid columns={2} rowHeight={"150px"}>
+          <Grid columns={2} rowHeight={'150px'}>
             <DocsCardHeroText />
           </Grid>
         </DocsPlayground>
@@ -80,7 +80,7 @@ class DocsCards extends React.Component<DocsPageProps> {
           exampleProps={<DocsCardProps />}
           code={DocsCardOverlayCode}
         >
-          <Grid columns={2} rowHeight={"150px"}>
+          <Grid columns={2} rowHeight={'150px'}>
             <DocsCardHeader overlayContent={overlayContent} />
           </Grid>
         </DocsPlayground>

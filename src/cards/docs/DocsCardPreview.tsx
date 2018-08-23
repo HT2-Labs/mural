@@ -1,10 +1,10 @@
-import * as React from "react";
+import * as React from 'react';
 
-import { ButtonGroup, ButtonInvisible } from "../../buttons";
-import { Card, CardBody, CardFooter } from "../../cards";
-import { H2, H4, P, SizeType } from "../../text";
-import { Align } from "../../utils/AlignmentProps";
-import CardHeroText from "../CardHeroText";
+import { ButtonGroup, ButtonInvisible } from '../../buttons';
+import { Card, CardBody, CardFooter } from '../../cards';
+import { H2, H4, P, SizeType } from '../../text';
+import { Align } from '../../utils/AlignmentProps';
+import CardHeroText from '../CardHeroText';
 
 const DocsCardBasic = () => {
   return (
@@ -88,5 +88,5 @@ export {
   DocsCardOnClick,
   DocsCardHeroText,
   DocsCardHeader,
-  DocsCardOverlay
+  DocsCardOverlay,
 };

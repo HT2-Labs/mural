@@ -1,7 +1,7 @@
-import styled from "../../utils/mural-styled-components";
+import styled from '../../utils/mural-styled-components';
 
-import { readableColor } from "polished";
-import CardProps from "./CardProps";
+import { readableColor } from 'polished';
+import CardProps from './CardProps';
 
 const BaseCard = styled.div<CardProps>`
   border-radius: ${({ theme }) => theme.radius.Medium};
@@ -21,7 +21,7 @@ const BaseCard = styled.div<CardProps>`
     backgroundColor !== undefined
       ? backgroundColor
       : ({ theme }) => theme.color.White};
-  cursor: ${props => (props.onClick !== undefined ? "pointer" : "initial")};
+  cursor: ${props => (props.onClick !== undefined ? 'pointer' : 'initial')};
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -29,9 +29,9 @@ const BaseCard = styled.div<CardProps>`
   flex-direction: column;
   &:hover {
     ${({ onClick, theme }) =>
-      onClick !== undefined ? theme.shadow.Large : ""};
+      onClick !== undefined ? theme.shadow.Large : ''};
     transform: ${({ onClick }) =>
-      onClick !== undefined ? "scale(1.01)" : "none"};
+      onClick !== undefined ? 'scale(1.01)' : 'none'};
   }
 `;
 

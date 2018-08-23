@@ -121,5 +121,5 @@ export {
   DocsCardHeroTextCode,
   DocsCardHeaderCode,
   DocsCardOverlayCode,
-  DocsCardOnClickCode
+  DocsCardOnClickCode,
 };
