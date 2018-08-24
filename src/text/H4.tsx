@@ -15,6 +15,7 @@ const H4 = ({
     color: ${color};
     font-size: ${getFontSize(size)};
     margin: 0;
+    width: 100%;
   `;
 
   return (
