@@ -42,5 +42,5 @@ export default ({
     backgroundLight = ({ theme }: any) => theme.color.ButtonLight;
     text = ({ theme }: any) => theme.color.ButtonText;
   }
-  return {background, text, backgroundLight};
+  return { background, text, backgroundLight };
 };
