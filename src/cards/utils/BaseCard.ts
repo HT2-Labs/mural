@@ -18,20 +18,16 @@ const BaseCard = styled.div<CardProps>`
     return readableColor(backgroundColor);
   }};
   background-color: ${({ backgroundColor }) =>
-    backgroundColor !== undefined
-      ? backgroundColor
-      : ({ theme }) => theme.color.White};
-  cursor: ${props => (props.onClick !== undefined ? 'pointer' : 'initial')};
+    backgroundColor !== undefined ? backgroundColor : ({ theme }) => theme.color.White};
+  cursor: ${(props) => (props.onClick !== undefined ? 'pointer' : 'initial')};
   overflow: hidden;
   position: relative;
   width: 100%;
   display: flex;
   flex-direction: column;
   &:hover {
-    ${({ onClick, theme }) =>
-      onClick !== undefined ? theme.shadow.Large : ''};
-    transform: ${({ onClick }) =>
-      onClick !== undefined ? 'scale(1.01)' : 'none'};
+    ${({ onClick, theme }) => (onClick !== undefined ? theme.shadow.Large : '')};
+    transform: ${({ onClick }) => (onClick !== undefined ? 'scale(1.01)' : 'none')};
   }
 `;
 

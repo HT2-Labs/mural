@@ -7,16 +7,16 @@ import * as React from 'react';
 import { Button, ButtonGhost, ButtonGroupVertical } from '../../../buttons';
 import {
   DocsCardBasicCode,
-  DocsCardOnClickCode,
   DocsCardHeaderCode,
   DocsCardHeroTextCode,
+  DocsCardOnClickCode,
   DocsCardOverlayCode,
 } from '../../../cards/docs/DocsCardCode';
 import {
   DocsCardBasic,
-  DocsCardOnClick,
   DocsCardHeader,
   DocsCardHeroText,
+  DocsCardOnClick,
   DocsCardOverlay,
 } from '../../../cards/docs/DocsCardPreview';
 import DocsCardProps from '../../../cards/docs/DocsCardProps';
@@ -31,7 +31,7 @@ class DocsCards extends React.Component<DocsPageProps> {
 
   public readonly deadClick = () => {
     return null;
-  };
+  }
 
   public render() {
     const overlayContent = (
