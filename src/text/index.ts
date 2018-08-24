@@ -3,8 +3,9 @@ import H2 from './H2';
 import H3 from './H3';
 import H4 from './H4';
 import Label from './Label';
+import Link from './Link';
 import P from './P';
-import { SizeType } from './TextProps';
+import { SizeType } from './textProps';
 
 export {
   H1,
@@ -12,6 +13,7 @@ export {
   H3,
   H4,
   Label,
+  Link,
   P,
   SizeType,
 };

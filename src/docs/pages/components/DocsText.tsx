@@ -1,9 +1,8 @@
 // tslint:disable:max-line-length
 import * as React from 'react';
 
-import { Link } from '../../../links';
 import { Table, TableCell, TableRow } from '../../../tables';
-import { H1, H2, H3, H4, P, SizeType } from '../../../text';
+import { H1, H2, H3, H4, Link, P, SizeType } from '../../../text';
 import { DocsDescription, DocsPlayground, DocsPropsTableHeader } from '../../shared';
 import DocsPageProps from './DocsPageProps';
 

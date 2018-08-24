@@ -1,4 +1,4 @@
-import { SizeType } from './TextProps';
+import { SizeType } from './textProps';
 
 export interface Props {
   readonly fullWidth: any;
