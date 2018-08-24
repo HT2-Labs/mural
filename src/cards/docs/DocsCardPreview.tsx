@@ -11,8 +11,8 @@ const DocsCardBasic = () => {
     <Card title="Card Title">
       <CardBody>
         <P>
-          The new home for all shared components Defines whether the button is
-          disabled or not Defines whether the button is disabled or not
+          The new home for all shared components Defines whether the button is disabled or not
+          Defines whether the button is disabled or not
         </P>
       </CardBody>
       <CardFooter>Card Title</CardFooter>
@@ -83,10 +83,4 @@ const DocsCardOverlay = ({ overlayContent }: any) => {
   );
 };
 
-export {
-  DocsCardBasic,
-  DocsCardOnClick,
-  DocsCardHeroText,
-  DocsCardHeader,
-  DocsCardOverlay,
-};
+export { DocsCardBasic, DocsCardOnClick, DocsCardHeroText, DocsCardHeader, DocsCardOverlay };
