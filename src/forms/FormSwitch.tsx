@@ -3,12 +3,9 @@ import styled from 'styled-components';
 import buttonColorStyles from '../buttons/utils/buttonColorStyles';
 import FormProps from './FormProps';
 
-const FormSwitch = ({
-  danger = false,
-  disabled = false,
-}: FormProps) => {
-
-  const color = buttonColorStyles({ danger, disabled });
+const FormSwitch = (props: FormProps) => {
+  const disabled = props.disabled;
+  const color = buttonColorStyles({disabled});
 
   const SwitchBody = styled.label`
     position: relative;
@@ -57,7 +54,7 @@ const FormSwitch = ({
 
   return (
     <SwitchBody>
-      <CheckBox type="checkbox"/>
+      <CheckBox type="checkbox" {...props}/>
       <Slider/>
     </SwitchBody>
   );
