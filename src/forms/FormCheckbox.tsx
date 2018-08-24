@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import buttonColorStyles from '../buttons/utils/buttonColorStyles';
 import { IconCheck } from '../icons';
-import FormProps from './FormProps';
+import FormProps from './formProps';
 
 const SwitchBody = styled.label`
   position: relative;

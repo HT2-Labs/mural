@@ -4,7 +4,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { Label, SizeType } from '../text';
-import FormProps from './FormProps';
+import FormProps from './formProps';
 
 class FormTextArea extends React.Component<FormProps> {
 

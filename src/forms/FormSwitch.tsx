@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import buttonColorStyles from '../buttons/utils/buttonColorStyles';
-import FormProps from './FormProps';
+import FormProps from './formProps';
 
 const FormSwitch = (props: FormProps) => {
   const disabled = props.disabled;

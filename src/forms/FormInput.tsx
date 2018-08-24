@@ -3,7 +3,7 @@
 // tslint:disable:no-this
 import * as React from 'react';
 import styled from 'styled-components';
-import FormProps from './FormProps';
+import FormProps from './formProps';
 
 const Input = styled.input`
   background-color: #fff;
