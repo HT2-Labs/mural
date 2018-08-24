@@ -2,7 +2,7 @@ export default {
   colorBody: '#efefef',
   colorButton: '#076699',
   colorDanger: '#ce0000',
-  colorDisabled: 'rgba(0, 0, 0, 0.1)',
+  colorDisabled: 'rgba(40, 40, 40, 0.15)',
   colorPrimary: '#41bfee',
   colorSecondary: '#344a58',
   colorSuccess: '#22c65b',
