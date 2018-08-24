@@ -1,7 +1,8 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import IconExternalLink from '../icons/IconExternalLink';
-import LinkProps from './linkProps';
+import { LinkProps } from './textProps';
+import { getFontSize } from './textStyle';
 
 const Link = ({
   children,
@@ -9,11 +10,13 @@ const Link = ({
   external = false,
   href,
   onClick,
+  size,
 }: LinkProps) => {
 
   const LinkContainer = styled.a`
     cursor: pointer;
     color: ${color};
+    font-size: ${getFontSize(size)};
     &:hover{
       -webkit-text-decoration-skip: auto;
       text-decoration: underline;

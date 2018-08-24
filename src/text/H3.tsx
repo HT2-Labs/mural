@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import fontStyle from '../utils/fontStyle';
-import TextProps from './TextProps';
+import { TextProps } from './textProps';
 import { getFontSize } from './textStyle';
 
 const H3 = ({
@@ -15,6 +15,7 @@ const H3 = ({
     color: ${color};
     font-size: ${getFontSize(size)};
     margin: 0;
+    width: 100%;
   `;
 
   return (

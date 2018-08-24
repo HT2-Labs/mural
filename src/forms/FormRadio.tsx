@@ -1,16 +1,10 @@
-// tslint:disable:prefer-function-over-method
-// tslint:disable:no-class
-// tslint:disable:no-this
 import * as React from 'react';
 import styled from 'styled-components';
 import buttonColorStyles from '../buttons/utils/buttonColorStyles';
-import FormProps from './FormProps';
+import FormProps from './formProps';
 
-const FormRadio = ({
-  disabled = false,
-  group,
-}: FormProps) => {
-
+const FormRadio = (props: FormProps) => {
+  const disabled = props.disabled;
   const activeColor = buttonColorStyles({disabled});
 
   const RadioBody = styled.label`
@@ -63,7 +57,7 @@ const FormRadio = ({
 
   return (
     <RadioBody>
-      <CheckBox type="radio" name={group}/>
+      <CheckBox type="radio" {...props}/>
       <Slider/>
     </RadioBody>
   );

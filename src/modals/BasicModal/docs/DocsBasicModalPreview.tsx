@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import { Button, ButtonGhost, ButtonGroup } from '../../../buttons';
+import { FormInput } from '../../../forms';
 import {
   Modal,
   ModalBody,
@@ -21,7 +22,7 @@ export default (props: any) => {
         <P>Delightful unreserved impossible few estimating men favourable see entreaties.</P>
         <P>She propriety immediate was improving. He or entrance humoured likewise moderate.</P>
         <P>Much nor game son say feel. Fat make met can must form into gate.</P>
-        <input value={props.text} onChange={props.changeText}/>
+        <FormInput value={props.text} onChange={props.changeText}/>
       </ModalBody>
 
       <ModalFooter>

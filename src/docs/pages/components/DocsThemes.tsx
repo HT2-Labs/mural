@@ -2,8 +2,7 @@
 // tslint:disable:max-line-length
 import * as React from 'react';
 import styled from 'styled-components';
-import { Link } from '../../../links';
-import { H1, H4, P, SizeType } from '../../../text';
+import { H1, H4, Link, P, SizeType } from '../../../text';
 import { DocsColor, DocsPlayground } from '../../shared';
 import DocsPageProps from './DocsPageProps';
 

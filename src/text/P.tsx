@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import fontStyle from '../utils/fontStyle';
-import TextProps from './TextProps';
+import { TextProps } from './textProps';
 import { getFontSize } from './textStyle';
 
 const P = ({
@@ -14,6 +14,7 @@ const P = ({
   const Paragraph = styled.p`
     color: ${color};
     font-size: ${getFontSize(size)};
+    margin: 0;
   `;
 
   return (
