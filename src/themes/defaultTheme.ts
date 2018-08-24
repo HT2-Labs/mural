@@ -1,4 +1,4 @@
-export default ({
+export default {
   colorBody: '#efefef',
   colorButton: '#076699',
   colorDanger: '#ce0000',
@@ -11,7 +11,7 @@ export default ({
   radiusLarge: '50%',
   radiusMedium: '12px',
   radiusSmall: '2px',
-  shadowLarge: '0 2px 2px 2px rgba(0, 0, 0, 0.12)',
-  shadowMedium: '0px 1px 5px 0px rgba(0, 0, 0, 0.3)',
-  shadowSmall: 'rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px',
-});
+  shadowLarge: '0 3px 3px 3px rgba(0, 0, 0, 0.6)',
+  shadowMedium: '0px 1px 6px rgba(0, 0, 0, 0.12)',
+  shadowSmall: '0px 1px 3px 0px rgba(0, 0, 0, 0.05)',
+};

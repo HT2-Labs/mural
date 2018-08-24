@@ -1,6 +1,5 @@
 // tslint:disable:max-file-line-count
-const DocsCardBasicCode =
-`import {
+const DocsCardBasicCode = `import {
   Card,
   CardBody,
   CardFooter,
@@ -19,8 +18,25 @@ export default () => {
 }
 `;
 
-const DocsCardHeroTextCode =
-`import {
+const DocsCardOnClickCode = `import {
+  Card,
+  CardBody,
+  CardFooter,
+} from '@ht2-labs/mural/cards';
+
+import { P } from '@ht2-labs/mural/text';
+
+export default () => {
+  <Card title="A Clickable Card" onClick={() => null}>
+    <CardBody>
+      <P>This whole card is clickable - woo!</P>
+    </CardBody>
+    <CardFooter>Card Footer Text</CardFooter>
+  </Card>
+}
+`;
+
+const DocsCardHeroTextCode = `import {
   Card,
   CardHeroText,
 } from '@ht2-labs/mural/cards';
@@ -43,8 +59,7 @@ export default () => {
 }
 `;
 
-const DocsCardHeaderCode =
-`import {
+const DocsCardHeaderCode = `import {
   ButtonGroup,
   ButtonInvisible,
 } from '@ht2-labs/mural/buttons';
@@ -72,8 +87,7 @@ export default = ({overlayContent}) => {
 }
 `;
 
-const DocsCardOverlayCode =
-`import {
+const DocsCardOverlayCode = `import {
   ButtonGroup,
   ButtonInvisible,
 } from '@ht2-labs/mural/buttons';
@@ -107,4 +121,5 @@ export {
   DocsCardHeroTextCode,
   DocsCardHeaderCode,
   DocsCardOverlayCode,
+  DocsCardOnClickCode,
 };

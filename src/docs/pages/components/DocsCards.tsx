@@ -9,12 +9,14 @@ import {
   DocsCardBasicCode,
   DocsCardHeaderCode,
   DocsCardHeroTextCode,
+  DocsCardOnClickCode,
   DocsCardOverlayCode,
 } from '../../../cards/docs/DocsCardCode';
 import {
   DocsCardBasic,
   DocsCardHeader,
   DocsCardHeroText,
+  DocsCardOnClick,
   DocsCardOverlay,
 } from '../../../cards/docs/DocsCardPreview';
 import DocsCardProps from '../../../cards/docs/DocsCardProps';
@@ -23,7 +25,6 @@ import { DocsPlayground } from '../../shared';
 import DocsPageProps from './DocsPageProps';
 
 class DocsCards extends React.Component<DocsPageProps> {
-
   public readonly state = {
     overlay: false,
   };
@@ -33,14 +34,12 @@ class DocsCards extends React.Component<DocsPageProps> {
   }
 
   public render() {
-
     const overlayContent = (
       <ButtonGroupVertical>
         <Button fullWidth>Edit</Button>
-        <ButtonGhost
-          fullWidth
-          danger
-        >Delete</ButtonGhost>
+        <ButtonGhost fullWidth danger>
+          Delete
+        </ButtonGhost>
       </ButtonGroupVertical>
     );
 
@@ -51,8 +50,18 @@ class DocsCards extends React.Component<DocsPageProps> {
           exampleProps={<DocsCardProps />}
           code={DocsCardBasicCode}
         >
-          <Grid columns={2} >
+          <Grid columns={2}>
             <DocsCardBasic />
+          </Grid>
+        </DocsPlayground>
+
+        <DocsPlayground
+          title="Basic Card with onClick"
+          exampleProps={<DocsCardProps />}
+          code={DocsCardOnClickCode}
+        >
+          <Grid columns={2}>
+            <DocsCardOnClick />
           </Grid>
         </DocsPlayground>
 
@@ -81,7 +90,7 @@ class DocsCards extends React.Component<DocsPageProps> {
           exampleProps={<DocsCardProps />}
           code={DocsCardHeaderCode}
         >
-          <Grid columns={2} >
+          <Grid columns={2}>
             <DocsCardOverlay overlayContent={overlayContent} />
           </Grid>
         </DocsPlayground>
