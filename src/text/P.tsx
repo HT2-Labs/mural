@@ -14,6 +14,7 @@ const P = ({
   const Paragraph = styled.p`
     color: ${color};
     font-size: ${getFontSize(size)};
+    margin: 0;
   `;
 
   return (
