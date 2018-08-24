@@ -4,13 +4,9 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { Label, SizeType } from '../text';
+import FormProps from './FormProps';
 
-export interface Props {
-    readonly label?: string;
-    readonly placeholder?: string;
-}
-
-class FormTextArea extends React.Component<Props> {
+class FormTextArea extends React.Component<FormProps> {
 
   public render() {
     const Input = styled.textarea`
@@ -33,7 +29,7 @@ class FormTextArea extends React.Component<Props> {
           ? <Label size={SizeType.Body}>{this.props.label}</Label>
           : null
         }
-        <Input placeholder={this.props.placeholder}/>
+        <Input {...this.props}/>
       </>
     );
   }
