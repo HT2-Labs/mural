@@ -9,6 +9,7 @@ import {
   DocsCardBasicCode,
   DocsCardHeaderCode,
   DocsCardHeroTextCode,
+  DocsCardMediaCode,
   DocsCardOnClickCode,
   DocsCardOverlayCode,
 } from '../../../cards/docs/DocsCardCode';
@@ -16,6 +17,7 @@ import {
   DocsCardBasic,
   DocsCardHeader,
   DocsCardHeroText,
+  DocsCardMedia,
   DocsCardOnClick,
   DocsCardOverlay,
 } from '../../../cards/docs/DocsCardPreview';
@@ -92,6 +94,16 @@ class DocsCards extends React.Component<DocsPageProps> {
         >
           <Grid columns={2}>
             <DocsCardOverlay overlayContent={overlayContent} />
+          </Grid>
+        </DocsPlayground>
+
+        <DocsPlayground
+          title="Card with Media"
+          exampleProps={<DocsCardProps />}
+          code={DocsCardMediaCode}
+        >
+          <Grid columns={2}>
+            <DocsCardMedia />
           </Grid>
         </DocsPlayground>
       </>

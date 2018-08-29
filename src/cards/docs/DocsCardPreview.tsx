@@ -1,7 +1,9 @@
+// tslint:disable:max-file-line-count
 import * as React from 'react';
 
 import { ButtonGroup, ButtonInvisible } from '../../buttons';
 import { Card, CardBody, CardFooter } from '../../cards';
+import { Media } from '../../media';
 import { H2, H4, P, SizeType } from '../../text';
 import { Align } from '../../utils/AlignmentProps';
 import CardHeroText from '../CardHeroText';
@@ -53,7 +55,7 @@ const DocsCardHeader = ({ overlayContent }: any) => {
       <CardBody>
         <strong>The new home for all shared components</strong>
       </CardBody>
-      <CardFooter>
+      <CardFooter padding="0">
         <ButtonGroup>
           <ButtonInvisible>First</ButtonInvisible>
           <ButtonInvisible>Second</ButtonInvisible>
@@ -83,4 +85,30 @@ const DocsCardOverlay = ({ overlayContent }: any) => {
   );
 };
 
-export { DocsCardBasic, DocsCardOnClick, DocsCardHeroText, DocsCardHeader, DocsCardOverlay };
+const DocsCardMedia = () => {
+  return (
+    <Card title="hello">
+      <Media
+        // tslint:disable-next-line:max-line-length
+        url="https://images.unsplash.com/photo-1535191162489-aaec838b5221?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=602ef4d589c4a74e3222e97404621df8&auto=format&fit=crop&w=1000&q=50"
+      />
+      <CardBody>
+        <H2>Hello</H2>
+        <P>
+          The new home for all shared components Defines whether the button is disabled or not
+          Defines whether the button is disabled or not
+        </P>
+      </CardBody>
+      <CardFooter>Card Title</CardFooter>
+    </Card>
+  );
+};
+
+export {
+  DocsCardBasic,
+  DocsCardOnClick,
+  DocsCardHeroText,
+  DocsCardHeader,
+  DocsCardOverlay,
+  DocsCardMedia,
+};
