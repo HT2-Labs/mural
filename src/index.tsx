@@ -12,6 +12,7 @@ import {
   DocsHeaders,
   DocsIcons,
   DocsLists,
+  DocsMedia,
   DocsMenus,
   DocsModals,
   DocsText,
@@ -48,6 +49,7 @@ return (
             <DocsIcons path={getRootPath('/icons')} />
             <DocsLists path={getRootPath('/lists')} />
             <DocsMenus path={getRootPath('/menus')} />
+            <DocsMedia path={getRootPath('/media')} />
             <DocsModals path={getRootPath('/modal')} />
             <DocsText path={getRootPath('/text')} />
             <DocsIntro path={getRootPath('/')} />

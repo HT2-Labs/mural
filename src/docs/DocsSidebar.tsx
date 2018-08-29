@@ -103,6 +103,7 @@ export default () => {
           <MenuItem to={getRootPath('/headers')}>Headers</MenuItem>
           <MenuItem to={getRootPath('/icons')}>Icons</MenuItem>
           <MenuItem to={getRootPath('/lists')}>Lists</MenuItem>
+          <MenuItem to={getRootPath('/media')}>Media</MenuItem>
           <MenuItem to={getRootPath('/menus')}>Menus</MenuItem>
           <MenuItem to={getRootPath('/modal')}>Modal</MenuItem>
           <MenuItem to={getRootPath('/text')}>Text</MenuItem>
