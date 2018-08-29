@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length
 // tslint:disable:max-file-line-count
 const DocsCardBasicCode = `import {
   Card,
@@ -76,7 +77,7 @@ export default = ({overlayContent}) => {
       <CardBody>
         <strong>The new home for all shared components</strong>
       </CardBody>
-      <CardFooter>
+      <CardFooter padding="0">
           <ButtonGroup>
             <ButtonInvisible>First</ButtonInvisible>
             <ButtonInvisible>Second</ButtonInvisible>
@@ -116,10 +117,34 @@ export default ({overlayContent}) => {
 }
 `;
 
+const DocsCardMediaCode = `import {
+  Card,
+  CardBody,
+  CardFooter,
+} from '@ht2-labs/mural/cards';
+import { Media } from '@ht2-labs/mural/media';
+import { P } from '@ht2-labs/mural/text';
+
+export default () => {
+  return(
+    <Card>
+      <Media
+        url="https://images.unsplash.com/photo-1535191162489-aaec838b5221?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=602ef4d589c4a74e3222e97404621df8&auto=format&fit=crop&w=1000&q=50"
+      />
+      <CardBody>
+        <P>Card Body</P>
+      </CardBody>
+      <CardFooter>Card Footer</CardFooter>
+    </Card>
+  );
+}
+`;
+
 export {
   DocsCardBasicCode,
   DocsCardHeroTextCode,
   DocsCardHeaderCode,
   DocsCardOverlayCode,
   DocsCardOnClickCode,
+  DocsCardMediaCode,
 };
