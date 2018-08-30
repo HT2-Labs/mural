@@ -17,6 +17,7 @@ export interface TextProps {
   readonly strong?: boolean;
   readonly italic?: boolean;
   readonly alignment?: Align;
+  readonly margin?: boolean;
 }
 
 export interface LinkProps {

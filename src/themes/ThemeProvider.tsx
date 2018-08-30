@@ -3,13 +3,7 @@
 // tslint:disable:object-literal-sort-keys
 import * as React from 'react';
 
-import {
-  darken,
-  em,
-  lighten,
-  modularScale,
-  readableColor,
-} from 'polished';
+import { darken, em, lighten, modularScale, readableColor } from 'polished';
 import { ThemeProvider } from '../utils/mural-styled-components';
 import defaultTheme from './defaultTheme';
 
@@ -19,14 +13,13 @@ export interface ThemeProps {
 }
 
 const MuralThemeProvider = ({ children, theme }: ThemeProps) => {
-
   // Apply app supplied theme over the mural default
-  const mergedTheme = {...defaultTheme, ...theme};
+  const mergedTheme = { ...defaultTheme, ...theme };
 
   // Default values
   const lightenValue = 0.1;
   const DarkenValue = 0.1;
-  const modularScaleValue = 'perfectFourth';
+  const modularScaleValue = 'majorThird';
 
   const constructedTheme = {
     color: {
@@ -70,8 +63,8 @@ const MuralThemeProvider = ({ children, theme }: ThemeProps) => {
     font: {
       Small: modularScale(-1, em(mergedTheme.fontBase), modularScaleValue),
       Base: em(mergedTheme.fontBase),
-      Medium: modularScale(2, em(mergedTheme.fontBase), modularScaleValue),
-      Large: modularScale(3, em(mergedTheme.fontBase), modularScaleValue),
+      Medium: modularScale(1.6, em(mergedTheme.fontBase), modularScaleValue),
+      Large: modularScale(2.56, em(mergedTheme.fontBase), modularScaleValue),
       ExtraLarge: modularScale(4, em(mergedTheme.fontBase), modularScaleValue),
     },
     radius: {
@@ -85,11 +78,7 @@ const MuralThemeProvider = ({ children, theme }: ThemeProps) => {
       Small: mergedTheme.shadowSmall,
     },
   };
-  return (
-    <ThemeProvider theme={constructedTheme}>
-      {children}
-    </ThemeProvider>
-  );
+  return <ThemeProvider theme={constructedTheme}>{children}</ThemeProvider>;
 };
 
 export default MuralThemeProvider;
