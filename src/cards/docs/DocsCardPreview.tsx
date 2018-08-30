@@ -65,7 +65,12 @@ const DocsCardHeroText = () => {
 
 const DocsCardHeader = ({ overlayContent }: any) => {
   return (
-    <Card overlayContent={overlayContent}>
+    <Card
+      overlayContent={overlayContent}
+      onClick={() => {
+        alert('clicked');
+      }}
+    >
       <CardBody>
         <strong>The new home for all shared components</strong>
       </CardBody>
@@ -86,6 +91,9 @@ const DocsCardOverlay = ({ overlayContent }: any) => {
       headerColor={({ theme }) => theme.color.Secondary}
       title={<H4 size={SizeType.Medium}>Hello this is a test</H4>}
       overlayContent={overlayContent}
+      onClick={() => {
+        alert('clicked');
+      }}
     >
       <CardBody>
         <H2 size={SizeType.Large} alignment={Align.Center}>
