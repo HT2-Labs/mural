@@ -6,6 +6,7 @@ import styled from '../utils/mural-styled-components';
 
 import BaseCard from './utils/BaseCard';
 import CardHeader from './utils/CardHeader';
+import CardOverlay from './utils/CardOverlay';
 import CardProps from './utils/CardProps';
 
 import { ButtonGroup, IconButtonInvisible } from '../buttons';
@@ -14,7 +15,12 @@ import { IconEllipsisV, IconTimes } from '../icons';
 import { Align } from '../utils/AlignmentProps';
 
 const OverlayContent = styled.div`
-  padding: 12px 16px;
+  padding: 12px 32px;
+  margin-top: -32px;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
 `;
 
 class Card extends React.Component<CardProps> {
@@ -28,17 +34,6 @@ class Card extends React.Component<CardProps> {
 
   public render() {
     const { backgroundColor, children, headerColor, onClick, overlayContent, title } = this.props;
-
-    const Overlay = styled.div`
-      box-sizing: border-box;
-      padding: 4px;
-      position: absolute;
-      right: 0;
-      z-index: 20;
-      ${this.state.showOverlay ? 'background-color: #fff' : ''};
-      ${this.state.showOverlay ? 'height: 100%' : ''};
-      ${this.state.showOverlay ? 'width: 100%' : ''};
-    `;
 
     const actionOpen = (e: React.MouseEvent<HTMLElement>) => {
       e.stopPropagation();
@@ -57,7 +52,7 @@ class Card extends React.Component<CardProps> {
     };
 
     const renderOverlay = (
-      <Overlay>
+      <CardOverlay backgroundColor={backgroundColor} showOverlay={this.state.showOverlay}>
         <ButtonGroup alignment={Align.Right}>
           {this.state.showOverlay ? (
             <IconButtonInvisible onClick={actionClose} size={Size.Small}>
@@ -70,7 +65,7 @@ class Card extends React.Component<CardProps> {
           )}
         </ButtonGroup>
         {this.state.showOverlay ? <OverlayContent>{overlayContent}</OverlayContent> : null}
-      </Overlay>
+      </CardOverlay>
     );
 
     return (

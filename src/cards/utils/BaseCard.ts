@@ -5,14 +5,9 @@ import CardProps from './CardProps';
 
 const BaseCard = styled.div<CardProps>`
   border-radius: ${({ theme }) => theme.radius.Medium};
-  border: 3px solid
-    rgba(
-      0,
-      0,
-      0,
-      ${({ backgroundColor }) =>
-        backgroundColor !== undefined ? backgroundColor : ({ theme }) => theme.color.White}
-    );
+  border: 3px solid rgba(0, 0, 0, ${({ backgroundColor }) => backgroundColor !== undefined
+    ? backgroundColor
+    : ({ theme }) => theme.color.White});
   box-shadow: ${({ onClick, theme }) =>
     onClick !== undefined ? theme.shadow.Medium : theme.shadow.Small};
   box-sizing: border-box;
@@ -25,7 +20,7 @@ const BaseCard = styled.div<CardProps>`
     }
     return readableColor(backgroundColor);
   }};
-  background-color: ${({ backgroundColor }) =>
+  background: ${({ backgroundColor }) =>
     backgroundColor !== undefined ? backgroundColor : ({ theme }) => theme.color.White};
   cursor: ${(props) => (props.onClick !== undefined ? 'pointer' : 'initial')};
   overflow: hidden;
