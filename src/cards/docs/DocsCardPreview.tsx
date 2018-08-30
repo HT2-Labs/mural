@@ -16,7 +16,12 @@ const DocsCardBasic = () => {
           The new home for all shared components Defines whether the button is disabled or not
           Defines whether the button is disabled or not
         </P>
-        <Card title="Card Title" onClick={() => alert('hello')}>
+        <Card
+          title="Card Title"
+          onClick={() => {
+            alert('hello');
+          }}
+        >
           <CardBody>
             <P>
               The new home for all shared components Defines whether the button is disabled or not

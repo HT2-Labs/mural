@@ -11,11 +11,12 @@ const P = ({
   strong,
   size,
   children,
+  margin,
 }: TextProps) => {
   const Paragraph = styled.p`
     color: ${color};
     font-size: ${getFontSize(size, SizeType.Body)};
-    margin: 0;
+    margin: ${margin !== undefined ? '15px 0 10px 0' : 0};
   `;
 
   return <Paragraph>{fontStyle({ italic, strong, children })}</Paragraph>;

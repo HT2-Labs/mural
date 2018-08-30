@@ -19,7 +19,7 @@ const H2 = ({
     margin: 0;
     width: 100%;
     font-weight: 100;
-    margin: ${margin ? '15px 0 10px 0' : 0};
+    margin: ${margin !== undefined ? '15px 0 10px 0' : 0};
   `;
 
   return <HeaderText>{fontStyle({ italic, strong, children })}</HeaderText>;

@@ -16,7 +16,7 @@ const H4 = ({
   const HeaderText = styled.h4`
     color: ${color};
     font-size: ${getFontSize(size, SizeType.Body)};
-    margin: ${margin ? '15px 0 10px 0' : 0};
+    margin: ${margin !== undefined ? '15px 0 10px 0' : 0};
     width: 100%;
     font-weight: 100;
   `;

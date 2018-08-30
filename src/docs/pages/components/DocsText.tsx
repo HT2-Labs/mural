@@ -1,4 +1,5 @@
 // tslint:disable:max-line-length
+// tslint:disable:max-file-line-count
 import * as React from 'react';
 
 import { Table, TableCell, TableRow } from '../../../tables';
