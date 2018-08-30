@@ -4,7 +4,7 @@ const path = require('path');
 
 const getDirectoryFiles = (dirPath) => {
   return new Promise((resolve, reject) => {
-    fs.readdir((err, fileNames) => {
+    fs.readdir(dirPath, (err, fileNames) => {
       if (err) {
         reject(err);
         return;
