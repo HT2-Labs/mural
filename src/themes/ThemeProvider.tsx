@@ -63,8 +63,8 @@ const MuralThemeProvider = ({ children, theme }: ThemeProps) => {
     font: {
       Small: modularScale(-1, em(mergedTheme.fontBase), modularScaleValue),
       Base: em(mergedTheme.fontBase),
-      Medium: modularScale(2, em(mergedTheme.fontBase), modularScaleValue),
-      Large: modularScale(3, em(mergedTheme.fontBase), modularScaleValue),
+      Medium: modularScale(1.6, em(mergedTheme.fontBase), modularScaleValue),
+      Large: modularScale(2.56, em(mergedTheme.fontBase), modularScaleValue),
       ExtraLarge: modularScale(4, em(mergedTheme.fontBase), modularScaleValue),
     },
     radius: {
