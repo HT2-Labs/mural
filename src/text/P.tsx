@@ -17,6 +17,7 @@ const P = ({
     color: ${color};
     font-size: ${getFontSize(size, SizeType.Body)};
     margin: ${margin !== undefined ? '15px 0 10px 0' : 0};
+    font-weight: 100;
   `;
 
   return <Paragraph>{fontStyle({ italic, strong, children })}</Paragraph>;
