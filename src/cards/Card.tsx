@@ -27,14 +27,7 @@ class Card extends React.Component<CardProps> {
   };
 
   public render() {
-    const {
-      backgroundColor,
-      children,
-      headerColor,
-      onClick,
-      overlayContent,
-      title,
-    } = this.props;
+    const { backgroundColor, children, headerColor, onClick, overlayContent, title } = this.props;
 
     const Overlay = styled.div`
       box-sizing: border-box;
@@ -47,13 +40,17 @@ class Card extends React.Component<CardProps> {
       ${this.state.showOverlay ? 'width: 100%' : ''};
     `;
 
-    const actionOpen = () => {
+    const actionOpen = (e: React.MouseEvent<HTMLElement>) => {
+      e.stopPropagation();
+
       this.setState({
         showOverlay: true,
       });
     };
 
-    const actionClose = () => {
+    const actionClose = (e: React.MouseEvent<HTMLElement>) => {
+      e.stopPropagation();
+
       this.setState({
         showOverlay: false,
       });
@@ -62,17 +59,15 @@ class Card extends React.Component<CardProps> {
     const renderOverlay = (
       <Overlay>
         <ButtonGroup alignment={Align.Right}>
-          {this.state.showOverlay ?
+          {this.state.showOverlay ? (
             <IconButtonInvisible onClick={actionClose} size={Size.Small}>
               <IconTimes />
-            </IconButtonInvisible> :
-            <IconButtonInvisible
-              onClick={actionOpen}
-              size={Size.Small}
-            >
-              <IconEllipsisV  />
             </IconButtonInvisible>
-          }
+          ) : (
+            <IconButtonInvisible onClick={actionOpen} size={Size.Small}>
+              <IconEllipsisV />
+            </IconButtonInvisible>
+          )}
         </ButtonGroup>
         {this.state.showOverlay ? <OverlayContent>{overlayContent}</OverlayContent> : null}
       </Overlay>
