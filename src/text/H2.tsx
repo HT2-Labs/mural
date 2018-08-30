@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import { SizeType } from '.';
 import fontStyle from '../utils/fontStyle';
 import { TextProps } from './textProps';
 import { getFontSize } from './textStyle';
@@ -14,7 +15,7 @@ const H2 = ({
 }: TextProps) => {
   const HeaderText = styled.h2`
     color: ${color};
-    font-size: ${getFontSize(size)};
+    font-size: ${getFontSize(size, SizeType.Large)};
     margin: 0;
     width: 100%;
     font-weight: 100;

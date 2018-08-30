@@ -46,23 +46,35 @@ const DocsText = ({  }: DocsPageProps) => {
           element looks depends on the <code>size</code> prop.
         </P>
         <DocsPlayground code={codeSnippet} exampleProps={availableProps}>
-          <H3 margin>H1 : Header 1 Element : ExtraLarge</H3>
-          <H1 size={SizeType.ExtraLarge}>The quick brown fox jumps over the lazy dog</H1>
+          <H3 color="#888" italic size={SizeType.Body} margin>
+            H1 : Header 1 Element : ExtraLarge
+          </H3>
+          <H1>The quick brown fox jumps over the lazy dog</H1>
           <hr />
-          <H3 margin>H1 : Header 1 Element : Medium</H3>
+          <H3 color="#888" italic size={SizeType.Body} margin>
+            H1 : Header 1 Element : Medium
+          </H3>
           <H1 size={SizeType.Medium}>The quick brown fox jumps over the lazy dog</H1>
           <hr />
-          <H3 margin>H2 : Header 2 Element</H3>
-          <H2 size={SizeType.Large}>The quick brown fox jumps over the lazy dog</H2>
+          <H3 color="#888" italic size={SizeType.Body} margin>
+            H2 : Header 2 Element
+          </H3>
+          <H2>The quick brown fox jumps over the lazy dog</H2>
           <hr />
-          <H3 margin>H3 : Header 3 Element</H3>
-          <H3 size={SizeType.Medium}>The quick brown fox jumps over the lazy dog</H3>
+          <H3 color="#888" italic size={SizeType.Body} margin>
+            H3 : Header 3 Element
+          </H3>
+          <H3>The quick brown fox jumps over the lazy dog</H3>
           <hr />
-          <H3 margin>H4 : Header 4 Element</H3>
-          <H4 size={SizeType.Body}>The quick brown fox jumps over the lazy dog</H4>
+          <H3 color="#888" italic size={SizeType.Body} margin>
+            H4 : Header 4 Element
+          </H3>
+          <H4>The quick brown fox jumps over the lazy dog</H4>
           <hr />
-          <H3 margin>P : Paragraph Element</H3>
-          <P size={SizeType.Body}>
+          <H3 color="#888" italic size={SizeType.Body} margin>
+            P : Paragraph Element
+          </H3>
+          <P>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo, ante a fermentum
             malesuada, diam lacus aliquet justo, sed tincidunt augue ante nec dolor. In et egestas
             ex. Quisque ex lectus, tempor vel viverra eu, mattis vel magna. Aliquam erat volutpat.
@@ -74,7 +86,9 @@ const DocsText = ({  }: DocsPageProps) => {
             inceptos himenaeos.
           </P>
           <hr />
-          <H3 margin>P : Small Paragraph Element</H3>
+          <H3 color="#888" italic size={SizeType.Body} margin>
+            P : Small Paragraph Element
+          </H3>
           <P size={SizeType.Small}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo, ante a fermentum
             malesuada, diam lacus aliquet justo, sed tincidunt augue ante nec dolor. In et egestas
@@ -87,7 +101,9 @@ const DocsText = ({  }: DocsPageProps) => {
             inceptos himenaeos.
           </P>
           <hr />
-          <H3 margin>Link : Text links</H3>
+          <H3 color="#888" italic size={SizeType.Body} margin>
+            Link : Text links
+          </H3>
           <P>
             <Link>yellow gems</Link>
           </P>

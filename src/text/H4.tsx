@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import { SizeType } from '.';
 import fontStyle from '../utils/fontStyle';
 import { TextProps } from './textProps';
 import { getFontSize } from './textStyle';
@@ -10,11 +11,12 @@ const H4 = ({
   strong,
   size,
   children,
+  margin,
 }: TextProps) => {
   const HeaderText = styled.h4`
     color: ${color};
-    font-size: ${getFontSize(size)};
-    margin: 0;
+    font-size: ${getFontSize(size, SizeType.Body)};
+    margin: ${margin ? '15px 0 10px 0' : 0};
     width: 100%;
     font-weight: 100;
   `;
