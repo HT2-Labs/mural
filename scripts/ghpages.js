@@ -9,7 +9,7 @@ const getDirectoryFiles = (dirPath) => {
         reject(err);
         return;
       }
-      return fileNames;
+      resolve(fileNames);
     });
   });
 };
