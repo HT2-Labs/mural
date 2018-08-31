@@ -5,7 +5,7 @@ import FormProps from './formProps';
 
 const FormSwitch = (props: FormProps) => {
   const disabled = props.disabled;
-  const color = buttonColorStyles({disabled});
+  const color = buttonColorStyles({ disabled });
 
   const SwitchBody = styled.label`
     position: relative;
@@ -22,30 +22,30 @@ const FormSwitch = (props: FormProps) => {
     right: 0;
     bottom: 0;
     background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
     border-radius: 34px;
     &:before {
       border-radius: 50%;
       position: absolute;
-      content: "";
+      content: '';
       height: 26px;
       width: 26px;
       left: 4px;
       bottom: 4px;
       background-color: white;
-      -webkit-transition: .4s;
-      transition: .4s;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
     }
   `;
 
   const CheckBox = styled.input`
     z-index: 1000;
     &:checked + ${Slider} {
-      background-color: ${color.backgroundLight};
+      background-color: ${color.background};
     }
     &:focus + ${Slider} {
-      box-shadow: 0 0 1px #2196F3;
+      box-shadow: 0 0 1px #2196f3;
     }
     &:checked + ${Slider}:before {
       transform: translateX(26px);
@@ -54,8 +54,8 @@ const FormSwitch = (props: FormProps) => {
 
   return (
     <SwitchBody>
-      <CheckBox type="checkbox" {...props}/>
-      <Slider/>
+      <CheckBox type="checkbox" {...props} />
+      <Slider />
     </SwitchBody>
   );
 };
