@@ -9,16 +9,18 @@ const Overlay = styled.div<{
   readonly backgroundColor?: ((props: { readonly theme: ThemeProvider }) => string) | string;
   readonly showOverlay: boolean;
 }>`
-  background-color: ${(props) => props.showOverlay === true ? (
-    ({ backgroundColor, theme }) => {
-      if (backgroundColor === undefined) {
-        return transparentize(alpha, invert(theme.color.BodyText));
-      }
-      if (backgroundColor instanceof Function) {
-        return transparentize(alpha, invert(readableColor(backgroundColor({ theme }))));
-      }
-      return transparentize(alpha, invert(readableColor(backgroundColor)));
-    }) : ( null )};
+  background-color: ${(props) =>
+    props.showOverlay
+      ? ({ backgroundColor, theme }) => {
+          if (backgroundColor === undefined) {
+            return transparentize(alpha, invert(theme.color.BodyText));
+          }
+          if (backgroundColor instanceof Function) {
+            return transparentize(alpha, invert(readableColor(backgroundColor({ theme }))));
+          }
+          return transparentize(alpha, invert(readableColor(backgroundColor)));
+        }
+      : null};
 
   box-sizing: border-box;
   padding: 4px;
