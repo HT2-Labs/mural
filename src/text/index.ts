@@ -5,7 +5,6 @@ import H4 from './H4';
 import Label from './Label';
 import Link from './Link';
 import P from './P';
-import { SizeType } from './textProps';
 
 export {
   H1,
@@ -15,5 +14,4 @@ export {
   Label,
   Link,
   P,
-  SizeType,
 };

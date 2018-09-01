@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { H2, SizeType } from '../../text';
+import { H2 } from '../../text';
+import { Size } from '../../utils/sizes';
 
 interface DocsDescriptionProps {
   readonly children: React.ReactNode;
@@ -12,7 +13,7 @@ const DocsDescription = ({
 }: DocsDescriptionProps) => {
   return (
     <>
-      <H2 size={SizeType.Large}>{title}</H2>
+      <H2 size={Size.Giga}>{title}</H2>
       <hr />
       {children}
     </>

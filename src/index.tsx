@@ -13,7 +13,7 @@ const NavLink = styled(Link)<{ readonly isCurrent?: any}>`
   ${ (props) => props.isCurrent ? 'background-color: #ba2c9c;' : null }
   padding: 0 12px;
   color: ${({ theme }) => theme.color.Button};
-  font-size: ${({ theme }) => theme.font.Base};
+  font-size: ${({ theme }) => theme.size.Default};
   text-decoration: none;
 `;
 
@@ -34,19 +34,10 @@ const GhostNav = styled.div`
   height: 60px;
 `;
 
-const GhostNav = styled.div`
-  ::selection {
-    background: ${({ theme }) => theme.color.Button};
-  }
-  ::-moz-selection {
-    background: ${({ theme }) => theme.color.Button};
-  }
-`;
-
 const Demo = () => {
   return (
     <ThemeProvider>
-      <Thing>
+      <>
         <Nav>
           <NavLink to={'/'} >Mural</NavLink>
           <TabMenu alignment={Align.Right}>
@@ -61,7 +52,7 @@ const Demo = () => {
           <PageHome path={'/'} />
           <PageComponents path={'components/*'} />
         </Router>
-      </Thing>
+      </>
     </ThemeProvider>
   );
 };

@@ -8,14 +8,15 @@ import {
   ModalFooter,
   ModalHeader,
 } from '../../../modals';
-import { H3, P, SizeType } from '../../../text';
+import { H3, P } from '../../../text';
 import { Align } from '../../../utils/AlignmentProps';
+import { Size } from '../../../utils/sizes';
 
 export default (props: any) => {
   return(
     <Modal open={props.modalOpen} onCloseFn={props.modalClose}>
       <ModalHeader>
-        <H3 size={SizeType.Large}>This is a Modal</H3>
+        <H3 size={Size.Giga}>This is a Modal</H3>
       </ModalHeader>
 
       <ModalBody>

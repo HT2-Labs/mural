@@ -4,7 +4,8 @@ import styled from '../../utils/mural-styled-components';
 
 import DocsPageProps from '../../docs/pages/components/DocsPageProps';
 import { DocsPlayground } from '../../docs/shared';
-import { H1, H4, Link, P, SizeType } from '../../text';
+import { H1, H4, Link, P } from '../../text';
+import { Size } from '../../utils/sizes';
 import DocsColor from './utils/DocsColor';
 
 const codeSnippet =
@@ -68,11 +69,11 @@ const ColorSubGrid = styled.div`
 const DocsThemes = ({}: DocsPageProps) => {
   return (
     <>
-      <H1 size={SizeType.ExtraLarge}>Theme</H1>
+      <H1 size={Size.Tera}>Theme</H1>
       <hr />
       <ColorGrid>
         <ColorInfo>
-          <H4 size={SizeType.Medium}>Body</H4>
+          <H4 size={Size.Mega}>Body</H4>
           <ColorSubGrid>
             <DocsColor color={({ theme }: any) => theme.color.Body}>Base</DocsColor>
             <DocsColor color={({ theme }: any) => theme.color.BodyDark}>Dark</DocsColor>
@@ -81,7 +82,7 @@ const DocsThemes = ({}: DocsPageProps) => {
           </ColorSubGrid>
         </ColorInfo>
         <ColorInfo>
-          <H4 size={SizeType.Medium}>Primary</H4>
+          <H4 size={Size.Mega}>Primary</H4>
           <ColorSubGrid>
             <DocsColor color={({ theme }: any) => theme.color.Primary}>Body</DocsColor>
             <DocsColor color={({ theme }: any) => theme.color.PrimaryDark}>Dark</DocsColor>
@@ -90,7 +91,7 @@ const DocsThemes = ({}: DocsPageProps) => {
           </ColorSubGrid>
         </ColorInfo>
         <ColorInfo>
-          <H4 size={SizeType.Medium}>Secondary</H4>
+          <H4 size={Size.Mega}>Secondary</H4>
           <ColorSubGrid>
             <DocsColor color={({ theme }: any) => theme.color.Secondary}>Body</DocsColor>
             <DocsColor color={({ theme }: any) => theme.color.SecondaryDark}>Dark</DocsColor>
@@ -99,7 +100,7 @@ const DocsThemes = ({}: DocsPageProps) => {
           </ColorSubGrid>
         </ColorInfo>
         <ColorInfo>
-          <H4 size={SizeType.Medium}>Button</H4>
+          <H4 size={Size.Mega}>Button</H4>
           <ColorSubGrid>
             <DocsColor color={({ theme }: any) => theme.color.Button}>Body</DocsColor>
             <DocsColor color={({ theme }: any) => theme.color.ButtonDark}>Dark</DocsColor>
@@ -108,7 +109,7 @@ const DocsThemes = ({}: DocsPageProps) => {
           </ColorSubGrid>
         </ColorInfo>
         <ColorInfo>
-          <H4 size={SizeType.Medium}>Danger</H4>
+          <H4 size={Size.Mega}>Danger</H4>
           <ColorSubGrid>
             <DocsColor color={({ theme }: any) => theme.color.Danger}>Body</DocsColor>
             <DocsColor color={({ theme }: any) => theme.color.DangerDark}>Dark</DocsColor>
@@ -117,7 +118,7 @@ const DocsThemes = ({}: DocsPageProps) => {
           </ColorSubGrid>
         </ColorInfo>
         <ColorInfo>
-          <H4 size={SizeType.Medium}>Success</H4>
+          <H4 size={Size.Mega}>Success</H4>
           <ColorSubGrid>
             <DocsColor color={({ theme }: any) => theme.color.Success}>Body</DocsColor>
             <DocsColor color={({ theme }: any) => theme.color.SuccessDark}>Dark</DocsColor>
@@ -126,7 +127,7 @@ const DocsThemes = ({}: DocsPageProps) => {
           </ColorSubGrid>
         </ColorInfo>
         <ColorInfo>
-          <H4 size={SizeType.Medium}>Disabled</H4>
+          <H4 size={Size.Mega}>Disabled</H4>
           <ColorSubGrid>
             <DocsColor color={({ theme }: any) => theme.color.Disabled}>Body</DocsColor>
             <DocsColor color={({ theme }: any) => theme.color.DisabledDark}>Dark</DocsColor>

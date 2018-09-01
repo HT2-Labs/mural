@@ -5,20 +5,15 @@ import { Size } from '../utils/sizes';
 import { TextProps } from './utils/textProps';
 import { getFontSize } from './utils/textStyle';
 
-const Label = ({
-  color = String(({ theme }: any) => theme.color.Button),
-  italic,
-  strong,
-  size,
-  children,
-}: TextProps) => {
-  const LabelText = styled.label`
-    display: block;
+const Text = () => {
+  const Paragraph = styled.p`
     color: ${color};
     font-size: ${getFontSize(size, Size.Default)};
+    margin: ${margin !== undefined ? '15px 0 10px 0' : 0};
+    font-weight: 100;
   `;
 
-  return <LabelText>{fontStyle({ italic, strong, children })}</LabelText>;
+  return <Paragraph>{fontStyle({ italic, strong, children })}</Paragraph>;
 };
 
-export default Label;
+export default P;

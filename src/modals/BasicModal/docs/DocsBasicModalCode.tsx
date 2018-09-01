@@ -8,14 +8,15 @@ import {
   ModalFooter,
   ModalHeader,
 } from '@ht2-labs/mural/modals';
-import { H3, P, SizeType } from '@ht2-labs/mural/text';
+import { H3, P } from '@ht2-labs/mural/text';
+import { Size } from '@ht2-labs/mural/utils/sizes';
 import { Align } from '@ht2-labs/mural/utils/AlignmentProps';
 
 export default (props: any) => {
   return(
     <Modal open={props.modalOpen} onCloseFn={props.modalClose}>
       <ModalHeader>
-        <H3 size={SizeType.Large}>This is a Modal</H3>
+        <H3 size={Size.Giga}>This is a Modal</H3>
       </ModalHeader>
 
       <ModalBody>

@@ -1,9 +1,9 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { SizeType } from '.';
 import fontStyle from '../utils/fontStyle';
-import { TextProps } from './textProps';
-import { getFontSize } from './textStyle';
+import { Size } from '../utils/sizes';
+import { TextProps } from './utils/textProps';
+import { getFontSize } from './utils/textStyle';
 
 const H4 = ({
   color = String(({ theme }: any) => theme.color.Button),
@@ -15,7 +15,7 @@ const H4 = ({
 }: TextProps) => {
   const HeaderText = styled.h4`
     color: ${color};
-    font-size: ${getFontSize(size, SizeType.Body)};
+    font-size: ${getFontSize(size, Size.Default)};
     margin: ${margin !== undefined ? '15px 0 10px 0' : 0};
     width: 100%;
     font-weight: 100;

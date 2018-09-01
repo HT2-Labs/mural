@@ -1,9 +1,9 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { SizeType } from '.';
 import fontStyle from '../utils/fontStyle';
-import { TextProps } from './textProps';
-import { getFontSize } from './textStyle';
+import { Size } from '../utils/sizes';
+import { TextProps } from './utils/textProps';
+import { getFontSize } from './utils/textStyle';
 
 const H2 = ({
   color = String(({ theme }: any) => theme.color.Button),
@@ -15,7 +15,7 @@ const H2 = ({
 }: TextProps) => {
   const HeaderText = styled.h2`
     color: ${color};
-    font-size: ${getFontSize(size, SizeType.Large)};
+    font-size: ${getFontSize(size, Size.Giga)};
     margin: 0;
     width: 100%;
     font-weight: 100;

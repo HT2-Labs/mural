@@ -1,18 +1,11 @@
 import { ReactNode } from 'react';
-import ThemeProvider from '../themes/themeProps';
-import { Align } from '../utils/AlignmentProps';
-
-export enum SizeType {
-  Small,
-  Body,
-  Medium,
-  Large,
-  ExtraLarge,
-}
+import ThemeProvider from '../../themes/themeProps';
+import { Align } from '../../utils/AlignmentProps';
+import { Size } from '../../utils/sizes';
 
 export interface TextProps {
   readonly children: ReactNode;
-  readonly size?: SizeType;
+  readonly size?: Size;
   readonly color?: ((props: { readonly theme: ThemeProvider }) => string) | string;
   readonly strong?: boolean;
   readonly italic?: boolean;
@@ -26,5 +19,5 @@ export interface LinkProps {
   readonly external?: boolean;
   readonly href?: string;
   readonly onClick?: (e: React.MouseEvent<HTMLElement>) => void;
-  readonly size?: SizeType;
+  readonly size?: Size;
 }

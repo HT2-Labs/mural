@@ -1,7 +1,8 @@
 import * as React from 'react';
 
 import { FormCheckbox, FormInput, FormRadio, FormSwitch, FormTextArea } from '../../../forms';
-import { H1, SizeType } from '../../../text';
+import { H1 } from '../../../text';
+import { Size } from '../../../utils/sizes';
 import { DocsPlayground } from '../../shared';
 import DocsPageProps from './DocsPageProps';
 
@@ -18,7 +19,7 @@ const codeSnippetTextArea =
 const DocsForms = ({}: DocsPageProps) => {
   return (
     <>
-      <H1 size={SizeType.ExtraLarge}>Text</H1>
+      <H1 size={Size.Tera}>Text</H1>
       <hr />
       <DocsPlayground code={codeSnippetInput}>
         <FormInput />

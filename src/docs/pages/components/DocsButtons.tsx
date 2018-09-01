@@ -23,8 +23,9 @@ import {
   IconTimesCircle,
 } from '../../../icons';
 import { Table, TableCell, TableRow } from '../../../tables';
-import { H1, P, SizeType } from '../../../text';
+import { H1, P } from '../../../text';
 import { Align } from '../../../utils/AlignmentProps';
+import { Size } from '../../../utils/sizes';
 import { DocsDescription, DocsGuidance, DocsPlayground, DocsPropsTableHeader } from '../../shared';
 import DocsPageProps from './DocsPageProps';
 
@@ -88,7 +89,7 @@ import { Align } from '@ht2-labs/mural/utils/AlignmentProps';
 
 const codeSnippetIconButton =
   `
-import Size from '../buttons/IconButtonProps';
+import { Size } from '../buttons/IconButtonProps';
 import {
   IconButton,
   ButtonGroup,
@@ -104,7 +105,7 @@ import {
 
 const codeSnippetIconButtonInvisible =
   `
-import Size from '../buttons/IconButtonProps';
+import { Size } from '../buttons/IconButtonProps';
 import {
   IconButtonInvisible,
   ButtonGroup,
@@ -237,7 +238,7 @@ const availablePropsInvisibleButton =
 export default ({}: DocsPageProps) => {
   return (
     <>
-      <H1 size={SizeType.ExtraLarge}>Buttons</H1>
+      <H1 size={Size.Tera}>Buttons</H1>
       <DocsDescription title="Normal Button">
         <P>This is the default button that should be used.</P>
         <DocsPlayground code={codeSnippetButton} exampleProps={availablePropsButton}>

@@ -4,21 +4,24 @@ import { ButtonGhost } from '../../../buttons';
 import { PageActions, PageHeader, PageHeaderText, PageTitle } from '../../../headers';
 import { TabItem, TabMenu } from '../../../menus';
 import { Table, TableCell, TableRow } from '../../../tables';
-import { H1, H3, SizeType } from '../../../text';
+import { H1, H3 } from '../../../text';
+import { Size } from '../../../utils/sizes';
 import { DocsPlayground, DocsPropsTableHeader } from '../../shared';
 import DocsPageProps from './DocsPageProps';
 
-const codeSnippet = `import { H1, H3, SizeType } from '../Text';
+const codeSnippet = `import { H1, H3 } from '../Text';
 import PageHeader from '@ht2-labs/mural/headers/PageHeader';
 import PageHeaderText from '@ht2-labs/mural/headers/PageHeaderText';
 import PageTitle from '@ht2-labs/mural/headers/PageTitle';
+import { Size } from '@ht2-labs/mural/utils/sizes';
+
 <PageHeader>
   <PageTitle>
     <PageHeaderText>
-      <H1 size={SizeType.Large}>
+      <H1 size={Size.Giga}>
         Promote
       </H1>
-      <H3 size={SizeType.Small}>
+      <H3 size={Size.Kilo}>
         Grow into a new role
       </H3>
     </PageHeaderText>
@@ -34,9 +37,17 @@ const availableProps =
   <TableRow>
     <TableCell>size</TableCell>
     <TableCell>
-      SizeType.Body, SizeType.Small, SizeType.Medium, SizeType.Large, SizeType.ExtraLarge
+      Size.Bit,
+      Size.Bite,
+      Size.Kilo,
+      Size.Default,
+      Size.Mega,
+      Size.Giga,
+      Size.Tera,
+      Size.Peta,
+      Size.Exa
     </TableCell>
-    <TableCell>SizeType.Body </TableCell>
+    <TableCell>Size.Default </TableCell>
     <TableCell>Defines the text size of the header</TableCell>
   </TableRow>
 </Table>;
@@ -44,16 +55,16 @@ const availableProps =
 const DocsHeaders = ({}: DocsPageProps) => {
   return (
     <>
-      <H1 size={SizeType.ExtraLarge}>Headers</H1>
+      <H1 size={Size.Tera}>Headers</H1>
       <hr />
       <DocsPlayground code={codeSnippet} exampleProps={availableProps}>
         <PageHeader>
           <PageTitle>
             <PageHeaderText>
-              <H1 size={SizeType.Large}>
+              <H1 size={Size.Giga}>
                 Promote
             </H1>
-              <H3 size={SizeType.Small}>
+              <H3 size={Size.Kilo}>
                 Grow into a new role
             </H3>
             </PageHeaderText>

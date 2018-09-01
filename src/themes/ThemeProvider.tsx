@@ -19,7 +19,6 @@ const MuralThemeProvider = ({ children, theme }: ThemeProps) => {
   // Default values
   const lightenValue = 0.1;
   const DarkenValue = 0.1;
-  const modularScaleValue = 'majorThird';
 
   const constructedTheme = {
     color: {
@@ -60,12 +59,16 @@ const MuralThemeProvider = ({ children, theme }: ThemeProps) => {
 
       White: mergedTheme.colorWhite,
     },
-    font: {
-      Small: modularScale(-1, em(mergedTheme.fontBase), modularScaleValue),
-      Base: em(mergedTheme.fontBase),
-      Medium: modularScale(1.6, em(mergedTheme.fontBase), modularScaleValue),
-      Large: modularScale(2.56, em(mergedTheme.fontBase), modularScaleValue),
-      ExtraLarge: modularScale(4, em(mergedTheme.fontBase), modularScaleValue),
+    size: {
+      Bit: modularScale(0.262, em(mergedTheme.fontBase)),
+      Bite: modularScale(0.512, em(mergedTheme.fontBase)),
+      Kilo: modularScale(0.8, em(mergedTheme.fontBase)),
+      Default: em(mergedTheme.fontBase),
+      Mega: modularScale(1.25, em(mergedTheme.fontBase)),
+      Giga: modularScale(1.953, em(mergedTheme.fontBase)),
+      Tera: modularScale(3.052, em(mergedTheme.fontBase)),
+      Peta: modularScale(3.815, em(mergedTheme.fontBase)),
+      Exa: modularScale(4.768, em(mergedTheme.fontBase)),
     },
     radius: {
       Large: mergedTheme.radiusLarge,

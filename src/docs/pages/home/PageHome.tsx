@@ -4,7 +4,8 @@ import styled from '../../../utils/mural-styled-components';
 
 import { Card } from '../../../cards';
 import { Media } from '../../../media';
-import { H1, H3, P, SizeType } from '../../../text';
+import { H1, H3, P } from '../../../text';
+import { Size } from '../../../utils/sizes';
 import DocsPage from '../../shared/DocsPage';
 import DocsPageProps from '../components/DocsPageProps';
 
@@ -19,7 +20,7 @@ const Quote = styled.p`
 export default ({}: DocsPageProps) => {
   return (
     <DocsPage>
-      <H1 size={SizeType.Large}>The HT2Labs Component Library - MURAL</H1>
+      <H1 size={Size.Giga}>The HT2Labs Component Library - MURAL</H1>
       <Media height="24%" url="https://images.unsplash.com/photo-1535478044878-3ed83d5456ef?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5627447ed73815773a2fa205a2111ca1&dpr=1&auto=format&fit=crop&w=1200&q=80&cs=tinysrgb" />
       <Quote>
         A distinguishing characteristic of mural painting is that the architectural
