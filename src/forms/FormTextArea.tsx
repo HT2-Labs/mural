@@ -6,23 +6,24 @@ import styled from 'styled-components';
 import { Label, SizeType } from '../text';
 import FormProps from './formProps';
 
+const Input = styled.textarea`
+  background-color: #fff;
+  border: 2px solid ${({ theme }) => theme.color.Button};
+  border-radius: ${({ theme }) => theme.radius.Small};
+  margin-top: 4px;
+  padding: 8px 12px 9px;
+  color: #000;
+  font-size: 16px;
+  min-width: 52px;
+  min-height: 20px;
+  &:focus {
+    outline: 4px solid ${({ theme }) => theme.color.ButtonLight};
+  }
+`;
+
 class FormTextArea extends React.Component<FormProps> {
 
   public render() {
-    const Input = styled.textarea`
-      background-color: #fff;
-      border: 1px solid ${({ theme }) => theme.color.Button};
-      border-radius: ${({ theme }) => theme.radius.Button};
-      margin-top: 4px;
-      padding: 8px 12px 9px;
-      color: #000;
-      font-size: 16px;
-      min-width: 52px;
-      min-height: 20px;
-      &:focus {
-        outline: 8px solid aliceblue;
-      }
-    `;
     return (
       <>
         {this.props.label !== undefined

@@ -34,10 +34,19 @@ const GhostNav = styled.div`
   height: 60px;
 `;
 
+const GhostNav = styled.div`
+  ::selection {
+    background: ${({ theme }) => theme.color.Button};
+  }
+  ::-moz-selection {
+    background: ${({ theme }) => theme.color.Button};
+  }
+`;
+
 const Demo = () => {
   return (
     <ThemeProvider>
-      <>
+      <Thing>
         <Nav>
           <NavLink to={'/'} >Mural</NavLink>
           <TabMenu alignment={Align.Right}>
@@ -52,7 +61,7 @@ const Demo = () => {
           <PageHome path={'/'} />
           <PageComponents path={'components/*'} />
         </Router>
-      </>
+      </Thing>
     </ThemeProvider>
   );
 };

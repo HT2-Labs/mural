@@ -14,6 +14,7 @@ import { H1, SizeType } from '../../../text';
 import { DocsPlayground } from '../../shared';
 import DocsPageProps from './DocsPageProps';
 
+const element = document.getElementsByClassName('app')[0];
 class DocsModals extends React.Component<DocsPageProps> {
 
   public readonly state = {
@@ -24,10 +25,12 @@ class DocsModals extends React.Component<DocsPageProps> {
 
   public readonly modalOpen = () => {
     this.setState({ modalOpen: true });
+    element.style.filter = 'blur(4px)';
   }
 
   public readonly modalClose = () => {
     this.setState({ modalOpen: false });
+    element.style.filter = 'blur(0)';
   }
 
   public readonly fullPageModalOpen = () => {

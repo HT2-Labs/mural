@@ -1,10 +1,10 @@
 export default {
   colorBody: '#efefef',
-  colorButton: '#ba2c55',
+  colorButton: '#912cba',
   colorDanger: '#ce0000',
   colorDisabled: '#dadbdb',
   colorPrimary: '#ba2c9c',
-  colorSecondary: '#912cba',
+  colorSecondary: '#ba2c55',
   colorSuccess: '#2cba4a',
   colorWhite: '#fff',
   fontBase: '16px',

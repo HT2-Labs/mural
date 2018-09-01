@@ -8,12 +8,12 @@ import FormProps from './formProps';
 const Input = styled.input`
   background-color: #fff;
   border: 2px solid ${({ theme }) => theme.color.Button};
-  border-radius: ${({ theme }) => theme.radius.Button};
+  border-radius: ${({ theme }) => theme.radius.Small};
   padding: 8px 12px 9px;
   color: #000;
   font-size: 16px;
   &:focus {
-    outline: 8px solid aliceblue;
+    outline: 4px solid ${({ theme }) => theme.color.ButtonLight};
   }
 `;
 
