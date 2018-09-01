@@ -1,61 +1,58 @@
 import * as React from 'react';
 import * as dom from 'react-dom';
+
+import { Link, Router } from '@reach/router';
+import PageComponents from './docs/pages/components/PageComponents';
+import PageHome from './docs/pages/home/PageHome';
+import { TabMenu } from './menus';
+import ThemeProvider from './themes/ThemeProvider';
+import { Align } from './utils/AlignmentProps';
 import styled from './utils/mural-styled-components';
 
-import { Router } from '@reach/router';
-import DocsIntro from './docs/DocsIntro';
-import DocsSidebar from './docs/DocsSidebar';
-import {
-  DocsButtons,
-  DocsCards,
-  DocsForms,
-  DocsHeaders,
-  DocsIcons,
-  DocsLists,
-  DocsMedia,
-  DocsMenus,
-  DocsModals,
-  DocsText,
-  DocsThemes,
-} from './docs/pages/components';
-import ThemeProvider from './themes/ThemeProvider';
-import getRootPath from './utils/getRootPath';
+const NavLink = styled(Link)<{ readonly isCurrent?: any}>`
+  ${ (props) => props.isCurrent ? 'background-color: #ba2c9c;' : null }
+  padding: 0 12px;
+  color: ${({ theme }) => theme.color.Button};
+  font-size: ${({ theme }) => theme.font.Base};
+  text-decoration: none;
+`;
+
+const Nav = styled.div`
+  background-color: #fff;
+  width: 100%;
+  height: 60px;
+  box-shadow: ${(props) => props.theme.shadow.Medium};
+  position: fixed;
+  border-bottom: 6px solid #ba2c9c;
+  padding: 0 16px;
+  box-sizing: border-box;
+  display: flex;
+  z-index: 1000;
+`;
+
+const GhostNav = styled.div`
+  height: 60px;
+`;
 
 const Demo = () => {
-
-  const MainWrap = styled.div`
-    display: grid;
-    grid-template-columns: 250px auto;
-    grid-template-rows: auto;
-    max-width: 1200px;
-    height: 100%;
-  `;
-
-  const Main = styled.main`
-    padding: 20px;
-  `;
-
-return (
-  <ThemeProvider>
-      <MainWrap>
-        <DocsSidebar />
-        <Main>
-          <Router>
-            <DocsThemes path={getRootPath('/themes')} />
-            <DocsButtons path={getRootPath('/buttons')} />
-            <DocsCards path={getRootPath('/cards')} />
-            <DocsForms path={getRootPath('/forms')} />
-            <DocsHeaders path={getRootPath('/headers')} />
-            <DocsIcons path={getRootPath('/icons')} />
-            <DocsLists path={getRootPath('/lists')} />
-            <DocsMenus path={getRootPath('/menus')} />
-            <DocsMedia path={getRootPath('/media')} />
-            <DocsModals path={getRootPath('/modal')} />
-            <DocsText path={getRootPath('/text')} />
-            <DocsIntro path={getRootPath('/')} />
-          </Router>
-        </Main>
-      </MainWrap>
+  return (
+    <ThemeProvider>
+      <>
+        <Nav>
+          <NavLink to={'/'} >Mural</NavLink>
+          <TabMenu alignment={Align.Right}>
+            <NavLink to={'/info'}>Guidelines</NavLink>
+            <NavLink to={'/changelog'}>Changelog</NavLink>
+            <NavLink to={'/components'}>Components</NavLink>
+            <NavLink to={'/patterns'}>Patterns</NavLink>
+          </TabMenu>
+        </Nav>
+        <GhostNav />
+        <Router>
+          <PageHome path={'/'} />
+          <PageComponents path={'components/*'} />
+        </Router>
+      </>
     </ThemeProvider>
   );
 };
