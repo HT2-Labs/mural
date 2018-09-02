@@ -1,11 +1,11 @@
 // tslint:disable:max-file-line-count
 import * as React from 'react';
 
-import { Table, TableCell, TableRow } from '../../../tables';
-import { H1, H2, H3, H4, Link, P } from '../../../text';
-import { Size } from '../../../utils/sizes';
-import { DocsDescription, DocsPlayground, DocsPropsTableHeader } from '../../shared';
-import DocsPageProps from './DocsPageProps';
+import { H1, H2, H3, H4, Link, P } from '..';
+import DocsPageProps from '../../docs/pages/components/DocsPageProps';
+import { DocsDescription, DocsPlayground, DocsPropsTableHeader } from '../../docs/shared';
+import { Table, TableCell, TableRow } from '../../tables';
+import { Size } from '../../utils/sizes';
 
 const codeSnippet = ``;
 
@@ -47,32 +47,47 @@ const DocsText = ({  }: DocsPageProps) => {
           element looks depends on the <code>size</code> prop.
         </P>
         <DocsPlayground code={codeSnippet} exampleProps={availableProps}>
-          <H3 color="#888" italic size={Size.Default} margin>
+        <H1 spacing={Size.Bite} size={Size.Exa}>The quick brown fox jumps over the lazy dog</H1>
+        <H1 size={Size.Peta}>The quick brown fox jumps over the lazy dog</H1>
+        <H1 size={Size.Tera}>The quick brown fox jumps over the lazy dog</H1>
+        <H1 size={Size.Giga}>The quick brown fox jumps over the lazy dog</H1>
+        <H1 size={Size.Mega}>The quick brown fox jumps over the lazy dog</H1>
+        <H1 size={Size.Default}>The quick brown fox jumps over the lazy dog</H1>
+        <H1 size={Size.Kilo}>The quick brown fox jumps over the lazy dog</H1>
+        <H1 size={Size.Bite}>The quick brown fox jumps over the lazy dog</H1>
+        <H1 size={Size.Bit}>The quick brown fox jumps over the lazy dog</H1>
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+          <H3 color="#888" italic size={Size.Default}>
             H1 : Header 1 Element : ExtraLarge
           </H3>
           <H1>The quick brown fox jumps over the lazy dog</H1>
           <hr />
-          <H3 color="#888" italic size={Size.Default} margin>
+          <H3 color="#888" italic size={Size.Default}>
             H1 : Header 1 Element : Medium
           </H3>
           <H1 size={Size.Mega}>The quick brown fox jumps over the lazy dog</H1>
           <hr />
-          <H3 color="#888" italic size={Size.Default} margin>
+          <H3 color="#888" italic size={Size.Default}>
             H2 : Header 2 Element
           </H3>
           <H2>The quick brown fox jumps over the lazy dog</H2>
           <hr />
-          <H3 color="#888" italic size={Size.Default} margin>
+          <H3 color="#888" italic size={Size.Default}>
             H3 : Header 3 Element
           </H3>
           <H3>The quick brown fox jumps over the lazy dog</H3>
           <hr />
-          <H3 color="#888" italic size={Size.Default} margin>
+          <H3 color="#888" italic size={Size.Default}>
             H4 : Header 4 Element
           </H3>
           <H4>The quick brown fox jumps over the lazy dog</H4>
           <hr />
-          <H3 color="#888" italic size={Size.Default} margin>
+          <H3 color="#888" italic size={Size.Default}>
             P : Paragraph Element
           </H3>
           <P>
@@ -87,7 +102,7 @@ const DocsText = ({  }: DocsPageProps) => {
             inceptos himenaeos.
           </P>
           <hr />
-          <H3 color="#888" italic size={Size.Default} margin>
+          <H3 color="#888" italic size={Size.Default}>
             P : Small Paragraph Element
           </H3>
           <P size={Size.Kilo}>
@@ -102,7 +117,7 @@ const DocsText = ({  }: DocsPageProps) => {
             inceptos himenaeos.
           </P>
           <hr />
-          <H3 color="#888" italic size={Size.Default} margin>
+          <H3 color="#888" italic size={Size.Default}>
             Link : Text links
           </H3>
           <P>

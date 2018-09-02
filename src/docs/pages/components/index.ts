@@ -1,4 +1,6 @@
+import DocsText from '../../../text/docs/DocsText';
 import DocsThemes from '../../../themes/docs/DocsThemes';
+import DocsUtils from '../../../utils/docs/DocsUtils';
 import DocsButtons from './DocsButtons';
 import DocsCards from './DocsCards';
 import DocsForms from './DocsForms';
@@ -8,7 +10,6 @@ import DocsLists from './DocsLists';
 import DocsMedia from './DocsMedia';
 import DocsMenus from './DocsMenus';
 import DocsModals from './DocsModals';
-import DocsText from './DocsText';
 
 export {
   DocsButtons,
@@ -22,4 +23,5 @@ export {
   DocsModals,
   DocsText,
   DocsThemes,
+  DocsUtils,
 };

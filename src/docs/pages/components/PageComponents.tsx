@@ -14,6 +14,7 @@ import {
   DocsModals,
   DocsText,
   DocsThemes,
+  DocsUtils,
 } from '.';
 import DocsPage from '../../shared/DocsPage';
 import DocsPageProps from './DocsPageProps';
@@ -43,6 +44,7 @@ const PageComponents = ({}: DocsPageProps) => {
           <DocsMedia path={'media'} />
           <DocsModals path={'modal'} />
           <DocsText path={'text'} />
+          <DocsUtils path={'utils'} />
         </Router>
 
       </DocsPage>

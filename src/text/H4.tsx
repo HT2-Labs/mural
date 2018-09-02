@@ -1,27 +1,28 @@
 import * as React from 'react';
-import styled from 'styled-components';
-import fontStyle from '../utils/fontStyle';
+import styled from '../utils/mural-styled-components';
+
+import ThemeProvider from '../themes/themeProps';
+import { Align } from '../utils/AlignmentProps';
 import { Size } from '../utils/sizes';
-import { TextProps } from './utils/textProps';
 import { getFontSize } from './utils/textStyle';
 
-const H4 = ({
-  color = String(({ theme }: any) => theme.color.Button),
-  italic,
-  strong,
-  size,
-  children,
-  margin,
-}: TextProps) => {
-  const HeaderText = styled.h4`
-    color: ${color};
-    font-size: ${getFontSize(size, Size.Default)};
-    margin: ${margin !== undefined ? '15px 0 10px 0' : 0};
-    width: 100%;
-    font-weight: 100;
-  `;
+export interface TextProps {
+  readonly alignment?: Align;
+  readonly bold?: boolean;
+  readonly children: React.ReactNode;
+  readonly color?: ((props: { readonly theme: ThemeProvider }) => string) | string;
+  readonly italic?: boolean;
+  readonly size?: any;
+  readonly spacing?: Size | string | undefined;
+}
 
-  return <HeaderText>{fontStyle({ italic, strong, children })}</HeaderText>;
-};
+const H4 = styled.h4<TextProps>`
+  color: ${(props) => props.color ? props.color : props.theme.color.BodyText};
+  font-size: ${getFontSize((props: any) => props.size, Size.Default)};
+  font-style: ${(props) => props.italic ? 'italic' : 'normal'};
+  font-weight: ${(props) => props.bold ? '700' : '300'};
+  margin: 0 0 ${getFontSize((props) => props.spacing, Size.Default)};
+  width: 100%;
+`;
 
 export default H4;

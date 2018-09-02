@@ -19,6 +19,10 @@ const MenuItem = styled(Link)`
     background: ${(props) => props.theme.color.Button};
     color: ${(props) => props.theme.color.ButtonText };
   }
+  &:focus {
+    background: #0000001a;
+    outline: none;
+  }
   transition: all 0.06s;
 `;
 
@@ -36,6 +40,7 @@ export default () => {
         <MenuItem to={'menus'}>Menus</MenuItem>
         <MenuItem to={'modal'}>Modal</MenuItem>
         <MenuItem to={'text'}>Text</MenuItem>
+        <MenuItem to={'utils'}>Utils</MenuItem>
     </Sidebar>
   );
 };
