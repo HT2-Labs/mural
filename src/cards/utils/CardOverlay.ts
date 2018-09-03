@@ -27,8 +27,8 @@ const Overlay = styled.div<{
   position: absolute;
   right: 0;
   z-index: 20;
-  height: 100%;
-  width: 100%;
+  height: ${(props) => props.showOverlay === true ? '100%' : null};
+  width: ${(props) => props.showOverlay === true ? '100%' : null};
 `;
 
 export default Overlay;
