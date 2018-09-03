@@ -1,5 +1,5 @@
 export default interface FormProps {
-  readonly label?: string;
+  readonly label?: string | JSX.Element;
   readonly danger?: boolean | undefined;
   readonly group?: string | undefined;
   readonly onChange?: (event: React.ChangeEvent<HTMLElement>) => void;
