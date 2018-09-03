@@ -5,7 +5,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 import { IconCode, IconEye, IconProject } from '../../icons';
-import { TabItem, TabMenu } from '../../menus';
+import { TabItem, TabMenu } from '../../navigation';
 import { H4 } from '../../text';
 import { Align } from '../../utils/AlignmentProps';
 import DocsCode from './DocsCode';
