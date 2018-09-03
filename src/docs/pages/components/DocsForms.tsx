@@ -6,40 +6,38 @@ import { Size } from '../../../utils/sizes';
 import { DocsPlayground } from '../../shared';
 import DocsPageProps from './DocsPageProps';
 
-const codeSnippetInput =
-`import FormInput from '@ht2-labs/mural/forms/FormInput';
+const codeSnippetInput = `import FormInput from '@ht2-labs/mural/forms/FormInput';
 <FormInput />
 `;
 
-const codeSnippetTextArea =
-`import FormTextArea from '@ht2-labs/mural/forms/FormTextArea';
+const codeSnippetTextArea = `import FormTextArea from '@ht2-labs/mural/forms/FormTextArea';
 <FormTextArea label="Label" placeholder="Type something here..."/>
 `;
 
-const DocsForms = ({}: DocsPageProps) => {
+const DocsForms = ({  }: DocsPageProps) => {
   return (
     <>
       <H1 size={Size.Tera}>Text</H1>
       <hr />
       <DocsPlayground code={codeSnippetInput}>
-        <FormInput />
+        <FormInput label={<span>Some Label:</span>} />
       </DocsPlayground>
       <DocsPlayground code={codeSnippetTextArea}>
-        <FormTextArea label="Label" placeholder="Type something here..."/>
+        <FormTextArea label="Label" placeholder="Type something here..." />
       </DocsPlayground>
       <DocsPlayground code={codeSnippetTextArea}>
         <FormSwitch />
       </DocsPlayground>
       <DocsPlayground>
-        <FormCheckbox/>
+        <FormCheckbox />
       </DocsPlayground>
       <DocsPlayground>
-        <FormRadio group="group1"/>
-        <FormRadio group="group1"/>
-        <FormRadio group="group1"/>
-        <FormRadio group="group2"/>
-        <FormRadio group="group2"/>
-        <FormRadio group="group2"/>
+        <FormRadio group="group1" />
+        <FormRadio group="group1" />
+        <FormRadio group="group1" />
+        <FormRadio group="group2" />
+        <FormRadio group="group2" />
+        <FormRadio group="group2" />
       </DocsPlayground>
     </>
   );

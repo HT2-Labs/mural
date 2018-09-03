@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { ButtonGhost } from '../../../buttons';
 import { PageActions, PageHeader, PageHeaderText, PageTitle } from '../../../headers';
-import { TabItem, TabMenu } from '../../../menus';
+import { TabItem, TabMenu } from '../../../navigation';
 import { Table, TableCell, TableRow } from '../../../tables';
 import { H1, H3 } from '../../../text';
 import { Size } from '../../../utils/sizes';

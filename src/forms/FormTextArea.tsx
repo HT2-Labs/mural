@@ -4,34 +4,32 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { Label } from '../text';
-import { Size } from '../utils/sizes';
 import FormProps from './formProps';
 
 const Input = styled.textarea`
   background-color: #fff;
-  border: 2px solid ${({ theme }) => theme.color.Button};
+  border: 2px solid #888;
   border-radius: ${({ theme }) => theme.radius.Small};
-  margin-top: 4px;
   padding: 8px 12px 9px;
   color: #000;
   font-size: 16px;
   min-width: 52px;
   min-height: 20px;
+  &:hover {
+    box-shadow: 0 0 0 1pt #888;
+  }
   &:focus {
-    outline: 4px solid ${({ theme }) => theme.color.ButtonLight};
+    outline: none;
+    box-shadow: 0 0 0 1pt ${({ theme }) => theme.color.Button};
+    border: 2px solid ${({ theme }) => theme.color.Button};
   }
 `;
-
 class FormTextArea extends React.Component<FormProps> {
-
   public render() {
     return (
       <>
-        {this.props.label !== undefined
-          ? <Label size={Size.Default}>{this.props.label}</Label>
-          : null
-        }
-        <Input {...this.props}/>
+        {this.props.label !== undefined ? <Label margin>{this.props.label}</Label> : null}
+        <Input {...this.props} />
       </>
     );
   }

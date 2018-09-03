@@ -30,7 +30,7 @@ const MuralThemeProvider = ({ children, theme }: ThemeProps) => {
       Button: mergedTheme.colorButton,
       ButtonDark: darken(DarkenValue, mergedTheme.colorButton),
       ButtonLight: lighten(lightenValue, mergedTheme.colorButton),
-      ButtonText: readableColor(mergedTheme.colorButton),
+      ButtonText: readableColor(darken(DarkenValue, mergedTheme.colorButton)),
 
       Danger: mergedTheme.colorDanger,
       DangerDark: darken(DarkenValue, mergedTheme.colorDanger),
@@ -50,7 +50,7 @@ const MuralThemeProvider = ({ children, theme }: ThemeProps) => {
       Secondary: mergedTheme.colorSecondary,
       SecondaryDark: darken(DarkenValue, mergedTheme.colorSecondary),
       SecondaryLight: lighten(lightenValue, mergedTheme.colorSecondary),
-      SecondaryText: readableColor(mergedTheme.colorSecondary),
+      SecondaryText: readableColor(darken(DarkenValue, mergedTheme.colorSecondary)),
 
       Success: mergedTheme.colorSuccess,
       SuccessDark: darken(DarkenValue, mergedTheme.colorSuccess),

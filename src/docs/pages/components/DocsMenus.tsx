@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { TabItem, TabMenu } from '../../../menus';
+import { TabItem, TabMenu } from '../../../navigation';
 import { Table, TableCell, TableRow } from '../../../tables';
 import { H1, P } from '../../../text';
 import { Align } from '../../../utils/AlignmentProps';
