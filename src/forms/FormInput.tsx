@@ -3,23 +3,31 @@
 // tslint:disable:no-this
 import * as React from 'react';
 import styled from 'styled-components';
+import { Label, SizeType } from '../text';
 import FormProps from './formProps';
 
 const Input = styled.input`
   background-color: #fff;
-  border: 2px solid ${({ theme }) => theme.color.Button};
-  border-radius: ${({ theme }) => theme.radius.Button};
+  border: 2px solid #888;
+  border-radius: ${({ theme }) => theme.radius.Small};
   padding: 8px 12px 9px;
   color: #000;
   font-size: 16px;
   &:focus {
-    outline: 8px solid aliceblue;
+    outline: none;
+    box-shadow: 0 0 0 1pt ${({ theme }) => theme.color.Button};
+    border: 2px solid ${({ theme }) => theme.color.Button};
   }
 `;
 
 class FormInput extends React.Component<FormProps> {
   public render() {
-    return <Input {...this.props} />;
+    return (
+      <>
+        {this.props.label !== undefined ? <Label margin>{this.props.label}</Label> : null}
+        <Input {...this.props} />
+      </>
+    );
   }
 }
 

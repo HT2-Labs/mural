@@ -11,11 +11,13 @@ const Label = ({
   strong,
   size,
   children,
+  margin,
 }: TextProps) => {
   const LabelText = styled.label`
     display: block;
     color: ${color};
-    font-size: ${getFontSize(size, SizeType.Body)};
+    font-size: ${getFontSize(size, SizeType.Small)};
+    margin: ${margin !== undefined ? '5px 0 5px 0' : 0};
   `;
 
   return <LabelText>{fontStyle({ italic, strong, children })}</LabelText>;
