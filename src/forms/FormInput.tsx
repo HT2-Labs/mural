@@ -13,6 +13,9 @@ const Input = styled.input`
   padding: 8px 12px 9px;
   color: #000;
   font-size: 16px;
+  &:hover {
+    box-shadow: 0 0 0 1pt #888;
+  }
   &:focus {
     outline: none;
     box-shadow: 0 0 0 1pt ${({ theme }) => theme.color.Button};

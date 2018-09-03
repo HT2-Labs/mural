@@ -15,6 +15,9 @@ const Input = styled.textarea`
   font-size: 16px;
   min-width: 52px;
   min-height: 20px;
+  &:hover {
+    box-shadow: 0 0 0 1pt #888;
+  }
   &:focus {
     outline: none;
     box-shadow: 0 0 0 1pt ${({ theme }) => theme.color.Button};
