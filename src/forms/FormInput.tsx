@@ -3,7 +3,7 @@
 // tslint:disable:no-this
 import * as React from 'react';
 import styled from 'styled-components';
-import { Label, SizeType } from '../text';
+import { Label } from '../text';
 import FormProps from './formProps';
 
 const Input = styled.input`
