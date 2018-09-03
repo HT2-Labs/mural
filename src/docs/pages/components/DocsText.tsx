@@ -106,7 +106,7 @@ const DocsText = ({  }: DocsPageProps) => {
             Link : Text links
           </H3>
           <P>
-            <Link>yellow gems</Link>
+            <Link href="https://www.ht2labs.com">yellow gems</Link>
           </P>
           <P>
             <Link color="red">yellow gems</Link>
