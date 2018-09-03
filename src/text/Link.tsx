@@ -17,6 +17,10 @@ const Link = ({
     cursor: pointer;
     color: ${color};
     font-size: ${getFontSize(size, SizeType.Body)};
+    text-decoration: none;
+    &:visited {
+      color: ${color};
+    }
     &:hover {
       -webkit-text-decoration-skip: auto;
       text-decoration: underline;
