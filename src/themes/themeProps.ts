@@ -40,7 +40,6 @@ export default interface ThemeProvider {
     readonly size: {
       readonly Bit: string;
       readonly Bite: string;
-      readonly Kilo: string;
       readonly Default: string;
       readonly Mega: string;
       readonly Giga: string;

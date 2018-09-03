@@ -14,12 +14,12 @@ export interface TextProps {
   readonly spacing?: Size | string;
 }
 
-const textStyle = css`
-  color: ${(props) => props.color ? props.color : ({theme}: any) => theme.color.Success};
-  margin: 0 0 ${getSize((props) => props.spacing, Size.Default)};
-  width: 100%;
-  font-weight: ${(props) => props.bold ? '700' : '300'};
+const textStyle = css<TextProps>`
+  color: ${(props) => props.color ? props.color : props.theme.color.BodyText};
   font-style: ${(props) => props.italic ? 'italic' : 'normal'};
+  font-weight: ${(props) => props.bold ? '700' : '300'};
+  margin: 0 0 ${(props) => getSize(props.spacing, Size.Default)};
+  width: 100%;
 `;
 
 export default textStyle;

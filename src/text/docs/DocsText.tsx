@@ -47,30 +47,10 @@ const DocsText = ({  }: DocsPageProps) => {
           element looks depends on the <code>size</code> prop.
         </P>
         <DocsPlayground code={codeSnippet} exampleProps={availableProps}>
-        <H1 spacing={Size.Bite} size={Size.Exa}>The quick brown fox jumps over the lazy dog</H1>
-        <H1 size={Size.Peta}>The quick brown fox jumps over the lazy dog</H1>
-        <H1 size={Size.Tera}>The quick brown fox jumps over the lazy dog</H1>
-        <H1 size={Size.Giga}>The quick brown fox jumps over the lazy dog</H1>
-        <H1 size={Size.Mega}>The quick brown fox jumps over the lazy dog</H1>
-        <H1 size={Size.Default}>The quick brown fox jumps over the lazy dog</H1>
-        <H1 size={Size.Kilo}>The quick brown fox jumps over the lazy dog</H1>
-        <H1 size={Size.Bite}>The quick brown fox jumps over the lazy dog</H1>
-        <H1 size={Size.Bit}>The quick brown fox jumps over the lazy dog</H1>
-
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-          <H3 color="#888" italic size={Size.Default}>
-            H1 : Header 1 Element : ExtraLarge
-          </H3>
-          <H1>The quick brown fox jumps over the lazy dog</H1>
-          <hr />
           <H3 color="#888" italic size={Size.Default}>
             H1 : Header 1 Element : Medium
           </H3>
-          <H1 size={Size.Mega}>The quick brown fox jumps over the lazy dog</H1>
+          <H1>The quick brown fox jumps over the lazy dog</H1>
           <hr />
           <H3 color="#888" italic size={Size.Default}>
             H2 : Header 2 Element
@@ -105,7 +85,7 @@ const DocsText = ({  }: DocsPageProps) => {
           <H3 color="#888" italic size={Size.Default}>
             P : Small Paragraph Element
           </H3>
-          <P size={Size.Kilo}>
+          <P size={Size.Bite}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo, ante a fermentum
             malesuada, diam lacus aliquet justo, sed tincidunt augue ante nec dolor. In et egestas
             ex. Quisque ex lectus, tempor vel viverra eu, mattis vel magna. Aliquam erat volutpat.
@@ -121,13 +101,13 @@ const DocsText = ({  }: DocsPageProps) => {
             Link : Text links
           </H3>
           <P>
-            <Link>yellow gems</Link>
+            <Link href="#">yellow gems</Link>
           </P>
           <P>
-            <Link color="red">yellow gems</Link>
+            <Link color="red" href="#">yellow gems</Link>
           </P>
           <P>
-            <Link external color="blue">
+            <Link external color="blue" href="#">
               yellow gems
             </Link>
           </P>

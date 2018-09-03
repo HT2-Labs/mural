@@ -1,20 +1,10 @@
-import * as React from 'react';
-import styled from 'styled-components';
-import fontStyle from '../utils/fontStyle';
+import styled from '../utils/mural-styled-components';
 import { getSize, Size } from '../utils/sizes';
-import textStyle from './utils/Text';
-import { TextProps } from './utils/textProps';
+import textStyles, { TextProps } from './utils/textStyles';
 
-const H2 = ({
-  size,
-  children,
-}: TextProps) => {
-  const HeaderText = styled.h2`
-    ${textStyle}
-    font-size: ${getSize(size, Size.Giga)};
-  `;
-
-  return <HeaderText>{children}</HeaderText>;
-};
+const H2 = styled.h2<TextProps>`
+  ${textStyles}
+  font-size: ${(props) => getSize(props.size, Size.Giga)};
+`;
 
 export default H2;

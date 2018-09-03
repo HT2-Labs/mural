@@ -60,10 +60,9 @@ const MuralThemeProvider = ({ children, theme }: ThemeProps) => {
       White: mergedTheme.colorWhite,
     },
     size: {
-      Bit: modularScale(0.262, em(mergedTheme.fontBase)),
-      Bite: modularScale(0.512, em(mergedTheme.fontBase)),
-      Kilo: modularScale(0.8, em(mergedTheme.fontBase)),
-      Default: em(mergedTheme.fontBase),
+      Bit: modularScale(-1, em(mergedTheme.fontBase)),
+      Bite: modularScale(-0.5, em(mergedTheme.fontBase)),
+      Default: modularScale(0, em(mergedTheme.fontBase)),
       Mega: modularScale(1.25, em(mergedTheme.fontBase)),
       Giga: modularScale(1.953, em(mergedTheme.fontBase)),
       Tera: modularScale(3.052, em(mergedTheme.fontBase)),

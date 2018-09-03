@@ -1,7 +1,7 @@
 enum Size {
+  None,
   Bit, // 2px
   Bite, // 4px
-  Kilo, // 8px
   Default, // 16px
   Mega, // 20px
   Giga, // 32px
@@ -13,17 +13,16 @@ enum Size {
 const getSize = (size: any, defaultSize: Size) => {
 
   const selectedSize = size ? size : defaultSize;
-  console.log(selectedSize);
 
   switch (selectedSize) {
+    case Size.None:
+      return 0;
+
     case Size.Bit:
       return ({ theme }: any) => theme.size.Bit;
 
     case Size.Bite:
       return ({ theme }: any) => theme.size.Bite;
-
-    case Size.Kilo:
-      return ({ theme }: any) => theme.size.Kilo;
 
     case Size.Default:
     default:

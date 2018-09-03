@@ -12,12 +12,3 @@ export interface TextProps {
   readonly alignment?: Align;
   readonly margin?: boolean;
 }
-
-export interface LinkProps {
-  readonly children: ReactNode;
-  readonly color?: ((props: { readonly theme: ThemeProvider }) => string) | string;
-  readonly external?: boolean;
-  readonly href?: string;
-  readonly onClick?: (e: React.MouseEvent<HTMLElement>) => void;
-  readonly size?: Size;
-}
