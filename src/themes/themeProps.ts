@@ -37,12 +37,15 @@ export default interface ThemeProvider {
 
       readonly White: string;
     };
-    readonly font: {
+    readonly size: {
+      readonly ExtraSmall: string;
       readonly Small: string;
-      readonly Base: string;
-      readonly Medium: string;
+      readonly Default: string;
       readonly Large: string;
       readonly ExtraLarge: string;
+      readonly Huge: string;
+      readonly ExtraHuge: string;
+      readonly Massive: string;
     };
     readonly radius: {
       readonly Large: string;

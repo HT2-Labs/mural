@@ -2,8 +2,9 @@ import * as React from 'react';
 
 import { TabItem, TabMenu } from '../../../navigation';
 import { Table, TableCell, TableRow } from '../../../tables';
-import { H1, P, SizeType } from '../../../text';
+import { H1, P } from '../../../text';
 import { Align } from '../../../utils/AlignmentProps';
+import { Size } from '../../../utils/sizes';
 import { DocsPlayground, DocsPropsTableHeader } from '../../shared';
 import DocsPageProps from './DocsPageProps';
 
@@ -42,7 +43,7 @@ const DocsMenus = ({}: DocsPageProps) => {
 
   return (
     <>
-      <H1 size={SizeType.ExtraLarge}>Menus</H1>
+      <H1 size={Size.ExtraLarge}>Menus</H1>
       <hr />
       <P>Simple tab menu. Only use for top level page specific navigation.</P>
       <DocsPlayground code={codeSnippet} exampleProps={availableProps}>

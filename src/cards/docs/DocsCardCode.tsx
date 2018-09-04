@@ -51,7 +51,7 @@ export default () => {
       <CardHeroText>
         <H2
           color={({theme}: any) => theme.color.DisabledText}
-          size={SizeType.Large}
+          size={Size.Large}
           alignment={Align.Center}
         >Shared components!</H2>
       </CardHeroText>
@@ -105,12 +105,12 @@ export default ({overlayContent}) => {
   return(
     <Card
       headerColor={({theme}) => theme.color.Secondary}
-      title={<H4 size={SizeType.Medium}>Hello this is a test</H4>}
+      title={<H4>Hello this is a test</H4>}
       overlayContent={overlayContent}
     >
       <CardBody>
-        <H2 size={SizeType.Large}>Shared components!</H2>
-        <P size={SizeType.Medium}>Shared components!</P>
+        <H2 size={Size.Large}>Shared components!</H2>
+        <P>Shared components!</P>
       </CardBody>
     </Card>
   );

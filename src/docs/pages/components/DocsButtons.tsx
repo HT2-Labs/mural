@@ -23,8 +23,9 @@ import {
   IconTimesCircle,
 } from '../../../icons';
 import { Table, TableCell, TableRow } from '../../../tables';
-import { H1, P, SizeType } from '../../../text';
+import { H1, P } from '../../../text';
 import { Align } from '../../../utils/AlignmentProps';
+import { Size } from '../../../utils/sizes';
 import { DocsDescription, DocsGuidance, DocsPlayground, DocsPropsTableHeader } from '../../shared';
 import DocsPageProps from './DocsPageProps';
 
@@ -97,7 +98,7 @@ import {
 <P>Icon Button</P>
 <ButtonGroup>
   <IconButton><IconAsterisk /></IconButton>
-  <IconButton size={Size.Medium} danger><IconEllipsisV /></IconButton>
+  <IconButton danger><IconEllipsisV /></IconButton>
   <IconButton disabled><IconChevronRight /></IconButton>
   <IconButton><IconFlagCheckered /></IconButton>
 </ButtonGroup>`;
@@ -135,8 +136,8 @@ const availablePropsIconButton =
 <DocsPropsTableHeader/>
   <TableRow>
     <TableCell>size</TableCell>
-    <TableCell>Size.Small, Size.Medium, Size.Large</TableCell>
-    <TableCell>Size.Medium</TableCell>
+    <TableCell>Size.Small, Size.Default, Size.Large</TableCell>
+    <TableCell>Size.Default</TableCell>
     <TableCell>Size of button</TableCell>
   </TableRow>
   <TableRow>
@@ -157,8 +158,8 @@ const availablePropsInvisibleIconButton =
 <DocsPropsTableHeader/>
   <TableRow>
     <TableCell>size</TableCell>
-    <TableCell>Size.Small, Size.Medium, Size.Large</TableCell>
-    <TableCell>Size.Medium</TableCell>
+    <TableCell>Size.Small, Size.Default, Size.Large</TableCell>
+    <TableCell>Size.Default</TableCell>
     <TableCell>Size of button</TableCell>
   </TableRow>
   <TableRow>
@@ -237,7 +238,7 @@ const availablePropsInvisibleButton =
 export default ({}: DocsPageProps) => {
   return (
     <>
-      <H1 size={SizeType.ExtraLarge}>Buttons</H1>
+      <H1 size={Size.ExtraLarge}>Buttons</H1>
       <DocsDescription title="Normal Button">
         <P>This is the default button that should be used.</P>
         <DocsPlayground code={codeSnippetButton} exampleProps={availablePropsButton}>

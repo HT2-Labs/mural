@@ -35,7 +35,8 @@ import {
   IconTimes,
   IconTimesCircle,
 } from '../../../icons';
-import { H1, SizeType } from '../../../text';
+import { H1 } from '../../../text';
+import { Size } from '../../../utils/sizes';
 import { DocsPlayground } from '../../shared';
 import DocsPageProps from './DocsPageProps';
 
@@ -67,7 +68,7 @@ const DocsIcons = ({}: DocsPageProps) => {
   `;
   return (
     <>
-      <H1 size={SizeType.ExtraLarge}>Icons</H1>
+      <H1 size={Size.ExtraLarge}>Icons</H1>
       <hr />
       <DocsPlayground code={codeSnippet}>
         <Grid>

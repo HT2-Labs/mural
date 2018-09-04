@@ -26,7 +26,6 @@ import IconLink from './IconLink';
 import IconNpm from './IconNpm';
 import IconPlusCircle from './IconPlusCircle';
 import IconProject from './IconProject';
-import IconProps from './IconProps';
 import IconSearch from './IconSearch';
 import IconTachometer from './IconTachometer';
 import IconThumbsUp from './IconThumbsUp';
@@ -61,7 +60,6 @@ export {
   IconLink,
   IconNpm,
   IconPlusCircle,
-  IconProps,
   IconProject,
   IconSearch,
   IconTachometer,

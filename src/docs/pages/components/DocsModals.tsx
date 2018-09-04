@@ -10,7 +10,8 @@ import DocsBasicModalProps from '../../../modals/BasicModal/docs/DocsBasicModalP
 import DocsFullPageModalCode from '../../../modals/FullPageModal/docs/DocsFullPageModalCode';
 import DocsFullPageModalPreview from '../../../modals/FullPageModal/docs/DocsFullPageModalPreview';
 import DocsFullPageModalProps from '../../../modals/FullPageModal/docs/DocsFullPageModalProps';
-import { H1, SizeType } from '../../../text';
+import { H1 } from '../../../text';
+import { Size } from '../../../utils/sizes';
 import { DocsPlayground } from '../../shared';
 import DocsPageProps from './DocsPageProps';
 
@@ -45,7 +46,7 @@ class DocsModals extends React.Component<DocsPageProps> {
   public render() {
     return (
       <>
-        <H1 size={SizeType.ExtraLarge}>Headers</H1>
+        <H1 size={Size.ExtraLarge}>Headers</H1>
         <hr />
         <DocsPlayground
           code={DocsBasicModalCode}

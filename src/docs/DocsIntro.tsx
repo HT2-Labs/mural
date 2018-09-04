@@ -1,7 +1,8 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import { H1, P, SizeType } from '../text';
+import { H1, P } from '../text';
+import { Size } from '../utils/sizes';
 import DocsPageProps from './pages/components/DocsPageProps';
 
 const Quote = styled.p`
@@ -15,7 +16,7 @@ const Quote = styled.p`
 export default ({}: DocsPageProps) => {
   return (
     <>
-      <H1 size={SizeType.Large}>The HT2Labs Component Library - MURAL</H1>
+      <H1 size={Size.Large}>The HT2Labs Component Library - MURAL</H1>
       <Quote>
         A distinguishing characteristic of mural painting is that the architectural
         elements of the given space are harmoniously incorporated into the picture

@@ -66,7 +66,7 @@ const FormCheckbox = (props: FormProps) => {
   return (
     <SwitchBody>
       <CheckBox type="checkbox" {...props}/>
-      <Slider><IconCheck color="white" /></Slider>
+      <Slider><IconCheck textColor="white" /></Slider>
     </SwitchBody>
   );
 

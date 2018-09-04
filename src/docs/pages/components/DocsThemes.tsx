@@ -2,7 +2,8 @@
 // tslint:disable:max-line-length
 import * as React from 'react';
 import styled from 'styled-components';
-import { H1, H4, Link, P, SizeType } from '../../../text';
+import { H1, H4, Link, P } from '../../../text';
+import { Size } from '../../../utils/sizes';
 import { DocsColor, DocsPlayground } from '../../shared';
 import DocsPageProps from './DocsPageProps';
 
@@ -60,61 +61,61 @@ const DocsThemes = ({}: DocsPageProps) => {
 
   return (
     <>
-      <H1 size={SizeType.ExtraLarge}>Theme</H1>
+      <H1 size={Size.ExtraLarge}>Theme</H1>
       <hr />
       <ColorGrid>
         <ColorInfo>
-          <H4 size={SizeType.Medium}>Body</H4>
+          <H4 size={Size.Large}>Body</H4>
           <ColorSubGrid>
-            <DocsColor color={({ theme }: any) => theme.color.Body}>Color</DocsColor>
-            <DocsColor color={({ theme }: any) => theme.color.BodyDark}>Color</DocsColor>
-            <DocsColor color={({ theme }: any) => theme.color.BodyLight}>Color</DocsColor>
-            <DocsColor color={({ theme }: any) => theme.color.BodyText}>Color</DocsColor>
+            <DocsColor color={({ theme }: any) => theme.color.Body}>Base</DocsColor>
+            <DocsColor color={({ theme }: any) => theme.color.BodyDark}>Dark</DocsColor>
+            <DocsColor color={({ theme }: any) => theme.color.BodyLight}>Light</DocsColor>
+            <DocsColor color={({ theme }: any) => theme.color.BodyText}>Text</DocsColor>
           </ColorSubGrid>
         </ColorInfo>
         <ColorInfo>
-          <H4 size={SizeType.Medium}>Primary</H4>
+          <H4 size={Size.Large}>Primary</H4>
           <ColorSubGrid>
-            <DocsColor color={({ theme }: any) => theme.color.Primary}>Color</DocsColor>
-            <DocsColor color={({ theme }: any) => theme.color.PrimaryDark}>Color</DocsColor>
-            <DocsColor color={({ theme }: any) => theme.color.PrimaryLight}>Color</DocsColor>
-            <DocsColor color={({ theme }: any) => theme.color.PrimaryText}>Color</DocsColor>
+            <DocsColor color={({ theme }: any) => theme.color.Primary}>Base</DocsColor>
+            <DocsColor color={({ theme }: any) => theme.color.PrimaryDark}>Dark</DocsColor>
+            <DocsColor color={({ theme }: any) => theme.color.PrimaryLight}>Light</DocsColor>
+            <DocsColor color={({ theme }: any) => theme.color.PrimaryText}>Text</DocsColor>
           </ColorSubGrid>
         </ColorInfo>
         <ColorInfo>
-          <H4 size={SizeType.Medium}>Secondary</H4>
+          <H4 size={Size.Large}>Secondary</H4>
           <ColorSubGrid>
-            <DocsColor color={({ theme }: any) => theme.color.Secondary}>Color</DocsColor>
-            <DocsColor color={({ theme }: any) => theme.color.SecondaryDark}>Color</DocsColor>
-            <DocsColor color={({ theme }: any) => theme.color.SecondaryLight}>Color</DocsColor>
-            <DocsColor color={({ theme }: any) => theme.color.SecondaryText}>Color</DocsColor>
+            <DocsColor color={({ theme }: any) => theme.color.Secondary}>Base</DocsColor>
+            <DocsColor color={({ theme }: any) => theme.color.SecondaryDark}>Dark</DocsColor>
+            <DocsColor color={({ theme }: any) => theme.color.SecondaryLight}>Light</DocsColor>
+            <DocsColor color={({ theme }: any) => theme.color.SecondaryText}>Text</DocsColor>
           </ColorSubGrid>
         </ColorInfo>
         <ColorInfo>
-          <H4 size={SizeType.Medium}>Button</H4>
+          <H4 size={Size.Large}>Button</H4>
           <ColorSubGrid>
-            <DocsColor color={({ theme }: any) => theme.color.Button}>Color</DocsColor>
-            <DocsColor color={({ theme }: any) => theme.color.ButtonDark}>Color</DocsColor>
-            <DocsColor color={({ theme }: any) => theme.color.ButtonLight}>Color</DocsColor>
-            <DocsColor color={({ theme }: any) => theme.color.ButtonText}>Color</DocsColor>
+            <DocsColor color={({ theme }: any) => theme.color.Button}>Base</DocsColor>
+            <DocsColor color={({ theme }: any) => theme.color.ButtonDark}>Dark</DocsColor>
+            <DocsColor color={({ theme }: any) => theme.color.ButtonLight}>Light</DocsColor>
+            <DocsColor color={({ theme }: any) => theme.color.ButtonText}>Text</DocsColor>
           </ColorSubGrid>
         </ColorInfo>
         <ColorInfo>
-          <H4 size={SizeType.Medium}>Danger</H4>
+          <H4 size={Size.Large}>Danger</H4>
           <ColorSubGrid>
-            <DocsColor color={({ theme }: any) => theme.color.Danger}>Color</DocsColor>
-            <DocsColor color={({ theme }: any) => theme.color.DangerDark}>Color</DocsColor>
-            <DocsColor color={({ theme }: any) => theme.color.DangerLight}>Color</DocsColor>
-            <DocsColor color={({ theme }: any) => theme.color.DangerText}>Color</DocsColor>
+            <DocsColor color={({ theme }: any) => theme.color.Danger}>Base</DocsColor>
+            <DocsColor color={({ theme }: any) => theme.color.DangerDark}>Dark</DocsColor>
+            <DocsColor color={({ theme }: any) => theme.color.DangerLight}>Light</DocsColor>
+            <DocsColor color={({ theme }: any) => theme.color.DangerText}>Text</DocsColor>
           </ColorSubGrid>
         </ColorInfo>
         <ColorInfo>
-          <H4 size={SizeType.Medium}>Disabled</H4>
+          <H4 size={Size.Large}>Disabled</H4>
           <ColorSubGrid>
-            <DocsColor color={({ theme }: any) => theme.color.Disabled}>Color</DocsColor>
-            <DocsColor color={({ theme }: any) => theme.color.DisabledDark}>Color</DocsColor>
-            <DocsColor color={({ theme }: any) => theme.color.DisabledLight}>Color</DocsColor>
-            <DocsColor color={({ theme }: any) => theme.color.DisabledText}>Color</DocsColor>
+            <DocsColor color={({ theme }: any) => theme.color.Disabled}>Base</DocsColor>
+            <DocsColor color={({ theme }: any) => theme.color.DisabledDark}>Dark</DocsColor>
+            <DocsColor color={({ theme }: any) => theme.color.DisabledLight}>Light</DocsColor>
+            <DocsColor color={({ theme }: any) => theme.color.DisabledText}>Text</DocsColor>
           </ColorSubGrid>
         </ColorInfo>
       </ColorGrid>

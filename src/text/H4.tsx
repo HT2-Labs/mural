@@ -1,27 +1,10 @@
-import * as React from 'react';
-import styled from 'styled-components';
-import { SizeType } from '.';
-import fontStyle from '../utils/fontStyle';
-import { TextProps } from './textProps';
-import { getFontSize } from './textStyle';
+import styled from '../utils/mural-styled-components';
+import { getSize, Size } from '../utils/sizes';
+import textStyles, { TextProps } from './utils/textStyles';
 
-const H4 = ({
-  color = String(({ theme }: any) => theme.color.Button),
-  italic,
-  strong,
-  size,
-  children,
-  margin,
-}: TextProps) => {
-  const HeaderText = styled.h4`
-    color: ${color};
-    font-size: ${getFontSize(size, SizeType.Body)};
-    margin: ${margin !== undefined ? '15px 0 10px 0' : 0};
-    width: 100%;
-    font-weight: 100;
-  `;
-
-  return <HeaderText>{fontStyle({ italic, strong, children })}</HeaderText>;
-};
+const H4 = styled.h4<TextProps>`
+  ${textStyles}
+  font-size: ${(props) => getSize(props.size, Size.Default)};
+`;
 
 export default H4;

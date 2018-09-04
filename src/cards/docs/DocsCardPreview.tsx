@@ -4,8 +4,9 @@ import * as React from 'react';
 import { ButtonGroup, ButtonInvisible } from '../../buttons';
 import { Card, CardBody, CardFooter } from '../../cards';
 import { Media } from '../../media';
-import { H2, H4, P, SizeType } from '../../text';
+import { H2, H4, P } from '../../text';
 import { Align } from '../../utils/AlignmentProps';
+import { Size } from '../../utils/sizes';
 import CardHeroText from '../CardHeroText';
 
 const DocsCardBasic = () => {
@@ -52,8 +53,8 @@ const DocsCardHeroText = () => {
     <Card active backgroundColor={({ theme }) => theme.color.Disabled}>
       <CardHeroText>
         <H2
-          color={({ theme }: any) => theme.color.DisabledText}
-          size={SizeType.Large}
+          textColor={({ theme }) => theme.color.DisabledText}
+          size={Size.Large}
           alignment={Align.Center}
         >
           Shared components!
@@ -89,17 +90,17 @@ const DocsCardOverlay = ({ overlayContent }: any) => {
     <Card
       active
       headerColor={({ theme }) => theme.color.Secondary}
-      title={<H4 size={SizeType.Medium}>Hello this is a test</H4>}
+      title={<H4>Hello this is a test</H4>}
       overlayContent={overlayContent}
       onClick={() => {
         alert('clicked');
       }}
     >
       <CardBody>
-        <H2 size={SizeType.Large} alignment={Align.Center}>
+        <H2 size={Size.Large} alignment={Align.Center}>
           Shared components!
         </H2>
-        <P size={SizeType.Medium} alignment={Align.Center}>
+        <P alignment={Align.Center}>
           Shared components!
         </P>
       </CardBody>

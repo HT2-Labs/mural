@@ -1,43 +1,50 @@
 import * as React from 'react';
-import styled from 'styled-components';
-import { SizeType } from '.';
-import IconExternalLink from '../icons/IconExternalLink';
-import { LinkProps } from './textProps';
-import { getFontSize } from './textStyle';
+import styled from '../utils/mural-styled-components';
 
-const Link = ({
-  children,
-  color = String(({ theme }: any) => theme.color.Button),
-  external = false,
-  href,
-  onClick,
-  size,
-}: LinkProps) => {
-  const LinkContainer = styled.a`
-    cursor: pointer;
-    color: ${color};
-    font-size: ${getFontSize(size, SizeType.Body)};
-    text-decoration: none;
-    &:visited {
-      color: ${color};
-    }
-    &:hover {
-      -webkit-text-decoration-skip: auto;
-      text-decoration: underline;
-    }
-    & svg {
-      margin-left: 4px;
-      position: relative;
-      top: 0.15em;
-    }
-  `;
+import ThemeProvider from '../themes/themeProps';
 
-  return (
-    <LinkContainer href={href} onClick={onClick}>
-      {children}
-      {external ? <IconExternalLink /> : null}
-    </LinkContainer>
-  );
-};
+// import IconExternalLink from '../icons/IconExternalLink';
+import { getSize, Size } from '../utils/sizes';
+import textStyles from './utils/textStyles';
 
-export default Link;
+export interface LinkProps {
+  readonly children: React.ReactNode;
+  readonly color?: ((props: { readonly theme: ThemeProvider }) => string) | string;
+  readonly external?: boolean;
+  readonly href?: string;
+  readonly onClick?: (e: React.MouseEvent<HTMLElement>) => void;
+  readonly size?: Size;
+}
+
+const BaseLink = styled.a.attrs<LinkProps>({
+  target: (props: any) => props.external ? '_blank' : '_self',
+})`
+  ${textStyles}
+  cursor: pointer;
+  font-size: ${(props) => getSize(props.size, Size.Default)};
+  text-decoration: none;
+
+  &:hover {
+    -webkit-text-decoration-skip: auto;
+    text-decoration: underline;
+  }
+  & svg {
+    margin-left: 4px;
+    position: relative;
+    top: 0.15em;
+  }
+`;
+
+// const Link = (props: LinkProps) => {
+//   return (
+//     <BaseLink
+//       href={props.href}
+//       onClick={props.onClick}
+//     >
+//       {props.children}
+//       {props.external ? <IconExternalLink /> : null}
+//     </BaseLink>
+//   );
+// };
+
+export default BaseLink;
