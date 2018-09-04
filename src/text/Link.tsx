@@ -8,7 +8,7 @@ import { getSize, Size } from '../utils/sizes';
 import textStyles from './utils/textStyles';
 
 export interface LinkProps {
-  readonly children: React.ReactNode;
+  readonly children?: React.ReactNode;
   readonly color?: ((props: { readonly theme: ThemeProvider }) => string) | string;
   readonly external?: boolean;
   readonly href?: string | undefined;
