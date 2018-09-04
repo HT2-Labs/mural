@@ -50,10 +50,13 @@ const DocsCardOnClick = () => {
 
 const DocsCardHeroText = () => {
   return (
-    <Card active backgroundColor={({ theme }) => theme.color.Disabled}>
+    <Card
+      active
+      backgroundColor={({ theme }) => theme.color.Disabled}
+      textColor={({ theme }) => theme.color.DisabledText}
+    >
       <CardHeroText>
         <H2
-          textColor={({ theme }) => theme.color.DisabledText}
           size={Size.Large}
           alignment={Align.Center}
         >

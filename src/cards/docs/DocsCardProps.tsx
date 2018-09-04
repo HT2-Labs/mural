@@ -15,6 +15,12 @@ export default () => {
           <TableCell>Use for when a Card needs to be shown as active/selected</TableCell>
         </TableRow>
         <TableRow>
+          <TableCell>textColor</TableCell>
+          <TableCell>string | theme</TableCell>
+          <TableCell>Undefined</TableCell>
+          <TableCell>Sets the text color of the card</TableCell>
+        </TableRow>
+        <TableRow>
           <TableCell>backgroundColor</TableCell>
           <TableCell>string | theme</TableCell>
           <TableCell>Undefined</TableCell>

@@ -8,7 +8,10 @@ const BaseCard = styled.div<CardProps>`
   box-shadow: ${({ onClick, theme }) =>
     onClick !== undefined ? theme.shadow.Medium : theme.shadow.Small};
   box-sizing: border-box;
-  color: ${({ backgroundColor, theme }) => {
+  color: ${({ backgroundColor, textColor, theme }) => {
+    if (textColor !== undefined) {
+      return textColor;
+    }
     if (backgroundColor === undefined) {
       return theme.color.BodyText;
     }

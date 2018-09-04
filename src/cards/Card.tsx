@@ -33,7 +33,15 @@ class Card extends React.Component<CardProps> {
   };
 
   public render() {
-    const { backgroundColor, children, headerColor, onClick, overlayContent, title } = this.props;
+    const {
+      backgroundColor,
+      children,
+      headerColor,
+      onClick,
+      overlayContent,
+      textColor,
+      title,
+    } = this.props;
 
     const actionOpen = (e: React.MouseEvent<HTMLElement>) => {
       e.stopPropagation();
@@ -72,6 +80,7 @@ class Card extends React.Component<CardProps> {
       <BaseCard
         role={onClick !== undefined ? 'button' : ''}
         backgroundColor={backgroundColor}
+        textColor={textColor}
         onClick={onClick}
       >
         {overlayContent !== undefined ? renderOverlay : null}

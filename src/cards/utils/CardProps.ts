@@ -8,6 +8,9 @@ export default interface CardProps {
   // Sets the background color of the card
   readonly backgroundColor?: ((props: { readonly theme: ThemeProvider }) => string) | string;
 
+  // Sets the main text color of the card
+  readonly textColor?: ((props: { readonly theme: ThemeProvider }) => string) | string;
+
   // Set background color of header/title
   readonly headerColor?: ((props: { readonly theme: ThemeProvider }) => string) | string;
 
