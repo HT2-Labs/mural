@@ -40,7 +40,7 @@ const Link = (props: LinkProps) => {
       onClick={props.onClick}
     >
       {props.children}
-      {props.external ? <IconExternalLink /> : null}
+      {props.external !== undefined ? <IconExternalLink /> : null}
     </BaseLink>
   );
 };
