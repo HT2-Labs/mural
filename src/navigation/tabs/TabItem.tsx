@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import { getSize, Size } from '../../utils/sizes';
 import MenuProps from './menuProps';
 
 const TabItem = ({ active = false, children, onClick}: MenuProps) => {
@@ -11,15 +12,16 @@ const TabItem = ({ active = false, children, onClick}: MenuProps) => {
     border-bottom: 4px solid;
     border-color: ${active ? ({ theme }) => theme.color.Button : 'transparent'};
     box-sizing: border-box;
-    background: none;
+    background: transparent;
     color: ${active
       ? ({ theme }) => theme.color.Button
       : ({ theme }) => theme.color.BodyText
     };
     flex: 0;
-    font-size: 16px;
+    font-family: inherit;
+    font-size: ${getSize(Size.Default, Size.Default)};
     height: 44px;
-    padding: 12px 16px 0px;
+    padding: 0 16px;
     text-align: center;
     width: 100%;
     &:hover {
