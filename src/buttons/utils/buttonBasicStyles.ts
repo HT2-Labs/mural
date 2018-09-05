@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { getSize, Size } from '../../utils/sizes';
 
 export interface Props {
   readonly fullWidth: boolean | undefined;
@@ -12,7 +13,7 @@ export default ({ fullWidth = false, disabled = false }: Props) => {
     cursor: ${disabled ? 'not-allowed' : 'pointer'};
     display: block;
     flex-shrink: 0;
-    font-size: 16px;
+    font-size: ${getSize(Size.Small, Size.Small)};;
     font-weight: 500;
     padding: 8px 12px;
     text-align: center;
