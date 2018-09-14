@@ -17,13 +17,11 @@ const TabItem = ({ active = false, children, onClick}: MenuProps) => {
       ? ({ theme }) => theme.color.Button
       : ({ theme }) => theme.color.BodyText
     };
-    flex: 0;
     font-family: inherit;
     font-size: ${getSize(Size.Default, Size.Default)};
     height: 44px;
     padding: 0 16px;
     text-align: center;
-    width: 100%;
     &:hover {
       border-color: ${({ theme }) => theme.color.ButtonLight};
       color: ${({ theme }) => theme.color.ButtonLight};
