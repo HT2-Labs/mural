@@ -38,6 +38,7 @@ const Link = (props: LinkProps) => {
     <BaseLink
       href={props.href}
       onClick={props.onClick}
+      target={props.external !== undefined ? '_blank' : '_self'}
     >
       {props.children}
       {props.external !== undefined ? <IconExternalLink /> : null}
