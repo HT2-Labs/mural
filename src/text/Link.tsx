@@ -39,6 +39,7 @@ const Link = (props: LinkProps) => {
       href={props.href}
       onClick={props.onClick}
       target={props.external !== undefined ? '_blank' : '_self'}
+      rel={props.external !== undefined ? 'noopener noreferrer' : ''}
     >
       {props.children}
       {props.external !== undefined ? <IconExternalLink /> : null}
