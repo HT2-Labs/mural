@@ -32,7 +32,7 @@
     "@ht2-labs/semantic-release": "1.1.25",
     "@ht2-labs/typescript-project": "1.1.0",
     "@reach/router": "1.2.1",
-    "@types/prop-types": "15.5.5",
+    "@types/prop-types": "15.5.6",
     "@types/reach__router": "1.0.1",
     "@types/react-dom": "16.0.7",
     "@types/react": "16.4.14",
