@@ -33,6 +33,7 @@ import {
   IconLink,
   IconNpm,
   IconPen,
+  IconPlus,
   IconPlusCircle,
   IconProject,
   IconSearch,
@@ -110,6 +111,7 @@ const DocsIcons = ({}: DocsPageProps) => {
           <GridItem><IconLink /><GridItemText>IconLink</GridItemText></GridItem>
           <GridItem><IconNpm /><GridItemText>IconNpm</GridItemText></GridItem>
           <GridItem><IconPen /><GridItemText>IconPen</GridItemText></GridItem>
+          <GridItem><IconPlus /><GridItemText>IconPlus</GridItemText></GridItem>
           <GridItem><IconPlusCircle /><GridItemText>IconPlusCircle</GridItemText></GridItem>
           <GridItem><IconSearch /><GridItemText>IconSearch</GridItemText></GridItem>
           <GridItem><IconStarHalf /><GridItemText>IconStarHalf</GridItemText></GridItem>
