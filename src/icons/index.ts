@@ -40,6 +40,7 @@ import IconThumbsDown from './IconThumbsDown';
 import IconThumbsUp from './IconThumbsUp';
 import IconTimes from './IconTimes';
 import IconTimesCircle from './IconTimesCircle';
+import IconTrash from './IconTrash';
 
 export {
   IconArrowDown,
@@ -84,4 +85,5 @@ export {
   IconThumbsUp,
   IconTimes,
   IconTimesCircle,
+  IconTrash,
 };
