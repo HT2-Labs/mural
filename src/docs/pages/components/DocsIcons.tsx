@@ -45,6 +45,7 @@ import {
   IconThumbsUp,
   IconTimes,
   IconTimesCircle,
+  IconTrash,
 } from '../../../icons';
 import { H1 } from '../../../text';
 import { Size } from '../../../utils/sizes';
@@ -96,13 +97,15 @@ const DocsIcons = ({}: DocsPageProps) => {
           <GridItem><IconChevronDown /><GridItemText>IconChevronDown</GridItemText></GridItem>
           <GridItem><IconChevronLeft /><GridItemText>IconChevronLeft</GridItemText></GridItem>
           <GridItem><IconChevronRight /><GridItemText>IconChevronRight</GridItemText></GridItem>
-          <GridItem><IconClose /><GridItemText>IconClose</GridItemText></GridItem>
           <GridItem><IconChevronUp /><GridItemText>IconChevronUp</GridItemText></GridItem>
+          <GridItem><IconClose /><GridItemText>IconClose</GridItemText></GridItem>
+          <GridItem><IconCode /><GridItemText>IconCode</GridItemText></GridItem>
           <GridItem><IconCog /><GridItemText>IconCog</GridItemText></GridItem>
           <GridItem><IconCuratr /><GridItemText>IconCuratr</GridItemText></GridItem>
           <GridItem><IconEdit /><GridItemText>IconEdit</GridItemText></GridItem>
           <GridItem><IconEllipsisV /><GridItemText>IconEllipsisV</GridItemText></GridItem>
           <GridItem><IconExternalLink /><GridItemText>IconExternalLink</GridItemText></GridItem>
+          <GridItem><IconEye /><GridItemText>IconEye</GridItemText></GridItem>
           <GridItem><IconFilter /><GridItemText>IconFilter</GridItemText></GridItem>
           <GridItem><IconFlagCheckered /><GridItemText>IconFlagCheckered</GridItemText></GridItem>
           <GridItem><IconGithub /><GridItemText>IconGithub</GridItemText></GridItem>
@@ -113,6 +116,7 @@ const DocsIcons = ({}: DocsPageProps) => {
           <GridItem><IconPen /><GridItemText>IconPen</GridItemText></GridItem>
           <GridItem><IconPlus /><GridItemText>IconPlus</GridItemText></GridItem>
           <GridItem><IconPlusCircle /><GridItemText>IconPlusCircle</GridItemText></GridItem>
+          <GridItem><IconProject /><GridItemText>IconProject</GridItemText></GridItem>
           <GridItem><IconSearch /><GridItemText>IconSearch</GridItemText></GridItem>
           <GridItem><IconStarHalf /><GridItemText>IconStarHalf</GridItemText></GridItem>
           <GridItem><IconStarRegular /><GridItemText>IconStarRegular</GridItemText></GridItem>
@@ -122,9 +126,7 @@ const DocsIcons = ({}: DocsPageProps) => {
           <GridItem><IconThumbsUp /><GridItemText>IconThumbsUp</GridItemText></GridItem>
           <GridItem><IconTimes /><GridItemText>IconTimes</GridItemText></GridItem>
           <GridItem><IconTimesCircle /><GridItemText>IconTimesCircle</GridItemText></GridItem>
-          <GridItem><IconCode /><GridItemText>IconCode</GridItemText></GridItem>
-          <GridItem><IconProject /><GridItemText>IconProject</GridItemText></GridItem>
-          <GridItem><IconEye /><GridItemText>IconEye</GridItemText></GridItem>
+          <GridItem><IconTrash /><GridItemText>IconTrash</GridItemText></GridItem>
         </Grid>
       </DocsPlayground>
     </>
