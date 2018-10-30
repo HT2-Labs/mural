@@ -3,6 +3,7 @@ import IconArrowLeft from './IconArrowLeft';
 import IconArrowRight from './IconArrowRight';
 import IconArrowUp from './IconArrowUp';
 import IconAsterisk from './IconAsterisk';
+import IconBook from './IconBook';
 import IconBullseye from './IconBullseye';
 import IconCalendar from './IconCalendar';
 import IconChartBar from './IconChartBar';
@@ -41,6 +42,7 @@ import IconThumbsUp from './IconThumbsUp';
 import IconTimes from './IconTimes';
 import IconTimesCircle from './IconTimesCircle';
 import IconTrash from './IconTrash';
+import IconUsers from './IconUsers';
 
 export {
   IconArrowDown,
@@ -48,6 +50,7 @@ export {
   IconArrowRight,
   IconArrowUp,
   IconAsterisk,
+  IconBook,
   IconBullseye,
   IconCalendar,
   IconChartBar,
@@ -86,4 +89,5 @@ export {
   IconTimes,
   IconTimesCircle,
   IconTrash,
+  IconUsers,
 };

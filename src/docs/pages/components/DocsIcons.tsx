@@ -8,6 +8,7 @@ import {
   IconArrowRight,
   IconArrowUp,
   IconAsterisk,
+  IconBook,
   IconBullseye,
   IconCalendar,
   IconChartBar,
@@ -46,6 +47,7 @@ import {
   IconTimes,
   IconTimesCircle,
   IconTrash,
+  IconUsers,
 } from '../../../icons';
 import { H1 } from '../../../text';
 import { Size } from '../../../utils/sizes';
@@ -89,6 +91,7 @@ const DocsIcons = ({}: DocsPageProps) => {
           <GridItem><IconArrowRight /><GridItemText>IconArrowRight</GridItemText></GridItem>
           <GridItem><IconArrowUp /><GridItemText>IconArrowUp</GridItemText></GridItem>
           <GridItem><IconAsterisk /><GridItemText>IconAsterisk</GridItemText></GridItem>
+          <GridItem><IconBook /><GridItemText>IconBook</GridItemText></GridItem>
           <GridItem><IconBullseye /><GridItemText>IconBullseye</GridItemText></GridItem>
           <GridItem><IconCalendar /><GridItemText>IconCalendar</GridItemText></GridItem>
           <GridItem><IconChartBar /><GridItemText>IconChartBar</GridItemText></GridItem>
@@ -127,6 +130,7 @@ const DocsIcons = ({}: DocsPageProps) => {
           <GridItem><IconTimes /><GridItemText>IconTimes</GridItemText></GridItem>
           <GridItem><IconTimesCircle /><GridItemText>IconTimesCircle</GridItemText></GridItem>
           <GridItem><IconTrash /><GridItemText>IconTrash</GridItemText></GridItem>
+          <GridItem><IconUsers /><GridItemText>IconUsers</GridItemText></GridItem>
         </Grid>
       </DocsPlayground>
     </>
