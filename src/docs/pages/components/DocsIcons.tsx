@@ -3,13 +3,16 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 import {
+  IconArchive,
   IconArrowDown,
   IconArrowLeft,
   IconArrowRight,
   IconArrowUp,
   IconAsterisk,
+  IconBook,
   IconBullseye,
   IconCalendar,
+  IconChartBar,
   IconCheck,
   IconCheckCircle,
   IconChevronDown,
@@ -18,22 +21,34 @@ import {
   IconChevronUp,
   IconClose,
   IconCode,
+  IconCog,
   IconCuratr,
+  IconEdit,
   IconEllipsisV,
+  IconExternalLink,
   IconEye,
   IconFilter,
   IconFlagCheckered,
   IconGithub,
   IconHome,
+  IconInfoCircle,
   IconLink,
   IconNpm,
+  IconPen,
+  IconPlus,
   IconPlusCircle,
   IconProject,
   IconSearch,
+  IconStarHalf,
+  IconStarRegular,
+  IconStarSolid,
   IconTachometer,
+  IconThumbsDown,
   IconThumbsUp,
   IconTimes,
   IconTimesCircle,
+  IconTrash,
+  IconUsers,
 } from '../../../icons';
 import { H1 } from '../../../text';
 import { Size } from '../../../utils/sizes';
@@ -72,37 +87,52 @@ const DocsIcons = ({}: DocsPageProps) => {
       <hr />
       <DocsPlayground code={codeSnippet}>
         <Grid>
+          <GridItem><IconArchive /><GridItemText>IconArchive</GridItemText></GridItem>
           <GridItem><IconArrowDown /><GridItemText>IconArrowDown</GridItemText></GridItem>
           <GridItem><IconArrowLeft /><GridItemText>IconArrowLeft</GridItemText></GridItem>
           <GridItem><IconArrowRight /><GridItemText>IconArrowRight</GridItemText></GridItem>
           <GridItem><IconArrowUp /><GridItemText>IconArrowUp</GridItemText></GridItem>
           <GridItem><IconAsterisk /><GridItemText>IconAsterisk</GridItemText></GridItem>
+          <GridItem><IconBook /><GridItemText>IconBook</GridItemText></GridItem>
           <GridItem><IconBullseye /><GridItemText>IconBullseye</GridItemText></GridItem>
           <GridItem><IconCalendar /><GridItemText>IconCalendar</GridItemText></GridItem>
+          <GridItem><IconChartBar /><GridItemText>IconChartBar</GridItemText></GridItem>
           <GridItem><IconCheck /><GridItemText>IconCheck</GridItemText></GridItem>
           <GridItem><IconCheckCircle /><GridItemText>IconCheckCircle</GridItemText></GridItem>
           <GridItem><IconChevronDown /><GridItemText>IconChevronDown</GridItemText></GridItem>
           <GridItem><IconChevronLeft /><GridItemText>IconChevronLeft</GridItemText></GridItem>
           <GridItem><IconChevronRight /><GridItemText>IconChevronRight</GridItemText></GridItem>
-          <GridItem><IconClose /><GridItemText>IconClose</GridItemText></GridItem>
           <GridItem><IconChevronUp /><GridItemText>IconChevronUp</GridItemText></GridItem>
+          <GridItem><IconClose /><GridItemText>IconClose</GridItemText></GridItem>
+          <GridItem><IconCode /><GridItemText>IconCode</GridItemText></GridItem>
+          <GridItem><IconCog /><GridItemText>IconCog</GridItemText></GridItem>
           <GridItem><IconCuratr /><GridItemText>IconCuratr</GridItemText></GridItem>
+          <GridItem><IconEdit /><GridItemText>IconEdit</GridItemText></GridItem>
           <GridItem><IconEllipsisV /><GridItemText>IconEllipsisV</GridItemText></GridItem>
+          <GridItem><IconExternalLink /><GridItemText>IconExternalLink</GridItemText></GridItem>
+          <GridItem><IconEye /><GridItemText>IconEye</GridItemText></GridItem>
           <GridItem><IconFilter /><GridItemText>IconFilter</GridItemText></GridItem>
           <GridItem><IconFlagCheckered /><GridItemText>IconFlagCheckered</GridItemText></GridItem>
           <GridItem><IconGithub /><GridItemText>IconGithub</GridItemText></GridItem>
           <GridItem><IconHome /><GridItemText>IconHome</GridItemText></GridItem>
+          <GridItem><IconInfoCircle /><GridItemText>IconInfoCircle</GridItemText></GridItem>
           <GridItem><IconLink /><GridItemText>IconLink</GridItemText></GridItem>
           <GridItem><IconNpm /><GridItemText>IconNpm</GridItemText></GridItem>
+          <GridItem><IconPen /><GridItemText>IconPen</GridItemText></GridItem>
+          <GridItem><IconPlus /><GridItemText>IconPlus</GridItemText></GridItem>
           <GridItem><IconPlusCircle /><GridItemText>IconPlusCircle</GridItemText></GridItem>
+          <GridItem><IconProject /><GridItemText>IconProject</GridItemText></GridItem>
           <GridItem><IconSearch /><GridItemText>IconSearch</GridItemText></GridItem>
+          <GridItem><IconStarHalf /><GridItemText>IconStarHalf</GridItemText></GridItem>
+          <GridItem><IconStarRegular /><GridItemText>IconStarRegular</GridItemText></GridItem>
+          <GridItem><IconStarSolid /><GridItemText>IconStarSolid</GridItemText></GridItem>
           <GridItem><IconTachometer /><GridItemText>IconTachometer</GridItemText></GridItem>
+          <GridItem><IconThumbsDown /><GridItemText>IconThumbsDown</GridItemText></GridItem>
           <GridItem><IconThumbsUp /><GridItemText>IconThumbsUp</GridItemText></GridItem>
           <GridItem><IconTimes /><GridItemText>IconTimes</GridItemText></GridItem>
           <GridItem><IconTimesCircle /><GridItemText>IconTimesCircle</GridItemText></GridItem>
-          <GridItem><IconCode /><GridItemText>IconCode</GridItemText></GridItem>
-          <GridItem><IconProject /><GridItemText>IconProject</GridItemText></GridItem>
-          <GridItem><IconEye /><GridItemText>IconEye</GridItemText></GridItem>
+          <GridItem><IconTrash /><GridItemText>IconTrash</GridItemText></GridItem>
+          <GridItem><IconUsers /><GridItemText>IconUsers</GridItemText></GridItem>
         </Grid>
       </DocsPlayground>
     </>

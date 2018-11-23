@@ -16,9 +16,9 @@ const Svg = styled.svg<IconProps>`
 `;
 
 export default (renderSvg: () => React.ReactNode, viewBox = '0 0 512 512') => {
-  return ({}: IconProps) => {
+  return (props: IconProps) => {
     return (
-      <Svg xmlns="http://www.w3.org/2000/svg" viewBox={viewBox}>
+      <Svg xmlns="http://www.w3.org/2000/svg" viewBox={viewBox} {...props}>
         ${renderSvg()}
       </Svg>
     );
