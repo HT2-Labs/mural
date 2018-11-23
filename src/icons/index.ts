@@ -1,3 +1,4 @@
+import IconArchive from './IconArchive';
 import IconArrowDown from './IconArrowDown';
 import IconArrowLeft from './IconArrowLeft';
 import IconArrowRight from './IconArrowRight';
@@ -45,6 +46,7 @@ import IconTrash from './IconTrash';
 import IconUsers from './IconUsers';
 
 export {
+  IconArchive,
   IconArrowDown,
   IconArrowLeft,
   IconArrowRight,

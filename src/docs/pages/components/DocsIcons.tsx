@@ -3,6 +3,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 import {
+  IconArchive,
   IconArrowDown,
   IconArrowLeft,
   IconArrowRight,
@@ -86,6 +87,7 @@ const DocsIcons = ({}: DocsPageProps) => {
       <hr />
       <DocsPlayground code={codeSnippet}>
         <Grid>
+          <GridItem><IconArchive /><GridItemText>IconArchive</GridItemText></GridItem>
           <GridItem><IconArrowDown /><GridItemText>IconArrowDown</GridItemText></GridItem>
           <GridItem><IconArrowLeft /><GridItemText>IconArrowLeft</GridItemText></GridItem>
           <GridItem><IconArrowRight /><GridItemText>IconArrowRight</GridItemText></GridItem>
