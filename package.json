@@ -41,7 +41,7 @@
     "parcel-bundler": "1.12.2",
     "react-syntax-highlighter": "8.1.0",
     "rimraf": "2.6.3",
-    "typescript": "3.3.1"
+    "typescript": "3.3.3333"
   },
   "publishConfig": {
     "access": "public"
