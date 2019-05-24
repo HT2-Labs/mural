@@ -1,17 +1,18 @@
 {
   "extends": "./node_modules/@ht2-labs/typescript-project/configs/tsconfig.json",
   "compilerOptions": {
-    "rootDir": "src",
-    "outDir": "dist",
-    "jsx": "react",
     "esModuleInterop": true,
-    "typeRoots": [
-      "./@types",
-      "./node_modules/@types"
-    ],
+    "jsx": "react",
     "lib": [
       "dom",
       "es2015"
+    ],
+    "outDir": "dist",
+    "rootDir": "src",
+    "sourceMap": false,
+    "typeRoots": [
+      "./@types",
+      "./node_modules/@types"
     ]
   },
   "includes": [
