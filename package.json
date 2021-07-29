@@ -21,6 +21,10 @@
     "ghpages": "npm run build-ghpages && npm run deploy-ghpages"
   },
   "dependencies": {
+    "@types/prop-types": "15.7.3",
+    "@types/reach__router": "1.2.5",
+    "@types/react": "16.9.4",
+    "@types/react-dom": "16.9.1",
     "polished": "^2.0.0",
     "prop-types": "^15.6.1",
     "react": "^16.4.2",
@@ -32,10 +36,6 @@
     "@ht2-labs/semantic-release": "^2.0.86",
     "@ht2-labs/typescript-project": "2.0.15",
     "@reach/router": "1.2.1",
-    "@types/prop-types": "15.7.3",
-    "@types/reach__router": "1.2.5",
-    "@types/react": "16.9.4",
-    "@types/react-dom": "16.9.1",
     "gh-pages": "1.2.0",
     "jscpd": "0.6.25",
     "parcel-bundler": "1.12.3",
