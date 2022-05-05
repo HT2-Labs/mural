@@ -34,20 +34,8 @@ jobs:
       - name: Checking for Duplication
         run: npm run duplication -- --limit 15
 
-  release:
-    name: Semantic Release
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v3
-
-    - uses: actions/setup-node@v3
-      with:
-        node-version: "8"
-        cache: 'npm'
-
-    - name: Semantic Release
-      if: github.ref == 'refs/heads/master'
-      run: npx ts-node src/deploy.ts
-      env:
-        GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_GITHUB_TOKEN }}
+      - name: Semantic Release
+        if: github.ref == 'refs/heads/master'
+        run: npm run semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_GITHUB_TOKEN }}
